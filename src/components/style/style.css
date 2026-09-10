@@ -214,6 +214,9 @@
     background-color: #ffffff;
     z-index: 9999;
     overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
     transition: top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
@@ -249,8 +252,9 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
     padding: 25px 30px 40px 30px;
+    box-sizing: border-box;
 }
 
 /* Mobile Panel Header */
