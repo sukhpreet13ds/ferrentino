@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #FBC705;
+    --secondary-color: #111213;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+/* 1. LARGE DESKTOPS (1200px to 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    .nav-logo img {
+        font-size: 83px;
+    }
+
+
+.hero-section{
+    min-height: 100vh;
+}
+
+    .hero-title-top {
+        font-size: 85px;
+    }
+
+    .hero-subtitle {
+        font-size: 23px;
+    }
+
+    .hero-title-bottom {
+        font-size: 85px;
+    }
+
+    .nav-menu {
+        gap: 22px;
+    }
+
+    .nav-sub {
+        font-size: 14px;
+    }
+
+    .btn-get-estimate {
+        font-size: 22px;
+    }
+
+    .nav-main,
+    .nav-link-single {
+        font-size: 17px;
+    }
+
+    .top-bar-right {
+        gap: 25px;
+    }
+}
+
+/* 2. MINI DESKTOPS & LANDSCAPE TABLETS (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .top-bar {
+        padding: 10px 20px;
+    }
+
+    .main-navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-menu {
+        gap: 25px;
+    }
+
+    .nav-main,
+    .nav-link-single {
+
+        font-size: 16px;
+    }
+
+    .consultation-text {
+        font-size: 13px;
+        max-width: 125px;
+    }
+
+    .hero-title-top {
+        font-size: 76px;
+    }
+
+    .hero-title-bottom {
+        font-size: 76px;
+    }
+
+    .hero-subtitle {
+        font-size: 22px;
+        max-width: 664px;
+    }
+
+    .btn-get-estimate {
+        font-size: 22px;
+    }
+
+    .nav-logo img {
+        height: 65px;
+    }
+
+    .top-bar-right {
+        gap: 35px;
+    }
+      
+}
+
+/* HAMBURGER ACTIVATION FOR TABLET & MOBILE (< 992px) */
+@media (max-width: 991px) {
+    .nav-menu {
+        display: none !important;
+    }
+
+    .top-bar-right .social-icons,
+    .top-bar-right .top-contact-item,
+    .top-bar-right .lang-select {
+        display: none !important;
+    }
+
+    .top-bar {
+        display: none;
+    }
+
+    .mobile-hamburger-btn {
+        display: block !important;
+    }
+}
+
+/* 3. PORTRAIT TABLETS (577px to 991px) */
+@media (min-width: 577px) and (max-width: 991px) {
+    .top-bar {
+        padding: 8px 25px;
+    }
+
+    .top-bar-container {
+        justify-content: flex-end;
+    }
+
+    .main-navbar {
+        padding: 12px 25px;
+    }
+
+    .nav-logo img, .mobile-logo img {
+        height: 60px;
+    }
+
+    .hero-content-wrapper {
+        padding: 120px 25px 80px 25px;
+    }
+
+    .hero-title-top {
+        font-size: 70px;
+    }
+
+    .hero-title-bottom {
+        font-size: 70px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+        max-width: 620px;
+    }
+
+    .hero-learn-more {
+        left: 25px;
+        bottom: 25px;
+    }
+
+    .hero-dots {
+        bottom: 25px;
+    }
+
+    .mobile-menu-list li a {
+        font-size: 38px;
+    }
+
+    .mobile-contact-item {
+        font-size: 20px;
+    }
+    
+}
+
+/* 4. MOBILE (<= 576px) */
+@media (max-width: 576px) {
+    .top-bar {
+        padding: 6px 15px;
+    }
+
+    .main-navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-logo img {
+        height: 55px;
+    }
+
+    .hero-content-wrapper {
+        padding: 100px 15px 70px 15px;
+    }
+
+    .hero-title-top {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .hero-title-bottom {
+        font-size: 40px;
+        margin-top: 0;
+        font-weight: 600;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    .btn-get-estimate {
+        padding: 13px 26px;
+        font-size: 20px;
+    }
+
+    .hero-dots {
+        bottom: 20px;
+    }
+
+    .hero-learn-more {
+        left: 15px;
+        bottom: 18px;
+    }
+
+    .learn-more-link span {
+        display: none;
+    }
+
+    .arrow-circle {
+        width: 32px;
+        height: 32px;
+    }
+
+    .mobile-nav-content {
+        padding: 20px 20px 30px 20px;
+    }
+
+    .mobile-menu-list li a {
+        font-size: 34px;
+    }
+
+    .mobile-consultation-link {
+        font-size: 17px !important;
+    }
+
+    .mobile-contact-item {
+        font-size: 20px;
+    }
+
+    .hero-section {
+        min-height: 70vh;
+    }
+
+    .dot.active {
+        width: 10px;
+        height: 10px;
+    }
+}
