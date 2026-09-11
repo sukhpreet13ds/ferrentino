@@ -1,27 +1,6 @@
-npm install gsap
-
-import FoldText from './FoldText';
-
-<FoldText
-  text="Design unfolds"
-  splitBy="char"
-  hinge="top"
-  trigger="mount"
-  duration={0.65}
-  stagger={0.045}
-  ease="power3.out"
-  perspective={700}
-  creaseShading={0.55}
-  fontSize={80}
-  fontWeight={800}
-  color="#f7f2e8"
-/>
-
-
-import { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 import './FoldText.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -48,7 +27,7 @@ const renderWhitespace = (value, key) =>
   });
 
 const FoldText = ({
-  text = 'Design unfolds',
+  text = 'built',
   splitBy = 'char',
   hinge = 'top',
   duration = 0.65,
@@ -57,9 +36,9 @@ const FoldText = ({
   perspective = 700,
   creaseShading = 0.55,
   trigger = 'mount',
-  fontSize = 80,
-  fontWeight = 800,
-  color = '#f7f2e8',
+  fontSize = 'inherit',
+  fontWeight = 'inherit',
+  color = 'inherit',
   className = '',
   style = {}
 }) => {

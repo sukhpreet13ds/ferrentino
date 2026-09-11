@@ -154,7 +154,7 @@
 }
 
 .btn-icon {
-    font-size: 14px;
+    font-size: 20px;
     transition: transform 0.3s ease;
 }
 
@@ -232,3 +232,861 @@
     color: var(--primary-color);
     transform: translateY(3px);
 }
+
+/* Design & Build Section - Base Styles */
+.design-build-section {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 100px 0 100px 0;
+    overflow: hidden;
+    color: #111213;
+}
+
+.design-build-bg-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 52%;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+    opacity: 0.75;
+    pointer-events: none;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
+.design-build-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1820px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Top Content Row */
+.design-build-top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+
+
+.design-build-right-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.design-build-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 110px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.05;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.design-build-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.35;
+    margin-bottom: 30px;
+    max-width: 740px;
+}
+
+.design-build-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.4;
+    max-width: 860px;
+    margin: 0;
+}
+
+/* Middle Accent Text (Positioned above bottom grid, aligned towards left) */
+.design-build-middle-accent {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.built-around-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 130px;
+    color: #000000;
+    line-height: 1.1;
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.built-around-text .built-italic {
+    font-style: italic;
+    font-weight: 700;
+    display: inline-block;
+}
+
+/* Bottom Content Grid */
+.design-build-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.design-build-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Column 1: Projects Link */
+.col-projects {
+    justify-content: flex-end;
+    height: 100%;
+    min-height: 140px;
+}
+
+.projects-circle-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: #111213;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.projects-arrow-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #111213;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.projects-circle-link:hover {
+    color: #000000;
+}
+
+.projects-circle-link:hover .projects-arrow-circle {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+/* Column 2: What Sets Us Apart */
+.col-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #111213;
+    margin-bottom: 12px;
+}
+
+.col-bold-sub {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111213;
+    margin-bottom: 12px;
+}
+
+.col-desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    max-width: 380px;
+}
+
+.btn-design-estimate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    box-shadow: 0 2px 10px rgba(251, 199, 5, 0.2);
+}
+
+.btn-design-estimate:hover {
+    background-color: #e2b304;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(251, 199, 5, 0.4);
+}
+
+.btn-design-estimate i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.btn-design-estimate:hover i {
+    transform: translateX(4px);
+}
+
+/* Video Confidence Section - Base Styles */
+.video-confidence-section {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 100px 0 100px 0;
+}
+
+.video-confidence-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.video-confidence-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 400;
+    color: #111213;
+    line-height: 1.1;
+    margin-bottom: 50px;
+    letter-spacing: -0.5px;
+}
+
+.video-player-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confidence-video-element {
+    width: 100%;
+    height: auto;
+    max-height: 750px;
+    object-fit: cover;
+    display: block;
+}
+
+.video-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+}
+
+.video-player-wrapper:hover .video-play-overlay {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.video-play-circle-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: none;
+    color: #111213;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    padding-left: 5px;
+}
+
+.video-player-wrapper:hover .video-play-circle-btn {
+    transform: scale(1.12);
+    box-shadow: 0 12px 40px rgba(251, 199, 5, 0.5);
+}
+
+/* Renovate Banner & Testimonial Section - Base Styles */
+.reno-banner-section {
+    position: relative;
+    width: 100%;
+}
+
+.reno-yellow-banner {
+    background-color: var(--primary-color);
+    color: #111213;
+    padding: 90px 0;
+}
+
+.reno-banner-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.reno-banner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.reno-banner-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.reno-banner-left-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: #111213;
+    margin-bottom: 45px;
+    letter-spacing: -0.5px;
+}
+
+.reno-learn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: #111213;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.reno-arrow-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid #111213;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.reno-learn-link:hover .reno-arrow-circle {
+    background-color: #111213;
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.reno-banner-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.reno-banner-right-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #111213;
+    margin-bottom: 25px;
+    letter-spacing: -0.3px;
+}
+
+.reno-banner-right-desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: #222222;
+    margin: 0;
+}
+
+/* Dark Testimonial Block */
+.reno-testimonial-block {
+    background-color: #111213;
+    color: #ffffff;
+    padding: 100px 0 110px 0;
+    text-align: center;
+}
+
+.reno-testimonial-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-stars {
+    display: flex;
+    gap: 6px;
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.testimonial-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.testimonial-quote-icon {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #ffffff;
+    margin: 0 0 35px 0;
+    text-align: center;
+    letter-spacing: -0.3px;
+}
+
+.testimonial-attribution {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.testimonial-attribution .author-name {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.testimonial-attribution .author-location {
+    color: #888888;
+    font-weight: 400;
+}
+
+/* Locality Section - Base Styles */
+.locality-section {
+    position: relative;
+    width: 100%;
+    min-height: 750px;
+    background-color: #1C1E20;
+    color: #ffffff;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.locality-bg-map-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.locality-map-box {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1331 / 899;
+    display: block;
+}
+
+.locality-map-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+.locality-pin-wrapper {
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.locality-pin-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.locality-pin-wrapper:hover .locality-pin-img {
+    transform: scale(1.25) translateY(-4px);
+}
+
+/* Staggered Pop Animation when section becomes visible */
+.locality-section.animate-in .locality-pin-wrapper {
+    animation: pinBubblePop 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes pinBubblePop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    65% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+    85% {
+        transform: translate(-50%, -50%) scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.pin-pulse {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background-color: rgba(251, 199, 5, 0.4);
+    z-index: -1;
+    animation: pinPulseRing 2.5s infinite ease-out;
+}
+
+@keyframes pinPulseRing {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+.locality-container {
+    position: relative;
+    z-index: 5;
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.locality-content {
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+}
+
+.locality-tag {
+    display: inline-block;
+    border: 1px solid rgba(251, 199, 5, 0.4);
+    color: var(--primary-color);
+    padding: 6px 14px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    align-self: flex-start;
+    background-color: rgba(251, 199, 5, 0.05);
+}
+
+.locality-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.locality-desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 35px;
+}
+
+.locality-counties-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 40px;
+    max-width: 380px;
+}
+
+.locality-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.locality-list li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bullet-dot {
+    color: var(--primary-color);
+    font-size: 22px;
+    line-height: 1;
+}
+
+/* 102 Years Craftsmanship Section - Base Styles */
+.years-102-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 110px 0;
+    overflow: hidden;
+}
+
+.years-102-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(17, 18, 19, 0.65) 0%, rgba(17, 18, 19, 0.85) 100%);
+    z-index: 1;
+}
+
+.years-102-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1850px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 96px;
+}
+
+.years-102-left {
+    flex: 0 0 auto;
+}
+
+.years-102-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 460px;
+    font-weight: 700;
+    color: #FFD217;
+    line-height: 0.8;
+    margin: 0;
+    letter-spacing: -60px;
+    margin-bottom: -66px;
+}
+
+.years-102-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.years-102-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.877);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.years-102-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 400;
+    color: #EFEEE8;
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.years-102-title em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Ready to Build CTA Section - Base Styles */
+.ready-cta-section {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.ready-cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(17, 18, 19, 0.55) 0%, rgba(17, 18, 19, 0.8) 100%);
+    z-index: 1;
+}
+
+.ready-cta-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ready-cta-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 90px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 18px;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+
+.ready-cta-desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    line-height: 1.5;
+}
+
+.ready-cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-ready-estimate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 16px 36px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(251, 199, 5, 0.25);
+}
+
+.btn-ready-estimate:hover {
+    background-color: #e2b304;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(251, 199, 5, 0.4);
+}
+
+.btn-ready-call {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 16px 36px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-ready-call:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-ready-call i {
+    font-size: 20px;
+}
+
+
