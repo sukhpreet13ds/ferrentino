@@ -191,6 +191,28 @@ body {
     .projects-read-more {
         font-size: 20px;
     }
+
+    /* Contact Hero Section - Large Desktops */
+    .contact-title-line {
+        font-size: 84px;
+    }
+
+    .contact-hero-container {
+        padding-top: 180px;
+    }
+
+    .contact-form-card {
+        padding: 36px;
+    }
+
+    /* Contractor Hero Section - Large Desktops */
+    .contractor-title-line {
+        font-size: 84px;
+    }
+
+    .contractor-hero-container {
+        padding-top: 180px;
+    }
 }
 
 /* 2. MINI DESKTOPS & LANDSCAPE TABLETS (992px to 1199px) */
@@ -381,6 +403,40 @@ body {
 
     .footer-content-row {
         gap: 35px;
+    }
+
+    /* Contact Hero Section - Mini Desktops & Landscape Tablets */
+    .contact-title-line {
+        font-size: 76px;
+    }
+
+    .contact-hero-container {
+        padding-top: 170px;
+    }
+
+    .contact-hero-desc {
+        font-size: 19px;
+    }
+
+    .contact-main-container {
+        gap: 40px;
+    }
+
+    .contact-form-card {
+        padding: 32px;
+    }
+
+    /* Contractor Hero Section - Mini Desktops */
+    .contractor-title-line {
+        font-size: 76px;
+    }
+
+    .contractor-hero-container {
+        padding-top: 170px;
+    }
+
+    .contractor-hero-desc {
+        font-size: 19px;
     }
 }
 
@@ -727,6 +783,56 @@ body {
 
     .footer-newsletter-col {
         grid-column: span 2;
+    }
+
+    /* Contact Hero Section - Portrait Tablets */
+    .contact-hero-section {
+        min-height: 80vh;
+    }
+
+    .contact-title-line {
+        font-size: 64px;
+    }
+
+    .contact-hero-container {
+        padding: 150px 30px 80px 30px;
+    }
+
+    .contact-hero-desc {
+        font-size: 18px;
+    }
+
+    .contact-main-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 0 30px;
+    }
+
+    .features-strip-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 30px;
+    }
+
+    /* Contractor Hero Section - Portrait Tablets */
+    .contractor-hero-section {
+        min-height: 70vh;
+    }
+
+    .contractor-title-line {
+        font-size: 64px;
+    }
+
+    .contractor-hero-container {
+        padding: 150px 30px 80px 30px;
+    }
+
+    .contractor-hero-desc {
+        font-size: 18px;
+    }
+
+    .contractor-form-card {
+        padding: 40px 30px;
     }
 }
 
@@ -1235,5 +1341,105 @@ body {
 
     .footer-copyright-bar {
         font-size: 14px;
+    }
+
+    /* Contact Hero Section - Mobile */
+    .contact-hero-section {
+        min-height: 55vh;
+    }
+
+    .contact-title-line {
+        font-size: 44px;
+    }
+
+    .contact-hero-container {
+        padding: 130px 20px 60px 20px;
+    }
+
+    .contact-hero-tag {
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    .contact-hero-desc {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .contact-main-section {
+        padding: 60px 0 70px 0;
+    }
+
+    .contact-main-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .contact-form-card {
+        padding: 24px 20px;
+    }
+
+    .form-row-two {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .contact-info-title {
+        font-size: 34px;
+    }
+
+    .form-card-title {
+        font-size: 30px;
+    }
+
+    .features-strip-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 20px;
+    }
+
+    /* Contractor Hero Section - Mobile */
+    .contractor-hero-section {
+        min-height: 55vh;
+    }
+
+    .contractor-title-line {
+        font-size: 44px;
+    }
+
+    .contractor-hero-container {
+        padding: 130px 20px 60px 20px;
+    }
+
+    .contractor-hero-tag {
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    .contractor-hero-desc {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .contractor-main-section {
+        padding: 60px 0 70px 0;
+    }
+
+    .contractor-main-container {
+        padding: 0 20px;
+    }
+
+    .contractor-form-card {
+        padding: 28px 20px;
+    }
+
+    .contractor-form-title {
+        font-size: 26px;
+    }
+
+    .form-row-three {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 }

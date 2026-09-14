@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import Contractor from "./pages/Contractor";
 import Navbar from "./components/Navbar";
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -43,6 +45,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/contractor" element={<Contractor />} />
         </Routes>
       </Router>
     </>

@@ -88,10 +88,10 @@ const Navbar = () => {
                             <a href="#projects" className="nav-link nav-link-single">Projects</a>
                         </li>
                         <li className="nav-item">
-                            <a href="#contractor" className="nav-link nav-link-single">Contractor</a>
+                            <a href="/contractor" className="nav-link nav-link-single">Contractor</a>
                         </li>
                         <li className="nav-item">
-                            <a href="#contact" className="nav-link nav-link-single">Contact</a>
+                            <a href="/contact" className="nav-link nav-link-single">Contact</a>
                         </li>
                         <li className="nav-item nav-consultation">
                             <i className="fa-solid fa-phone icon-yellow consultation-icon"></i>
@@ -145,12 +145,13 @@ const Navbar = () => {
 
                     {/* Nav items list left aligned large text */}
                     <ul className="mobile-menu-list">
-                        <li><a href="#about" onClick={closeMobileMenu}>About Us</a></li>
-                        <li><a href="#residential" onClick={closeMobileMenu}>Residential</a></li>
-                        <li><a href="#commercial" onClick={closeMobileMenu}>Commercial</a></li>
-                        <li><a href="#projects" onClick={closeMobileMenu}>Projects</a></li>
-                        <li><a href="#contractor" onClick={closeMobileMenu}>Contractor</a></li>
-                        <li><a href="#contact" onClick={closeMobileMenu}>Contact</a></li>
+                        <li><a href="/" onClick={closeMobileMenu}>Home</a></li>
+                        <li><a href="/#about" onClick={closeMobileMenu}>About Us</a></li>
+                        <li><a href="/#residential" onClick={closeMobileMenu}>Residential</a></li>
+                        <li><a href="/#commercial" onClick={closeMobileMenu}>Commercial</a></li>
+                        <li><a href="/#projects" onClick={closeMobileMenu}>Projects</a></li>
+                        <li><a href="/contractor" onClick={closeMobileMenu}>Contractor</a></li>
+                        <li><a href="/contact" onClick={closeMobileMenu}>Contact</a></li>
                     </ul>
 
                     {/* Featured Design Consultation CTA Block */}

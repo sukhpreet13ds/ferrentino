@@ -178,9 +178,9 @@ const Gallery = () => {
     };
 
     return (
-        <section className="gallery-section">
+        <section className="gallery-section reveal-zoom">
             <div
-                className={`gallery-slider-wrapper reveal-zoom ${isDragging ? 'dragging' : ''}`}
+                className={`gallery-slider-wrapper ${isDragging ? 'dragging' : ''}`}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
