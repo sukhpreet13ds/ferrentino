@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import kitchenImg from '../assets/kitchen.jpg';
 import bathImg from '../assets/bath.jpg';
 import wholeHomeImg from '../assets/whole-home.jpg';
@@ -16,6 +17,7 @@ const servicesData = [
 ];
 
 const ServicesSlider = () => {
+    const navigate = useNavigate();
     // Clone array 3 times for seamless infinite loop
     const extendedServices = [...servicesData, ...servicesData, ...servicesData];
     
@@ -197,7 +199,12 @@ const ServicesSlider = () => {
                         onTransitionEnd={handleTransitionEnd}
                     >
                         {extendedServices.map((service, index) => (
-                            <div className="services-slide-card" key={`${service.id}-${index}`}>
+                            <div
+                                className="services-slide-card"
+                                key={`${service.id}-${index}`}
+                                style={{ cursor: 'pointer' }}
+                                onClick={() => navigate('/service-view')}
+                            >
                                 <div className="services-image-box">
                                     <img src={service.img} alt={service.title} draggable="false" />
                                 </div>

@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './style/style.css';
 import logo from '../assets/ferrentino-logo.png';
 
 const Navbar = () => {
+    const location = useLocation();
+    const isEstimator = location.pathname === '/estimator';
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
@@ -28,13 +31,13 @@ const Navbar = () => {
     };
 
     return (
-        <header className="site-header">
+        <header className={`site-header ${isEstimator ? 'site-header-dark-text' : ''}`}>
             {/* Top Utility Bar */}
             <div className="top-bar">
                 <div className="top-bar-container">
                     <div className="top-bar-right">
                         <div className="social-icons">
-                            <a href="#facebook" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/ferrentinoandson/" aria-label="Facebook" target='_blank'><i className="fa-brands fa-facebook-f"></i></a>
                             <a href="#instagram" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
                             <a href="#linkedin" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
                             <a href="#youtube" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
@@ -67,25 +70,25 @@ const Navbar = () => {
                     {/* Desktop Menu */}
                     <ul className="nav-menu">
                         <li className="nav-item">
-                            <a href="#about" className="nav-link">
+                            <a href="/about" className="nav-link">
                                 <span className="nav-sub">Ferrentino <span className="highlight-yellow">& Son</span> </span>
                                 <span className="nav-main">About Us</span>
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a href="#residential" className="nav-link">
-                                <span className="nav-sub">Live<span className="highlight-yellow">Well</span></span>
-                                <span className="nav-main">Residential</span>
+                            <a href="/services" className="nav-link">
+                                <span className="nav-sub">Our<span className="highlight-yellow"> Work</span></span>
+                                <span className="nav-main">Services</span>
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a href="#commercial" className="nav-link">
-                                <span className="nav-sub">Work<span className="highlight-yellow">Well</span></span>
-                                <span className="nav-main">Commercial</span>
+                            <a href="/meet-the-builders" className="nav-link">
+                                <span className="nav-sub">Meet<span className="highlight-yellow"> The</span></span>
+                                <span className="nav-main">Builders</span>
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a href="#projects" className="nav-link nav-link-single">Projects</a>
+                            <a href="/projects" className="nav-link nav-link-single">Projects</a>
                         </li>
                         <li className="nav-item">
                             <a href="/contractor" className="nav-link nav-link-single">Contractor</a>
@@ -102,8 +105,8 @@ const Navbar = () => {
                     </ul>
 
                     {/* Mobile Hamburger Button */}
-                    <button 
-                        className="mobile-hamburger-btn" 
+                    <button
+                        className="mobile-hamburger-btn"
                         onClick={toggleMobileMenu}
                         aria-label="Toggle navigation menu"
                     >
@@ -134,10 +137,10 @@ const Navbar = () => {
 
                     {/* 4 Social Icons in one row */}
                     <div className="mobile-social-row">
-                        <a href="#facebook" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-                        <a href="#instagram" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-                        <a href="#linkedin" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#youtube" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/ferrentinoandson/" aria-label="Facebook" target='_blank'><i className="fa-brands fa-facebook-f"></i></a>
+                        <a href="#instagram" aria-label="Instagram" target='_blank'><i className="fa-brands fa-instagram"></i></a>
+                        <a href="#linkedin" aria-label="LinkedIn" target='_blank'><i className="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#youtube" aria-label="YouTube" target='_blank'><i className="fa-brands fa-youtube"></i></a>
                     </div>
 
                     {/* Horizontal Divider line */}
@@ -146,10 +149,10 @@ const Navbar = () => {
                     {/* Nav items list left aligned large text */}
                     <ul className="mobile-menu-list">
                         <li><a href="/" onClick={closeMobileMenu}>Home</a></li>
-                        <li><a href="/#about" onClick={closeMobileMenu}>About Us</a></li>
-                        <li><a href="/#residential" onClick={closeMobileMenu}>Residential</a></li>
-                        <li><a href="/#commercial" onClick={closeMobileMenu}>Commercial</a></li>
-                        <li><a href="/#projects" onClick={closeMobileMenu}>Projects</a></li>
+                        <li><a href="/about" onClick={closeMobileMenu}>About Us</a></li>
+                        <li><a href="/services" onClick={closeMobileMenu}>Services</a></li>
+                        <li><a href="/meet-the-builders" onClick={closeMobileMenu}>Meet The Builders</a></li>
+                        <li><a href="/projects" onClick={closeMobileMenu}>Projects</a></li>
                         <li><a href="/contractor" onClick={closeMobileMenu}>Contractor</a></li>
                         <li><a href="/contact" onClick={closeMobileMenu}>Contact</a></li>
                     </ul>

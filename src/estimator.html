@@ -1,0 +1,1608 @@
+<!-- =========================================================
+  PROJECT ESTIMATOR &mdash; Marion County, FL  (Full Catalog v2)
+  Drop this entire block into a Squarespace Code Block.
+  See "SETUP" comments in the <script> below.
+========================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Estimator &mdash; Marion County, FL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="https://dillonmediagroup.com/assets/favicon.ico" />
+    <link rel="shortcut icon" href="https://dillonmediagroup.com/assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://dillonmediagroup.com/assets/favicon.ico" />
+<style>
+  /* =========================================================================
+   FERRENTINO & SON &mdash; PROJECT ESTIMATOR (Enhanced Visual Design & Smoothness)
+   ========================================================================= */
+  #est-root {
+    --est-bg: transparent;
+    --est-surface: #FFFFFF;
+    --est-ink: #1A1A1A;
+    --est-ink-soft: #6B6B6B;
+    --est-line: #E8E8E8;
+    --est-accent: #1A1A1A;
+    --est-accent-hover: #000000;
+    --est-accent-soft: #F4F4F6;
+    --est-cta: #C2410C;
+    --est-cta-hover: #9A3412;
+    --est-cta-ring: rgba(194, 65, 12, 0.22);
+    --est-success: #15803D;
+    --est-danger: #DC2626;
+    --est-radius: 12px;
+    --est-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+  }
+
+  #est-root,
+  #est-root *,
+  #est-root *::before,
+  #est-root *::after {
+    box-sizing: border-box;
+  }
+
+  #est-root {
+    font-family: "Poppins", sans-serif;
+    color: var(--est-ink);
+    background: var(--est-bg);
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 36px 20px;
+    line-height: 1.55;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #est-root h1,
+  #est-root h2,
+  #est-root h3,
+  #est-root h4 {
+    font-family: "Poppins", sans-serif;
+    color: var(--est-ink);
+    letter-spacing: -0.015em;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  #est-root .est-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #est-root .est-header {
+    margin-bottom: 28px;
+  }
+
+  #est-root .est-eyebrow {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--est-ink-soft);
+    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  #est-root .est-eyebrow .est-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--est-cta);
+    margin-right: 8px;
+    vertical-align: middle;
+    box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.2);
+    animation: est-pulse 2s infinite ease-in-out;
+  }
+
+  @keyframes est-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.75; }
+  }
+
+  #est-root .est-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.15;
+  }
+
+  #est-root .est-subtitle {
+    color: var(--est-ink-soft);
+    font-size: 17px;
+    max-width: 640px;
+    line-height: 1.6;
+  }
+
+  /* Desktop & Wide Screens */
+  @media (min-width: 981px) {
+    #est-root .est-layout {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 24px;
+      align-items: start;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    #est-root {
+      max-width: 1280px;
+      padding: 36px 20px;
+    }
+
+    #est-root .est-layout {
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+    }
+  }
+
+  /* Mobile & Tablet Devices (<= 980px) */
+  @media (max-width: 980px) {
+    #est-root {
+      padding: 20px 14px;
+      width: 100%;
+    }
+
+    #est-root .est-title {
+      font-size: 26px;
+    }
+
+    #est-root .est-layout {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+      width: 100% !important;
+    }
+
+    /* "Your estimate" card ALWAYS ABOVE on mobile/tablet */
+    #est-root .est-cart-panel {
+      order: -1 !important;
+      position: static !important;
+      width: 100% !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Services catalog accordion box ALWAYS BELOW with fixed scrollable height */
+    #est-root .est-layout > .est-panel:first-child {
+      order: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      max-height: 520px !important;
+      overflow: hidden !important;
+      width: 100% !important;
+    }
+
+    #est-root #est-catalog {
+      flex: 1 !important;
+      max-height: 440px !important;
+      overflow-y: auto !important;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+    }
+  }
+
+
+
+  #est-root .est-panel {
+    background: var(--est-surface);
+    border: 1px solid var(--est-line);
+    border-radius: var(--est-radius);
+    box-shadow: var(--est-shadow);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  #est-root .est-panel:hover {
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.03);
+  }
+
+  #est-root .est-panel-head {
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--est-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.015);
+  }
+
+  #est-root .est-panel-head h2 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  #est-root .est-panel-head .est-hint {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--est-ink-soft);
+  }
+
+  #est-root .est-cat {
+    border-bottom: 1px solid var(--est-line);
+    transition: background 0.2s ease;
+  }
+
+  #est-root .est-cat:last-child {
+    border-bottom: none;
+  }
+
+  #est-root .est-cat-head {
+    width: 100%;
+    padding: 16px 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--est-ink);
+    text-align: left;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  #est-root .est-cat-head:hover {
+    background: var(--est-accent-soft);
+  }
+
+  #est-root .est-cat-head .est-cat-name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #est-root .est-cat-count {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    color: var(--est-ink-soft);
+    padding: 3px 10px;
+    border: 1px solid var(--est-line);
+    border-radius: 20px;
+    transition: all 0.25s ease;
+  }
+
+  #est-root .est-cat-count.est-has {
+    background: rgba(194, 65, 12, 0.1);
+    border-color: rgba(194, 65, 12, 0.3);
+    color: var(--est-cta);
+    font-weight: 600;
+  }
+
+  #est-root .est-caret {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+    color: var(--est-ink-soft);
+    display: inline-block;
+  }
+
+  #est-root .est-cat.est-open .est-caret {
+    transform: rotate(90deg);
+    color: var(--est-ink);
+  }
+
+  #est-root .est-cat-body {
+    display: none;
+    padding: 4px 22px 20px 22px;
+    animation: est-slide-down 0.25s ease forwards;
+  }
+
+  @keyframes est-slide-down {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  #est-root .est-cat.est-open .est-cat-body {
+    display: block;
+  }
+
+  #est-root .est-svc {
+    padding: 14px 10px;
+    border-top: 1px solid var(--est-line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px 16px;
+    align-items: center;
+    border-radius: 8px;
+    margin: 4px 0;
+    transition: background 0.2s ease;
+  }
+
+  #est-root .est-svc:hover {
+    background: rgba(0, 0, 0, 0.015);
+  }
+
+  #est-root .est-svc:first-child {
+    border-top: none;
+  }
+
+  #est-root .est-svc-info {
+    min-width: 0;
+  }
+
+  #est-root .est-svc-name {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--est-ink);
+  }
+
+  #est-root .est-svc-rate {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13.5px;
+    color: var(--est-ink-soft);
+    margin-top: 3px;
+  }
+
+  #est-root .est-svc-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  #est-root .est-qty-input {
+    width: 76px;
+    padding: 7px 10px;
+    border: 1px solid var(--est-line);
+    border-radius: 8px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 15px;
+    text-align: right;
+    background: var(--est-surface);
+    color: var(--est-ink);
+    transition: all 0.2s ease;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+  }
+
+  #est-root .est-qty-input:focus {
+    outline: none;
+    border-color: var(--est-cta);
+    box-shadow: 0 0 0 3px var(--est-cta-ring);
+  }
+
+  #est-root .est-qty-unit {
+    font-size: 13px;
+    color: var(--est-ink-soft);
+    min-width: 46px;
+  }
+
+  #est-root .est-add-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: var(--est-ink);
+    color: #fff;
+    border: 1px solid var(--est-ink);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  #est-root .est-add-btn:hover {
+    background: #000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  #est-root .est-add-btn:active {
+    transform: translateY(0);
+  }
+
+  #est-root .est-add-btn.est-in-cart {
+    background: var(--est-success);
+    border-color: var(--est-success);
+    box-shadow: 0 2px 8px rgba(21, 128, 61, 0.25);
+  }
+
+  #est-root .est-add-btn.est-in-cart:hover {
+    background: #146c2e;
+  }
+
+  #est-root .est-cart-panel {
+    position: sticky;
+    top: 24px;
+  }
+
+  #est-root .est-cart-empty {
+    padding: 36px 20px;
+    text-align: center;
+    color: var(--est-ink-soft);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  #est-root .est-line-items {
+    padding: 4px 0;
+  }
+
+  #est-root .est-line {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--est-line);
+    align-items: start;
+    animation: est-line-pop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: background 0.2s ease;
+  }
+
+  @keyframes est-line-pop {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  #est-root .est-line:hover {
+    background: rgba(0, 0, 0, 0.01);
+  }
+
+  #est-root .est-line:last-child {
+    border-bottom: none;
+  }
+
+  #est-root .est-line-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--est-ink);
+  }
+
+  #est-root .est-line-meta {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    color: var(--est-ink-soft);
+    margin-top: 3px;
+  }
+
+  #est-root .est-line-cost {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+    white-space: nowrap;
+    color: var(--est-ink);
+  }
+
+  #est-root .est-line-remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--est-ink-soft);
+    font-size: 18px;
+    padding: 0 4px;
+    line-height: 1;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+  }
+
+  #est-root .est-line-remove:hover {
+    color: var(--est-danger);
+    transform: scale(1.15);
+  }
+
+  #est-root .est-cart-addons {
+    padding: 14px 20px;
+    border-top: 1px solid var(--est-line);
+    background: var(--est-accent-soft);
+  }
+
+  #est-root .est-addon-toggle {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 8px 0;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  #est-root .est-addon-toggle input {
+    margin-top: 3px;
+    accent-color: var(--est-cta);
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+  }
+
+  #est-root .est-addon-toggle .est-addon-desc {
+    font-size: 13px;
+    color: var(--est-ink-soft);
+    margin-top: 2px;
+  }
+
+  #est-root .est-cart-total {
+    padding: 20px 22px;
+    border-top: 1px solid #000;
+    background: linear-gradient(135deg, #1e1e24 0%, #111115 100%);
+    color: #fff;
+  }
+
+  #est-root .est-total-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 6px;
+  }
+
+  #est-root .est-total-range {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
+
+  #est-root .est-total-range .est-dash {
+    opacity: 0.4;
+    margin: 0 6px;
+  }
+
+  #est-root .est-total-note {
+    font-size: 13px;
+    opacity: 0.65;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  #est-root .est-cta-btn {
+    width: 100%;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 0 0 var(--est-radius) var(--est-radius);
+    box-shadow: 0 4px 16px var(--est-cta-ring), 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  #est-root .est-cta-btn:hover {
+    background: linear-gradient(135deg, #f97316 0%, #9a3412 100%);
+    box-shadow: 0 8px 24px var(--est-cta-ring), 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+  }
+
+  #est-root .est-cta-btn:active {
+    transform: translateY(0);
+  }
+
+  #est-root .est-cta-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    animation: none;
+    box-shadow: none;
+    transform: none;
+  }
+
+  #est-root .est-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 15, 20, 0.65);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 9999;
+    animation: est-fade 0.25s ease;
+  }
+
+  @keyframes est-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  #est-root .est-modal {
+    background: var(--est-surface);
+    border-radius: 16px;
+    max-width: 490px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    animation: est-modal-pop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes est-modal-pop {
+    from { opacity: 0; transform: scale(0.96) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  #est-root .est-modal-head {
+    padding: 22px 26px;
+    border-bottom: 1px solid var(--est-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.015);
+  }
+
+  #est-root .est-modal-title {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  #est-root .est-modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 26px;
+    color: var(--est-ink-soft);
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  #est-root .est-modal-close:hover {
+    color: var(--est-ink);
+    transform: scale(1.15);
+  }
+
+  #est-root .est-modal-body {
+    padding: 24px 26px;
+  }
+
+  #est-root .est-modal-summary {
+    background: var(--est-accent-soft);
+    border: 1px solid var(--est-line);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 22px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #est-root .est-modal-summary-label {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--est-ink-soft);
+    font-weight: 600;
+  }
+
+  #est-root .est-modal-summary-value {
+    font-weight: 700;
+    color: var(--est-ink);
+  }
+
+  #est-root .est-field {
+    margin-bottom: 16px;
+  }
+
+  #est-root .est-label {
+    display: block;
+    font-size: 14.5px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--est-ink);
+  }
+
+  #est-root .est-label-hint {
+    font-weight: 400;
+    color: var(--est-ink-soft);
+    margin-left: 6px;
+    font-size: 13.5px;
+  }
+
+  #est-root .est-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--est-line);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    background: var(--est-surface);
+    color: var(--est-ink);
+    transition: all 0.2s ease;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+  }
+
+  #est-root .est-input:focus {
+    outline: none;
+    border-color: var(--est-cta);
+    box-shadow: 0 0 0 3px var(--est-cta-ring);
+  }
+
+  #est-root .est-error-msg {
+    color: var(--est-danger);
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  #est-root .est-modal-actions {
+    padding: 18px 26px;
+    border-top: 1px solid var(--est-line);
+    display: flex;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.01);
+  }
+
+  #est-root .est-modal-actions .est-btn-ghost {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--est-ink);
+    border: 1px solid var(--est-line);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  #est-root .est-modal-actions .est-btn-ghost:hover {
+    background: var(--est-accent-soft);
+  }
+
+  #est-root .est-modal-actions .est-cta-btn {
+    flex: 1;
+    border-radius: 8px;
+  }
+
+  #est-root .est-success-body {
+    padding: 44px 26px;
+    text-align: center;
+  }
+
+  #est-root .est-success-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--est-success);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 20px rgba(21, 128, 61, 0.25);
+  }
+
+  #est-root .est-success-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  #est-root .est-success-msg {
+    color: var(--est-ink-soft);
+    margin-bottom: 22px;
+    line-height: 1.6;
+  }
+
+  #est-root .est-footer {
+    margin-top: 28px;
+    text-align: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    color: var(--est-ink-soft);
+    text-transform: uppercase;
+  }
+    /* Small Mobile Phones (<= 480px) */
+  @media (max-width: 576px) {
+    #est-root {
+      padding: 16px 10px;
+    }
+
+    #est-root .est-title {
+      font-size: 22px;
+    }
+
+    #est-root .est-subtitle {
+      font-size: 14px;
+    }
+
+    #est-root .est-layout > .est-panel:first-child {
+      max-height: 460px !important;
+    }
+
+    #est-root #est-catalog {
+      max-height: 380px !important;
+    }
+
+    #est-root .est-cat-head {
+      padding: 14px 16px;
+      font-size: 15.5px;
+    }
+
+    #est-root .est-cat-body {
+      padding: 4px 10px 16px 10px;
+    }
+
+    #est-root .est-svc {
+      grid-template-columns: 1fr 1;
+      gap: 10px;
+      padding: 12px 8px;
+    }
+
+    #est-root .est-svc-controls {
+      width: 100%;
+      justify-content: space-between;
+      border-top: 1px dashed var(--est-line);
+      padding-top: 8px;
+      margin-top: 4px;
+    }
+
+    #est-root .est-line {
+      grid-template-columns: 1fr auto auto;
+      gap: 8px;
+      padding: 12px 14px;
+    }
+
+    #est-root .est-modal {
+      width: 95%;
+      max-height: 88vh;
+    }
+
+    #est-root .est-modal-head,
+    #est-root .est-modal-body,
+    #est-root .est-modal-actions {
+      padding: 16px 18px;
+    }
+    #est-root .est-panel-head h2 {
+    font-size: 18px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="est-root">
+  <div class="est-header">
+    <div class="est-eyebrow"><span class="est-dot"></span>Marion County &middot; FL</div>
+    <h1 class="est-title">Build your project estimate</h1>
+    <p class="est-subtitle">Add any combination of services below to see a ballpark price range. We'll follow up with a
+      firm quote.</p>
+  </div>
+
+  <div class="est-layout">
+    <div class="est-panel">
+      <div class="est-panel-head">
+        <h2>Services catalog</h2>
+        <span class="est-hint">Tap a category to expand</span>
+      </div>
+      <div id="est-catalog"></div>
+    </div>
+
+    <div class="est-cart-panel">
+      <div class="est-panel">
+        <div class="est-panel-head">
+          <h2>Your estimate</h2>
+          <span class="est-hint" id="est-cart-count">0 items</span>
+        </div>
+        <div id="est-cart-body">
+          <div class="est-cart-empty">Add services from the catalog to build your estimate.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="est-modal-mount"></div>
+
+  <div class="est-footer">Ranges are approximate, based on 2026 Marion County rates.</div>
+</div>
+
+<script>
+  (function () {
+    // ========================================================================
+    // SETUP \u2014 READ THIS BEFORE GOING LIVE
+    // Sign up free at https://formspree.io, create a form, and paste the
+    // endpoint URL here. Until you do, submissions log to the browser console.
+    // ========================================================================
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+    // ========================================================================
+    // FULL SERVICE CATALOG \u2014 mirrors your Excel price sheet.
+    // Edit any number here to update the estimator.
+    // ========================================================================
+    const CATALOG = [
+      {
+        key: 'remodel', name: 'Remodels & Additions', services: [
+          { key: 'bath_cosmetic', name: 'Cosmetic bath refresh', kind: 'flat', low: 5000, high: 12000 },
+          { key: 'bath_standard', name: 'Standard bath remodel', kind: 'flat', low: 15000, high: 30000 },
+          { key: 'bath_highend', name: 'High-end bath remodel', kind: 'flat', low: 35000, high: 55000 },
+          { key: 'kitchen_minor', name: 'Minor kitchen refresh', kind: 'flat', low: 12000, high: 22000 },
+          { key: 'kitchen_mid', name: 'Mid-range kitchen remodel', kind: 'flat', low: 25000, high: 55000 },
+          { key: 'room_addition', name: 'Room addition', kind: 'per_sqft', low: 150, high: 250, unitLabel: 'sq ft' },
+          { key: 'ada_mods', name: 'ADA modifications', kind: 'flat', low: 3000, high: 15000 }
+        ]
+      },
+      {
+        key: 'roofing', name: 'Roofing', services: [
+          { key: 'roof_replace', name: 'Full roof replacement', kind: 'flat', low: 8000, high: 20000 }
+        ]
+      },
+      {
+        key: 'demo_scope', name: 'Demolition \u2014 by scope', services: [
+          { key: 'demo_cosmetic', name: 'Selective/cosmetic demo (1\u20132 surfaces)', kind: 'per_sqft', low: 2, high: 4, unitLabel: 'sq ft' },
+          { key: 'demo_single', name: 'Single room gut to studs', kind: 'per_sqft', low: 3, high: 6, unitLabel: 'sq ft' },
+          { key: 'demo_full', name: 'Full interior gut (non-structural)', kind: 'per_sqft', low: 4, high: 8, unitLabel: 'sq ft' },
+          { key: 'demo_structural', name: 'Full gut with structural work', kind: 'per_sqft', low: 6, high: 12, unitLabel: 'sq ft' }
+        ]
+      },
+      {
+        key: 'demo_room', name: 'Demolition \u2014 by room', services: [
+          { key: 'demo_bath', name: 'Bathroom (full gut)', kind: 'flat', low: 1500, high: 3500 },
+          { key: 'demo_kitchen', name: 'Kitchen (full gut)', kind: 'flat', low: 2500, high: 5000 },
+          { key: 'demo_bedroom', name: 'Single bedroom/room', kind: 'flat', low: 800, high: 2500 },
+          { key: 'demo_multiroom', name: 'Multi-room selective demo', kind: 'flat', low: 3000, high: 8000 },
+          { key: 'demo_whole', name: 'Whole-home gut (~1,500 sq ft)', kind: 'flat', low: 5000, high: 15000 }
+        ]
+      },
+      {
+        key: 'demo_element', name: 'Demolition \u2014 by element', services: [
+          { key: 'demo_wall_nl', name: 'Non-load-bearing wall removal', kind: 'per_unit', low: 300, high: 1000, unitLabel: 'walls' },
+          { key: 'demo_wall_lb', name: 'Load-bearing wall removal', kind: 'per_unit', low: 2000, high: 10000, unitLabel: 'walls' },
+          { key: 'demo_cabinet', name: 'Cabinet removal', kind: 'per_linear_ft', low: 25, high: 50, unitLabel: 'linear ft' },
+          { key: 'demo_counter', name: 'Countertop removal', kind: 'flat', low: 50, high: 400 },
+          { key: 'demo_fixture', name: 'Toilet/sink/tub/shower removal', kind: 'per_unit', low: 75, high: 250, unitLabel: 'fixtures' },
+          { key: 'demo_appl', name: 'Large appliance removal', kind: 'per_unit', low: 75, high: 150, unitLabel: 'each' }
+        ]
+      },
+      {
+        key: 'demo_surface', name: 'Demolition \u2014 by surface', services: [
+          { key: 'demo_carpet', name: 'Carpet & pad removal', kind: 'per_sqft', low: 0.75, high: 1.50, unitLabel: 'sq ft' },
+          { key: 'demo_hardwood', name: 'Hardwood/laminate removal', kind: 'per_sqft', low: 1.50, high: 3.00, unitLabel: 'sq ft' },
+          { key: 'demo_tile', name: 'Tile flooring removal (slab)', kind: 'per_sqft', low: 2.00, high: 4.50, unitLabel: 'sq ft' },
+          { key: 'demo_thinset', name: 'Tile thin-set removal (add on)', kind: 'per_sqft', low: 0.50, high: 1.50, unitLabel: 'sq ft' },
+          { key: 'demo_drywall', name: 'Drywall removal', kind: 'per_sqft', low: 1.50, high: 3.50, unitLabel: 'sq ft' },
+          { key: 'demo_plaster', name: 'Plaster & lath removal', kind: 'per_sqft', low: 4.00, high: 8.00, unitLabel: 'sq ft' },
+          { key: 'demo_ceiling', name: 'Ceiling removal (drywall)', kind: 'per_sqft', low: 1.50, high: 3.00, unitLabel: 'sq ft' },
+          { key: 'demo_dropceil', name: 'Drop/suspended ceiling removal', kind: 'per_sqft', low: 1.00, high: 2.50, unitLabel: 'sq ft' },
+          { key: 'demo_popcorn', name: 'Popcorn ceiling removal', kind: 'per_sqft', low: 1.50, high: 2.50, unitLabel: 'sq ft' },
+          { key: 'demo_insul', name: 'Insulation removal', kind: 'per_sqft', low: 1.00, high: 2.00, unitLabel: 'sq ft' }
+        ]
+      },
+      {
+        key: 'dust_containment', name: 'Dust Containment', services: [
+          { key: 'dust_poly', name: 'Poly sheeting room barrier (6 mil, taped)', kind: 'per_unit', low: 30, high: 80, unitLabel: 'rooms' },
+          { key: 'dust_zipwall', name: 'ZipWall system (poles + zipper)', kind: 'per_unit', low: 50, high: 120, unitLabel: 'zones' },
+          { key: 'dust_hepa_rent', name: 'Negative air / HEPA air scrubber (rental)', kind: 'per_unit', low: 75, high: 150, unitLabel: 'weeks' },
+          { key: 'dust_hepa_buy', name: 'HEPA air scrubber (purchase)', kind: 'flat', low: 500, high: 1500 },
+          { key: 'dust_exhaust', name: 'Exhaust fan + ducted exterior vent setup', kind: 'per_unit', low: 40, high: 100, unitLabel: 'setups' }
+        ]
+      },
+      {
+        key: 'concrete_saw', name: 'Concrete Saw Cutting (labor only)', services: [
+          { key: 'saw_slab_4', name: 'Slab saw cut (up to 4" deep)', kind: 'per_linear_ft', low: 3, high: 8, unitLabel: 'linear ft' },
+          { key: 'saw_slab_6', name: 'Slab saw cut (4"\u20136" deep)', kind: 'per_linear_ft', low: 6, high: 12, unitLabel: 'linear ft' },
+          { key: 'saw_wall', name: 'Wall saw cut (block/CMU)', kind: 'per_linear_ft', low: 8, high: 20, unitLabel: 'linear ft' },
+          { key: 'saw_core_4', name: 'Core drilling (up to 4" diameter)', kind: 'per_unit', low: 75, high: 200, unitLabel: 'holes' },
+          { key: 'saw_core_8', name: 'Core drilling (4"\u20138" diameter)', kind: 'per_unit', low: 150, high: 350, unitLabel: 'holes' },
+          { key: 'saw_expand', name: 'Expansion joint cutting', kind: 'per_linear_ft', low: 2, high: 5, unitLabel: 'linear ft' }
+        ]
+      },
+      {
+        key: 'concrete_break', name: 'Concrete Breaking & Chipping (labor only)', services: [
+          { key: 'brk_hand', name: 'Hand demo hammer / chipping', kind: 'per_sqft', low: 3, high: 8, unitLabel: 'sq ft' },
+          { key: 'brk_jack_4', name: 'Jackhammer (floor slab, 4" thick)', kind: 'per_sqft', low: 2, high: 6, unitLabel: 'sq ft' },
+          { key: 'brk_jack_6', name: 'Jackhammer (floor slab, 6"+ thick)', kind: 'per_sqft', low: 4, high: 10, unitLabel: 'sq ft' },
+          { key: 'brk_trench', name: 'Trench cutting for plumbing rough-in', kind: 'per_linear_ft', low: 15, high: 40, unitLabel: 'linear ft' },
+          { key: 'brk_footing', name: 'Footing / foundation breaking', kind: 'per_linear_ft', low: 20, high: 55, unitLabel: 'linear ft' },
+          { key: 'brk_cmu', name: 'CMU / block wall demolition (per SF of wall face)', kind: 'per_sqft', low: 4, high: 10, unitLabel: 'sq ft' },
+          { key: 'brk_spot', name: 'Spot chipping (patch prep)', kind: 'per_sqft', low: 3, high: 7, unitLabel: 'sq ft' }
+        ]
+      },
+      {
+        key: 'doors_windows', name: 'Doors & Windows', services: [
+          { key: 'ext_door', name: 'Exterior door removal (labor only)', kind: 'per_unit', low: 70, high: 200, unitLabel: 'doors' },
+          { key: 'ext_door_disp', name: 'Exterior door + disposal', kind: 'per_unit', low: 95, high: 260, unitLabel: 'doors' },
+          { key: 'ext_door_cbs', name: 'CBS/masonry opening add-on (per door)', kind: 'per_unit', low: 75, high: 150, unitLabel: 'doors' },
+          { key: 'int_door', name: 'Interior door removal', kind: 'per_unit', low: 40, high: 80, unitLabel: 'doors' },
+          { key: 'garage_single', name: 'Single garage door removal', kind: 'per_unit', low: 50, high: 200, unitLabel: 'doors' },
+          { key: 'garage_double', name: 'Double garage door removal', kind: 'per_unit', low: 100, high: 300, unitLabel: 'doors' },
+          { key: 'garage_full', name: 'Garage door w/ tracks + opener disconnect', kind: 'flat', low: 150, high: 250 }
+        ]
+      },
+      {
+        key: 'site_prep', name: 'Site Preparation (before excavation)', services: [
+          { key: 'sp_staking', name: 'Staking / layout (contractor self-perform)', kind: 'flat', low: 150, high: 400 },
+          { key: 'sp_clearing', name: 'Land clearing, light brush', kind: 'per_unit', low: 1200, high: 3500, unitLabel: 'acres' },
+          { key: 'sp_grubbing', name: 'Grubbing & root removal', kind: 'per_unit', low: 800, high: 2500, unitLabel: 'acres' },
+          { key: 'sp_tree', name: 'Tree removal (< 18" diameter)', kind: 'per_unit', low: 200, high: 600, unitLabel: 'trees' },
+          { key: 'sp_sod', name: 'Sod / grass stripping', kind: 'per_sqft', low: 0.15, high: 0.40, unitLabel: 'sq ft' },
+          { key: 'sp_grade', name: 'Fine grading / rough grade', kind: 'per_sqft', low: 0.50, high: 1.50, unitLabel: 'sq ft' }
+        ]
+      },
+      {
+        key: 'excavation', name: 'Excavation (labor + equipment)', services: [
+          { key: 'ex_sandy', name: 'General excavation \u2014 sandy soil', kind: 'per_unit', low: 8, high: 18, unitLabel: 'cubic yd' },
+          { key: 'ex_mixed', name: 'General excavation \u2014 mixed / rocky soil', kind: 'per_unit', low: 15, high: 35, unitLabel: 'cubic yd' },
+          { key: 'ex_limestone', name: 'Limestone rock excavation', kind: 'per_unit', low: 30, high: 75, unitLabel: 'cubic yd' },
+          { key: 'ex_footing', name: 'Footing trench excavation', kind: 'per_linear_ft', low: 8, high: 20, unitLabel: 'linear ft' },
+          { key: 'ex_hand', name: 'Hand excavation (tight spaces)', kind: 'per_unit', low: 40, high: 100, unitLabel: 'cubic yd' },
+          { key: 'ex_add_slab', name: 'Excavation for addition slab (typical 400 SF)', kind: 'flat', low: 400, high: 1200 },
+          { key: 'ex_pool', name: 'Pool / deep excavation', kind: 'per_unit', low: 20, high: 45, unitLabel: 'cubic yd' }
+        ]
+      },
+      {
+        key: 'fill_material', name: 'Fill & Base Material (delivered)', services: [
+          { key: 'fm_clean', name: 'Clean fill dirt', kind: 'per_unit', low: 12, high: 22, unitLabel: 'cubic yd' },
+          { key: 'fm_structural', name: 'Compacted structural fill (select fill)', kind: 'per_unit', low: 18, high: 30, unitLabel: 'cubic yd' },
+          { key: 'fm_crusher', name: 'Crusher run / compacted base rock', kind: 'per_unit', low: 22, high: 38, unitLabel: 'cubic yd' },
+          { key: 'fm_57', name: '#57 limestone (drainage layer)', kind: 'per_unit', low: 28, high: 45, unitLabel: 'cubic yd' },
+          { key: 'fm_sand', name: 'Sand (concrete mix / bedding)', kind: 'per_unit', low: 18, high: 30, unitLabel: 'cubic yd' },
+          { key: 'fm_recycled', name: 'Recycled concrete aggregate', kind: 'per_unit', low: 15, high: 25, unitLabel: 'cubic yd' }
+        ]
+      },
+      {
+        key: 'subgrade', name: 'Subgrade Preparation & Forming', services: [
+          { key: 'sg_compact', name: 'Subgrade compaction', kind: 'per_sqft', low: 0.30, high: 0.75, unitLabel: 'sq ft' },
+          { key: 'sg_vapor', name: 'Vapor barrier (6 mil poly)', kind: 'per_sqft', low: 0.08, high: 0.15, unitLabel: 'sq ft' },
+          { key: 'sg_termite', name: 'Termite pre-treatment (required FL code)', kind: 'per_sqft', low: 0.10, high: 0.25, unitLabel: 'sq ft' },
+          { key: 'sg_baserock', name: 'Compacted base rock (4")', kind: 'per_sqft', low: 0.40, high: 0.85, unitLabel: 'sq ft' },
+          { key: 'sg_form_str', name: 'Form setting \u2014 straight forms', kind: 'per_linear_ft', low: 2.50, high: 5.00, unitLabel: 'linear ft' },
+          { key: 'sg_form_cpx', name: 'Form setting \u2014 complex shapes', kind: 'per_linear_ft', low: 4.00, high: 8.00, unitLabel: 'linear ft' },
+          { key: 'sg_form_lumb', name: 'Form lumber (2\u00D7 material)', kind: 'per_linear_ft', low: 0.60, high: 1.20, unitLabel: 'linear ft' }
+        ]
+      },
+      {
+        key: 'concrete_slab', name: 'Concrete Slab Placement (installed)', services: [
+          { key: 'cs_plain', name: 'Plain 4" slab, no rebar (small pad)', kind: 'per_sqft', low: 5.50, high: 9.00, unitLabel: 'sq ft' },
+          { key: 'cs_mesh', name: '4" slab with wire mesh', kind: 'per_sqft', low: 6.00, high: 10.00, unitLabel: 'sq ft' },
+          { key: 'cs_rebar_4', name: '4" slab with rebar (#3 @ 18" OC)', kind: 'per_sqft', low: 7.00, high: 11.00, unitLabel: 'sq ft' },
+          { key: 'cs_rebar_6', name: '6" slab with rebar (garage / heavy load)', kind: 'per_sqft', low: 8.50, high: 13.00, unitLabel: 'sq ft' },
+          { key: 'cs_monolithic', name: 'Thickened edge monolithic slab', kind: 'per_sqft', low: 9.00, high: 14.00, unitLabel: 'sq ft' },
+          { key: 'cs_posttens', name: 'Post-tension slab (engineer required)', kind: 'per_sqft', low: 11.00, high: 18.00, unitLabel: 'sq ft' },
+          { key: 'cs_patch', name: 'Concrete patch', kind: 'per_sqft', low: 8.00, high: 16.00, unitLabel: 'sq ft' }
+        ]
+      },
+      {
+        key: 'ready_mix', name: 'Ready-Mix Concrete (material)', services: [
+          { key: 'rm_3000', name: 'Ready-mix concrete (3,000 PSI)', kind: 'per_unit', low: 130, high: 165, unitLabel: 'cubic yd' },
+          { key: 'rm_4000', name: 'Ready-mix concrete (4,000 PSI)', kind: 'per_unit', low: 145, high: 180, unitLabel: 'cubic yd' },
+          { key: 'rm_shortload', name: 'Short load fee (under 5 CY)', kind: 'flat', low: 75, high: 150 },
+          { key: 'rm_pump', name: 'Pump truck (if needed)', kind: 'per_unit', low: 500, high: 900, unitLabel: 'pours' },
+          { key: 'rm_fiber', name: 'Fiber mesh additive', kind: 'per_unit', low: 8, high: 15, unitLabel: 'cubic yd' },
+          { key: 'rm_admix', name: 'Accelerator / retarder admix', kind: 'per_unit', low: 5, high: 15, unitLabel: 'cubic yd' }
+        ]
+      },
+      {
+        key: 'reinforcement', name: 'Reinforcement (material)', services: [
+          { key: 'rb_3', name: 'Rebar #3 (3/8")', kind: 'per_linear_ft', low: 0.45, high: 0.75, unitLabel: 'linear ft' },
+          { key: 'rb_4', name: 'Rebar #4 (1/2")', kind: 'per_linear_ft', low: 0.65, high: 1.00, unitLabel: 'linear ft' },
+          { key: 'rb_5', name: 'Rebar #5 (5/8")', kind: 'per_linear_ft', low: 0.90, high: 1.40, unitLabel: 'linear ft' },
+          { key: 'rb_mesh', name: 'Wire mesh (6\u00D76 W1.4)', kind: 'per_sqft', low: 0.18, high: 0.35, unitLabel: 'sq ft' },
+          { key: 'rb_chairs', name: 'Rebar chairs / supports', kind: 'per_sqft', low: 0.08, high: 0.20, unitLabel: 'sq ft' },
+          { key: 'rb_anchor', name: 'Anchor bolts (J-bolt)', kind: 'per_unit', low: 1.50, high: 4.00, unitLabel: 'bolts' },
+          { key: 'rb_tiein', name: 'Rebar tie-in to existing slab', kind: 'per_linear_ft', low: 3, high: 7, unitLabel: 'linear ft' }
+        ]
+      },
+      {
+        key: 'fireplace_footing', name: 'Fireplace Pier & Footing', services: [
+          { key: 'ff_excav', name: 'Hand excavation (tight interior access)', kind: 'flat', low: 150, high: 400 },
+          { key: 'ff_compact', name: 'Soil compaction / prep', kind: 'flat', low: 75, high: 150 },
+          { key: 'ff_pad_simple', name: 'Simple pad footing (24"\u00D724"\u00D712", poured)', kind: 'flat', low: 300, high: 600 },
+          { key: 'ff_pad_std', name: 'Standard fireplace pad (36"\u00D736"\u00D712")', kind: 'flat', low: 450, high: 850 },
+          { key: 'ff_pad_large', name: 'Large hearth / masonry fireplace pad (48"\u00D748"\u00D712")', kind: 'flat', low: 650, high: 1200 },
+          { key: 'ff_thickslab', name: 'Thickened slab extension (existing slab reinforce)', kind: 'flat', low: 400, high: 900 },
+          { key: 'ff_pier', name: 'Isolated pier footing (12" dia, 18" deep)', kind: 'per_unit', low: 200, high: 450, unitLabel: 'piers' }
+        ]
+      },
+      {
+        key: 'new_const', name: 'New Construction', services: [
+          { key: 'new_sfr_small', name: 'New SFR \u2014 up to 1,500 sq ft (permit)', kind: 'permit_new_sfr', size: 'small' },
+          { key: 'new_sfr_med', name: 'New SFR \u2014 1,501\u20132,499 sq ft (permit)', kind: 'permit_new_sfr', size: 'med' },
+          { key: 'new_sfr_large', name: 'New SFR \u2014 2,500+ sq ft (permit)', kind: 'permit_new_sfr', size: 'large' },
+          { key: 'impact_small', name: 'Impact fees \u2014 \u22641,500 sq ft', kind: 'flat', low: 8250, high: 8250 },
+          { key: 'impact_med', name: 'Impact fees \u2014 1,501\u20132,499 sq ft', kind: 'flat', low: 9021, high: 9021 },
+          { key: 'impact_large', name: 'Impact fees \u2014 \u22652,500 sq ft', kind: 'flat', low: 9500, high: 9500 }
+        ]
+      },
+      {
+        key: 'design', name: 'Design & Architectural', services: [
+          { key: 'permit_drawings', name: 'Permit drawings (2D CAD, remodel)', kind: 'flat', low: 1500, high: 5000 },
+          { key: 'reno_package', name: 'Residential addition/reno permit package', kind: 'flat', low: 3000, high: 8000 },
+          { key: 'new_sfr_arch', name: 'New SFR \u2014 full architectural set', kind: 'flat', low: 8000, high: 25000 },
+          { key: 'design_sqft_simple', name: 'Per sq ft (simple remodels)', kind: 'per_sqft', low: 2, high: 4, unitLabel: 'sq ft' },
+          { key: 'design_sqft_complex', name: 'Per sq ft (complex/additions)', kind: 'per_sqft', low: 4, high: 8, unitLabel: 'sq ft' },
+          { key: 'arch_hourly', name: 'Licensed principal architect', kind: 'per_hour', low: 150, high: 250, unitLabel: 'hours' },
+          { key: 'draft_hourly', name: 'Drafting/CAD technician', kind: 'per_hour', low: 70, high: 120, unitLabel: 'hours' },
+          { key: 'plan_revisions', name: 'Plan revisions (minor)', kind: 'per_unit', low: 300, high: 800, unitLabel: 'revisions' },
+          { key: 'after_fact_draw', name: 'After-the-fact permit drawings', kind: 'flat', low: 4000, high: 15000 }
+        ]
+      },
+      {
+        key: 'engineering', name: 'Structural Engineering', services: [
+          { key: 'eng_letter', name: 'Engineering letter / opinion', kind: 'flat', low: 1500, high: 3500 },
+          { key: 'eng_complex_calc', name: 'Complex assessment with calculations', kind: 'flat', low: 3500, high: 6000 },
+          { key: 'eng_reno_drawings', name: 'Structural renovation drawings', kind: 'flat', low: 2000, high: 6000 },
+          { key: 'eng_complex_mods', name: 'Complex structural modifications', kind: 'flat', low: 5000, high: 12000 },
+          { key: 'eng_new_res_sqft', name: 'New residential (structural only)', kind: 'per_sqft', low: 2.00, high: 4.50, unitLabel: 'sq ft' },
+          { key: 'eng_full_set_sfr', name: 'Full permit set (arch+structural+MEP)', kind: 'flat', low: 8000, high: 25000 },
+          { key: 'eng_after_fact', name: 'After-the-fact engineering letter', kind: 'flat', low: 2500, high: 6000 }
+        ]
+      },
+      {
+        key: 'mep', name: 'MEP Engineering (Mech / Elec / Plumbing)', services: [
+          { key: 'mep_min_set', name: 'MEP permit set (signed & sealed, minimum)', kind: 'flat', low: 500, high: 500 },
+          { key: 'mep_sqft', name: 'Residential remodel MEP', kind: 'per_sqft', low: 0.50, high: 3.00, unitLabel: 'sq ft' },
+          { key: 'mep_manual_j', name: 'Heat load calc (Manual J)', kind: 'per_unit', low: 100, high: 100, unitLabel: 'A/C units' },
+          { key: 'mep_energy', name: 'Energy calculations (FL Energy Code)', kind: 'flat', low: 150, high: 150 },
+          { key: 'mep_manual_d', name: 'Duct design (Manual D)', kind: 'per_unit', low: 75, high: 75, unitLabel: 'A/C units' }
+        ]
+      },
+      {
+        key: 'trade_labor', name: 'Trade Labor (hourly)', services: [
+          { key: 'lab_gc', name: 'General Contractor', kind: 'per_hour', low: 50, high: 100, unitLabel: 'hours' },
+          { key: 'lab_electric', name: 'Master Electrician', kind: 'per_hour', low: 80, high: 140, unitLabel: 'hours' },
+          { key: 'lab_plumber', name: 'Plumber', kind: 'per_hour', low: 75, high: 150, unitLabel: 'hours' },
+          { key: 'lab_hvac', name: 'HVAC Technician', kind: 'per_hour', low: 85, high: 125, unitLabel: 'hours' },
+          { key: 'lab_carpenter', name: 'Carpenter / Framing', kind: 'per_hour', low: 20, high: 40, unitLabel: 'hours' },
+          { key: 'lab_roofer', name: 'Roofer', kind: 'per_hour', low: 75, high: 125, unitLabel: 'hours' },
+          { key: 'lab_painter', name: 'Painter', kind: 'per_hour', low: 20, high: 50, unitLabel: 'hours' },
+          { key: 'lab_flooring', name: 'Flooring Installer', kind: 'per_hour', low: 22, high: 45, unitLabel: 'hours' },
+          { key: 'lab_laborer', name: 'General Laborer', kind: 'per_hour', low: 13, high: 20, unitLabel: 'hours' },
+          { key: 'lab_landscape', name: 'Landscaper', kind: 'per_hour', low: 17, high: 25, unitLabel: 'hours' },
+          { key: 'lab_mason_j', name: 'Journeyman mason', kind: 'per_hour', low: 28, high: 45, unitLabel: 'hours' },
+          { key: 'lab_mason_m', name: 'Master mason / foreman', kind: 'per_hour', low: 45, high: 65, unitLabel: 'hours' },
+          { key: 'lab_mason_t', name: 'Mason tender / laborer', kind: 'per_hour', low: 16, high: 22, unitLabel: 'hours' },
+          { key: 'lab_mason_crew', name: 'Mason crew (mason + tender)', kind: 'per_hour', low: 44, high: 67, unitLabel: 'hours' }
+        ]
+      },
+      {
+        key: 'permits_addition', name: 'Building Permit \u2014 Additions/Alterations', services: [
+          { key: 'permit_addition', name: 'Residence addition/alteration (auto-calc)', kind: 'permit_addition' },
+          { key: 'permit_accessory', name: 'Accessory structure (frame/masonry/steel)', kind: 'permit_addition' }
+        ]
+      },
+      {
+        key: 'permits_trade', name: 'Trade Permits (flat rate)', services: [
+          { key: 'p_electric', name: 'Electrical permit', kind: 'flat', low: 100, high: 100 },
+          { key: 'p_mech', name: 'Mechanical / HVAC permit', kind: 'flat', low: 100, high: 100 },
+          { key: 'p_plumb', name: 'Plumbing permit', kind: 'flat', low: 100, high: 100 },
+          { key: 'p_reroof', name: 'Re-roof permit (per squares)', kind: 'permit_reroof' },
+          { key: 'p_pool', name: 'Pool / spa (in-ground)', kind: 'flat', low: 250, high: 250 }
+        ]
+      },
+      {
+        key: 'permits_misc', name: 'Other Permits (flat rate)', services: [
+          { key: 'p_concrete', name: 'Concrete pad / slab', kind: 'flat', low: 110, high: 110 },
+          { key: 'p_deck', name: 'Deck (over 1 step)', kind: 'flat', low: 110, high: 110 },
+          { key: 'p_demo', name: 'Demolition permit', kind: 'flat', low: 115, high: 115 },
+          { key: 'p_fence', name: 'Fence / wall / entranceway', kind: 'flat', low: 125, high: 125 },
+          { key: 'p_fire', name: 'Fireplace / chimney', kind: 'flat', low: 100, high: 100 },
+          { key: 'p_garage_ch', name: 'Garage door (change only)', kind: 'flat', low: 80, high: 80 },
+          { key: 'p_gas', name: 'Gas (natural or propane)', kind: 'flat', low: 140, high: 140 },
+          { key: 'p_gen', name: 'Generator', kind: 'flat', low: 165, high: 165 },
+          { key: 'p_shutters', name: 'Hurricane shutters', kind: 'flat', low: 80, high: 80 },
+          { key: 'p_siding', name: 'Siding / fascia / soffit', kind: 'flat', low: 75, high: 75 },
+          { key: 'p_skylight', name: 'Skylight / solar tube', kind: 'flat', low: 90, high: 90 },
+          { key: 'p_solar', name: 'Solar PV', kind: 'flat', low: 140, high: 140 },
+          { key: 'p_win_door', name: 'Windows / doors change or remodel', kind: 'flat', low: 80, high: 80 },
+          { key: 'p_stucco', name: 'Stucco or plaster remodel', kind: 'flat', low: 75, high: 75 },
+          { key: 'p_sprinkler', name: 'Fire sprinklers / alarms', kind: 'flat', low: 125, high: 125 }
+        ]
+      },
+      {
+        key: 'inspection', name: 'Inspection & Admin Fees', services: [
+          { key: 'reinsp_1', name: 'Re-inspection (1st disapproval)', kind: 'flat', low: 50, high: 50 },
+          { key: 'reinsp_2', name: 'Re-inspection (same problem, 2nd)', kind: 'flat', low: 200, high: 200 },
+          { key: 'afterhours', name: 'After-hours / weekend inspection', kind: 'per_hour', low: 75, high: 75, unitLabel: 'hours' },
+          { key: 'prelim_review', name: 'Preliminary plans review (residential)', kind: 'flat', low: 75, high: 75 },
+          { key: 'permit_mod', name: 'Permit modification', kind: 'flat', low: 50, high: 50 },
+          { key: 'permit_ext', name: 'Permit extension (90 days)', kind: 'flat', low: 30, high: 30 },
+          { key: 'temp_co', name: 'Temporary certificate of occupancy', kind: 'flat', low: 75, high: 75 }
+        ]
+      },
+      {
+        key: 'other', name: 'Other / Custom Project', services: [
+          { key: 'custom', name: 'Custom scope \u2014 request a quote', kind: 'custom' }
+        ]
+      }
+    ];
+
+    // Global add-ons (toggles that apply to the whole cart)
+    const GLOBAL_ADDONS = [
+      { key: 'dumpster', name: '20-yard dumpster rental', low: 400, high: 650, desc: 'Debris removal container' },
+      { key: 'hazmat', name: 'Hazmat present (per sq ft of demo)', low: 8, high: 30, desc: 'Asbestos, lead, or mold \u2014 applied to demo sq ft', perSqftOfDemo: true }
+    ];
+
+    // ========================================================================
+    // STATE
+    // ========================================================================
+    const state = {
+      openCategories: {},
+      cart: {},
+      addons: {},
+      contingency: true,
+      contact: { name: '', email: '', phone: '', notes: '' },
+      modalOpen: false,
+      submitState: 'idle'
+    };
+
+    // ========================================================================
+    // HELPERS
+    // ========================================================================
+    const $ = (id) => document.getElementById(id);
+    const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+    const el = (tag, attrs = {}, ...kids) => {
+      const node = document.createElement(tag);
+      for (const [k, v] of Object.entries(attrs)) {
+        if (v === false || v == null) continue;
+        if (k === 'class') node.className = v;
+        else if (k === 'html') node.innerHTML = v;
+        else if (k.startsWith('on') && typeof v === 'function') node.addEventListener(k.slice(2), v);
+        else node.setAttribute(k, v === true ? '' : v);
+      }
+      kids.flat().forEach(k => { if (k != null) node.append(k?.nodeType ? k : document.createTextNode(k)); });
+      return node;
+    };
+    function findService(key) {
+      for (const cat of CATALOG) {
+        for (const s of cat.services) if (s.key === key) return { service: s, cat };
+      }
+      return null;
+    }
+    function serviceRateLabel(s) {
+      if (s.kind === 'flat') return s.low === s.high ? fmt(s.low) : `${fmt(s.low)} \u2013 ${fmt(s.high)}`;
+      if (s.kind === 'per_sqft') return `$${s.low} \u2013 $${s.high} / sq ft`;
+      if (s.kind === 'per_unit') return `${fmt(s.low)} \u2013 ${fmt(s.high)} / ${s.unitLabel}`;
+      if (s.kind === 'per_hour') return s.low === s.high ? `${fmt(s.low)} / hr` : `${fmt(s.low)} \u2013 ${fmt(s.high)} / hr`;
+      if (s.kind === 'per_linear_ft') return `$${s.low} \u2013 $${s.high} / linear ft`;
+      if (s.kind === 'permit_new_sfr') {
+        const f = { small: '$150 base + $0.125/sq ft', med: '$150 base + $0.15/sq ft', large: '$150 base + $0.18/sq ft' };
+        return f[s.size];
+      }
+      if (s.kind === 'permit_addition') return '$150 base + $0.145/sq ft';
+      if (s.kind === 'permit_reroof') return '$125 base + $20/squares';
+      if (s.kind === 'custom') return 'Custom quote';
+      return '';
+    }
+    function serviceNeedsQty(s) {
+      return ['per_sqft', 'per_unit', 'per_hour', 'per_linear_ft', 'permit_new_sfr', 'permit_addition', 'permit_reroof'].includes(s.kind);
+    }
+    function qtyLabelFor(s) {
+      if (s.kind === 'per_sqft') return 'sq ft';
+      if (s.kind === 'per_hour') return 'hours';
+      if (s.kind === 'per_linear_ft') return 'lin ft';
+      if (s.kind === 'per_unit') return s.unitLabel || 'units';
+      if (s.kind === 'permit_new_sfr' || s.kind === 'permit_addition') return 'sq ft';
+      if (s.kind === 'permit_reroof') return 'squares';
+      return '';
+    }
+    function lineCost(key, entry) {
+      const found = findService(key);
+      if (!found) return null;
+      const s = found.service;
+      const q = parseFloat(entry.qty) || 0;
+      if (s.kind === 'flat') return { low: s.low, high: s.high };
+      if (s.kind === 'per_sqft') return { low: s.low * q, high: s.high * q };
+      if (s.kind === 'per_unit') return { low: s.low * q, high: s.high * q };
+      if (s.kind === 'per_hour') return { low: s.low * q, high: s.high * q };
+      if (s.kind === 'per_linear_ft') return { low: s.low * q, high: s.high * q };
+      if (s.kind === 'permit_new_sfr') {
+        const r = { small: 0.125, med: 0.15, large: 0.18 };
+        const v = 150 + r[s.size] * q;
+        return { low: v, high: v };
+      }
+      if (s.kind === 'permit_addition') { const v = 150 + 0.145 * q; return { low: v, high: v }; }
+      if (s.kind === 'permit_reroof') { const v = 125 + 20 * q; return { low: v, high: v }; }
+      if (s.kind === 'custom') return null;
+      return null;
+    }
+    function totalEstimate() {
+      const items = [];
+      let low = 0, high = 0, hasCustom = false, demoSqft = 0;
+      for (const [key, entry] of Object.entries(state.cart)) {
+        const found = findService(key);
+        if (!found) continue;
+        const s = found.service;
+        if (s.kind === 'custom') { hasCustom = true; items.push({ key, name: s.name, custom: true }); continue; }
+        const c = lineCost(key, entry);
+        if (!c) continue;
+        if (found.cat.key.startsWith('demo_') && s.kind === 'per_sqft') demoSqft += (parseFloat(entry.qty) || 0);
+        items.push({ key, name: s.name, low: c.low, high: c.high, qty: entry.qty, unit: qtyLabelFor(s) });
+        low += c.low; high += c.high;
+      }
+      for (const a of GLOBAL_ADDONS) {
+        if (!state.addons[a.key]) continue;
+        if (a.perSqftOfDemo) {
+          if (demoSqft > 0) {
+            const l = a.low * demoSqft, h = a.high * demoSqft;
+            items.push({ key: a.key, name: `${a.name.split(' (')[0]} \u2014 ${demoSqft} sq ft`, low: l, high: h, addon: true });
+            low += l; high += h;
+          }
+        } else {
+          items.push({ key: a.key, name: a.name, low: a.low, high: a.high, addon: true });
+          low += a.low; high += a.high;
+        }
+      }
+      if (state.contingency && !hasCustom && low > 0) {
+        const cl = low * 0.10, ch = high * 0.15;
+        items.push({ key: 'contingency', name: 'Contingency (10\u201315% buffer)', low: cl, high: ch, addon: true });
+        low += cl; high += ch;
+      }
+      return { items, low, high, hasCustom, demoSqft };
+    }
+
+    // ========================================================================
+    // RENDER: CATALOG
+    // ========================================================================
+    function renderCatalog() {
+      const mount = $('est-catalog');
+      mount.innerHTML = '';
+      for (const cat of CATALOG) {
+        const inCartCount = cat.services.filter(s => state.cart[s.key]).length;
+        const isOpen = !!state.openCategories[cat.key];
+        const head = el('button', {
+          class: 'est-cat-head', type: 'button',
+          onclick: () => { state.openCategories[cat.key] = !isOpen; renderCatalog(); }
+        },
+          el('span', { class: 'est-cat-name-wrap' },
+            el('span', {}, cat.name),
+            inCartCount > 0 ? el('span', { class: 'est-cat-count est-has' }, `${inCartCount} added`) : null
+          ),
+          el('span', { class: 'est-caret' }, '\u203A')
+        );
+        const body = el('div', { class: 'est-cat-body' }, ...cat.services.map(s => renderService(s)));
+        mount.append(el('div', { class: 'est-cat' + (isOpen ? ' est-open' : '') }, head, body));
+      }
+    }
+    function renderService(s) {
+      const inCart = !!state.cart[s.key];
+      const needsQty = serviceNeedsQty(s);
+      const currentQty = state.cart[s.key]?.qty ?? '';
+      const controls = el('div', { class: 'est-svc-controls' });
+      if (needsQty) {
+        controls.append(
+          el('input', {
+            class: 'est-qty-input', type: 'number', min: '1', step: 'any',
+            placeholder: '0', value: currentQty, 'data-svc': s.key,
+            oninput: (e) => {
+              if (state.cart[s.key]) { state.cart[s.key].qty = e.target.value; renderCart(); }
+            }
+          }),
+          el('span', { class: 'est-qty-unit' }, qtyLabelFor(s))
+        );
+      }
+      controls.append(el('button', {
+        class: 'est-add-btn' + (inCart ? ' est-in-cart' : ''),
+        type: 'button', onclick: () => toggleService(s)
+      }, inCart ? '\u2713 Added' : 'Add'));
+      return el('div', { class: 'est-svc' },
+        el('div', { class: 'est-svc-info' },
+          el('div', { class: 'est-svc-name' }, s.name),
+          el('div', { class: 'est-svc-rate' }, serviceRateLabel(s))
+        ),
+        controls
+      );
+    }
+    function toggleService(s) {
+      if (state.cart[s.key]) { delete state.cart[s.key]; }
+      else {
+        const needsQty = serviceNeedsQty(s);
+        if (needsQty) {
+          const input = document.querySelector(`.est-qty-input[data-svc="${s.key}"]`);
+          const val = input?.value;
+          if (!val || parseFloat(val) <= 0) {
+            if (input) { input.focus(); input.style.borderColor = 'var(--est-danger)'; setTimeout(() => input.style.borderColor = '', 1200); }
+            return;
+          }
+          state.cart[s.key] = { qty: val };
+        } else {
+          state.cart[s.key] = { qty: 1 };
+        }
+      }
+      renderCatalog();
+      renderCart();
+    }
+
+    // ========================================================================
+    // RENDER: CART
+    // ========================================================================
+    function renderCart() {
+      const body = $('est-cart-body');
+      const countEl = $('est-cart-count');
+      const total = totalEstimate();
+      const itemCount = Object.keys(state.cart).length;
+      countEl.textContent = itemCount === 1 ? '1 item' : `${itemCount} items`;
+      body.innerHTML = '';
+      if (itemCount === 0) {
+        body.append(el('div', { class: 'est-cart-empty' }, 'Add services from the catalog to build your estimate.'));
+        return;
+      }
+      const list = el('div', { class: 'est-line-items' });
+      for (const item of total.items.filter(i => !i.addon)) {
+        const meta = item.qty && item.unit ? `${item.qty} ${item.unit}` : '';
+        list.append(el('div', { class: 'est-line' },
+          el('div', {},
+            el('div', { class: 'est-line-name' }, item.name),
+            meta ? el('div', { class: 'est-line-meta' }, meta) : null
+          ),
+          el('div', { class: 'est-line-cost' },
+            item.custom ? el('span', {}, 'Custom')
+              : (item.low === item.high ? el('span', {}, fmt(item.low))
+                : el('span', {}, `${fmt(item.low)}\u2013${fmt(item.high)}`))
+          ),
+          el('button', {
+            class: 'est-line-remove', type: 'button', title: 'Remove',
+            onclick: () => { delete state.cart[item.key]; renderCatalog(); renderCart(); }
+          }, '\u2715')
+        ));
+      }
+      body.append(list);
+      const addonsPanel = el('div', { class: 'est-cart-addons' });
+      addonsPanel.append(el('div', {
+        style: 'font-size: 13px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:0.1em;text-transform:uppercase;color:var(--est-ink-soft);margin-bottom:4px;'
+      }, 'Extras'));
+      for (const a of GLOBAL_ADDONS) {
+        if (a.perSqftOfDemo && total.demoSqft === 0) continue;
+        const isOn = !!state.addons[a.key];
+        addonsPanel.append(el('label', { class: 'est-addon-toggle' },
+          el('input', {
+            type: 'checkbox', ...(isOn ? { checked: true } : {}),
+            onchange: (e) => { state.addons[a.key] = e.target.checked; renderCart(); }
+          }),
+          el('div', {}, el('div', {}, a.name), el('div', { class: 'est-addon-desc' }, a.desc))
+        ));
+      }
+      addonsPanel.append(el('label', { class: 'est-addon-toggle' },
+        el('input', {
+          type: 'checkbox', ...(state.contingency ? { checked: true } : {}),
+          onchange: (e) => { state.contingency = e.target.checked; renderCart(); }
+        }),
+        el('div', {},
+          el('div', {}, 'Add 10\u201315% contingency'),
+          el('div', { class: 'est-addon-desc' }, 'Recommended buffer for hidden issues')
+        )
+      ));
+      body.append(addonsPanel);
+      body.append(el('div', { class: 'est-cart-total' },
+        el('div', { class: 'est-total-label' }, total.hasCustom ? 'Estimated range + custom' : 'Estimated range'),
+        total.hasCustom && total.low === 0
+          ? el('div', { class: 'est-total-range' }, 'Custom quote')
+          : el('div', { class: 'est-total-range est-mono' },
+            fmt(total.low), el('span', { class: 'est-dash' }, '\u2013'), fmt(total.high)
+          ),
+        el('div', { class: 'est-total-note' }, 'Ballpark for planning \u2014 final quote based on materials, site conditions, and design.')
+      ));
+      body.append(el('button', { class: 'est-cta-btn', type: 'button', onclick: openModal },
+        'Send me this estimate \u2192'));
+    }
+
+    // ========================================================================
+    // MODAL (contact form + success)
+    // ========================================================================
+    function openModal() { state.modalOpen = true; state.submitState = 'idle'; renderModal(); }
+    function closeModal() { state.modalOpen = false; renderModal(); }
+    function renderModal() {
+      const mount = $('est-modal-mount');
+      mount.innerHTML = '';
+      if (!state.modalOpen) return;
+      const total = totalEstimate();
+      if (state.submitState === 'success') {
+        mount.append(el('div', { class: 'est-modal-backdrop', onclick: (e) => { if (e.target === e.currentTarget) closeModal(); } },
+          el('div', { class: 'est-modal' },
+            el('div', { class: 'est-success-body' },
+              el('div', { class: 'est-success-icon' }, '\u2713'),
+              el('h2', { class: 'est-success-title' }, 'Estimate sent'),
+              el('p', { class: 'est-success-msg' },
+                `Check your inbox, ${state.contact.name.split(' ')[0] || 'friend'}. We'll follow up within 1 business day.`),
+              el('button', { class: 'est-cta-btn', type: 'button', onclick: closeModal }, 'Done')
+            )
+          )
+        ));
+        return;
+      }
+      mount.append(el('div', { class: 'est-modal-backdrop', onclick: (e) => { if (e.target === e.currentTarget) closeModal(); } },
+        el('div', { class: 'est-modal' },
+          el('div', { class: 'est-modal-head' },
+            el('h2', { class: 'est-modal-title' }, 'Get your estimate'),
+            el('button', { class: 'est-modal-close', type: 'button', onclick: closeModal }, '\u00D7')
+          ),
+          el('div', { class: 'est-modal-body' },
+            el('div', { class: 'est-modal-summary' },
+              el('span', { class: 'est-modal-summary-label' }, 'Your estimate'),
+              el('span', { class: 'est-modal-summary-value est-mono' },
+                total.hasCustom && total.low === 0 ? 'Custom' : `${fmt(total.low)} \u2013 ${fmt(total.high)}`)
+            ),
+            el('div', { class: 'est-field' },
+              el('label', { class: 'est-label', for: 'est-c-name' }, 'Full name'),
+              el('input', {
+                class: 'est-input', type: 'text', id: 'est-c-name', required: true,
+                value: state.contact.name, oninput: (e) => { state.contact.name = e.target.value; }
+              })
+            ),
+            el('div', { class: 'est-field' },
+              el('label', { class: 'est-label', for: 'est-c-email' }, 'Email'),
+              el('input', {
+                class: 'est-input', type: 'email', id: 'est-c-email', required: true,
+                value: state.contact.email, oninput: (e) => { state.contact.email = e.target.value; }
+              })
+            ),
+            el('div', { class: 'est-field' },
+              el('label', { class: 'est-label', for: 'est-c-phone' },
+                'Phone', el('span', { class: 'est-label-hint' }, 'optional')),
+              el('input', {
+                class: 'est-input', type: 'tel', id: 'est-c-phone',
+                value: state.contact.phone, oninput: (e) => { state.contact.phone = e.target.value; }
+              })
+            ),
+            el('div', { class: 'est-field' },
+              el('label', { class: 'est-label', for: 'est-c-notes' },
+                'Notes', el('span', { class: 'est-label-hint' }, 'optional')),
+              el('textarea', {
+                class: 'est-input', id: 'est-c-notes', rows: '3',
+                placeholder: 'Timeline, materials, questions\u2026',
+                oninput: (e) => { state.contact.notes = e.target.value; }
+              }, state.contact.notes)
+            ),
+            state.submitState === 'error' ? el('div', { class: 'est-error-msg' },
+              'Something went wrong. Please try again or call us directly.') : null
+          ),
+          el('div', { class: 'est-modal-actions' },
+            el('button', { class: 'est-btn-ghost', type: 'button', onclick: closeModal }, 'Cancel'),
+            el('button', {
+              class: 'est-cta-btn', type: 'button', onclick: submitForm,
+              disabled: state.submitState === 'sending'
+            }, state.submitState === 'sending' ? 'Sending\u2026' : 'Send estimate')
+          )
+        )
+      ));
+    }
+    async function submitForm() {
+      if (!state.contact.name.trim()) { alert('Please enter your name.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.contact.email)) { alert('Please enter a valid email.'); return; }
+      state.submitState = 'sending';
+      renderModal();
+      const total = totalEstimate();
+      const lineSummary = total.items.filter(i => !i.addon)
+        .map(i => `${i.name}${i.qty ? ` (${i.qty} ${i.unit || ''})` : ''}: ${i.custom ? 'custom' : `${fmt(i.low)}\u2013${fmt(i.high)}`}`)
+        .join('\n');
+      const addonSummary = total.items.filter(i => i.addon)
+        .map(i => `${i.name}: ${fmt(i.low)}\u2013${fmt(i.high)}`).join('\n');
+      const payload = {
+        name: state.contact.name,
+        email: state.contact.email,
+        phone: state.contact.phone,
+        notes: state.contact.notes,
+        estimateLow: total.hasCustom && total.low === 0 ? 'Custom' : fmt(total.low),
+        estimateHigh: total.hasCustom && total.low === 0 ? 'Custom' : fmt(total.high),
+        lineItems: lineSummary,
+        extras: addonSummary || 'none',
+        contingency: state.contingency ? 'included (10\u201315%)' : 'not included',
+        submittedAt: new Date().toISOString()
+      };
+      if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
+        console.log('Estimator submission (endpoint not configured):', payload);
+        setTimeout(() => { state.submitState = 'success'; renderModal(); }, 600);
+        return;
+      }
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) { state.submitState = 'success'; renderModal(); }
+        else throw new Error('bad response');
+      } catch (err) { state.submitState = 'error'; renderModal(); }
+    }
+
+    renderCatalog();
+    renderCart();
+  })();
+</script>
+</body>
+
+</html>

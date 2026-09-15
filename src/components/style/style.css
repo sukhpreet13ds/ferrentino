@@ -1253,8 +1253,64 @@
     width: 100%;
     background-color: #0b0c0d;
     padding: 22px 20px;
-    text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-copyright-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-copyright-container p {
+    margin: 0;
+}
+
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-legal-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-legal-links .separator {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Estimator Page Dark Navbar Text Override */
+.site-header.site-header-dark-text {
+    background: transparent;
+}
+
+.site-header.site-header-dark-text .social-icons a,
+.site-header.site-header-dark-text .top-contact-item a,
+.site-header.site-header-dark-text .nav-sub,
+.site-header.site-header-dark-text .nav-main,
+.site-header.site-header-dark-text .nav-link-single,
+.site-header.site-header-dark-text .consultation-text,
+.site-header.site-header-dark-text .mobile-hamburger-btn {
+    color: #000000 !important;
+}
+
+.site-header.site-header-dark-text .main-navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.site-header.site-header-dark-text .nav-consultation {
+    border-left: 1px solid rgba(0, 0, 0, 0.2) !important;
 }

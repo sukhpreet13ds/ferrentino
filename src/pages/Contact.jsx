@@ -315,9 +315,6 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
-
-            {/* Footer Component */}
-            <Footer />
         </div>
     );
 };

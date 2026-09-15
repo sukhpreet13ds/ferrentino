@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './style/style.css';
+import {Link} from 'react-router-dom';
 import logoImg from '../assets/ferrentino-logo.png';
 import bbbLogo from '../assets/footer-business.png';
 import bathroomImg from '../assets/bathroom.jpg';
@@ -37,12 +38,12 @@ const Footer = () => {
                         <h2 className="project-mind-title">
                             Have a project<br />in mind?
                         </h2>
-                        <a href="#contact" className="project-mind-btn">
+                        <Link to="/contact" className="project-mind-btn">
                             <div className="project-mind-arrow-circle">
                                 <i className="fa-solid fa-arrow-right"></i>
                             </div>
                             <span>Book Your <br/> Consultation</span>
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Right Column: Image block with yellow offset accent */}
@@ -73,7 +74,7 @@ const Footer = () => {
                             <img src={logoImg} alt="Ferrentino & Son, LLC" />
                         </div>
                         <div className="footer-social-icons">
-                            <a href="#facebook" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/ferrentinoandson/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
                             <a href="#instagram" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
                             <a href="#linkedin" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
                             <a href="#youtube" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
@@ -87,13 +88,14 @@ const Footer = () => {
                         {/* Col 1: Links */}
                         <div className="footer-col footer-links-col reveal-zoom" data-delay="100">
                             <ul className="footer-links-list">
-                                <li><a href="#home">Home</a></li>
-                                <li><a href="#about">About Us</a></li>
-                                <li><a href="#residential">Residential</a></li>
-                                <li><a href="#commercial">Commercial</a></li>
-                                <li><a href="#projects">Projects</a></li>
-                                <li><a href="#contractor">Contractor</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/services">Services</a></li>
+                                <li><a href="/meet-the-builders">Meet The Builders</a></li>
+                                <li><a href="/projects">Projects</a></li>
+                                <li><a href="/contractor">Contractor</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                              
                             </ul>
                         </div>
 
@@ -137,7 +139,14 @@ const Footer = () => {
 
                 {/* Copyright Bar */}
                 <div className="footer-copyright-bar">
-                    <p>Copyright &copy; 2026 Ferrentino and Son, LLC. All Rights Reserved.</p>
+                    <div className="footer-copyright-container">
+                        <p>Copyright &copy; 2026 Ferrentino and Son, LLC. All Rights Reserved.</p>
+                        <div className="footer-legal-links">
+                            <a href="/privacy-and-policy">Privacy Policy</a>
+                            <span className="separator">|</span>
+                            <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </footer>

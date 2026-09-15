@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import bathroomImg from '../assets/bathroom.jpg';
 import roomImg from '../assets/room.jpg';
 import innerTwo2Img from '../assets/inner-two2.jpg';
@@ -14,6 +15,7 @@ const projectsData = [
 ];
 
 const Projects = () => {
+    const navigate = useNavigate();
     // Clone array 3 times for seamless infinite loop
     const extendedProjects = [...projectsData, ...projectsData, ...projectsData];
 
@@ -192,8 +194,10 @@ const Projects = () => {
                     className={`projects-cursor-btn ${isCursorVisible && !isDragging ? 'visible' : ''}`}
                     style={{
                         left: `${cursorPos.x}px`,
-                        top: `${cursorPos.y}px`
+                        top: `${cursorPos.y}px`,
+                        cursor: 'pointer'
                     }}
+                    onClick={() => navigate('/project-view')}
                 >
                     <span>Explore Project</span>
                     <i className="fa-solid fa-arrow-right projects-tilt-icon"></i>
@@ -257,7 +261,8 @@ const Projects = () => {
                                 }}
                                 onClick={() => {
                                     if (index === currentIndex - 1) handlePrev();
-                                    if (index === currentIndex + 1) handleNext();
+                                    else if (index === currentIndex + 1) handleNext();
+                                    else if (isActive) navigate('/project-view');
                                 }}
                             >
                                 <img
@@ -273,9 +278,9 @@ const Projects = () => {
                                 {/* Content on Active Card */}
                                 <div className="projects-card-content">
                                     <h3 className="projects-card-heading">{project.title}</h3>
-                                    <a href="#contact" className="projects-read-more">
+                                    <Link to="/project-view" className="projects-read-more" onClick={(e) => e.stopPropagation()}>
                                         Read More <i className="fa-solid fa-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         );

@@ -186,8 +186,7 @@ const Contractor = () => {
                 </div>
             </section>
 
-            {/* Footer Component */}
-            <Footer />
+       
         </div>
     );
 };

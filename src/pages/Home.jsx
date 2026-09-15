@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './style/style.css';
 import heroImg from '../assets/ferrentino1.jpg';
 import heroImg2 from '../assets/ferrentino2.jpg';
@@ -9,13 +10,12 @@ import thumbnailImg from '../assets/thumbnail-ferr.jpg';
 import mapImg from '../assets/map.png';
 import locationIcon from '../assets/location.png';
 import bg102 from '../assets/102-bg.jpg';
-import ctaBg from '../assets/cta-bg.jpg';
 import SplitText from '../components/SplitText';
 import FoldText from '../components/FoldText';
 import ServicesSlider from '../components/ServicesSlider';
 import Projects from '../components/Projects';
-import Gallery from '../components/Gallery';
-import Footer from '../components/Footer';
+import ReadyCta from '../components/ReadyCta';
+
 
 const Home = () => {
 
@@ -161,9 +161,9 @@ const Home = () => {
                         </p>
 
                         <div className="hero-btn-container">
-                            <a href="https://dillonmediagroup.com/estimator/" target="_blank" className="btn-get-estimate">
+                            <Link to="/estimator" className="btn-get-estimate">
                                 Get a Free Estimate <i className="fa-solid fa-arrow-right btn-icon"></i>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -239,12 +239,12 @@ const Home = () => {
                     <div className="design-build-bottom-grid">
                         {/* Column 1: Projects Link */}
                         <div className="design-build-col col-projects reveal-zoom" data-delay="100">
-                            <a href="#projects" className="projects-circle-link">
+                            <Link to="/project-view" className="projects-circle-link">
                                 <div className="projects-arrow-circle">
                                     <i className="fa-solid fa-arrow-right"></i>
                                 </div>
                                 <span>Look At Our Projects</span>
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Column 2: What Sets Us Apart */}
@@ -254,74 +254,84 @@ const Home = () => {
                             <p className="col-desc">
                                 Ferrentino &amp; Son uses a customized process to help buyers through the rewarding experience of remodeling or building a custom home.
                             </p>
-                            <a href="https://dillonmediagroup.com/estimator/" target="_blank" className="btn-design-estimate">
+                            <Link to="/estimator" className="btn-design-estimate">
                                 Get a Free Estimate <i className="fa-solid fa-arrow-right"></i>
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Column 3: Our Services */}
                         <div className="design-build-col col-services reveal-zoom" data-delay="400">
                             <h4 className="col-title">Our Services</h4>
                             <ul className="services-list">
-                                <li>
-                                    <span className="services-grid-icon">
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
-                                            <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
-                                            <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
-                                            <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
-                                            <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
-                                        </svg>
-                                    </span>
-                                    <span>Remodels &amp; Additions</span>
+                                <li style={{ cursor: 'pointer' }}>
+                                    <Link to="/service-view" style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        <span className="services-grid-icon">
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
+                                                <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
+                                            </svg>
+                                        </span>
+                                        <span>Remodels &amp; Additions</span>
+                                    </Link>
                                 </li>
-                                <li>
-                                    <span className="services-grid-icon">
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
-                                            <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
-                                            <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
-                                            <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
-                                            <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
-                                        </svg>
-                                    </span>
-                                    <span>Roofing</span>
+                                <li style={{ cursor: 'pointer' }}>
+                                    <Link to="/service-view" style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        <span className="services-grid-icon">
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
+                                                <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
+                                            </svg>
+                                        </span>
+                                        <span>Roofing</span>
+                                    </Link>
                                 </li>
-                                <li>
-                                    <span className="services-grid-icon">
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
-                                            <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
-                                            <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
-                                            <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
-                                            <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
-                                        </svg>
-                                    </span>
-                                    <span>Demolition &mdash; by scope</span>
+                                <li style={{ cursor: 'pointer' }}>
+                                    <Link to="/service-view" style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        <span className="services-grid-icon">
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
+                                                <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
+                                            </svg>
+                                        </span>
+                                        <span>Demolition &mdash; by scope</span>
+                                    </Link>
                                 </li>
-                                <li>
-                                    <span className="services-grid-icon">
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
-                                            <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
-                                            <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
-                                            <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
-                                            <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
-                                        </svg>
-                                    </span>
-                                    <span>Demolition &mdash; by room</span>
+                                <li style={{ cursor: 'pointer' }}>
+                                    <Link to="/service-view" style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        <span className="services-grid-icon">
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
+                                                <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
+                                            </svg>
+                                        </span>
+                                        <span>Demolition &mdash; by room</span>
+                                    </Link>
                                 </li>
-                                <li>
-                                    <span className="services-grid-icon">
-                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
-                                            <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
-                                            <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
-                                            <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
-                                            <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
-                                        </svg>
-                                    </span>
-                                    <span>Demolition &mdash; by material</span>
+                                <li style={{ cursor: 'pointer' }}>
+                                    <Link to="/service-view" style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        <span className="services-grid-icon">
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
+                                                <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
+                                            </svg>
+                                        </span>
+                                        <span>Demolition &mdash; by material</span>
+                                    </Link>
                                 </li>
                             </ul>
-                            <a href="#services" className="view-all-services">
+                            <Link to="/service-view" className="view-all-services">
                                 VIEW ALL
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -501,29 +511,8 @@ const Home = () => {
             </section>
 
             {/* Ready to Build Your Dream CTA Section */}
-            <section className="ready-cta-section" style={{ backgroundImage: `url(${ctaBg})` }}>
-                <div className="ready-cta-overlay"></div>
-                <div className="ready-cta-container">
-                    <h2 className="ready-cta-title reveal-zoom">Ready to Build Your Dream?</h2>
-                    <p className="ready-cta-desc reveal-zoom" data-delay="150">
-                        Contact us today for a completely free consultation, detailed project plan, and transparent estimate.
-                    </p>
-                    <div className="ready-cta-buttons reveal-zoom" data-delay="300">
-                        <a href="https://dillonmediagroup.com/estimator/" target="_blank" className="btn-ready-estimate">
-                            GET A FREE ESTIMATE
-                        </a>
-                        <a href="tel:3522373365" className="btn-ready-call">
-                            <i className="fa-solid fa-phone"></i> CALL (352) 237-3365
-                        </a>
-                    </div>
-                </div>
-            </section>
+            <ReadyCta />
 
-            {/* Gallery Section */}
-            <Gallery />
-
-            {/* Footer Component */}
-            <Footer />
         </div>
     );
 };
