@@ -1299,15 +1299,22 @@ body {
 
     /* Article Page - Tablets */
     .art-content-section {
-        padding: 60px 20px 80px 20px;
+        padding: 60px 24px 80px 24px;
     }
 
     .art-main-title {
         font-size: 36px;
+        line-height: 1.3;
+        margin-bottom: 20px;
     }
 
     .art-banner-box {
-        height: 360px;
+        height: 380px;
+        margin-bottom: 40px;
+    }
+
+    .art-section-heading {
+        font-size: 28px;
     }
 
     .art-metrics-grid {
@@ -1315,9 +1322,44 @@ body {
         gap: 16px;
     }
 
+    .art-metric-card {
+        padding: 20px;
+    }
+
+    .art-metric-val {
+        font-size: 30px;
+    }
+
     .art-main-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .art-pathway-title {
+        font-size: 30px;
+    }
+
+    .art-pathway-block {
+        padding: 26px 22px;
+    }
+
+    .art-block-heading {
+        font-size: 20px;
+    }
+
+    .art-sidebar-card {
+        padding: 24px 20px;
+    }
+
+    .art-certs-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .art-cert-badge {
+        font-size: 11px;
+        padding: 5px 10px;
     }
 
     /* AreaWeServe Page - Tablets */
@@ -2703,16 +2745,46 @@ height: 8px;
 
     /* Article Page - Mobile */
     .art-content-section {
-        padding: 40px 16px 60px 16px;
+        padding: 36px 16px 60px 16px;
+    }
+
+    .art-top-tag-line {
+        font-size: 11px;
+        gap: 8px;
+        margin-bottom: 12px;
     }
 
     .art-main-title {
-        font-size: 26px;
+        font-size: 24px;
+        line-height: 1.3;
+        margin-bottom: 16px;
+        word-break: break-word;
+    }
+
+    .art-author-row {
+        font-size: 13px;
+        gap: 10px;
+    }
+
+    .art-author-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
     }
 
     .art-banner-box {
-        height: 240px;
+        height: 220px;
         margin-bottom: 30px;
+        border-radius: 8px;
+    }
+
+    .art-metrics-block {
+        margin-bottom: 36px;
+    }
+
+    .art-section-heading {
+        font-size: 24px;
+        margin-bottom: 16px;
     }
 
     .art-metrics-grid {
@@ -2721,33 +2793,132 @@ height: 8px;
     }
 
     .art-metric-card {
-        padding: 14px !important;
+        padding: 14px 12px !important;
+        border-radius: 8px;
+    }
+
+    .art-metric-label {
+        font-size: 9.5px !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 6px !important;
     }
 
     .art-metric-val {
-        font-size: 24px !important;
+        font-size: 22px !important;
+        margin-bottom: 4px !important;
+        word-break: break-word;
+    }
+
+    .art-metric-sub {
+        font-size: 11px !important;
+        line-height: 1.3;
+    }
+
+    .art-main-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
     }
 
     .art-pathway-title {
-        font-size: 24px;
+        font-size: 26px;
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+
+    .art-pathway-desc {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 24px;
     }
 
     .art-pathway-block {
-        padding: 20px 16px;
+        padding: 20px 14px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .art-step-badge {
+        font-size: 9px;
+        padding: 2px 8px;
+        margin-bottom: 10px;
     }
 
     .art-block-heading {
         font-size: 18px;
+        line-height: 1.35;
+        margin-bottom: 16px;
     }
 
     .art-role-row {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
+        gap: 6px;
+        padding-top: 12px;
+    }
+
+    .art-role-name {
+        font-size: 13.5px;
+        line-height: 1.35;
+    }
+
+    .art-pay-pill {
+        font-size: 11.5px;
+        padding: 4px 10px;
+        align-self: flex-start;
+    }
+
+    .art-sidebar-column {
+        gap: 20px;
     }
 
     .art-sidebar-card {
         padding: 20px 16px;
+        border-radius: 8px;
+    }
+
+    .art-sidebar-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .art-sidebar-p {
+        font-size: 13.5px;
+        margin-bottom: 16px;
+    }
+
+    .art-gold-btn {
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .art-certs-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 12px;
+    }
+
+    .art-cert-badge {
+        font-size: 15.5px;
+        padding: 4px 8px;
+        line-height: 1.3;
+        word-break: break-word;
+    }
+
+    .art-next-tag {
+        font-size: 9.5px;
+    }
+
+    .art-next-title {
+        font-size: 16px;
+        line-height: 1.4;
+        margin: 6px 0 10px 0;
+        font-family: "D";
+    }
+
+    .art-next-link {
+        font-size: 12px;
     }
 
     /* AreaWeServe Page - Mobile */
