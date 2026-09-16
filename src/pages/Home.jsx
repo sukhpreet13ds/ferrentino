@@ -239,7 +239,7 @@ const Home = () => {
                     <div className="design-build-bottom-grid">
                         {/* Column 1: Projects Link */}
                         <div className="design-build-col col-projects reveal-zoom" data-delay="100">
-                            <Link to="/project-view" className="projects-circle-link">
+                            <Link to="/projects" className="projects-circle-link">
                                 <div className="projects-arrow-circle">
                                     <i className="fa-solid fa-arrow-right"></i>
                                 </div>
@@ -273,7 +273,7 @@ const Home = () => {
                                                 <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
                                             </svg>
                                         </span>
-                                        <span>Remodels &amp; Additions</span>
+                                        <span>Kitchen Remodels</span>
                                     </Link>
                                 </li>
                                 <li style={{ cursor: 'pointer' }}>
@@ -286,7 +286,7 @@ const Home = () => {
                                                 <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
                                             </svg>
                                         </span>
-                                        <span>Roofing</span>
+                                        <span>Bath Remodels</span>
                                     </Link>
                                 </li>
                                 <li style={{ cursor: 'pointer' }}>
@@ -299,7 +299,7 @@ const Home = () => {
                                                 <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
                                             </svg>
                                         </span>
-                                        <span>Demolition &mdash; by scope</span>
+                                        <span>Home Renovations </span>
                                     </Link>
                                 </li>
                                 <li style={{ cursor: 'pointer' }}>
@@ -312,7 +312,7 @@ const Home = () => {
                                                 <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
                                             </svg>
                                         </span>
-                                        <span>Demolition &mdash; by room</span>
+                                        <span>Home Additions</span>
                                     </Link>
                                 </li>
                                 <li style={{ cursor: 'pointer' }}>
@@ -325,11 +325,11 @@ const Home = () => {
                                                 <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
                                             </svg>
                                         </span>
-                                        <span>Demolition &mdash; by material</span>
+                                        <span>Outdoor Living</span>
                                     </Link>
                                 </li>
                             </ul>
-                            <Link to="/service-view" className="view-all-services">
+                            <Link to="/services" className="view-all-services">
                                 VIEW ALL
                             </Link>
                         </div>
@@ -382,12 +382,12 @@ const Home = () => {
                                 <h2 className="reno-banner-left-title">
                                     Renovate With a<br />Team You Trust
                                 </h2>
-                                <a href="#contact" className="reno-learn-link">
+                                <Link to="/meet-the-builders" className="reno-learn-link">
                                     <div className="reno-arrow-circle">
                                         <i className="fa-solid fa-arrow-right"></i>
                                     </div>
                                     <span>Learn More</span>
-                                </a>
+                                </Link>
                             </div>
 
                             {/* Right Column */}
@@ -499,7 +499,7 @@ const Home = () => {
                         <h2 className="years-102-number">102</h2>
                     </div>
                     <div className="years-102-right reveal-zoom" data-delay="200">
-                        <span className="years-102-subtitle">Quality Craftsman for over 102 Years</span>
+                        <span className="years-102-subtitle">Quality Craftsmanship for over 102 Years</span>
                         <h3 className="years-102-title">
                             Family-owned.<br />
                             <em>Detail-obsessed.</em><br />

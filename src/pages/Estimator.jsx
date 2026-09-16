@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './style/estimator.css';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
@@ -370,7 +370,7 @@ const Estimator = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [openCategories, setOpenCategories] = useState({});
+  const [openCategories, setOpenCategories] = useState({ remodel: true });
   const [cart, setCart] = useState({});
   const [qtyInputs, setQtyInputs] = useState({});
   const [invalidInputKeys, setInvalidInputKeys] = useState({});
@@ -380,8 +380,66 @@ const Estimator = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [submitState, setSubmitState] = useState('idle');
 
+  const cartRef = useRef(null);
+  const pillsRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [hasDragged, setHasDragged] = useState(false);
+
+  const scrollPills = (offset) => {
+    if (pillsRef.current) {
+      pillsRef.current.scrollBy({ left: offset, behavior: 'smooth' });
+    }
+  };
+
+  const handlePillsMouseDown = (e) => {
+    if (!pillsRef.current) return;
+    setIsDragging(true);
+    setHasDragged(false);
+    setStartX(e.pageX - pillsRef.current.offsetLeft);
+    setScrollLeft(pillsRef.current.scrollLeft);
+  };
+
+  const handlePillsMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handlePillsMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handlePillsMouseMove = (e) => {
+    if (!isDragging || !pillsRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - pillsRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    if (Math.abs(walk) > 4) {
+      setHasDragged(true);
+    }
+    pillsRef.current.scrollLeft = scrollLeft - walk;
+  };
+
   const toggleCategory = (catKey) => {
     setOpenCategories((prev) => ({ ...prev, [catKey]: !prev[catKey] }));
+  };
+
+  const expandAll = () => {
+    const all = {};
+    CATALOG.forEach((c) => { all[c.key] = true; });
+    setOpenCategories(all);
+  };
+
+  const collapseAll = () => {
+    setOpenCategories({});
+  };
+
+  const areAllOpen = CATALOG.every((c) => !!openCategories[c.key]);
+
+  const scrollToCart = () => {
+    if (cartRef.current) {
+      cartRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   const handleQtyChange = (key, val) => {
@@ -492,11 +550,17 @@ const Estimator = () => {
 
   const closeModal = () => {
     setModalOpen(false);
+    setSubmitState('idle');
   };
 
-  const submitForm = async () => {
+  const submitForm = async (e) => {
+    e?.preventDefault();
     if (!contact.name.trim()) {
       alert('Please enter your name.');
+      return;
+    }
+    if (!contact.email.trim()) {
+      alert('Please enter your email.');
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.email)) {
@@ -568,23 +632,93 @@ const Estimator = () => {
           {/* Services Catalog */}
           <div className="est-panel reveal-zoom">
             <div className="est-panel-head">
-              <h2>Services catalog</h2>
-              <span className="est-hint">Tap a category to expand</span>
+              <div>
+                <h2>Services catalog</h2>
+                <span className="est-hint">Tap a category to expand</span>
+              </div>
+              <button
+                type="button"
+                className="est-head-action-btn"
+                onClick={areAllOpen ? collapseAll : expandAll}
+              >
+                {areAllOpen ? 'Collapse All' : 'Expand All'}
+              </button>
             </div>
+
+            {/* Quick Horizontal Jump Pills for Categories with Arrows & Drag-to-Scroll */}
+            <div className="est-pills-nav-wrapper">
+              <button
+                type="button"
+                className="est-pills-arrow-btn left"
+                onClick={() => scrollPills(-220)}
+                aria-label="Scroll categories left"
+                title="Scroll left"
+              >
+                ‹
+              </button>
+
+              <div
+                className={`est-category-pills-bar ${isDragging ? 'is-dragging' : ''}`}
+                ref={pillsRef}
+                onMouseDown={handlePillsMouseDown}
+                onMouseLeave={handlePillsMouseLeave}
+                onMouseUp={handlePillsMouseUp}
+                onMouseMove={handlePillsMouseMove}
+              >
+                {CATALOG.map((cat) => {
+                  const inCartCount = cat.services.filter((s) => cart[s.key]).length;
+                  const isOpen = !!openCategories[cat.key];
+
+                  return (
+                    <button
+                      key={cat.key}
+                      type="button"
+                      className={`est-pill-btn ${isOpen ? 'active' : ''} ${inCartCount > 0 ? 'has-items' : ''}`}
+                      onClick={(e) => {
+                        if (hasDragged) {
+                          e.preventDefault();
+                          return;
+                        }
+                        setOpenCategories((prev) => ({ ...prev, [cat.key]: true }));
+                        const el = document.getElementById(`cat-${cat.key}`);
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                      }}
+                    >
+                      <span>{cat.name.split(' (')[0]}</span>
+                      {inCartCount > 0 && <span className="est-pill-badge">{inCartCount}</span>}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <button
+                type="button"
+                className="est-pills-arrow-btn right"
+                onClick={() => scrollPills(220)}
+                aria-label="Scroll categories right"
+                title="Scroll right"
+              >
+                ›
+              </button>
+            </div>
+
             <div id="est-catalog">
               {CATALOG.map((cat) => {
                 const inCartCount = cat.services.filter((s) => cart[s.key]).length;
                 const isOpen = !!openCategories[cat.key];
 
                 return (
-                  <div key={cat.key} className={`est-cat${isOpen ? ' est-open' : ''}`}>
+                  <div key={cat.key} id={`cat-${cat.key}`} className={`est-cat${isOpen ? ' est-open' : ''}`}>
                     <button
                       type="button"
                       className="est-cat-head"
                       onClick={() => toggleCategory(cat.key)}
+                      aria-expanded={isOpen}
                     >
                       <span className="est-cat-name-wrap">
-                        <span>{cat.name}</span>
+                        <span className="est-cat-title-text">{cat.name}</span>
                         {inCartCount > 0 && (
                           <span className="est-cat-count est-has">{inCartCount} added</span>
                         )}
@@ -600,7 +734,7 @@ const Estimator = () => {
                         const isInvalid = !!invalidInputKeys[s.key];
 
                         return (
-                          <div key={s.key} className="est-svc">
+                          <div key={s.key} className={`est-svc ${inCart ? 'est-svc-selected' : ''}`}>
                             <div className="est-svc-info">
                               <div className="est-svc-name">{s.name}</div>
                               <div className="est-svc-rate">{serviceRateLabel(s)}</div>
@@ -608,26 +742,54 @@ const Estimator = () => {
 
                             <div className="est-svc-controls">
                               {needsQty && (
-                                <>
-                                  <input
-                                    type="number"
-                                    min="1"
-                                    step="any"
-                                    className="est-qty-input"
-                                    style={{ borderColor: isInvalid ? 'var(--est-danger)' : undefined }}
-                                    placeholder="0"
-                                    value={currentQty}
-                                    onChange={(e) => handleQtyChange(s.key, e.target.value)}
-                                  />
+                                <div className="est-qty-group">
+                                  <div className="est-qty-stepper">
+                                    <button
+                                      type="button"
+                                      className="est-qty-step-btn"
+                                      aria-label="Decrease quantity"
+                                      onClick={() => {
+                                        const cur = parseFloat(currentQty) || 0;
+                                        const step = s.kind === 'per_sqft' ? 50 : 1;
+                                        const next = Math.max(0, cur - step);
+                                        handleQtyChange(s.key, next > 0 ? next.toString() : '');
+                                      }}
+                                    >
+                                      –
+                                    </button>
+                                    <input
+                                      type="number"
+                                      min="1"
+                                      step="any"
+                                      className="est-qty-input"
+                                      style={{ borderColor: isInvalid ? 'var(--est-danger)' : undefined }}
+                                      placeholder="0"
+                                      value={currentQty}
+                                      onChange={(e) => handleQtyChange(s.key, e.target.value)}
+                                    />
+                                    <button
+                                      type="button"
+                                      className="est-qty-step-btn"
+                                      aria-label="Increase quantity"
+                                      onClick={() => {
+                                        const cur = parseFloat(currentQty) || 0;
+                                        const step = s.kind === 'per_sqft' ? 50 : 1;
+                                        const next = cur + step;
+                                        handleQtyChange(s.key, next.toString());
+                                      }}
+                                    >
+                                      +
+                                    </button>
+                                  </div>
                                   <span className="est-qty-unit">{qtyLabelFor(s)}</span>
-                                </>
+                                </div>
                               )}
                               <button
                                 type="button"
                                 className={`est-add-btn${inCart ? ' est-in-cart' : ''}`}
                                 onClick={() => toggleService(s)}
                               >
-                                {inCart ? '✓ Added' : 'Add'}
+                                {inCart ? '✓ Added' : '+ Add'}
                               </button>
                             </div>
                           </div>
@@ -641,7 +803,7 @@ const Estimator = () => {
           </div>
 
           {/* Your Estimate Cart Panel */}
-          <div className="est-cart-panel reveal-zoom" data-delay="150">
+          <div className="est-cart-panel reveal-zoom" data-delay="150" ref={cartRef}>
             <div className="est-panel">
               <div className="est-panel-head">
                 <h2>Your estimate</h2>
@@ -653,7 +815,7 @@ const Estimator = () => {
               <div id="est-cart-body">
                 {itemCount === 0 ? (
                   <div className="est-cart-empty">
-                    Add services from the catalog to build your estimate.
+                    <p>Add services from the catalog above to build your estimate range.</p>
                   </div>
                 ) : (
                   <>
@@ -693,15 +855,16 @@ const Estimator = () => {
                     <div className="est-cart-addons">
                       <div
                         style={{
-                          fontSize: '13px',
+                          fontSize: '12px',
                           fontFamily: 'ui-monospace,SFMono-Regular,Menlo,Consolas,monospace',
-                          letterSpacing: '0.1em',
+                          letterSpacing: '0.12em',
                           textTransform: 'uppercase',
                           color: 'var(--est-ink-soft)',
-                          marginBottom: '4px'
+                          marginBottom: '6px',
+                          fontWeight: '700'
                         }}
                       >
-                        Extras
+                        Extras & Contingency
                       </div>
                       {GLOBAL_ADDONS.map((a) => {
                         if (a.perSqftOfDemo && total.demoSqft === 0) return null;
@@ -761,6 +924,24 @@ const Estimator = () => {
           </div>
         </div>
 
+        {/* Mobile Floating Sticky Bar when items are selected */}
+        {itemCount > 0 && (
+          <div className="est-mobile-floating-bar">
+            <div className="est-mobile-bar-summary" onClick={scrollToCart}>
+              <div className="est-mobile-bar-count">
+                <span className="est-mobile-count-badge">{itemCount}</span>
+                <span>{itemCount === 1 ? 'Item selected' : 'Items selected'}</span>
+              </div>
+              <div className="est-mobile-bar-price est-mono">
+                {total.hasCustom && total.low === 0 ? 'Custom Quote' : `${fmt(total.low)} – ${fmt(total.high)}`}
+              </div>
+            </div>
+            <button type="button" className="est-mobile-bar-cta" onClick={openModal}>
+              Get Quote →
+            </button>
+          </div>
+        )}
+
         {/* Footer info */}
         <div className="est-footer">Ranges are approximate, based on 2026 Marion County rates.</div>
 
@@ -811,6 +992,7 @@ const Estimator = () => {
                         className="est-input"
                         id="est-c-name"
                         required
+                        placeholder="John Doe"
                         value={contact.name}
                         onChange={(e) => setContact((prev) => ({ ...prev, name: e.target.value }))}
                       />
@@ -825,6 +1007,7 @@ const Estimator = () => {
                         className="est-input"
                         id="est-c-email"
                         required
+                        placeholder="john@example.com"
                         value={contact.email}
                         onChange={(e) => setContact((prev) => ({ ...prev, email: e.target.value }))}
                       />
@@ -838,6 +1021,7 @@ const Estimator = () => {
                         type="tel"
                         className="est-input"
                         id="est-c-phone"
+                        placeholder="(352) 000-0000"
                         value={contact.phone}
                         onChange={(e) => setContact((prev) => ({ ...prev, phone: e.target.value }))}
                       />

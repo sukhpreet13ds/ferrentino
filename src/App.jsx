@@ -18,6 +18,9 @@ import ThankYou from "./pages/ThankYou";
 import ErrorPage from "./pages/404";
 import Estimator from "./pages/Estimator";
 import ProjectView from "./pages/ProjectView";
+import AskToExpert from "./pages/AskToExpert";
+import Article from "./pages/Article";
+import AreaWeServe from "./pages/AreaWeServe";
 
 function RouteObserver() {
   const location = useLocation();
@@ -88,6 +91,9 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/service-view" element={<ServiceView />} />
           <Route path="/estimator" element={<Estimator />} />
+          <Route path="/ask-to-expert" element={<AskToExpert />} />
+          <Route path="/articles" element={<Article />} />
+          <Route path="/area-we-serve" element={<AreaWeServe />} />
           <Route path="/meet-the-builders" element={<MeetTheBuilders />} />
           <Route path="/privacy-and-policy" element={<Privacy />} />
           <Route path="/terms-and-conditions" element={<Terms />} />

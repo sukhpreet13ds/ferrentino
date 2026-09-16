@@ -1,13 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './style/style.css';
-import gallery1 from '../assets/gallary1.jpg';
-import gallery2 from '../assets/gallery2.jpg';
-import gallery3 from '../assets/gallery3.jpg';
-import gallery4 from '../assets/gallery4.jpg';
-import gallery5 from '../assets/gallery5.jpg';
-import gallery6 from '../assets/gallery6.jpg';
-import gallery7 from '../assets/gallery7.jpg';
-import gallery8 from '../assets/gallery8.jpg';
+import gallery1 from '../assets/room.jpg';
+import gallery2 from '../assets/bathroom.jpg';
+import gallery3 from '../assets/inner-two2.jpg';
+import gallery4 from '../assets/outdoor-pro.jpg';
+import gallery5 from '../assets/ferrentino1.jpg';
+import gallery6 from '../assets/bath.jpg';
+import gallery7 from '../assets/interier.jpg';
+import gallery8 from '../assets/kitchen.jpg';
+import zone1 from '../assets/project-zone.jpg';
+import zone2 from '../assets/project-zone1.jpg';
+import zone3 from '../assets/project-zone2.jpg';
+import zone4 from '../assets/project-zone3.jpg';
+import zone5 from '../assets/project-zone4.jpg';
+import zone6 from '../assets/project-zone5.jpg';
+
 
 const galleryImages = [
     { id: 1, img: gallery1 },
@@ -18,6 +25,12 @@ const galleryImages = [
     { id: 6, img: gallery6 },
     { id: 7, img: gallery7 },
     { id: 8, img: gallery8 },
+    { id: 9, img: zone1 },
+    { id: 10, img: zone2 },
+    { id: 11, img: zone3 },
+    { id: 12, img: zone4 },
+    { id: 13, img: zone5 },
+    { id: 14, img: zone6 },
 ];
 
 const Gallery = () => {

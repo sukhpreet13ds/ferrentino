@@ -88,13 +88,15 @@ const Footer = () => {
                         {/* Col 1: Links */}
                         <div className="footer-col footer-links-col reveal-zoom" data-delay="100">
                             <ul className="footer-links-list">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/about">About Us</a></li>
-                                <li><a href="/services">Services</a></li>
-                                <li><a href="/meet-the-builders">Meet The Builders</a></li>
-                                <li><a href="/projects">Projects</a></li>
-                                <li><a href="/contractor">Contractor</a></li>
-                                <li><a href="/contact">Contact</a></li>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/about">About Us</Link></li>
+                                <li><Link to="/services">Services</Link></li>
+                                <li><Link to="/meet-the-builders">Meet The Builders</Link></li>
+                                <li><Link to="/projects">Projects</Link></li>
+                                <li><Link to="/contractor">Subcontractor Application</Link></li>
+                                <li><Link to="/ask-to-expert">Ask to Expert</Link></li>
+                                <li><Link to="/area-we-serve">Area We Serve</Link></li>
+                                <li><Link to="/contact">Contact</Link></li>
                               
                             </ul>
                         </div>

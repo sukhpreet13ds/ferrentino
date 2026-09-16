@@ -301,14 +301,13 @@ const ServiceView = () => {
                         </p>
                     </div>
 
-                    <div className="faq-accordion-list">
+                    <div className="faq-accordion-list reveal-zoom">
                         {faqs.map((faq, index) => {
                             const isOpen = openFaq === index;
                             return (
                                 <div
                                     key={index}
-                                    className={`faq-item reveal-zoom ${isOpen ? 'active' : ''}`}
-                                    data-delay={(index % 4) * 100}
+                                    className={`faq-item ${isOpen ? 'active' : ''}`}
                                     onClick={() => toggleFaq(index)}
                                 >
                                     <div className="faq-question-row">

@@ -5,7 +5,7 @@ import logo from '../assets/ferrentino-logo.png';
 
 const Navbar = () => {
     const location = useLocation();
-    const isEstimator = location.pathname === '/estimator';
+    const isDarkNavbarPage = location.pathname === '/estimator' || location.pathname === '/project-view';
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const Navbar = () => {
     };
 
     return (
-        <header className={`site-header ${isEstimator ? 'site-header-dark-text' : ''}`}>
+        <header className={`site-header ${isDarkNavbarPage ? 'site-header-dark-text' : ''}`}>
             {/* Top Utility Bar */}
             <div className="top-bar">
                 <div className="top-bar-container">
@@ -91,14 +91,14 @@ const Navbar = () => {
                             <a href="/projects" className="nav-link nav-link-single">Projects</a>
                         </li>
                         <li className="nav-item">
-                            <a href="/contractor" className="nav-link nav-link-single">Contractor</a>
+                            <a href="/estimator" className="nav-link nav-link-single">Project Estimator</a>
                         </li>
                         <li className="nav-item">
                             <a href="/contact" className="nav-link nav-link-single">Contact</a>
                         </li>
                         <li className="nav-item nav-consultation">
                             <i className="fa-solid fa-phone icon-yellow consultation-icon"></i>
-                            <a href="#consultation" className="consultation-text">
+                            <a href="/contact" className="consultation-text">
                                 Book Your Design Consultation
                             </a>
                         </li>
@@ -153,7 +153,7 @@ const Navbar = () => {
                         <li><a href="/services" onClick={closeMobileMenu}>Services</a></li>
                         <li><a href="/meet-the-builders" onClick={closeMobileMenu}>Meet The Builders</a></li>
                         <li><a href="/projects" onClick={closeMobileMenu}>Projects</a></li>
-                        <li><a href="/contractor" onClick={closeMobileMenu}>Contractor</a></li>
+                        <li><a href="/estimator" onClick={closeMobileMenu}>Project Estimator</a></li>
                         <li><a href="/contact" onClick={closeMobileMenu}>Contact</a></li>
                     </ul>
 

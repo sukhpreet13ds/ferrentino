@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import kitchenImg from '../assets/kitchen.jpg';
 import bathImg from '../assets/bath.jpg';
 import wholeHomeImg from '../assets/whole-home.jpg';
-import roofingImg from '../assets/roofing.jpg';
+import roofingImg from '../assets/project-roofing.jpg';
 import interiorImg from '../assets/interier.jpg';
-import outdoorImg from '../assets/outdoor.jpg';
+import outdoorImg from '../assets/project-outdoor.jpg';
 
 const servicesData = [
     { id: 1, title: 'Kitchen Remodeling', img: kitchenImg },

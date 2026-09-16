@@ -1,10 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './style/style.css';
+
+// Asset imports
 import ferrentino1Img from '../assets/ferrentino1.jpg';
-import livingImg from '../assets/living.jpg';
+import ferrentino2Img from '../assets/ferrentino2.jpg';
+import ferrentino3Img from '../assets/ferrentino3.jpg';
 import kitchenImg from '../assets/kitchen.jpg';
-import projectsHeroBg from '../assets/projects-bg.jpg';
-import SplitText from '../components/SplitText';
+import livingImg from '../assets/living.jpg';
+import outdoorImg from '../assets/outdoor.jpg';
+import wholeHomeImg from '../assets/whole-home.jpg';
+import kitchenBgImg from '../assets/kitchen-bg.jpg';
 import ReadyCta from '../components/ReadyCta';
 
 const ProjectView = () => {
@@ -12,423 +18,312 @@ const ProjectView = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    // 3 Images for the Project Gallery Slider
-    const projectGallery = [
+    // 6 Walkthrough Slides for Project Walkthrough section
+    const walkthroughSlides = [
+        {
+            id: 0,
+            label: 'EXTERIOR FACADE',
+            img: ferrentino1Img,
+            title: 'Generations-Strength Timber Frame Structural Detail',
+            desc: 'Precision joinery showcase using native Florida timber-framing architecture designed to endure.'
+        },
         {
             id: 1,
-            img: ferrentino1Img,
-            caption: 'Modern Farmhouse Exterior & Timber Frame Beams',
-            sub: 'Hand-crafted structural beams and wrap-around porch in Williston, FL.'
+            label: "CHEF'S KITCHEN",
+            img: kitchenImg,
+            title: "Bespoke Chef's Kitchen & Oak Cabinetry",
+            desc: 'Custom-crafted solid oak island, commercial gas range, and premium quartzite surfaces.'
         },
         {
             id: 2,
+            label: 'GREAT ROOM',
             img: livingImg,
-            caption: 'Custom Hardwood Living & Vaulted Ceiling',
-            sub: 'Custom cabinetry, hardwood flooring, and spacious open living space.'
+            title: 'Open-Concept Great Room & Vaulted Beams',
+            desc: 'Expansive ceiling heights supported by exposed mortise-and-tenon interlocking timber trusses.'
         },
         {
             id: 3,
-            img: kitchenImg,
-            caption: 'Chef’s Kitchen & Quartz Waterfall Island',
-            sub: 'Commercial-grade kitchen setup with custom oak posts and quartz countertops.'
+            label: 'COVERED PORCH',
+            img: outdoorImg,
+            title: 'Generational Outdoor Living & Brick Porch',
+            desc: 'Seamless indoor-outdoor entertainment space with hand-laid brick columns and cypress ceiling.'
+        },
+        {
+            id: 4,
+            label: 'MASTER SUITE',
+            img: ferrentino2Img,
+            title: 'Master Suite Retreat & Custom Architecture',
+            desc: 'Tranquil master sanctuary featuring custom architectural millwork and panoramic pasture views.'
+        },
+        {
+            id: 5,
+            label: 'CRAFTED DETAILS',
+            img: ferrentino3Img,
+            title: 'Hand-Forged Hardware & Precision Finish',
+            desc: 'Every joint, latch, and beam corner meticulously finished by master tradespeople.'
         }
     ];
 
     const [currentSlide, setCurrentSlide] = useState(0);
+    const thumbContainerRef = useRef(null);
 
-    const handleNextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % projectGallery.length);
-    };
+    // Auto-sliding interval
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % walkthroughSlides.length);
+        }, 4000);
+        return () => clearInterval(timer);
+    }, [walkthroughSlides.length]);
 
     const handlePrevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + projectGallery.length) % projectGallery.length);
+        setCurrentSlide((prev) => (prev - 1 + walkthroughSlides.length) % walkthroughSlides.length);
+    };
+
+    const handleNextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % walkthroughSlides.length);
+    };
+
+    const scrollThumbnails = (direction) => {
+        if (thumbContainerRef.current) {
+            const scrollAmount = thumbContainerRef.current.clientWidth * 0.75;
+            thumbContainerRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     };
 
     return (
-        <div className="project-view-page contact-page">
-            {/* Hero Section (Same style as Contact.jsx) */}
-            <section
-                className="contact-hero-section"
-                style={{ backgroundImage: `url(${projectsHeroBg})` }}
-            >
-                <div className="contact-hero-overlay"></div>
+        <div className="project-view-page">
+            {/* Top Header Section (Replaces Hero) */}
+            <header className="pv-header-section">
+                <div className="pv-header-container">
+                    {/* Back link */}
+                    <Link to="/projects" className="pv-back-link">
+                        ‹ BACK TO ALL PROJECTS
+                    </Link>
 
-                <div className="contact-hero-container">
-                    <div className="contact-hero-content">
-                        <span className="contact-hero-tag">
-                            <SplitText
-                                text="FEATURED PROJECT"
-                                className="contact-tag-text"
-                                delay={40}
-                                duration={0.85}
-                                ease="power3.out"
-                                splitType="chars"
-                                from={{ opacity: 0, y: 20 }}
-                                to={{ opacity: 1, y: 0 }}
-                                threshold={0.01}
-                                rootMargin="0px"
-                                textAlign="left"
-                                tag="span"
-                            />
-                        </span>
+                    {/* Badge & Meta Row */}
+                    <div className="pv-meta-bar">
+                        <div className="pv-meta-left">
+                            <span className="pv-badge">LIVEWELL RESIDENTIAL</span>
+                            <span className="pv-meta-date">Completed 2025</span>
+                        </div>
+                        <div className="pv-location">
+                            <i className="fa-solid fa-location-dot"></i> Williston, FL
+                        </div>
+                    </div>
 
-                        <h1 className="contact-hero-title">
-                            <SplitText
-                                text="Modern Farmhouse Estate"
-                                className="contact-title-line"
-                                delay={45}
-                                duration={1.2}
-                                ease="power3.out"
-                                splitType="chars"
-                                from={{ opacity: 0, y: 40 }}
-                                to={{ opacity: 1, y: 0 }}
-                                threshold={0.01}
-                                rootMargin="0px"
-                                textAlign="left"
-                                tag="span"
-                            />
-                        </h1>
+                    {/* Title */}
+                    <h1 className="pv-main-title">Modern Farmhouse Estate</h1>
 
-                        <p className="contact-hero-desc" style={{ fontFamily: "'Roboto', sans-serif" }}>
-                            Proud custom construction of a modern farmhouse featuring generations-strength timber frame beams, state-of-the-art kitchen, wrap-around brick porch, and luxury master suite.
-                        </p>
+                    {/* Main Feature Hero Image */}
+                    <div className="pv-hero-img-box reveal-zoom">
+                        <img src={ferrentino1Img} alt="Modern Farmhouse Estate" />
                     </div>
                 </div>
-            </section>
+            </header>
 
-            {/* Project Overview & Main Image Section */}
-            <section style={{ padding: '70px 20px', background: '#FFFFFF' }}>
-                <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-                    
-                    {/* Category Tag */}
-                    <div className="reveal-zoom" style={{ marginBottom: '16px' }}>
-                        <span style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                            background: 'rgba(217, 119, 6, 0.12)',
-                            color: 'var(--primary-color)',
-                            fontWeight: '700',
-                            fontSize: '13px',
-                            fontFamily: "'Roboto', sans-serif",
-                            letterSpacing: '0.12em',
-                            textTransform: 'uppercase',
-                            padding: '8px 16px',
-                            borderRadius: '24px'
-                        }}>
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
-                                <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
-                                <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
-                                <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
-                                <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
-                            </svg>
-                            LiveWell Residential · Completed 2025
-                        </span>
-                    </div>
+            {/* Section 2: Explore the Craftsmanship (Walkthrough Slider) */}
+            <section className="pv-walkthrough-section">
+                <div className="pv-walkthrough-container">
+                    {/* Header row */}
+                    <div className="pv-section-header-row">
+                        <div className="pv-header-text-group">
+                            <span className="pv-subtag">PROJECT WALKTHROUGH</span>
+                            <h2 className="pv-section-title">Explore the Craftsmanship</h2>
+                        </div>
 
-                    <h2 className="reveal-zoom" style={{
-                        fontFamily: "'Playfair Display', serif",
-                        fontSize: 'clamp(28px, 4vw, 44px)',
-                        color: '#111827',
-                        marginBottom: '20px',
-                        fontWeight: '700',
-                        lineHeight: '1.2'
-                    }}>
-                        Project Overview &amp; Specifications
-                    </h2>
-
-                    {/* Main Featured Showcase Image (Wide & Prominent) */}
-                    <div className="reveal-zoom" style={{
-                        position: 'relative',
-                        width: '100%',
-                        maxHeight: '520px',
-                        borderRadius: '16px',
-                        overflow: 'hidden',
-                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.12)',
-                        margin: '28px 0 40px 0'
-                    }}>
-                        <img
-                            src={ferrentino1Img}
-                            alt="Modern Farmhouse Estate Primary View"
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                maxHeight: '520px',
-                                objectFit: 'cover',
-                                display: 'block'
-                            }}
-                        />
-                        <div style={{
-                            position: 'absolute',
-                            bottom: '0',
-                            left: '0',
-                            right: '0',
-                            background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)',
-                            padding: '24px 28px',
-                            color: '#FFFFFF'
-                        }}>
-                            <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--primary-color)', fontWeight: '700' }}>
-                                Primary Showcase
+                        <div className="pv-slider-controls">
+                            <span className="pv-slide-counter">
+                                {String(currentSlide + 1).padStart(2, '0')} / {String(walkthroughSlides.length).padStart(2, '0')}
                             </span>
-                            <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(20px, 3vw, 28px)', margin: '4px 0 0 0', color: '#FFFFFF', fontWeight: '700' }}>
-                                Exterior Timber Frame Architecture
-                            </h3>
+                            <button onClick={handlePrevSlide} className="pv-arrow-btn" aria-label="Previous Slide">
+                                ‹
+                            </button>
+                            <button onClick={handleNextSlide} className="pv-arrow-btn" aria-label="Next Slide">
+                                ›
+                            </button>
                         </div>
                     </div>
 
-                    {/* Content Columns: Descriptions & Specifications */}
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                        gap: '40px',
-                        alignItems: 'start'
-                    }}>
-                        {/* Narrative Left */}
-                        <div className="reveal-zoom">
-                            <p style={{ fontFamily: "'Roboto', sans-serif", fontSize: '17px', lineHeight: '1.7', color: '#4B5563', marginBottom: '18px' }}>
-                                Built in Williston, Florida, this flagship custom home represents three generations of Ferrentino family construction craftsmanship. Blending timeless rustic warmth with modern residential engineering, the estate features solid timber structural framing, custom oak trim, and open indoor-outdoor entertaining spaces.
-                            </p>
-                            <p style={{ fontFamily: "'Roboto', sans-serif", fontSize: '17px', lineHeight: '1.7', color: '#4B5563', margin: 0 }}>
-                                From heavy excavation and foundation setting to the hand-finished cabinetry and zero-threshold rain shower master bath, every square foot was custom built to exceed client expectations.
-                            </p>
-
-                            <ul className="kitchen-check-list" style={{ marginTop: '28px' }}>
-                                <li>
-                                    <span className="check-icon-gold">✓</span> Custom-engineered solid timber structural beam framing
-                                </li>
-                                <li>
-                                    <span className="check-icon-gold">✓</span> Wrap-around brick porch with custom outdoor fireplace pad
-                                </li>
-                                <li>
-                                    <span className="check-icon-gold">✓</span> Open-concept chef's kitchen with quartz waterfall island
-                                </li>
-                                <li>
-                                    <span className="check-icon-gold">✓</span> Energy-efficient FL energy code compliance &amp; metal roofing
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Specs Card Right */}
-                        <div className="reveal-zoom" data-delay="150" style={{
-                            background: '#F9FAFB',
-                            borderRadius: '16px',
-                            padding: '30px',
-                            border: '1px solid #E5E7EB',
-                            boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
-                        }}>
-                            <h3 style={{
-                                fontFamily: "'Playfair Display', serif",
-                                fontSize: '24px',
-                                color: '#111827',
-                                marginBottom: '20px',
-                                fontWeight: '700'
-                            }}>
-                                Project Details
-                            </h3>
-
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #E5E7EB', paddingBottom: '12px' }}>
-                                    <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '14px', color: '#6B7280' }}>Location</span>
-                                    <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '15px', fontWeight: '700', color: '#111827' }}>Williston, FL</span>
-                                </div>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #E5E7EB', paddingBottom: '12px' }}>
-                                    <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '14px', color: '#6B7280' }}>Project Category</span>
-                                    <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '15px', fontWeight: '700', color: '#111827' }}>Custom Estate</span>
-                                </div>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #E5E7EB', paddingBottom: '12px' }}>
-                                    <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '14px', color: '#6B7280' }}>Construction Time</span>
-                                    <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '15px', fontWeight: '700', color: '#111827' }}>6 Months</span>
-                                </div>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #E5E7EB', paddingBottom: '12px' }}>
-                                    <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '14px', color: '#6B7280' }}>Builder</span>
-                                    <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '15px', fontWeight: '700', color: '#111827' }}>Ferrentino &amp; Son, LLC</span>
-                                </div>
-                                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                    <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '14px', color: '#6B7280' }}>Status</span>
-                                    <span style={{ fontFamily: "'Roboto', sans-serif", fontSize: '15px', fontWeight: '700', color: '#059669' }}>Completed 2025</span>
-                                </div>
+                    {/* Main Active Slide Display Box */}
+                    <div className="pv-main-slider-card reveal-zoom">
+                        <img
+                            src={walkthroughSlides[currentSlide].img}
+                            alt={walkthroughSlides[currentSlide].title}
+                            className="pv-slider-img"
+                        />
+                        <div className="pv-slider-overlay">
+                            <div className="pv-overlay-content">
+                                <h3 className="pv-overlay-title">{walkthroughSlides[currentSlide].title}</h3>
+                                <p className="pv-overlay-desc">{walkthroughSlides[currentSlide].desc}</p>
+                            </div>
+                            <div className="pv-slider-dots">
+                                {walkthroughSlides.map((_, idx) => (
+                                    <span
+                                        key={idx}
+                                        onClick={() => setCurrentSlide(idx)}
+                                        className={`pv-dot ${idx === currentSlide ? 'active' : ''}`}
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
 
-                </div>
-            </section>
-
-            {/* 3 Images Gallery Slider Section */}
-            <section style={{ background: '#111827', color: '#FFFFFF', padding: '80px 20px' }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                    <div className="reveal-zoom" style={{ textAlign: 'center', marginBottom: '40px' }}>
-                        <span style={{
-                            color: 'var(--primary-color)',
-                            fontSize: '13px',
-                            fontFamily: "'Roboto', sans-serif",
-                            letterSpacing: '0.15em',
-                            textTransform: 'uppercase',
-                            fontWeight: '700'
-                        }}>
-                            PROJECT GALLERY
-                        </span>
-                        <h2 style={{
-                            fontFamily: "'Playfair Display', serif",
-                            fontSize: 'clamp(30px, 4vw, 44px)',
-                            color: '#FFFFFF',
-                            marginTop: '8px',
-                            fontWeight: '700'
-                        }}>
-                            Explore Project Showcase
-                        </h2>
-                        <p style={{
-                            fontFamily: "'Roboto', sans-serif",
-                            color: '#9CA3AF',
-                            fontSize: '16px',
-                            maxWidth: '600px',
-                            margin: '10px auto 0'
-                        }}>
-                            Slide through 3 key highlights of this featured build.
-                        </p>
-                    </div>
-
-                    {/* Slider Container (Wide aspect ratio for all viewports, no fixed square height) */}
-                    <div className="reveal-zoom" data-delay="150" style={{
-                        position: 'relative',
-                        width: '100%',
-                        maxWidth: '1080px',
-                        margin: '0 auto',
-                        borderRadius: '16px',
-                        overflow: 'hidden',
-                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)'
-                    }}>
-                        {/* Responsive Image Aspect Box */}
-                        <div style={{
-                            position: 'relative',
-                            width: '100%',
-                            aspectRatio: '16/9'
-                        }}>
-                            <img
-                                src={projectGallery[currentSlide].img}
-                                alt={projectGallery[currentSlide].caption}
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'cover',
-                                    display: 'block',
-                                    transition: 'all 0.5s ease'
-                                }}
-                            />
-                            
-                            {/* Gradient Caption Overlay */}
-                            <div style={{
-                                position: 'absolute',
-                                inset: '0',
-                                background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0) 100%)',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'flex-end',
-                                padding: 'clamp(16px, 4vw, 32px)'
-                            }}>
-                                <span style={{ color: 'var(--primary-color)', fontSize: '13px', fontWeight: '700', fontFamily: 'monospace' }}>
-                                    {String(currentSlide + 1).padStart(2, '0')} / {String(projectGallery.length).padStart(2, '0')}
-                                </span>
-                                <h3 style={{
-                                    fontFamily: "'Playfair Display', serif",
-                                    fontSize: 'clamp(18px, 3.5vw, 28px)',
-                                    color: '#FFFFFF',
-                                    margin: '6px 0 4px 0',
-                                    fontWeight: '700',
-                                    lineHeight: '1.2'
-                                }}>
-                                    {projectGallery[currentSlide].caption}
-                                </h3>
-                                <p style={{
-                                    fontFamily: "'Roboto', sans-serif",
-                                    color: '#D1D5DB',
-                                    fontSize: 'clamp(13px, 2vw, 16px)',
-                                    margin: 0,
-                                    lineHeight: '1.4'
-                                }}>
-                                    {projectGallery[currentSlide].sub}
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Navigation Arrow Buttons */}
+                    {/* Thumbnails Row with Mobile Scroll Buttons & Touch Swipe support */}
+                    <div className="pv-thumbnails-wrapper">
                         <button
-                            onClick={handlePrevSlide}
-                            aria-label="Previous Slide"
-                            style={{
-                                position: 'absolute',
-                                top: '50%',
-                                left: '14px',
-                                transform: 'translateY(-50%)',
-                                width: '42px',
-                                height: '42px',
-                                borderRadius: '50%',
-                                background: 'rgba(0, 0, 0, 0.65)',
-                                color: '#FFFFFF',
-                                border: '1px solid rgba(255, 255, 255, 0.3)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                cursor: 'pointer',
-                                fontSize: '24px',
-                                backdropFilter: 'blur(4px)',
-                                transition: 'all 0.2s ease',
-                                zIndex: 10
-                            }}
+                            className="pv-thumb-scroll-btn left"
+                            onClick={() => scrollThumbnails('left')}
+                            aria-label="Scroll mini images left"
                         >
                             ‹
                         </button>
 
+                        <div className="pv-thumbnails-row" ref={thumbContainerRef}>
+                            {walkthroughSlides.map((slide, idx) => (
+                                <div
+                                    key={slide.id}
+                                    onClick={() => setCurrentSlide(idx)}
+                                    className={`pv-thumb-item ${idx === currentSlide ? 'active' : ''}`}
+                                >
+                                    <div className="pv-thumb-img-wrapper">
+                                        <img src={slide.img} alt={slide.label} />
+                                    </div>
+                                    <span className="pv-thumb-label">{slide.label}</span>
+                                </div>
+                            ))}
+                        </div>
+
                         <button
-                            onClick={handleNextSlide}
-                            aria-label="Next Slide"
-                            style={{
-                                position: 'absolute',
-                                top: '50%',
-                                right: '14px',
-                                transform: 'translateY(-50%)',
-                                width: '42px',
-                                height: '42px',
-                                borderRadius: '50%',
-                                background: 'rgba(0, 0, 0, 0.65)',
-                                color: '#FFFFFF',
-                                border: '1px solid rgba(255, 255, 255, 0.3)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                cursor: 'pointer',
-                                fontSize: '24px',
-                                backdropFilter: 'blur(4px)',
-                                transition: 'all 0.2s ease',
-                                zIndex: 10
-                            }}
+                            className="pv-thumb-scroll-btn right"
+                            onClick={() => scrollThumbnails('right')}
+                            aria-label="Scroll mini images right"
                         >
                             ›
                         </button>
                     </div>
-
-                    {/* Dots Indicator */}
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '24px' }}>
-                        {projectGallery.map((_, idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => setCurrentSlide(idx)}
-                                style={{
-                                    width: idx === currentSlide ? '30px' : '10px',
-                                    height: '10px',
-                                    borderRadius: '5px',
-                                    background: idx === currentSlide ? 'var(--primary-color)' : 'rgba(255, 255, 255, 0.3)',
-                                    border: 'none',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.3s ease'
-                                }}
-                            />
-                        ))}
-                    </div>
-
                 </div>
             </section>
 
+            {/* Section 3: Generations of Timber & Stone (The Project Mandate) */}
+            <section className="pv-mandate-section">
+                <div className="pv-mandate-container">
+                    <div className="pv-header-text-group reveal-zoom">
+                        <span className="pv-subtag">THE PROJECT MANDATE</span>
+                        <h2 className="pv-section-title">Generations of Timber &amp; Stone</h2>
+                    </div>
+
+                    <div className="pv-mandate-grid">
+                        {/* Left Card: Project Specifics */}
+                        <div className="pv-specs-card reveal-zoom">
+                            <h3 className="pv-specs-title">Project Specifics</h3>
+                            <div className="pv-specs-list">
+                                <div className="pv-specs-row">
+                                    <span className="pv-specs-label">Client Scope</span>
+                                    <span className="pv-specs-value">Custom Residential</span>
+                                </div>
+                                <div className="pv-specs-row">
+                                    <span className="pv-specs-label">Timber Source</span>
+                                    <span className="pv-specs-value">Central Florida Pine &amp; Oak</span>
+                                </div>
+                                <div className="pv-specs-row">
+                                    <span className="pv-specs-label">Speciality Craft</span>
+                                    <span className="pv-specs-value">Mortise &amp; Tenon Joinery</span>
+                                </div>
+                                <div className="pv-specs-row">
+                                    <span className="pv-specs-label">Square Footage</span>
+                                    <span className="pv-specs-value">4,650 sq ft</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Content: Challenge & Solution + Quote */}
+                        <div className="pv-mandate-right reveal-zoom" data-delay="150">
+                            <div className="pv-text-block">
+                                <h4 className="pv-block-subtitle">THE CHALLENGE</h4>
+                                <p className="pv-block-p">
+                                    Our clients envisioned a timeless estate that looked as if it had sat on their Williston acreage for a hundred years, yet possessed the energy-efficiency and luxurious open layouts of modern builds. Structurally, the great room required massive, raw structural timber spans without visible heavy steel connectors, demanding old-world precision joinery.
+                                </p>
+                            </div>
+
+                            <div className="pv-text-block">
+                                <h4 className="pv-block-subtitle">THE SOLUTION</h4>
+                                <p className="pv-block-p">
+                                    Ferrentino &amp; Son engineered a pure timber frame architecture, leveraging authentic Florida pine beams and custom mortise-and-tenon interlocking joints. Our custom design team wrapped the home in high-performance insulation, framing gorgeous viewports facing the pasture. The state-of-the-art kitchen integrates commercial-grade power behind solid oak cabinetry, balancing new homestead charm with refined culinary luxury.
+                                </p>
+                            </div>
+
+                            <div className="pv-quote-box">
+                                <p className="pv-quote-text">
+                                    “The level of detail Ferrentino &amp; Son brought to our timber frame joints is absolutely stellar. It is a genuine masterpiece that our grandchildren will enjoy.”
+                                </p>
+                                <span className="pv-quote-author">— THE WILLISTON ESTATE FAMILY</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Section 4: Other Premium Portfolios */}
+            <section className="pv-portfolios-section">
+                <div className="pv-portfolios-container">
+                    <div className="pv-section-header-row reveal-zoom">
+                        <div className="pv-header-text-group">
+                            <span className="pv-subtag">CONTINUE EXPLORING</span>
+                            <h2 className="pv-section-title">Other Premium Portfolios</h2>
+                        </div>
+                        <Link to="/projects" className="pv-view-all-link">
+                            VIEW ALL CASE STUDIES
+                        </Link>
+                    </div>
+
+                    <div className="pv-portfolios-grid">
+                        {/* Card 1 */}
+                        <div className="pv-portfolio-card reveal-zoom">
+                            <div className="pv-portfolio-img-wrapper">
+                                <img src={wholeHomeImg} alt="Ocala Oak-Wood Remodel" />
+                                <div className="pv-card-badge-bar">
+                                    <span className="pv-card-badge">LIVEWELL RESIDENTIAL</span>
+                                    <span className="pv-card-location">Ocala, FL</span>
+                                </div>
+                            </div>
+                            <div className="pv-portfolio-card-body">
+                                <h3 className="pv-card-title">Ocala Oak-Wood Remodel</h3>
+                                <p className="pv-card-desc">
+                                    A complete estate home remodel highlighting custom cabinetry, vaulted ceilings, and meticulous hardwood finishes.
+                                </p>
+                                <Link to="/projects" className="pv-card-link">
+                                    View Project Case Study →
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Card 2 */}
+                        <div className="pv-portfolio-card reveal-zoom" data-delay="150">
+                            <div className="pv-portfolio-img-wrapper">
+                                <img src={kitchenBgImg} alt="Marion County Chef's Kitchen" />
+                                <div className="pv-card-badge-bar">
+                                    <span className="pv-card-badge">CUSTOM KITCHENS</span>
+                                    <span className="pv-card-location">Ocala, FL</span>
+                                </div>
+                            </div>
+                            <div className="pv-portfolio-card-body">
+                                <h3 className="pv-card-title">Marion County Chef's Kitchen</h3>
+                                <p className="pv-card-desc">
+                                    High-end remodel featuring commercial-grade range setups, warm solid oak structural posts, and custom quartz waterfalls.
+                                </p>
+                                <Link to="/projects" className="pv-card-link">
+                                    View Project Case Study →
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
             <ReadyCta />
         </div>
     );

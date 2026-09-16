@@ -3,7 +3,7 @@ import './style/style.css';
 import serviceHeroBg from '../assets/service-bg.png';
 import barbaraImg from '../assets/Barbara.jpg';
 import edwardImg from '../assets/Edward.jpg';
-import shawnaImg from '../assets/shawna.webp';
+import shawnaImg from '../assets/shawna.jpg';
 import SplitText from '../components/SplitText';
 
 const MeetTheBuilders = () => {
@@ -41,7 +41,7 @@ const MeetTheBuilders = () => {
 
                         <h1 className="builders-hero-title">
                             <SplitText
-                                text="The Masters Behind Every"
+                                text="The Masters"
                                 className="builders-title-line"
                                 delay={45}
                                 duration={1.2}
@@ -55,7 +55,7 @@ const MeetTheBuilders = () => {
                                 tag="span"
                             />
                             <SplitText
-                                text="Build"
+                                text="Behind Every Build"
                                 className="builders-title-line"
                                 delay={45}
                                 duration={1.2}
@@ -80,14 +80,14 @@ const MeetTheBuilders = () => {
             {/* Main Alternating Builders Section */}
             <section className="builders-main-section">
                 <div className="builders-main-container">
-                    
+
                     {/* Builder 1: Barbara Ferrentino (Content Left, Image Right) */}
                     <div className="builder-row">
                         <div className="builder-content-col reveal-zoom">
                             <span className="builder-role-tag">CO-FOUNDER &amp; 1ST WOMAN CERTIFIED MASTER BUILDER</span>
                             <h2 className="builder-name">Barbara Ferrentino</h2>
                             <div className="builder-accent-line"></div>
-                            
+
                             <p className="builder-bio">
                                 Barbara is not only the 1st Woman Certified Master Builder; she is also a leader in and out of the office, and a sweet heart of a mom, Nana, and dog mom. You may see her walking sites, or walking Toby, her poodle, around the neighborhood. She is the reason for the company existing today and the passion behind building dreams.
                             </p>
@@ -140,12 +140,9 @@ const MeetTheBuilders = () => {
                             <span className="builder-role-tag">CO-OWNER &amp; EXECUTIVE DIRECTOR OF CONSTRUCTION</span>
                             <h2 className="builder-name">Shawna Ferrentino</h2>
                             <div className="builder-accent-line"></div>
-
-                            <blockquote className="builder-quote-box">
-                                <p>
-                                    "My vision is to build more than just structures. I strive to create lasting value by delivering projects with precision, integrity, and innovation. As a woman in construction, I am committed to empowering others in the industry while giving back through active community involvement. Every project is an opportunity to strengthen connections, uplift people, and leave a positive legacy for future generations."
-                                </p>
-                            </blockquote>
+                            <p className="builder-bio">
+                              My vision is to build more than just structures. I strive to create lasting value by delivering projects with precision, integrity, and innovation. As a woman in construction, I am committed to empowering others in the industry while giving back through active community involvement. Every project is an opportunity to strengthen connections, uplift people, and leave a positive legacy for future generations.
+                            </p>
                         </div>
 
                         <div className="builder-img-col reveal-zoom" data-delay="150">

@@ -166,7 +166,7 @@ const Contact = () => {
                             <p className="contact-locality-desc">
                                 Rooted in Ocala, our fleets and project crews cover eight counties, delivering generational masonry, custom carpentry, and architectural finishes.
                             </p>
-                            <div className="locality-counties-grid">
+                            <div className="locality-counties-grid v2">
                                 <ul>
                                     <li><span className="yellow-dot">•</span> Marion County</li>
                                     <li><span className="yellow-dot">•</span> Lake County</li>
