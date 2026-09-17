@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import './style/style.css';
 import logo from '../assets/ferrentino-logo.png';
 
@@ -7,6 +7,48 @@ const Navbar = () => {
     const location = useLocation();
     const isDarkNavbarPage = location.pathname === '/estimator' || location.pathname === '/project-view';
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isMobileExtraOpen, setIsMobileExtraOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 40) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    // Close desktop dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    // Close menus when route changes
+    useEffect(() => {
+        setIsDropdownOpen(false);
+        setIsMobileMenuOpen(false);
+        setIsMobileExtraOpen(false);
+    }, [location.pathname]);
 
     useEffect(() => {
         if (isMobileMenuOpen) {
@@ -28,16 +70,17 @@ const Navbar = () => {
 
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
+        setIsMobileExtraOpen(false);
     };
 
     return (
-        <header className={`site-header ${isDarkNavbarPage ? 'site-header-dark-text' : ''}`}>
+        <header className={`site-header ${isDarkNavbarPage ? 'site-header-dark-text' : ''} ${isScrolled ? 'is-scrolled' : ''}`}>
             {/* Top Utility Bar */}
             <div className="top-bar">
                 <div className="top-bar-container">
                     <div className="top-bar-right">
                         <div className="social-icons">
-                            <a href="https://www.facebook.com/ferrentinoandson/" aria-label="Facebook" target='_blank'><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/ferrentinoandson/" aria-label="Facebook" target='_blank' rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
                             <a href="#instagram" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
                             <a href="#linkedin" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
                             <a href="#youtube" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
@@ -62,45 +105,76 @@ const Navbar = () => {
                 <div className="navbar-container">
                     {/* Logo */}
                     <div className="nav-logo">
-                        <a href="/">
+                        <Link to="/">
                             <img src={logo} alt="Ferrentino & Son, LLC" />
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Desktop Menu */}
                     <ul className="nav-menu">
                         <li className="nav-item">
-                            <a href="/about" className="nav-link">
+                            <Link to="/about" className="nav-link">
                                 <span className="nav-sub">Ferrentino <span className="highlight-yellow">& Son</span> </span>
                                 <span className="nav-main">About Us</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a href="/services" className="nav-link">
+                            <Link to="/services" className="nav-link">
                                 <span className="nav-sub">Our<span className="highlight-yellow"> Work</span></span>
                                 <span className="nav-main">Services</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a href="/meet-the-builders" className="nav-link">
+                            <Link to="/meet-the-builders" className="nav-link">
                                 <span className="nav-sub">Meet<span className="highlight-yellow"> The</span></span>
                                 <span className="nav-main">Builders</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a href="/projects" className="nav-link nav-link-single">Projects</a>
+                            <Link to="/projects" className="nav-link nav-link-single">Projects</Link>
                         </li>
                         <li className="nav-item">
-                            <a href="/estimator" className="nav-link nav-link-single">Project Estimator</a>
+                            <Link to="/estimator" className="nav-link nav-link-single">Project Estimator</Link>
                         </li>
                         <li className="nav-item">
-                            <a href="/contact" className="nav-link nav-link-single">Contact</a>
+                            <Link to="/contact" className="nav-link nav-link-single">Contact</Link>
                         </li>
+                        
+                        {/* More Pages Dropdown (FontAwesome Grip Lines Icon) */}
+                        <li className="nav-item nav-dropdown-wrapper" ref={dropdownRef}>
+                            <button
+                                className={`nav-grip-btn ${isDropdownOpen ? 'active' : ''}`}
+                                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                aria-label="More Pages"
+                                aria-expanded={isDropdownOpen}
+                            >
+                                <i className="fa-solid fa-grip-lines"></i>
+                            </button>
+                            <div className={`nav-dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
+                                <Link to="/contractor" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
+                                    <span>Subcontractor Application</span>
+                                    <i className="fa-solid fa-arrow-right-long"></i>
+                                </Link>
+                                <Link to="/ask-to-expert" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
+                                    <span>Ask to Expert</span>
+                                    <i className="fa-solid fa-arrow-right-long"></i>
+                                </Link>
+                                <Link to="/area-we-serve" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
+                                    <span>Area We Serve</span>
+                                    <i className="fa-solid fa-arrow-right-long"></i>
+                                </Link>
+                                <Link to="/testimonials" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
+                                    <span>Testimonials</span>
+                                    <i className="fa-solid fa-arrow-right-long"></i>
+                                </Link>
+                            </div>
+                        </li>
+
                         <li className="nav-item nav-consultation">
                             <i className="fa-solid fa-phone icon-yellow consultation-icon"></i>
-                            <a href="/contact" className="consultation-text">
+                            <Link to="/contact" className="consultation-text">
                                 Book Your Design Consultation
-                            </a>
+                            </Link>
                         </li>
                     </ul>
 
@@ -135,12 +209,52 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* 4 Social Icons in one row */}
-                    <div className="mobile-social-row">
-                        <a href="https://www.facebook.com/ferrentinoandson/" aria-label="Facebook" target='_blank'><i className="fa-brands fa-facebook-f"></i></a>
-                        <a href="#instagram" aria-label="Instagram" target='_blank'><i className="fa-brands fa-instagram"></i></a>
-                        <a href="#linkedin" aria-label="LinkedIn" target='_blank'><i className="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#youtube" aria-label="YouTube" target='_blank'><i className="fa-brands fa-youtube"></i></a>
+                    {/* Social Icons row + FontAwesome Grip Lines Icon on Right */}
+                    <div className="mobile-social-bar-container">
+                        <div className="mobile-social-row">
+                            <a href="https://www.facebook.com/ferrentinoandson/" aria-label="Facebook" target='_blank' rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="#instagram" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+                            <a href="#linkedin" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#youtube" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
+                        </div>
+                        <button
+                            className={`mobile-grip-toggle-btn ${isMobileExtraOpen ? 'active' : ''}`}
+                            onClick={() => setIsMobileExtraOpen(!isMobileExtraOpen)}
+                            aria-label="Toggle extra pages"
+                        >
+                            <i className="fa-solid fa-grip-lines"></i>
+                        </button>
+                    </div>
+
+                    {/* Expandable Extra Pages on Mobile when grip icon clicked */}
+                    <div className={`mobile-extra-dropdown ${isMobileExtraOpen ? 'open' : ''}`}>
+                        <div className="mobile-extra-header-badge">More Pages</div>
+                        <ul className="mobile-extra-links-list">
+                            <li>
+                                <Link to="/contractor" onClick={closeMobileMenu}>
+                                    <span>Subcontractor Application</span>
+                                    <i className="fa-solid fa-chevron-right"></i>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/ask-to-expert" onClick={closeMobileMenu}>
+                                    <span>Ask to Expert</span>
+                                    <i className="fa-solid fa-chevron-right"></i>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/area-we-serve" onClick={closeMobileMenu}>
+                                    <span>Area We Serve</span>
+                                    <i className="fa-solid fa-chevron-right"></i>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/testimonials" onClick={closeMobileMenu}>
+                                    <span>Testimonials</span>
+                                    <i className="fa-solid fa-chevron-right"></i>
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
 
                     {/* Horizontal Divider line */}
@@ -148,18 +262,18 @@ const Navbar = () => {
 
                     {/* Nav items list left aligned large text */}
                     <ul className="mobile-menu-list">
-                        <li><a href="/" onClick={closeMobileMenu}>Home</a></li>
-                        <li><a href="/about" onClick={closeMobileMenu}>About Us</a></li>
-                        <li><a href="/services" onClick={closeMobileMenu}>Services</a></li>
-                        <li><a href="/meet-the-builders" onClick={closeMobileMenu}>Meet The Builders</a></li>
-                        <li><a href="/projects" onClick={closeMobileMenu}>Projects</a></li>
-                        <li><a href="/estimator" onClick={closeMobileMenu}>Project Estimator</a></li>
-                        <li><a href="/contact" onClick={closeMobileMenu}>Contact</a></li>
+                        <li><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
+                        <li><Link to="/about" onClick={closeMobileMenu}>About Us</Link></li>
+                        <li><Link to="/services" onClick={closeMobileMenu}>Services</Link></li>
+                        <li><Link to="/meet-the-builders" onClick={closeMobileMenu}>Meet The Builders</Link></li>
+                        <li><Link to="/projects" onClick={closeMobileMenu}>Projects</Link></li>
+                        <li><Link to="/estimator" onClick={closeMobileMenu}>Project Estimator</Link></li>
+                        <li><Link to="/contact" onClick={closeMobileMenu}>Contact</Link></li>
                     </ul>
 
                     {/* Featured Design Consultation CTA Block */}
                     <div className="mobile-consultation-container">
-                        <a href="#consultation" className="mobile-consultation-card" onClick={closeMobileMenu}>
+                        <Link to="/contact" className="mobile-consultation-card" onClick={closeMobileMenu}>
                             <div className="consultation-card-icon">
                                 <i className="fa-solid fa-phone"></i>
                             </div>
@@ -168,7 +282,7 @@ const Navbar = () => {
                                 <span className="consultation-card-subtitle">Connect with our construction team</span>
                             </div>
                             <i className="fa-solid fa-chevron-right consultation-card-arrow"></i>
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Footer with contact number & email */}

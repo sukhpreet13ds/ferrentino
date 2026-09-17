@@ -21,6 +21,8 @@ import ProjectView from "./pages/ProjectView";
 import AskToExpert from "./pages/AskToExpert";
 import Article from "./pages/Article";
 import AreaWeServe from "./pages/AreaWeServe";
+import AreaWeServeView from "./pages/AreaWeServeView";
+import Testimonials from "./pages/Testimonials";
 
 function RouteObserver() {
   const location = useLocation();
@@ -94,6 +96,8 @@ function App() {
           <Route path="/ask-to-expert" element={<AskToExpert />} />
           <Route path="/articles" element={<Article />} />
           <Route path="/area-we-serve" element={<AreaWeServe />} />
+          <Route path="/area-we-serve-view" element={<AreaWeServeView />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/meet-the-builders" element={<MeetTheBuilders />} />
           <Route path="/privacy-and-policy" element={<Privacy />} />
           <Route path="/terms-and-conditions" element={<Terms />} />

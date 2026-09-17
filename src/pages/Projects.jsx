@@ -6,11 +6,11 @@ import SplitText from '../components/SplitText';
 
 // Project Images imported from assets
 import ferrentino1Img from '../assets/ferrentino1.jpg';
-import livingImg from '../assets/living.jpg';
-import kitchenImg from '../assets/kitchen.jpg';
-import bathroomImg from '../assets/bathroom.jpg';
-import outdoorProImg from '../assets/outdoor-pro.jpg';
-import innerTwo2Img from '../assets/inner-two2.jpg';
+import livingImg from '../assets/project22.jpg';
+import kitchenImg from '../assets/project33.jpg';
+import bathroomImg from '../assets/project44.jpg';
+import outdoorProImg from '../assets/project55.jpg';
+import innerTwo2Img from '../assets/project66.jpg';
 import ReadyCta from '../components/ReadyCta';
 
 const projectsList = [
@@ -167,11 +167,10 @@ const Projects = () => {
 
                     {/* 6 Boxes Grid */}
                     <div className="projects-grid-container">
-                        {filteredProjects.map((project, idx) => (
+                        {filteredProjects.map((project) => (
                             <div
                                 key={project.id}
-                                className="portfolio-project-card reveal-zoom"
-                                data-delay={(idx % 3 + 1) * 120}
+                                className="portfolio-project-card is-visible"
                                 style={{ cursor: 'pointer' }}
                                 onClick={() => navigate('/project-view')}
                             >

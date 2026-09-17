@@ -1,23 +1,60 @@
-/* Component Style for Navbar - Default Styles (No Media Queries) */
-
 .site-header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 9999;
     background: linear-gradient(to bottom,
             rgba(0, 0, 0, 0.90) 0%,
             rgba(0, 0, 0, 0.65) 45%,
             rgba(0, 0, 0, 0.25) 75%,
             rgba(0, 0, 0, 0) 100%);
     font-family: 'Roboto', sans-serif;
+    transition: background-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Scrolled Header Style */
+.site-header.is-scrolled {
+    background: rgba(17, 18, 19, 0.96) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+.site-header.is-scrolled .top-bar {
+    display: none !important;
+}
+
+.site-header.is-scrolled .main-navbar {
+    padding: 8px 40px 10px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.site-header.is-scrolled .nav-logo img {
+    height: 75px;
+    transition: height 0.3s ease;
+}
+
+/* When scrolled on dark text pages (like Estimator/ProjectView), keep text clear on blackish background */
+.site-header.is-scrolled.site-header-dark-text .social-icons a,
+.site-header.is-scrolled.site-header-dark-text .top-contact-item a,
+.site-header.is-scrolled.site-header-dark-text .nav-sub,
+.site-header.is-scrolled.site-header-dark-text .nav-main,
+.site-header.is-scrolled.site-header-dark-text .nav-link-single,
+.site-header.is-scrolled.site-header-dark-text .consultation-text,
+.site-header.is-scrolled.site-header-dark-text .mobile-hamburger-btn {
+    color: #ffffff !important;
+}
+
+.site-header.is-scrolled.site-header-dark-text .nav-consultation {
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
 /* Top Utility Bar */
 .top-bar {
     width: 100%;
     padding: 10px 40px;
+    transition: all 0.3s ease;
 }
 
 .top-bar-container {
@@ -157,6 +194,108 @@
 
 .nav-link-single:hover {
     color: var(--primary-color);
+}
+
+/* Nav Dropdown Wrapper & Grip Lines Button */
+.nav-dropdown-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-grip-btn {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.nav-grip-btn:hover,
+.nav-grip-btn.active {
+    color: var(--primary-color) !important;
+    background: transparent !important;
+    transform: scale(1.1);
+}
+
+/* Desktop Dropdown Menu Panel - Clean White Design (Click only) */
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 18px);
+    right: -10px;
+    min-width: 280px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: none;
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.98);
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.25s ease;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.nav-dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.nav-dropdown-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 22px;
+    color: #111213;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-dropdown-link span {
+    transition: transform 0.22s ease;
+}
+
+.nav-dropdown-link i {
+    font-size: 13px;
+    color: var(--primary-color);
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.nav-dropdown-link:hover {
+    background: #f8f9fa;
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    padding-left: 26px;
+}
+
+.nav-dropdown-link:hover span {
+    transform: translateX(2px);
+}
+
+.nav-dropdown-link:hover i {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .nav-consultation {
@@ -312,24 +451,31 @@
     transform: rotate(90deg);
 }
 
-/* 4 Social Icons in One Row */
+/* Social Icons row + FontAwesome Grip Lines Icon container */
+.mobile-social-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
 .mobile-social-row {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 12px;
 }
 
 .mobile-social-row a {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     border: 1px solid #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #111213;
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: none;
     transition: all 0.3s ease;
     background-color: rgba(255, 255, 255, 0.85);
@@ -341,6 +487,105 @@
     border-color: var(--primary-color);
     color: #111213;
     transform: translateY(-2px);
+}
+
+/* Mobile Grip Toggle Button */
+.mobile-grip-toggle-btn {
+    width: 44px;
+    height: 44px;
+    border: none !important;
+    background: transparent !important;
+    color: #111213;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    box-shadow: none !important;
+}
+
+.mobile-grip-toggle-btn.active,
+.mobile-grip-toggle-btn:hover {
+    color: var(--primary-color) !important;
+    background: transparent !important;
+    transform: scale(1.12);
+}
+
+/* Mobile Extra Pages Dropdown - Simple White Style */
+.mobile-extra-dropdown {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s ease,
+                margin 0.25s ease;
+    background: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-extra-dropdown.open {
+    max-height: 380px;
+    opacity: 1;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    padding: 14px 14px;
+}
+
+.mobile-extra-header-badge {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #888888;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mobile-extra-links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-extra-links-list li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    color: #111213;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: all 0.2s ease;
+}
+
+.mobile-extra-links-list li a i {
+    font-size: 12px;
+    color: #888888;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-extra-links-list li a:hover,
+.mobile-extra-links-list li a:active {
+    background: rgba(251, 199, 5, 0.15);
+    color: var(--primary-color);
+    transform: translateX(3px);
+}
+
+.mobile-extra-links-list li a:hover i,
+.mobile-extra-links-list li a:active i {
+    color: var(--primary-color);
+    transform: translateX(2px);
 }
 
 /* Divider Line */
@@ -1305,6 +1550,22 @@
 .site-header.site-header-dark-text .consultation-text,
 .site-header.site-header-dark-text .mobile-hamburger-btn {
     color: #000000 !important;
+}
+
+.site-header.site-header-dark-text .nav-grip-btn {
+    color: #000000 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.site-header.site-header-dark-text .nav-grip-btn:hover,
+.site-header.site-header-dark-text .nav-grip-btn.active {
+    color: var(--primary-color) !important;
+    background: transparent !important;
+}
+
+.site-header.is-scrolled.site-header-dark-text .nav-grip-btn {
+    color: #ffffff !important;
 }
 
 .site-header.site-header-dark-text .main-navbar {

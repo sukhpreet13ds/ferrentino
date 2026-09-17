@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 import './style/style.css';
 
 // Assets
-import contactHeroBg from '../assets/contact-us-hero.jpg';
-import projectRoofingImg from '../assets/project-roofing.jpg';
-import bathImg from '../assets/bath.jpg';
-import feature1Img from '../assets/feature-1.jpg';
-import feature2Img from '../assets/feature-2.jpg';
-import ferrentino2Img from '../assets/ferrentino2.jpg';
-import ferrentino3Img from '../assets/ferrentino3.jpg';
-import makingRightImg from '../assets/making-right.jpg';
-import livingImg from '../assets/living.jpg';
-import kitchenImg from '../assets/kitchen.jpg';
-import projectOutdoorImg from '../assets/project-outdoor.jpg';
-import roomImg from '../assets/room.jpg';
+import contactHeroBg from '../assets/ask-expert-bg.jpg';
+import projectRoofingImg from '../assets/expert11.png';
+import bathImg from '../assets/expert22.png';
+import feature1Img from '../assets/expert33.png';
+import feature2Img from '../assets/expert44.png';
+import ferrentino2Img from '../assets/expert55.png';
+import ferrentino3Img from '../assets/expert66.png';
+import makingRightImg from '../assets/expert77.png';
+import livingImg from '../assets/expert88.png';
+import kitchenImg from '../assets/expert99.png';
+import projectOutdoorImg from '../assets/expert0.png';
+import roomImg from '../assets/expert00.png';
 import SplitText from '../components/SplitText';
 
 const AskToExpert = () => {
@@ -84,7 +84,7 @@ const AskToExpert = () => {
             id: 4,
             author: 'EDWARD "CICC" FERRENTINO',
             date: '11/22/25',
-            img: ferrentino2Img,
+            img: feature2Img ,
             title: 'Industry Overview and Career Pathway to Carpentry',
             stats: [
                 { label: 'Total Employed', val: '1,784' },
@@ -96,7 +96,7 @@ const AskToExpert = () => {
             id: 5,
             author: 'EDWARD "CICC" FERRENTINO',
             date: '10/18/25',
-            img: makingRightImg,
+            img:  ferrentino2Img,
             title: '6 Steps of a Successful Remodel',
             desc: 'Your 6 steps remodel guide for an exciting home transformation! Strategize the way you live in your home. Use this guide to plan thoroughly, know what to expect, and enjoy the process.'
         },
@@ -104,7 +104,7 @@ const AskToExpert = () => {
             id: 6,
             author: 'EDWARD "CICC" FERRENTINO',
             date: '9/28/25',
-            img: livingImg,
+            img: ferrentino3Img,
             title: 'Is an Addition The Best Way to Develop your Properties Value in Ocala, FL?',
             desc: 'When you are thinking about improving your home, major upgrades offer a better return on investment than a small planned addition. Whether you are building out a new bedroom, expanding the kitchen, or adding a sunroom, a home addition not only enhances your living space—it also increases resale value.'
         },
@@ -112,7 +112,7 @@ const AskToExpert = () => {
             id: 7,
             author: 'EDWARD "CICC" FERRENTINO',
             date: '7/12/25',
-            img: feature2Img,
+            img:  makingRightImg,
             title: 'How Long Does it Take to Get a Permit in Ocala, FL – and What is the Process?',
             desc: 'As Ferrentino & Son Construction, we know how important it is to stay on schedule with your home improvement or construction project. One of the most common questions we hear from clients is: “How long does it take to get a permit in Ocala, Florida?” The answer depends on...'
         },
@@ -120,7 +120,7 @@ const AskToExpert = () => {
             id: 8,
             author: 'EDWARD "CICC" FERRENTINO',
             date: '6/22/25',
-            img: kitchenImg,
+            img: livingImg,
             title: 'How Much does a Kitchen Remodel Cost in Ocala?',
             desc: 'The cost of a kitchen remodel in Ocala depends on numerous factors, including the size and condition of your kitchen, the materials and finishes you choose, the scope of work, and whether any structural changes are involved. With so many variables, estimating the cost of a remodel...'
         },
@@ -128,7 +128,7 @@ const AskToExpert = () => {
             id: 9,
             author: 'EDWARD "CICC" FERRENTINO',
             date: '5/12/25',
-            img: projectOutdoorImg,
+            img: kitchenImg,
             title: 'What is the Typical Timeline for a Home Remodeling Project? From First Idea to Final Walkthrough',
             desc: 'If you are thinking about remodeling your home, you may be wondering how long total structural process takes. Where to start? While most people focus on the construction phase, the full remodel journey begins...'
         },
@@ -136,7 +136,7 @@ const AskToExpert = () => {
             id: 10,
             author: 'EDWARD "CICC" FERRENTINO',
             date: '4/25/25',
-            img: roomImg,
+            img:   projectOutdoorImg,
             title: 'What Should My Builder be Charging for Their Overhead and Profit?',
             desc: 'Remodeling contractors should aim to achieve a gross profit margin of approximately 25% to 40%, which includes their overhead and profit. This typically translates into a profit margin of 4% to 7%, representing profit after all operating expenses are accounted for.'
         },
@@ -144,7 +144,7 @@ const AskToExpert = () => {
             id: 11,
             author: 'EDWARD "CICC" FERRENTINO',
             date: '3/15/25',
-            img: ferrentino3Img,
+            img: roomImg,
             title: 'Why Hire a Licensed Contractor?',
             desc: 'Why is it so important to hire a licensed contractor in the first place? Anyone can claim to have 20-30+ years in construction, but can they prove it? Without proof, not just anyone can build. Mandatory licensing sets accountable standards.'
         }

@@ -1389,15 +1389,15 @@ body {
         gap: 20px !important;
     }
 
-    .core-cards-wrapper > .core-card:nth-child(1),
-    .core-cards-wrapper > .core-card:nth-child(2),
-    .core-cards-wrapper > .core-card:nth-child(3),
-    .core-cards-wrapper > .core-card:nth-child(4) {
+    .core-cards-wrapper>.core-card:nth-child(1),
+    .core-cards-wrapper>.core-card:nth-child(2),
+    .core-cards-wrapper>.core-card:nth-child(3),
+    .core-cards-wrapper>.core-card:nth-child(4) {
         grid-column: span 1 !important;
         width: 100% !important;
     }
 
-    .core-cards-wrapper > .core-card:nth-child(5) {
+    .core-cards-wrapper>.core-card:nth-child(5) {
         grid-column: span 2 !important;
         width: 100% !important;
     }
@@ -2240,9 +2240,10 @@ body {
         padding-top: 8px;
         gap: 4px;
     }
-    .card-category-tag svg{
-width: 8px;
-height: 8px;
+
+    .card-category-tag svg {
+        width: 8px;
+        height: 8px;
     }
 
     /* Services Hero & Grid Section - Mobile (<= 576px 2x2 Grid) */
@@ -2670,7 +2671,7 @@ height: 8px;
     /* AskToExpert Page - Mobile */
     .ate-articles-section,
     .ate-questions-section {
-        padding: 40px 16px;
+        padding: 40px 12px;
     }
 
     .ate-main-title {
@@ -2679,17 +2680,37 @@ height: 8px;
 
     .ate-cards-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
+        gap: 6px !important;
     }
 
     .ate-card {
-        padding: 12px !important;
+        padding: 6px !important;
         border-radius: 8px !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     .ate-card-img-box {
+        order: 1 !important;
         height: 110px !important;
-        margin-bottom: 12px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .ate-card-top-meta {
+        order: 2 !important;
+        font-size: 9px !important;
+        margin-bottom: 8px !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .ate-card-body {
+        order: 3 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 !important;
+        justify-content: space-between !important;
     }
 
     .ate-card-title {
@@ -2698,19 +2719,15 @@ height: 8px;
         margin-bottom: 8px !important;
     }
 
-    .ate-card-top-meta {
-        font-size: 9px !important;
-        margin-bottom: 10px !important;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2px;
+    .ate-card-desc,
+    .ate-card-stats-list,
+    .ate-stat-row {
+        display: none !important;
     }
 
-    .ate-stat-row,
-    .ate-card-desc {
-        font-size: 11px !important;
-        line-height: 1.4 !important;
-        margin-bottom: 1px !important;
+    .ate-card-footer {
+        padding-top: 8px !important;
+        margin-top: auto !important;
     }
 
     .ate-read-more {
@@ -2886,7 +2903,7 @@ height: 8px;
         font-size: 13.5px;
         margin-bottom: 16px;
     }
-  
+
     .art-gold-btn {
         font-size: 11px;
         gap: 6px;
@@ -3024,15 +3041,15 @@ height: 8px;
         gap: 12px !important;
     }
 
-    .core-cards-wrapper > .core-card:nth-child(1),
-    .core-cards-wrapper > .core-card:nth-child(2),
-    .core-cards-wrapper > .core-card:nth-child(3),
-    .core-cards-wrapper > .core-card:nth-child(4) {
+    .core-cards-wrapper>.core-card:nth-child(1),
+    .core-cards-wrapper>.core-card:nth-child(2),
+    .core-cards-wrapper>.core-card:nth-child(3),
+    .core-cards-wrapper>.core-card:nth-child(4) {
         grid-column: span 1 !important;
         width: 100% !important;
     }
 
-    .core-cards-wrapper > .core-card:nth-child(5) {
+    .core-cards-wrapper>.core-card:nth-child(5) {
         grid-column: span 2 !important;
         width: 100% !important;
     }
@@ -3240,14 +3257,33 @@ height: 8px;
         padding: 12px 20px;
         font-size: 14px;
     }
+
     .featured-tag {
-font-size: 10px;
+        font-size: 10px;
     }
-    .pv-slider-overlay{
+
+    .pv-slider-overlay {
         padding: 20px 12px;
     }
-    .pv-block-subtitle {
 
-font-size: 16px;
+    .pv-block-subtitle,
+    .test-sub-desc {
+        font-size: 16px;
+    }
+
+    .test-main-title {
+        font-size: 28px;
+    }
+
+    .test-section-container {
+        padding: 0 16px;
+    }
+
+    .site-header.is-scrolled .nav-logo img {
+        height: 55px;
+    }
+
+    .site-header.is-scrolled .main-navbar {
+        padding: 10px 15px;
     }
 }

@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import './style/style.css';
 
 // Assets
-import contactHeroBg from '../assets/contact-us-hero.jpg';
-import projectRoofingImg from '../assets/project-roofing.jpg';
+import contactHeroBg from '../assets/article-view.jpg';
+import projectRoofingImg from '../assets/article-inner.jpg';
+import avatar from '../assets/Edward.jpg';
 import SplitText from '../components/SplitText';
 
 const Article = () => {
@@ -143,7 +144,7 @@ const Article = () => {
 
                         <div className="art-author-row">
                             <div className="art-author-avatar">
-                                <i className="fa-solid fa-user-tie"></i>
+                                <img src={avatar} alt="Edward Cicc Ferrentino" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
                             </div>
                             <span className="art-author-name">Written By Edward Cicc Ferrentino</span>
                         </div>

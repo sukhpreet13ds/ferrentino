@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 import './style/style.css';
 
 // Assets
-import contactHeroBg from '../assets/contact-us-hero.jpg';
+import contactHeroBg from '../assets/area-bg.jpg';
 import mapImg from '../assets/map.png';
 import locationIcon from '../assets/location.png';
-import kitchenBgImg from '../assets/kitchen-bg.jpg';
-import livingImg from '../assets/living.jpg';
-import ferrentino1Img from '../assets/ferrentino1.jpg';
-import bathImg from '../assets/bath.jpg';
-import feature1Img from '../assets/feature-1.jpg';
-import interierImg from '../assets/interier.jpg';
-import feature2Img from '../assets/feature-2.jpg';
-import roomImg from '../assets/room.jpg';
+import kitchenBgImg from '../assets/area111.png';
+import livingImg from '../assets/area222.png';
+import ferrentino1Img from '../assets/area333.png';
+import bathImg from '../assets/area444.png';    
+import feature1Img from '../assets/area555.png';
+import interierImg from '../assets/area666.png';
+import feature2Img from '../assets/area777.png';
+import roomImg from '../assets/area888.png';
 import SplitText from '../components/SplitText';
 import ReadyCta from '../components/ReadyCta';
 
@@ -62,7 +62,7 @@ const AreaWeServe = () => {
         {
             id: 1,
             isHq: true,
-            hqBadge: 'OPERATIONAL HQ',
+            // hqBadge: 'OPERATIONAL HQ',
             county: 'Marion County',
             hub: 'PRIMARY HUB: OCALA (HOME BASE)',
             desc: 'Our ancestral heartland and operational headquarters. We offer full-scale residential custom builds, massive commercial renovations, and detailed kitchen bath transformations across Marion County.',
@@ -157,7 +157,7 @@ const AreaWeServe = () => {
                     <div className="contact-hero-content">
                         <span className="contact-hero-tag">
                             <SplitText
-                                text="COMMUNITY & REGIONAL COVERAGE"
+                                text="Central Florida Coverage"
                                 className="contact-tag-text"
                                 delay={40}
                                 duration={0.85}
@@ -175,20 +175,6 @@ const AreaWeServe = () => {
                         <h1 className="contact-hero-title">
                             <SplitText
                                 text="Areas We Serve"
-                                className="contact-title-line"
-                                delay={45}
-                                duration={1.2}
-                                ease="power3.out"
-                                splitType="chars"
-                                from={{ opacity: 0, y: 40 }}
-                                to={{ opacity: 1, y: 0 }}
-                                threshold={0.01}
-                                rootMargin="0px"
-                                textAlign="left"
-                                tag="span"
-                            />
-                            <SplitText
-                                text="In Florida"
                                 className="contact-title-line"
                                 delay={45}
                                 duration={1.2}
@@ -277,16 +263,16 @@ const AreaWeServe = () => {
                         {countyCards.map((card, idx) => (
                             <Link
                                 key={card.id}
-                                to="/estimator"
+                                to="/area-we-serve-view"
                                 className="aws-card reveal-zoom"
                                 data-delay={(idx % 4) * 100}
                                 style={{ textDecoration: 'none' }}
                             >
                                 <div className="aws-card-img-box">
                                     <img src={card.img} alt={card.county} />
-                                    {card.isHq && (
+                                    {/* {card.isHq && (
                                         <span className="aws-hq-badge">{card.hqBadge}</span>
-                                    )}
+                                    )} */}
                                 </div>
 
                                 <div className="aws-card-body">

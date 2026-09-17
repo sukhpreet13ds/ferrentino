@@ -96,6 +96,7 @@ const Footer = () => {
                                 <li><Link to="/contractor">Subcontractor Application</Link></li>
                                 <li><Link to="/ask-to-expert">Ask to Expert</Link></li>
                                 <li><Link to="/area-we-serve">Area We Serve</Link></li>
+                                <li><Link to="/testimonials">Testimonials</Link></li>
                                 <li><Link to="/contact">Contact</Link></li>
                               
                             </ul>

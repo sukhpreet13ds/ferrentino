@@ -6,11 +6,11 @@ import './style/style.css';
 import ferrentino1Img from '../assets/ferrentino1.jpg';
 import ferrentino2Img from '../assets/ferrentino2.jpg';
 import ferrentino3Img from '../assets/ferrentino3.jpg';
-import kitchenImg from '../assets/kitchen.jpg';
+import kitchenImg from '../assets/projectview2.jpg';
 import livingImg from '../assets/living.jpg';
 import outdoorImg from '../assets/outdoor.jpg';
-import wholeHomeImg from '../assets/whole-home.jpg';
-import kitchenBgImg from '../assets/kitchen-bg.jpg';
+import wholeHomeImg from '../assets/living.jpg';
+import kitchenBgImg from '../assets/outdoor-pro.jpg';
 import ReadyCta from '../components/ReadyCta';
 
 const ProjectView = () => {
@@ -29,9 +29,9 @@ const ProjectView = () => {
         },
         {
             id: 1,
-            label: "CHEF'S KITCHEN",
+            label: "Wooden Design",
             img: kitchenImg,
-            title: "Bespoke Chef's Kitchen & Oak Cabinetry",
+            title: "Wooden Paneling Design",
             desc: 'Custom-crafted solid oak island, commercial gas range, and premium quartzite surfaces.'
         },
         {
@@ -285,16 +285,16 @@ const ProjectView = () => {
                             <div className="pv-portfolio-img-wrapper">
                                 <img src={wholeHomeImg} alt="Ocala Oak-Wood Remodel" />
                                 <div className="pv-card-badge-bar">
-                                    <span className="pv-card-badge">LIVEWELL RESIDENTIAL</span>
+                                    <span className="pv-card-badge">LIVING AREA</span>
                                     <span className="pv-card-location">Ocala, FL</span>
                                 </div>
                             </div>
                             <div className="pv-portfolio-card-body">
-                                <h3 className="pv-card-title">Ocala Oak-Wood Remodel</h3>
+                                <h3 className="pv-card-title">Living Room Makeover</h3>
                                 <p className="pv-card-desc">
-                                    A complete estate home remodel highlighting custom cabinetry, vaulted ceilings, and meticulous hardwood finishes.
+                                    Transforming a cozy living room into a spacious entertainment haven with modern finishes and thoughtful design.
                                 </p>
-                                <Link to="/projects" className="pv-card-link">
+                                <Link to="/project-view" className="pv-card-link">
                                     View Project Case Study →
                                 </Link>
                             </div>
@@ -305,16 +305,16 @@ const ProjectView = () => {
                             <div className="pv-portfolio-img-wrapper">
                                 <img src={kitchenBgImg} alt="Marion County Chef's Kitchen" />
                                 <div className="pv-card-badge-bar">
-                                    <span className="pv-card-badge">CUSTOM KITCHENS</span>
+                                    <span className="pv-card-badge">OUTDOOR LIVING</span>
                                     <span className="pv-card-location">Ocala, FL</span>
                                 </div>
                             </div>
                             <div className="pv-portfolio-card-body">
-                                <h3 className="pv-card-title">Marion County Chef's Kitchen</h3>
+                                <h3 className="pv-card-title">Marion County Outdoor Living</h3>
                                 <p className="pv-card-desc">
-                                    High-end remodel featuring commercial-grade range setups, warm solid oak structural posts, and custom quartz waterfalls.
+                                    Creating inviting outdoor living spaces that blend seamlessly with the natural beauty of Marion County.
                                 </p>
-                                <Link to="/projects" className="pv-card-link">
+                                <Link to="/project-view" className="pv-card-link">
                                     View Project Case Study →
                                 </Link>
                             </div>
