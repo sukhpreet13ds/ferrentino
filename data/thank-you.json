@@ -1,0 +1,10 @@
+{
+  "heroBg": "/images/service-bg.png",
+  "subtag": "MESSAGE RECEIVED",
+  "title": "Thank You!",
+  "description": "We appreciate you reaching out to Ferrentino & Son, LLC. Our team has received your submission and will review your request promptly. Expect to hear from one of our specialists soon!",
+  "primaryButtonText": "Return To Home",
+  "primaryButtonHref": "/",
+  "secondaryButtonText": "View Our Projects",
+  "secondaryButtonHref": "/projects"
+}

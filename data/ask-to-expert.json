@@ -1,0 +1,144 @@
+{
+  "heroBg": "/images/ask-expert-bg.jpg",
+  "heroTag": "ASK TO EXPERT",
+  "heroTitleLine1": "Knowledge Base",
+  "heroTitleLine2": "& Insights",
+  "heroDescription": "Articles, Guides, & Expert Advice from our master builders to help you make informed decisions for your custom construction project.",
+  "articlesSubtag": "KNOWLEDGE BASE & INSIGHTS",
+  "articlesTitle": "Articles, Guides, & Expert Advice",
+  "articles": [
+    {
+      "id": 1,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "11/22/25",
+      "image": "/images/expert11.png",
+      "title": "Industry Overview and Career Pathway to Construction & Utilities",
+      "stats": [
+        { "label": "Total Employed", "value": "32,650" },
+        { "label": "Average Wage - Journeyman", "value": "$53,365" },
+        { "label": "Average Wage - Utilities", "value": "$118,521" },
+        { "label": "Expected Demand (5 years)", "value": "28,490" }
+      ],
+      "description": ""
+    },
+    {
+      "id": 2,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "11/22/25",
+      "image": "/images/expert22.png",
+      "title": "Industry Overview and Career Pathway to Plumbing and HVAC",
+      "stats": [
+        { "label": "Total Employed", "value": "11,128" },
+        { "label": "Average Wage", "value": "$62,110" },
+        { "label": "Expected Demand (5 years)", "value": "9,545" }
+      ],
+      "description": ""
+    },
+    {
+      "id": 3,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "11/22/25",
+      "image": "/images/expert33.png",
+      "title": "Industry Overview and Career Pathway to Electrical",
+      "stats": [
+        { "label": "Total Employed", "value": "4,428" },
+        { "label": "Average Wage", "value": "$58,720" },
+        { "label": "Expected Demand (5 years)", "value": "2,745" }
+      ],
+      "description": ""
+    },
+    {
+      "id": 4,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "11/22/25",
+      "image": "/images/expert44.png",
+      "title": "Industry Overview and Career Pathway to Carpentry",
+      "stats": [
+        { "label": "Total Employed", "value": "1,784" },
+        { "label": "Average Wage", "value": "$43,760" },
+        { "label": "Expected Demand (5 years)", "value": "865" }
+      ],
+      "description": ""
+    },
+    {
+      "id": 5,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "10/18/25",
+      "image": "/images/expert55.png",
+      "title": "6 Steps of a Successful Remodel",
+      "stats": [],
+      "description": "Your 6 steps remodel guide for an exciting home transformation! Strategize the way you live in your home. Use this guide to plan thoroughly, know what to expect, and enjoy the process."
+    },
+    {
+      "id": 6,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "9/28/25",
+      "image": "/images/expert66.png",
+      "title": "Is an Addition The Best Way to Develop your Properties Value in Ocala, FL?",
+      "stats": [],
+      "description": "When you are thinking about improving your home, major upgrades offer a better return on investment than a small planned addition. Whether you are building out a new bedroom, expanding the kitchen, or adding a sunroom, a home addition not only enhances your living space—it also increases resale value."
+    },
+    {
+      "id": 7,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "7/12/25",
+      "image": "/images/expert77.png",
+      "title": "How Long Does it Take to Get a Permit in Ocala, FL – and What is the Process?",
+      "stats": [],
+      "description": "As Ferrentino & Son Construction, we know how important it is to stay on schedule with your home improvement or construction project. One of the most common questions we hear from clients is: “How long does it take to get a permit in Ocala, Florida?” The answer depends on..."
+    },
+    {
+      "id": 8,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "6/22/25",
+      "image": "/images/expert88.png",
+      "title": "How Much does a Kitchen Remodel Cost in Ocala?",
+      "stats": [],
+      "description": "The cost of a kitchen remodel in Ocala depends on numerous factors, including the size and condition of your kitchen, the materials and finishes you choose, the scope of work, and whether any structural changes are involved. With so many variables, estimating the cost of a remodel..."
+    },
+    {
+      "id": 9,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "5/12/25",
+      "image": "/images/expert99.png",
+      "title": "What is the Typical Timeline for a Home Remodeling Project? From First Idea to Final Walkthrough",
+      "stats": [],
+      "description": "If you are thinking about remodeling your home, you may be wondering how long total structural process takes. Where to start? While most people focus on the construction phase, the full remodel journey begins..."
+    },
+    {
+      "id": 10,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "4/25/25",
+      "image": "/images/expert0.png",
+      "title": "What Should My Builder be Charging for Their Overhead and Profit?",
+      "stats": [],
+      "description": "Remodeling contractors should aim to achieve a gross profit margin of approximately 25% to 40%, which includes their overhead and profit. This typically translates into a profit margin of 4% to 7%, representing profit after all operating expenses are accounted for."
+    },
+    {
+      "id": 11,
+      "author": "EDWARD \"CICC\" FERRENTINO",
+      "date": "3/15/25",
+      "image": "/images/expert00.png",
+      "title": "Why Hire a Licensed Contractor?",
+      "stats": [],
+      "description": "Why is it so important to hire a licensed contractor in the first place? Anyone can claim to have 20-30+ years in construction, but can they prove it? Without proof, not just anyone can build. Mandatory licensing sets accountable standards."
+    }
+  ],
+  "readMoreLink": "/articles",
+  "readMoreText": "READ MORE",
+  "questionsTitle": "Questions?",
+  "questionsDescription": "Do you have a question that we haven't answered? Fill out the form below and we will Ask The Expert! Edward and our design crews will review your inquiry and publish a detailed roadmap.",
+  "formTitle": "Submit Your Question",
+  "successMessage": "✓ Thank you! Your question has been submitted to our master builders.",
+  "firstNameLabel": "FIRST NAME",
+  "firstNamePlaceholder": "John",
+  "lastNameLabel": "LAST NAME",
+  "lastNamePlaceholder": "Doe",
+  "emailLabel": "EMAIL",
+  "emailPlaceholder": "johndoe@example.com",
+  "phoneLabel": "PHONE",
+  "phonePlaceholder": "(352) 555-0199",
+  "questionLabel": "YOUR QUESTION",
+  "questionPlaceholder": "Describe your remodeling, timeline, or structural question...",
+  "submitButtonText": "SUBMIT QUESTION"
+}

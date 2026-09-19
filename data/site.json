@@ -1,0 +1,24 @@
+{
+  "siteName": "Ferrentino & Son, LLC",
+  "logo": "/images/ferrentino-logo.png",
+  "favicon": "/favicon.ico",
+  "phone": "+1 352-237-3368",
+  "phoneDisplay": "+1 352-237-3368",
+  "email": "estimating@ferrentinoandson.com",
+  "address": "816 NE 31st Ave, Ocala, FL 34470, United States",
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/ferrentinoandson/",
+    "instagram": "#instagram",
+    "linkedin": "#linkedin",
+    "youtube": "#youtube"
+  },
+  "footerBbbImage": "/images/footer-business.png",
+  "footerProjectImages": [
+    "/images/bathroom.jpg",
+    "/images/room.jpg",
+    "/images/inner-two2.jpg",
+    "/images/outdoor-pro.jpg",
+    "/images/living.jpg"
+  ],
+  "copyrightText": "Copyright © 2026 Ferrentino and Son, LLC. All Rights Reserved."
+}

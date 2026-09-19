@@ -1,0 +1,44 @@
+{
+  "heroBg": "/images/service-bg.png",
+  "heroTag": "MEET THE BUILDERS",
+  "heroTitleLine1": "The Masters",
+  "heroTitleLine2": "Behind Every Build",
+  "heroDescription": "Decades of passion, generational expertise, and dedicated leadership driving every custom home and renovation project across Central Florida.",
+  "members": [
+    {
+      "id": 1,
+      "name": "Barbara Ferrentino",
+      "roleTag": "CO-FOUNDER & 1ST WOMAN CERTIFIED MASTER BUILDER",
+      "image": "/images/Barbara.jpg",
+      "bioParagraphs": [
+        "Barbara is not only the 1st Woman Certified Master Builder; she is also a leader in and out of the office, and a sweet heart of a mom, Nana, and dog mom. You may see her walking sites, or walking Toby, her poodle, around the neighborhood. She is the reason for the company existing today and the passion behind building dreams.",
+        "Barbara recently had an article written about her for the Habitat Ocala Woman Build."
+      ],
+      "linkText": "Click here and enjoy the read!",
+      "linkHref": "https://www.facebook.com/61575031022080/posts/122122506974834367/?mibextid=wwXIfr&rdid=AhHMfbKRw17tZndR#"
+    },
+    {
+      "id": 2,
+      "name": "Edward \"Cicc\" Ferrentino",
+      "roleTag": "4TH GENERATION BUILDER & 2ND GENERATION EDWARD",
+      "image": "/images/Edward.jpg",
+      "bioParagraphs": [
+        "4th generation builder and 2nd generation Edward, Cicc carries his legacy proudly. As son of the founder of Ferrentino & Son and the 1st Woman Certified Master Builder, Cicc was raised with a passion for building.",
+        "After the passing of his father, Cicc has made it his life’s mission to carry on the good name and unique quality of all of the great Ferrentinos before him."
+      ],
+      "linkText": "",
+      "linkHref": ""
+    },
+    {
+      "id": 3,
+      "name": "Shawna Ferrentino",
+      "roleTag": "CO-OWNER & EXECUTIVE DIRECTOR OF CONSTRUCTION",
+      "image": "/images/shawna.jpg",
+      "bioParagraphs": [
+        "My vision is to build more than just structures. I strive to create lasting value by delivering projects with precision, integrity, and innovation. As a woman in construction, I am committed to empowering others in the industry while giving back through active community involvement. Every project is an opportunity to strengthen connections, uplift people, and leave a positive legacy for future generations."
+      ],
+      "linkText": "",
+      "linkHref": ""
+    }
+  ]
+}

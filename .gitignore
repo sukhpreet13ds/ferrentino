@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Next.js
+.next
+out
+next-env.d.ts
+
+# Admin-uploaded media (runtime content, not source)
+/public/uploads/*
+!/public/uploads/.gitkeep
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

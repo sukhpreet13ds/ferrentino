@@ -1,0 +1,110 @@
+{
+  "heroBg": "/images/testi-bg.jpg",
+  "heroTag": "Generations of Craftsmanship",
+  "heroTitleLine1": "Reviews & ",
+  "heroTitleLine2": "Testimonials",
+  "heroDescription": "Discover how our generational craft, transparent communication, and meticulous attention to detail have helped families throughout Central Florida build and remodel their dream homes.",
+  "featured": {
+    "tag": "FEATURED KITCHEN CLIENT",
+    "quote": "After talking with several designers and remodeling contractors, we decided on Ferrentino & Son. They got what we wanted straight away and had plans done in less than a week. The best part is how the kitchen actually turned out. Amazing, simply amazing!",
+    "author": "John & Trisha D.",
+    "location": "Ocala Homeowners"
+  },
+  "storiesTag": "STORIES",
+  "storiesTitle": "Client Success Stories",
+  "storiesDesc": "Explore authentic experiences from our kitchen remodeling, bathroom remodeling, whole-home renovations, and custom build projects.",
+  "stories": [
+    {
+      "id": 1,
+      "category": "KITCHEN REMODELING",
+      "stars": 5,
+      "quote": "The design process was completely seamless. They re-architected our tight kitchen space into an open-plan culinary dream with exquisite cabinet details.",
+      "author": "Robert & Janice S.",
+      "location": "Marion County Homeowners",
+      "image": "/images/testi111.png"
+    },
+    {
+      "id": 2,
+      "category": "BATHROOM REMODELING",
+      "stars": 5,
+      "quote": "From gorgeous porcelain tile work to custom vanity carpentry, the master bath feels like a high-end spa. Every trade crew they brought in was polite and precise.",
+      "author": "Elena G.",
+      "location": "Ocala Resident",
+      "image": "/images/testi222.png"
+    },
+    {
+      "id": 3,
+      "category": "WHOLE-HOME RENOVATION",
+      "stars": 5,
+      "quote": "We preserved the historic bones of our estate while completely modernizing structural framing, electric, and luxury finishes. Stunning execution and complete transparency.",
+      "author": "The Sterling Family",
+      "location": "Central Florida",
+      "image": "/images/testi333.png"
+    },
+    {
+      "id": 4,
+      "category": "NEW CUSTOM BUILD",
+      "stars": 5,
+      "quote": "Building our dream home was a major undertaking, but their team’s multi-generational construction expertise gave us total confidence from the foundation to the roof beams.",
+      "author": "Marcus & Clara B.",
+      "location": "Williston Landowners",
+      "image": "/images/testi444.png"
+    }
+  ],
+  "googleIcon": "/images/google.png",
+  "googleTitle": "What Our Community Says on Google",
+  "googleReadReviewsHref": "https://www.google.com/search?q=Ferrentino+%26+Son,+LLC#lrd=0x88e62d6c82d40beb:0x97e5f30d1e18441f,1,,,,",
+  "googleWriteReviewHref": "https://www.google.com/search?q=Ferrentino+%26+Son,+LLC#lrd=0x88e62d6c82d40beb:0x97e5f30d1e18441f,3,,,",
+  "reviews": [
+    {
+      "id": 1,
+      "author": "Allysen Fitzpatrick",
+      "stats": "5 reviews · 1 photo · a month ago",
+      "stars": 5,
+      "text": "If I could give more than five stars I would! We have been so pleased with the communication and openness of cisc and Shawna. They made what seemed like a super complicated endeavor, to turn our carport into livable space, seem so flawless. The attention to detail, the quality of products, the fact that they use other small businesses in town where they can ... just simply the best. God hand picked them for our project and I feel like we have life long friends because of it . We will forever be grateful for them!!!",
+      "tags": [],
+      "avatarBg": "#EA4335",
+      "avatarLetter": "A"
+    },
+    {
+      "id": 2,
+      "author": "Kenneth La Combe",
+      "stats": "Local Guide · 39 reviews · 1 photo · 3 months ago",
+      "stars": 5,
+      "text": "Great price\nCheech and Shawn are down to earth easy to talk to and stand up people great to work with",
+      "tags": ["Positive: General construction"],
+      "avatarBg": "#4285F4",
+      "avatarLetter": "K"
+    },
+    {
+      "id": 3,
+      "author": "Shaun Pert",
+      "stats": "Local Guide · 14 reviews · 3 years ago",
+      "stars": 5,
+      "text": "They do great work at a great price. Do yourself a favor and call them for your needs. Truly professional and reliable.",
+      "tags": [],
+      "avatarBg": "#34A853",
+      "avatarLetter": "S"
+    },
+    {
+      "id": 4,
+      "author": "David Richardson",
+      "stats": "Local Guide · 22 reviews · 5 months ago",
+      "stars": 5,
+      "text": "Ferrentino & Son remodeled our master bathroom and built a custom closet. The craftsmanship is second to none. Reliable, punctuality, and great value throughout the entire project!",
+      "tags": [],
+      "avatarBg": "#FBBC05",
+      "avatarLetter": "D"
+    },
+    {
+      "id": 5,
+      "author": "Maria Gonzalez",
+      "stats": "8 reviews · 6 months ago",
+      "stars": 5,
+      "text": "Amazing team! They took care of everything including permits and design blueprints. Super communicative and finished ahead of schedule.",
+      "tags": [],
+      "avatarBg": "#9C27B0",
+      "avatarLetter": "M"
+    }
+  ]
+}

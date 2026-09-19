@@ -1,0 +1,140 @@
+{
+  "heroBg": "/images/service-bg.png",
+  "heroTag": "LEGAL INFORMATION",
+  "heroTitle": "Privacy Policy",
+  "effectiveDate": "Effective Date: September 15, 2026",
+  "introParagraphs": [
+    "Ferrentino & Son, LLC (\"Ferrentino & Son,\" \"we,\" \"us,\" or \"our\") respects your privacy and is committed to protecting the information you provide when you visit our website, contact us, request information, or inquire about our remodeling and construction services.",
+    "This Privacy Policy explains what information we may collect, how we use it, how we protect it, and the choices you may have regarding your information."
+  ],
+  "sections": [
+    {
+      "num": "1.",
+      "heading": "Information We Collect",
+      "body": [
+        "We may collect information that you voluntarily provide to us when you use our website or communicate with us, including:"
+      ],
+      "items": [
+        "Your name",
+        "Email address",
+        "Phone number",
+        "Mailing or project address",
+        "Information about your remodeling or construction project",
+        "Information you provide when requesting a consultation or estimate",
+        "Messages, questions, comments, or other information submitted through website forms",
+        "Any other information you choose to provide to us"
+      ],
+      "afterItems": [
+        "We may also automatically collect certain technical information when you visit our website, such as your IP address, browser type, device type, pages visited, referring website, and general website usage information."
+      ]
+    },
+    {
+      "num": "2.",
+      "heading": "How We Use Your Information",
+      "body": [
+        "Ferrentino & Son may use the information we collect to:"
+      ],
+      "items": [
+        "Respond to your questions and inquiries",
+        "Contact you regarding a requested consultation, estimate, or project",
+        "Understand your remodeling or construction needs",
+        "Provide and improve our services",
+        "Communicate with you about projects, services, or requests",
+        "Maintain and improve our website",
+        "Analyze website usage and performance",
+        "Protect the security and integrity of our website",
+        "Comply with applicable laws and legal obligations"
+      ],
+      "afterItems": [
+        "We do not use information submitted through our website for purposes unrelated to our business activities unless permitted or required by law."
+      ]
+    },
+    {
+      "num": "3.",
+      "heading": "Information Sharing",
+      "body": [
+        "Ferrentino & Son does not sell your personal information.",
+        "We may share information when reasonably necessary to operate our business or provide requested services. This may include sharing information with:"
+      ],
+      "items": [
+        "Service providers who assist with website hosting, technology, communications, or business operations",
+        "Contractors, subcontractors, designers, suppliers, or other project-related professionals when necessary to respond to or perform services you have requested",
+        "Professional advisers, such as attorneys, accountants, or insurers",
+        "Government authorities or other parties when required by law or when necessary to protect our legal rights"
+      ],
+      "afterItems": [
+        "Any information shared for business purposes will be handled in accordance with applicable legal requirements and, where appropriate, contractual obligations."
+      ]
+    },
+    {
+      "num": "4.",
+      "heading": "Cookies and Similar Technologies",
+      "body": [
+        "Our website may use cookies or similar technologies to help the website function properly, understand how visitors use the website, and improve the user experience.",
+        "Third-party services used on the website may also use cookies or similar technologies for analytics, website functionality, advertising, or other purposes.",
+        "You may be able to control or disable cookies through your web browser settings. Disabling certain cookies may affect the functionality of portions of the website."
+      ]
+    },
+    {
+      "num": "5.",
+      "heading": "Third-Party Services and Links",
+      "body": [
+        "Our website may contain links to third-party websites, services, social media platforms, review websites, or other external resources.",
+        "Ferrentino & Son is not responsible for the privacy practices, security, content, or policies of third-party websites. We encourage you to review the privacy policies of any third-party website you visit."
+      ]
+    },
+    {
+      "num": "6.",
+      "heading": "Communications",
+      "body": [
+        "If you provide your contact information through our website, we may use it to respond to your inquiry or communicate with you regarding requested services.",
+        "If you receive marketing or promotional communications from us, you may request to stop receiving such communications by contacting us using the information provided below.",
+        "Please note that certain service-related or administrative communications may still be sent when necessary."
+      ]
+    },
+    {
+      "num": "7.",
+      "heading": "Data Security",
+      "body": [
+        "We take reasonable administrative, technical, and organizational measures to protect information submitted through our website.",
+        "However, no method of transmitting information over the internet or storing information electronically is completely secure. Therefore, we cannot guarantee absolute security."
+      ]
+    },
+    {
+      "num": "8.",
+      "heading": "Children's Privacy",
+      "body": [
+        "Our website and services are intended for adults and homeowners, property owners, and other individuals seeking construction or remodeling services.",
+        "We do not knowingly collect personal information from children under the age of 13. If you believe that a child has provided personal information to us through the website, please contact us so that we can take appropriate action."
+      ]
+    },
+    {
+      "num": "9.",
+      "heading": "Your Privacy Rights",
+      "body": [
+        "Depending on where you live and applicable law, you may have certain rights regarding your personal information, including the right to request access to, correction of, or deletion of certain information.",
+        "To make a privacy-related request, please contact us using the information below. We may need to verify your identity before completing certain requests."
+      ]
+    },
+    {
+      "num": "10.",
+      "heading": "Changes to This Privacy Policy",
+      "body": [
+        "We may update this Privacy Policy from time to time to reflect changes to our website, business practices, services, or applicable laws.",
+        "When we make changes, we will update the \"Effective Date\" at the top of this policy. Your continued use of the website after an updated Privacy Policy is posted constitutes your acknowledgment of the updated policy."
+      ]
+    }
+  ],
+  "contactSection": {
+    "num": "11.",
+    "heading": "Contact Us",
+    "intro": "If you have questions about this Privacy Policy or how your information is handled, please contact:",
+    "name": "Ferrentino & Son, LLC",
+    "email": "estimating@ferrentinoandson.com",
+    "phone": "(352) 237-3368",
+    "phoneHref": "3522373368",
+    "website": "",
+    "websiteHref": "",
+    "footnote": "Ferrentino & Son proudly serves communities throughout Central Florida, including Marion, Lake, Citrus, Sumter, Levy, Volusia, Putnam, and Alachua counties."
+  }
+}

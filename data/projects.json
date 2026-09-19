@@ -1,0 +1,132 @@
+{
+  "heroBg": "/images/projects-bg.jpg",
+  "heroTag": "THE FERRENTINO PORTFOLIO",
+  "heroTitle": "Our Built Dreams",
+  "heroDescription": "A showcase of generations of craftsmanship, custom masonry, high-end remodeling, and custom home construction across central Florida.",
+  "categories": ["All Projects", "LiveWell Residential", "WorkWell Commercial", "Custom Kitchens", "Luxury Bathrooms"],
+  "items": [
+    {
+      "id": 1,
+      "slug": "modern-farmhouse-estate",
+      "category": "LiveWell Residential",
+      "year": "Completed 2025",
+      "title": "Modern Farmhouse Estate",
+      "location": "Williston, FL",
+      "description": "Proud custom construction of a modern farmhouse featuring generations-strength timber frame beams, state-of-the-art kitchen, wrap-around brick porch, and luxury master suite.",
+      "heroImage": "/images/ferrentino1.jpg",
+      "walkthroughSlides": [
+        { "id": 0, "label": "EXTERIOR FACADE", "image": "/images/ferrentino1.jpg", "title": "Generations-Strength Timber Frame Structural Detail", "desc": "Precision joinery showcase using native Florida timber-framing architecture designed to endure." },
+        { "id": 1, "label": "Wooden Design", "image": "/images/projectview2.jpg", "title": "Wooden Paneling Design", "desc": "Custom-crafted solid oak island, commercial gas range, and premium quartzite surfaces." },
+        { "id": 2, "label": "GREAT ROOM", "image": "/images/living.jpg", "title": "Open-Concept Great Room & Vaulted Beams", "desc": "Expansive ceiling heights supported by exposed mortise-and-tenon interlocking timber trusses." },
+        { "id": 3, "label": "COVERED PORCH", "image": "/images/outdoor.jpg", "title": "Generational Outdoor Living & Brick Porch", "desc": "Seamless indoor-outdoor entertainment space with hand-laid brick columns and cypress ceiling." },
+        { "id": 4, "label": "MASTER SUITE", "image": "/images/ferrentino2.jpg", "title": "Master Suite Retreat & Custom Architecture", "desc": "Tranquil master sanctuary featuring custom architectural millwork and panoramic pasture views." },
+        { "id": 5, "label": "CRAFTED DETAILS", "image": "/images/ferrentino3.jpg", "title": "Hand-Forged Hardware & Precision Finish", "desc": "Every joint, latch, and beam corner meticulously finished by master tradespeople." }
+      ],
+      "specs": { "clientScope": "Custom Residential", "timberSource": "Central Florida Pine & Oak", "specialtyCraft": "Mortise & Tenon Joinery", "squareFootage": "4,650 sq ft" },
+      "challenge": "Our clients envisioned a timeless estate that looked as if it had sat on their Williston acreage for a hundred years, yet possessed the energy-efficiency and luxurious open layouts of modern builds. Structurally, the great room required massive, raw structural timber spans without visible heavy steel connectors, demanding old-world precision joinery.",
+      "solution": "Ferrentino & Son engineered a pure timber frame architecture, leveraging authentic Florida pine beams and custom mortise-and-tenon interlocking joints. Our custom design team wrapped the home in high-performance insulation, framing gorgeous viewports facing the pasture. The state-of-the-art kitchen integrates commercial-grade power behind solid oak cabinetry, balancing new homestead charm with refined culinary luxury.",
+      "quoteText": "The level of detail Ferrentino & Son brought to our timber frame joints is absolutely stellar. It is a genuine masterpiece that our grandchildren will enjoy.",
+      "quoteAuthor": "THE WILLISTON ESTATE FAMILY"
+    },
+    {
+      "id": 2,
+      "slug": "ocala-oak-wood-remodel",
+      "category": "LiveWell Residential",
+      "year": "Completed 2024",
+      "title": "Ocala Oak-Wood Remodel",
+      "location": "Ocala, FL",
+      "description": "A complete whole-home remodel highlighting custom cabinetry, vaulted ceilings, and meticulous hardwood finishings tailored exactly to client entertaining styles.",
+      "heroImage": "/images/project22.jpg",
+      "walkthroughSlides": [
+        { "id": 0, "label": "LIVING AREA", "image": "/images/project22.jpg", "title": "Vaulted Great Room Remodel", "desc": "Reopened sightlines and raised ceilings bring light and scale to the main living area." },
+        { "id": 1, "label": "CUSTOM CABINETRY", "image": "/images/inner-two2.jpg", "title": "Whole-Home Cabinetry Package", "desc": "Matching hardwood cabinetry ties the kitchen, bar, and built-ins together." },
+        { "id": 2, "label": "FINISHING DETAIL", "image": "/images/room.jpg", "title": "Hardwood Finish Work", "desc": "Hand-finished trim and flooring selected to match the home's original character." }
+      ],
+      "specs": { "clientScope": "Whole-Home Remodel", "timberSource": "Central Florida Oak", "specialtyCraft": "Custom Cabinetry", "squareFootage": "3,200 sq ft" },
+      "challenge": "The existing floor plan felt closed-off and dated, with low ceilings and disconnected living spaces that didn't suit the family's entertaining style.",
+      "solution": "We opened the main living areas, raised ceiling heights where structurally possible, and built a matching suite of custom hardwood cabinetry throughout the home to unify every room.",
+      "quoteText": "Ferrentino & Son turned our cramped, dated house into a home that finally works the way we live.",
+      "quoteAuthor": "AN OCALA HOMEOWNER"
+    },
+    {
+      "id": 3,
+      "slug": "marion-county-chefs-kitchen",
+      "category": "Custom Kitchens",
+      "year": "Completed 2025",
+      "title": "The Marion County Chef's Kitchen",
+      "location": "Ocala, FL",
+      "description": "High-end remodel featuring commercial-grade range setups, warm solid oak structural posts, custom quartz waterfalls, and a custom build layout designed to last generations.",
+      "heroImage": "/images/project33.jpg",
+      "walkthroughSlides": [
+        { "id": 0, "label": "CHEF'S RANGE", "image": "/images/project33.jpg", "title": "Commercial-Grade Range Wall", "desc": "Professional venting and power routed behind a custom tile backsplash." },
+        { "id": 1, "label": "ISLAND", "image": "/images/kitchen.jpg", "title": "Quartz Waterfall Island", "desc": "A oversized island anchors the kitchen with seating for six." },
+        { "id": 2, "label": "STRUCTURAL POSTS", "image": "/images/kitchen-bg.jpg", "title": "Exposed Oak Structural Posts", "desc": "Structural posts were kept exposed and finished as a design feature." }
+      ],
+      "specs": { "clientScope": "Custom Kitchen Remodel", "timberSource": "Solid Oak", "specialtyCraft": "Quartz Waterfall Fabrication", "squareFootage": "620 sq ft" },
+      "challenge": "The client, an avid home chef, needed commercial-grade cooking capability in a kitchen that still felt warm and residential.",
+      "solution": "We built out dedicated commercial-grade range and ventilation infrastructure, wrapped in warm solid oak posts and a quartz waterfall island that keeps the space feeling like home.",
+      "quoteText": "It's a professional kitchen that still feels like the heart of our home.",
+      "quoteAuthor": "A MARION COUNTY HOMEOWNER"
+    },
+    {
+      "id": 4,
+      "slug": "lake-weir-spa-sanctuary",
+      "category": "Luxury Bathrooms",
+      "year": "Completed 2024",
+      "title": "Lake Weir Spa Sanctuary",
+      "location": "Lake Weir, FL",
+      "description": "Bespoke master bath remodel emphasizing zero-threshold rain shower systems, natural stone masonry work, custom lighting, and dedicated floor-heating integrations.",
+      "heroImage": "/images/project44.jpg",
+      "walkthroughSlides": [
+        { "id": 0, "label": "RAIN SHOWER", "image": "/images/project44.jpg", "title": "Zero-Threshold Rain Shower", "desc": "A curbless entry and natural stone masonry create a true spa experience." },
+        { "id": 1, "label": "SOAKING TUB", "image": "/images/bath.jpg", "title": "Freestanding Soaking Tub", "desc": "Positioned beneath a picture window with custom ambient lighting." },
+        { "id": 2, "label": "FINISHES", "image": "/images/bathroom.jpg", "title": "Heated Stone Flooring", "desc": "Radiant floor heating installed beneath natural stone tile." }
+      ],
+      "specs": { "clientScope": "Master Bath Remodel", "timberSource": "N/A", "specialtyCraft": "Natural Stone Masonry", "squareFootage": "310 sq ft" },
+      "challenge": "The original bathroom was cramped, poorly lit, and lacked any of the spa-like comfort the clients wanted for their lakeside retirement home.",
+      "solution": "We reconfigured the layout around a curbless rain shower and freestanding tub, adding natural stone masonry, layered lighting, and radiant floor heating.",
+      "quoteText": "Every morning feels like a trip to the spa now.",
+      "quoteAuthor": "A LAKE WEIR HOMEOWNER"
+    },
+    {
+      "id": 5,
+      "slug": "silver-springs-equestrian-pavilion",
+      "category": "WorkWell Commercial",
+      "year": "Completed 2025",
+      "title": "Silver Springs Equestrian Pavilion",
+      "location": "Silver Springs, FL",
+      "description": "Commercial grade timber and masonry structure crafted for equestrian events and outdoor hosting with custom architectural beamwork.",
+      "heroImage": "/images/project55.jpg",
+      "walkthroughSlides": [
+        { "id": 0, "label": "PAVILION FRAME", "image": "/images/project55.jpg", "title": "Commercial Timber Beamwork", "desc": "Heavy timber trusses span the full event pavilion without interior columns." },
+        { "id": 1, "label": "OUTDOOR EVENT SPACE", "image": "/images/outdoor-pro.jpg", "title": "Outdoor Hosting Pavilion", "desc": "Covered masonry patio designed for equestrian events and gatherings." },
+        { "id": 2, "label": "SITE DETAIL", "image": "/images/project-outdoor.jpg", "title": "Site Masonry & Grading", "desc": "Custom grading and masonry work integrate the pavilion with the surrounding pastures." }
+      ],
+      "specs": { "clientScope": "Commercial Pavilion", "timberSource": "Engineered Heavy Timber", "specialtyCraft": "Long-Span Trusswork", "squareFootage": "6,800 sq ft" },
+      "challenge": "The client needed a column-free covered space large enough to host equestrian events, without compromising the sightlines to the surrounding pastures.",
+      "solution": "We engineered long-span heavy timber trusses that eliminate interior columns entirely, paired with durable masonry flooring built for year-round event use.",
+      "quoteText": "We can finally host every event under one roof, rain or shine.",
+      "quoteAuthor": "A SILVER SPRINGS CLIENT"
+    },
+    {
+      "id": 6,
+      "slug": "historic-downtown-ocala-loft",
+      "category": "WorkWell Commercial",
+      "year": "Completed 2024",
+      "title": "Historic Downtown Ocala Loft",
+      "location": "Ocala, FL",
+      "description": "Comprehensive restoration of a historic commercial building transformed into modern executive suites and lounge spaces.",
+      "heroImage": "/images/project66.jpg",
+      "walkthroughSlides": [
+        { "id": 0, "label": "EXECUTIVE SUITES", "image": "/images/project66.jpg", "title": "Modern Executive Suites", "desc": "Historic brick shell restored around new executive office suites." },
+        { "id": 1, "label": "LOUNGE", "image": "/images/inner-two2.jpg", "title": "Restored Lounge Space", "desc": "Original architectural details preserved alongside modern finishes." },
+        { "id": 2, "label": "FACADE", "image": "/images/article-inner.jpg", "title": "Historic Facade Restoration", "desc": "Original facade masonry restored to meet downtown historic guidelines." }
+      ],
+      "specs": { "clientScope": "Historic Commercial Restoration", "timberSource": "Reclaimed & New Heart Pine", "specialtyCraft": "Historic Masonry Restoration", "squareFootage": "8,400 sq ft" },
+      "challenge": "The century-old building needed a full structural and systems overhaul while preserving its historic street-facing character under downtown preservation guidelines.",
+      "solution": "Our team restored the original masonry facade, reinforced the structure, and rebuilt the interior into modern executive suites and lounge space while keeping key historic details intact.",
+      "quoteText": "They respected the building's history while making it work for a modern business.",
+      "quoteAuthor": "A DOWNTOWN OCALA TENANT"
+    }
+  ]
+}

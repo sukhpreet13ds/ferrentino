@@ -1,0 +1,8 @@
+{
+  "heroBg": "/images/service-bg.png",
+  "subtag": "ERROR 404",
+  "title": "Page Not Found",
+  "description": "The page you are looking for doesn't exist, has been removed, or is temporarily unavailable.",
+  "buttonText": "Back to Home",
+  "buttonHref": "/"
+}

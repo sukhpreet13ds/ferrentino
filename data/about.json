@@ -1,0 +1,58 @@
+{
+  "heroBg": "/images/about-bg.jpg",
+  "heroTag": "ABOUT US",
+  "heroTitleLine1": "Family Owned",
+  "heroTitleLine2": "Since 1920",
+  "heroDescBefore": "In 1920 ",
+  "heroDescLinkText": "Amedeo “Tom” Ferrentino",
+  "heroDescLinkHref": "https://www.ancestry.com/offers/join?dbid=2442&img=1&rtype=1&url=http%3A%2F%2Fwww.ancestry.com%2Fimageviewer%2Fcollections%2F2442%2Fimages%2Fm-t0627-02745-00143%3Fbacklabel%3DReturn%26pId%3D3795720%26ssrc%3D",
+  "heroDescAfter": " arrived at Ellis Island, NY from Trieste, Italy as a humble brick layer. His passion for craftsmanship and quality construction laid the foundation for over FIVE GENERATIONS! The Ferrentinos have been building dreams ever since.",
+  "heroImage": "/images/family.png",
+  "legacyTag": "1920 — TODAY",
+  "legacyTitle": "It’s A Legacy",
+  "legacyParagraphs": [
+    "Starting out small in 1984, 3rd Generation Builder Eddie \"Pop Pop\" and his wife Barbara \"Nana\" Ferrentino, began Ferrentino & Son. Ferrentino & Son has blossomed into not just a respected contractor but a 'go-to' kitchen and bathroom remodeling company. Ferrentino & Son is in the business of making dreams turn into reality. We started with Pop Pop & Nana's dream of passing the family business down to the next two generations became a reality in 2018 when Barbara handed over the reigns her son Edward \"Cicc\" Ferrentino & his wife, Shawna Ferrentino. Cicc & Shawna are continuing the dream by teaching the construction business/trades to Barbara's Grandchildren Cody & Caylea Fort. The Ferrentinos are now dreaming of creating a vocational trade school for 9-12 grade youth.",
+    "When you are looking to invest time and energy into remodeling your home, it pays to know the company that sets the bar for exceptional quality, incomparable design, and outstanding service. You can be absolutely certain Ferrentino & Son fits the bill perfectly."
+  ],
+  "bannerText": "Working together to build your dream home.",
+  "bannerBtnText": "Get a Free Estimate",
+  "bannerBtnHref": "/estimator",
+  "missionTag": "OUR MISSION STATEMENT",
+  "missionTitle": "We listen first. Then we build dreams.",
+  "missionDesc": "Our mission is to build dreams, by listening, getting to know our client's needs/wants or DREAMS, and understanding how the project will change their lives through providing high quality remodeling services with honest tradeswomen/tradesmen.",
+  "missionImage": "/images/mission-right.jpg",
+  "barbaraTag": "FOUNDING WOMAN",
+  "barbaraTitle": "The benchmark for better building.",
+  "barbaraImage": "/images/Barbara.jpg",
+  "barbaraParagraphs": [
+    "Barbara Ferrentino spent decades building more than homes in Ocala. She helped build a family legacy.",
+    "As co-founder of Ferrentino & Son and the first woman Certified Master Builder in Ocala, Barbara helped pave the way for women in the construction industry while growing a family business rooted in craft and community.",
+    "Since founding Ferrentino & Son with her husband, Eddie \"Pop Pop\" Ferrentino, in 1984, she has played an important role in shaping the company into what it is today."
+  ],
+  "barbaraQuoteBadge": "Barbara Ferrentino, 1st Woman Certified Master Builder",
+  "codeTag": "THE STANDARD WE LIVE BY",
+  "codeTitle": "The Code of Cicc",
+  "codeImage": "/images/Edward.jpg",
+  "codeImageAlt": "Edward \"Cicc\" Ferrentino",
+  "codeCaption": "Edward \"Cicc\" Ferrentino 4th Generation Builder",
+  "codeItems": [
+    { "num": "01", "text": "Acknowledge and act on all customer concerns." },
+    { "num": "02", "text": "Treat all we do business with like they are \"in the family.\"" },
+    { "num": "03", "text": "Give back to the community." },
+    { "num": "04", "text": "Conduct business operations in a manner that is transparent, legal, ethical, & fair." },
+    { "num": "05", "text": "Comply both in spirit & letter with rules and regulations prescribed by Federal, State, & community laws." },
+    { "num": "06", "text": "Avoid using any statement or implications which may be perceived as deceptive." },
+    { "num": "07", "text": "Accurately & honestly describe the price, materials, & standards of craftsmanship and craftsmanship used on our projects—and document, document, document." },
+    { "num": "08", "text": "Use only materials equal to or exceeding the quality specified in the contract, and follow all manufacture recommendations." },
+    { "num": "09", "text": "Start construction upon award of a contract & proceed diligently to completion without unnecessary delays." }
+  ],
+  "coreBg": "/images/core-bg.jpg",
+  "coreTitle": "Core Community Values",
+  "coreCards": [
+    { "title": "Supporting Our Community", "desc": "Support the company's effort in strengthening the communities in which we live, work, & play. Support the volunteerism of our fellow employees." },
+    { "title": "Superior Customer Experience", "desc": "Our commitment to delivering excellent customer service by engaging with our homeowners, going beyond primary job completion and satisfying our efforts. We strive to provide a fast response with quality craftsmanship/craftswomenship, genuine concern, & clear communication." },
+    { "title": "Quality of Service", "desc": "Take time to hire & train the right employees. Continuously offering learning opportunities. Measure performance. Keep an open line of communication." },
+    { "title": "Respect", "desc": "Take time to understand the perspective of others. Value the contribution of others. Treat everyone with unfailing dignity." },
+    { "title": "Honesty & Integrity", "desc": "Maintain truth in all interactions. Do not take the easy way out. Take accountability for our actions, without passing blame on others. Follow through on commitments." }
+  ]
+}

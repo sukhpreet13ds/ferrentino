@@ -1,0 +1,80 @@
+{
+  "heroBg": "/images/contact-us-hero.jpg",
+  "heroTag": "CONTACT US",
+  "heroTitleLine1": "Let’s Build",
+  "heroTitleLine2": "Your Dream",
+  "heroDescription": "You already know what you want your home to feel like. We help figure out how to make it real. Get in touch with our Ocala team today.",
+  "infoTitle": "Contact Information",
+  "infoSubtitle": "Thinking about remodeling, renovating, or adding on? We’d love to hear what you have in mind.",
+  "details": [
+    {
+      "icon": "fa-solid fa-location-dot",
+      "label": "HQ Office Address",
+      "value": "816 NE 31st Ave, Ocala, FL 34470",
+      "link": ""
+    },
+    {
+      "icon": "fa-solid fa-phone",
+      "label": "Call or Text Office",
+      "value": "+1 (352) 237-3368",
+      "link": "tel:3522373368"
+    },
+    {
+      "icon": "fa-solid fa-envelope",
+      "label": "Direct Estimation Email",
+      "value": "estimating@ferrentinoandson.com",
+      "link": "mailto:estimating@ferrentinoandson.com"
+    }
+  ],
+  "officeHoursTitle": "Office Hours",
+  "officeHours": [
+    { "day": "Monday – Friday", "time": "8:00 AM – 5:00 PM", "closed": false },
+    { "day": "Saturday", "time": "By Appointment Only", "closed": false },
+    { "day": "Sunday", "time": "Closed", "closed": true }
+  ],
+  "localityPill": "LOCALITY",
+  "localityTitle": "Proudly Serving Central Florida",
+  "localityDescription": "Rooted in Ocala, our fleets and project crews cover eight counties, delivering generational masonry, custom carpentry, and architectural finishes.",
+  "counties": [
+    "Marion County",
+    "Lake County",
+    "Citrus County",
+    "Sumter County",
+    "Levy County",
+    "Volusia County",
+    "Putnam County",
+    "Alachua County"
+  ],
+  "formTitle": "Contact Our Team",
+  "formSubtitle": "Tell us about your upcoming project and a specialist will get back to you with next steps.",
+  "availableServices": [
+    "New Custom Home",
+    "Home Remodeling",
+    "Commercial Build",
+    "Additions & Extensions",
+    "Roofing Service"
+  ],
+  "nameLabel": "Your Name *",
+  "namePlaceholder": "John Doe",
+  "phoneLabel": "Phone Number *",
+  "phonePlaceholder": "+1 (352) 555-0199",
+  "emailLabel": "Email Address *",
+  "emailPlaceholder": "john@example.com",
+  "locationLabel": "Project Location (City/County) *",
+  "locationPlaceholder": "Ocala / Marion County",
+  "servicesLabel": "What services are you looking for? *",
+  "budgetLabel": "Estimated Budget Range",
+  "budgetPlaceholder": "e.g. $150,000 - $300,000",
+  "detailsLabel": "Project Details & Vision",
+  "detailsPlaceholder": "Describe your dream project, specific ideas, or timeline constraints...",
+  "submitButtonText": "Submit Inquiry Details",
+  "privacyNote": "* Your privacy is fully respected. Your details are safe with the Ferrentino family.",
+  "successMessage": "Thank you! Your inquiry has been sent successfully. Our team will contact you shortly.",
+  "mapTitle": "Ferrentino & Son, LLC Location Map",
+  "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4494.279644759225!2d-82.0943676!3d29.1955004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e62d6c82d40beb%3A0x97e5f30d1e18441f!2sFerrentino%20%26%20Son%2C%20LLC%20Remodeling%20and%20Renovations!5e1!3m2!1sen!2sin!4v1789386824838!5m2!1sen!2sin",
+  "features": [
+    { "icon": "fa-solid fa-shield-halved", "title": "Generational Expertise", "sub": "Serving Florida families since 1984" },
+    { "icon": "fa-solid fa-shield-halved", "title": "Detail-Obsessed Crews", "sub": "No subcontractors cutting corners" },
+    { "icon": "fa-solid fa-shield-halved", "title": "Fully Licensed & Insured", "sub": "Peace of mind through every build state" }
+  ]
+}

@@ -1,0 +1,823 @@
+{
+  "heroBg": "/images/area-bg.jpg",
+  "heroTag": "Central Florida Coverage",
+  "heroTitle": "Areas We Serve",
+  "heroDescription": "Rooted in Ocala, our fleets and project crews cover eight counties, delivering generational masonry, custom carpentry, and architectural finishes right to your property.",
+  "mapImage": "/images/map.png",
+  "mapPinIcon": "/images/location.png",
+  "mapPins": [
+    {
+      "id": 1,
+      "name": "Alachua",
+      "top": "24%",
+      "left": "69%",
+      "size": "48px",
+      "delay": "0.1s"
+    },
+    {
+      "id": 2,
+      "name": "Putnam",
+      "top": "27%",
+      "left": "78%",
+      "size": "40px",
+      "delay": "0.25s"
+    },
+    {
+      "id": 3,
+      "name": "Levy",
+      "top": "35%",
+      "left": "66%",
+      "size": "52px",
+      "delay": "0.4s"
+    },
+    {
+      "id": 4,
+      "name": "Marion",
+      "top": "36%",
+      "left": "73%",
+      "size": "58px",
+      "delay": "0.55s"
+    },
+    {
+      "id": 5,
+      "name": "Volusia",
+      "top": "40%",
+      "left": "84%",
+      "size": "44px",
+      "delay": "0.7s"
+    },
+    {
+      "id": 6,
+      "name": "Citrus",
+      "top": "48%",
+      "left": "68%",
+      "size": "46px",
+      "delay": "0.85s"
+    },
+    {
+      "id": 7,
+      "name": "Sumter",
+      "top": "52%",
+      "left": "73%",
+      "size": "52px",
+      "delay": "1.0s"
+    },
+    {
+      "id": 8,
+      "name": "Lake",
+      "top": "48%",
+      "left": "78%",
+      "size": "55px",
+      "delay": "1.15s"
+    }
+  ],
+  "localityTag": "LOCALITY",
+  "localityTitle": "Proudly Serving Central Florida",
+  "localityDescription": "Generations of masonry, meticulous woodwork, and custom framing define our identity. From our primary operational base in Marion County, Ferrentino & Son deploys seasoned crews, master craftsmen, and advanced equipment to custom build or renovate high-end properties in eight central counties.",
+  "localityActiveLabel": "CURRENTLY ACTIVE COUNTIES:",
+  "countiesSectionTitle": "Explore Active Counties",
+  "countiesSectionDesc": "Click a county below to understand local guidelines, regional project hubs, and specialized building crews available for your address.",
+  "authorityTitle": "Built With Regional Authority",
+  "authorityDesc": "Building in central Florida demands hyper-local fluency. Here is how Ferrentino & Son delivers uncompromised reliability from city blocks to shoreline communities.",
+  "regionalFeatures": [
+    {
+      "icon": "fa-solid fa-file-contract",
+      "title": "Permitting Familiarity",
+      "desc": "Each municipal boundary holds specific ordinances. We maintain long-standing operational relationships with building departments across all 8 active counties, ensuring rapid permit approvals with zero unexpected compliance friction."
+    },
+    {
+      "icon": "fa-solid fa-shield-halved",
+      "title": "Shoreline & Wind Engineering",
+      "desc": "From beach-facing Volusia lots to high-water Lake County docks, we build with strict structural defenses, implementing specialized storm strapping, storm-rated impact glazings, and advanced moisture-barrier applications."
+    },
+    {
+      "icon": "fa-solid fa-user-group",
+      "title": "Generational Craft Coordination",
+      "desc": "Rooted locally since 1984, our family works exclusively with trusted, certified local trade sub-contractors, concrete suppliers, and specialty technicians who share our precise standards for excellence and punctuality."
+    }
+  ],
+  "stats": [
+    {
+      "value": "1984",
+      "text": "Building with core family values in Central Florida for over 40 years."
+    },
+    {
+      "value": "100%",
+      "text": "On-budget execution and locally verified materials guarantee."
+    },
+    {
+      "value": "8+",
+      "text": "Counties actively supported with dedicated craftsman networks."
+    }
+  ],
+  "specialtyServicesTitle": "Exceptional Building Services",
+  "specialtyServicesDesc": "From custom-designed luxury kitchen transformations to complex structural additions, we craft spaces built around your routine and designed to last generations.",
+  "specialtyServices": [
+    {
+      "id": 1,
+      "title": "Kitchen Remodeling",
+      "description": "Create a kitchen that combines functionality, comfort, and style. We remodel it to make cooking, gathering, storing, and everyday life feel easier, while giving the space a look that feels completely at home.",
+      "linkText": "View Kitchen Remodeling",
+      "image": "/images/f&s-service1.png",
+      "href": "/services/kitchen-remodeling"
+    },
+    {
+      "id": 2,
+      "title": "Bathroom Remodeling",
+      "description": "Small room, big impact. We rework bathrooms with better layouts, smarter storage, updated finishes, and details that make the space feel noticeably better every day.",
+      "linkText": "View Bathroom Remodeling",
+      "image": "/images/f&s-service2.png",
+      "href": "/services/bathroom-remodeling"
+    },
+    {
+      "id": 3,
+      "title": "Home Remodeling",
+      "description": "Sometimes a home just needs to work differently. We rethink outdated spaces, awkward layouts, and tired finishes to create a home that fits the way you live now.",
+      "linkText": "View Home Remodeling",
+      "image": "/images/f&s-service3.png",
+      "href": "/services/home-remodeling"
+    },
+    {
+      "id": 4,
+      "title": "Home Renovations",
+      "description": "Keep the character. Change what's not working. Our renovation work brings older or dated spaces forward while respecting the home that was already there.",
+      "linkText": "View Home Renovations",
+      "image": "/images/f&s-service4.png",
+      "href": "/services/home-renovations"
+    },
+    {
+      "id": 5,
+      "title": "Home Additions",
+      "description": "Need more room? Expand your living space with a thoughtfully designed addition that complements your existing home.",
+      "linkText": "View Home Additions",
+      "image": "/images/f&s-service5.png",
+      "href": "/services/home-additions"
+    },
+    {
+      "id": 6,
+      "title": "Interior Remodeling",
+      "description": "A few walls, finishes, or layout changes can completely shift how a home feels. We help remodel interiors so each space feels intentional.",
+      "linkText": "View Interior Remodeling",
+      "image": "/images/f&s-service6.png",
+      "href": "/services/interior-remodeling"
+    },
+    {
+      "id": 7,
+      "title": "Design & Planning",
+      "description": "Turn your ideas into a practical project plan. We help guide layout, functionality, materials, finishes, and design decisions before construction begins.",
+      "linkText": "View Design Services",
+      "image": "/images/f&s-service7.png",
+      "href": "/services/design-and-planning"
+    },
+    {
+      "id": 8,
+      "title": "Custom Carpentry",
+      "description": "Add character and detail to your home with custom carpentry, trim work, built-ins, woodwork, doors, and finishing details.",
+      "linkText": "View Custom Carpentry",
+      "image": "/images/f&s-service8.png",
+      "href": "/services/custom-carpentry"
+    },
+    {
+      "id": 9,
+      "title": "Exterior Renovations",
+      "description": "We update exterior details, finishes, and features to give the home a stronger, more finished presence from the street.",
+      "linkText": "View Exterior Renovations",
+      "image": "/images/f&s-service9.png",
+      "href": "/services/exterior-renovations"
+    }
+  ],
+  "blueprintTitle": "Our Customized Process",
+  "blueprintDesc": "Building your custom home or managing a complex remodel should be as rewarding as it is exciting. Here is how we ensure pristine transparency from concept to completion.",
+  "blueprintSteps": [
+    {
+      "num": "01",
+      "title": "Initial Consultation",
+      "desc": "We sit down with you to map your vision, explore functional design flaws, evaluate necessary code requirements, and align with your target budget."
+    },
+    {
+      "num": "02",
+      "title": "3D Design & Plan",
+      "desc": "We bring custom architectural plans to life and provide 3D digital simulation so you can examine every inch of your space before breaking ground."
+    },
+    {
+      "num": "03",
+      "title": "Turnkey Management",
+      "desc": "Protection barriers, active county communication, schedule synchronization, and oversight overseen by our senior lead master."
+    },
+    {
+      "num": "04",
+      "title": "Pristine Handover",
+      "desc": "After detailed inspection, structural reviews, and custom paint touching, we hand over your beautiful new space ready for generations to use."
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "slug": "marion",
+      "name": "Marion County",
+      "hub": "PRIMARY HUB: OCALA (HOME BASE)",
+      "hubCity": "Ocala",
+      "isHq": true,
+      "image": "/images/area111.png",
+      "description": "Our ancestral heartland and operational headquarters. We offer full-scale residential custom builds, massive commercial renovations, and detailed kitchen bath transformations across Marion County.",
+      "detailHeroBg": "/images/area-view-bg.jpg",
+      "detailHeroTag": "Marion County Builders",
+      "detailHeroTitleLine1": "Remodeling & Construction",
+      "detailHeroTitleLine2": "in Ocala, FL",
+      "detailHeroDesc": "Proudly building, renovating, and restoring homes across Marion County and Central Florida with generational craftsmanship and reliable family values.",
+      "centralFloridaFeatures": [
+        {
+          "icon": "fa-solid fa-file-contract",
+          "title": "Downtown Permitting Fluency",
+          "desc": "Historic preservation rules for Ocala's downtown properties require delicate municipal handling. We manage all historic board submittals and City of Ocala structural compliance seamlessly."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Soil & Limestone Engineering",
+          "desc": "Marion County's famous rolling hills and limestone pockets require rigorous foundation prep. We perform comprehensive soil testing and implement sinkhole-mitigating concrete pouring protocols."
+        },
+        {
+          "icon": "fa-solid fa-user-group",
+          "title": "Generational Local Trades",
+          "desc": "Forty years in Marion County means we only deploy the finest vetted craftsmen. Our long-standing network of local masonry, framing, and roofing experts ensures elite performance."
+        }
+      ],
+      "portfolioProjects": [
+        {
+          "id": 1,
+          "title": "F&S – Whole-Home Renovation",
+          "location": "Greg + Julia — Ocala, FL",
+          "image": "/images/whole-home.jpg"
+        },
+        {
+          "id": 2,
+          "title": "F&S – Bathroom Remodel #1",
+          "location": "Wolfram — Ocala, FL",
+          "image": "/images/bathroom.jpg"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Details and craftsmanship made all the difference. Ferrentino and Son completely revitalized our kitchen inside our historic Ocala bungalow on budget. Their designer made it effortless to plan with.",
+          "name": "Sarah & Robert K.",
+          "location": "Downtown Historic District – Ocala Homeowner"
+        },
+        {
+          "quote": "Top-quality structural authority from permitting down to concrete base pour. On these tricky soils they managed our extensive master wing addition with absolute transparency. Highly recommended local team.",
+          "name": "Marcus & Elena G.",
+          "location": "Southeast Ocala – Master Wing Addition"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do you handle historic district preservation codes?",
+          "answer": "Absolutely. We have over four decades of history working directly with Marion County and City of Ocala historic preservation guidelines. We handle all planning documentation, architectural approvals, and strict compliance measures."
+        },
+        {
+          "question": "How do you handle Ocala's karst limestone soils?",
+          "answer": "Foundation engineering is our absolute specialty. Before we break ground on any custom build or master wing expansion, we perform comprehensive soil-bearing capacity assessments and engineer reinforced steel-concrete structures designed against shifts."
+        },
+        {
+          "question": "What is the average timeline for a luxury kitchen remodel?",
+          "answer": "Depending on design complexity and structural wall changes, most custom Marion County kitchen remodels are completed within 4 to 8 weeks. We provide a full weekly scheduling blueprint before construction starts."
+        },
+        {
+          "question": "Are your estimators and trade partners fully certified?",
+          "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded. We only partner with verified local trade, mechanical professionals, and concrete suppliers who share our standards for safety and structural excellence."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "lake",
+      "name": "Lake County",
+      "hub": "PRIMARY HUB: TAVARES & CLERMONT",
+      "hubCity": "Tavares",
+      "isHq": false,
+      "image": "/images/area222.png",
+      "description": "Providing high-integrity additions, roofing services, and complete waterfront remodeling. Our teams understand the unique construction parameters of Lake County properties.",
+      "detailHeroBg": "/images/area-view-bg.jpg",
+      "detailHeroTag": "Lake County Builders",
+      "detailHeroTitleLine1": "Remodeling & Construction",
+      "detailHeroTitleLine2": "in Tavares & Clermont, FL",
+      "detailHeroDesc": "Proudly building, renovating, and restoring homes across Lake County's lake-dotted communities with generational craftsmanship and reliable family values.",
+      "centralFloridaFeatures": [
+        {
+          "icon": "fa-solid fa-file-contract",
+          "title": "Lakefront Permitting Fluency",
+          "desc": "Waterfront setback rules along Lake County's chain of lakes require careful municipal navigation. We manage all lakefront permitting and dock-adjacent structural compliance seamlessly."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Waterfront Foundation Engineering",
+          "desc": "Lake County's high water tables and lakeside lots require rigorous foundation and drainage prep. We perform comprehensive soil and moisture assessments before any addition or remodel begins."
+        },
+        {
+          "icon": "fa-solid fa-user-group",
+          "title": "Generational Local Trades",
+          "desc": "Our long-standing network of local masonry, framing, and roofing experts knows Lake County's waterfront communities inside and out, ensuring elite performance on every project."
+        }
+      ],
+      "portfolioProjects": [
+        {
+          "id": 1,
+          "title": "F&S – Lakefront Addition",
+          "location": "The Renner Family — Clermont, FL",
+          "image": "/images/ferrentino1.jpg"
+        },
+        {
+          "id": 2,
+          "title": "F&S – Outdoor Living Expansion",
+          "location": "Dana & Miguel — Tavares, FL",
+          "image": "/images/outdoor.jpg"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Our lakefront addition needed a builder who understood setback rules and moisture protection. Ferrentino & Son delivered a flawless, on-budget project.",
+          "name": "The Renner Family",
+          "location": "Clermont, FL – Lakefront Addition"
+        },
+        {
+          "quote": "From permitting to the final walkthrough, the team communicated clearly every step of the way. Our Tavares remodel exceeded expectations.",
+          "name": "Dana & Miguel R.",
+          "location": "Tavares, FL – Outdoor Living Expansion"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do you handle waterfront and lakefront setback permitting?",
+          "answer": "Yes. We regularly navigate Lake County's waterfront setback ordinances and dock-adjacent construction rules, handling all documentation and approvals on your behalf."
+        },
+        {
+          "question": "How do you address Lake County's high water tables?",
+          "answer": "We perform comprehensive soil and moisture assessments before breaking ground, engineering foundations and drainage systems designed for lakeside conditions."
+        },
+        {
+          "question": "What is the average timeline for a home addition in Lake County?",
+          "answer": "Most additions take 3 to 6 months depending on size, foundation type, and lakefront permitting timelines. We provide a full scheduling blueprint before construction starts."
+        },
+        {
+          "question": "Are your estimators and trade partners fully certified?",
+          "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "citrus",
+      "name": "Citrus County",
+      "hub": "PRIMARY HUB: CRYSTAL RIVER & INVERNESS",
+      "hubCity": "Crystal River",
+      "isHq": false,
+      "image": "/images/area333.png",
+      "description": "From coastal-resilient remodels to deep-foundation residential construction, Ferrentino & Son ensures unmatched structural mastery for Citrus County families.",
+      "detailHeroBg": "/images/area-view-bg.jpg",
+      "detailHeroTag": "Citrus County Builders",
+      "detailHeroTitleLine1": "Remodeling & Construction",
+      "detailHeroTitleLine2": "in Crystal River, FL",
+      "detailHeroDesc": "Proudly building, renovating, and restoring homes across Citrus County's spring-fed coastline with generational craftsmanship and reliable family values.",
+      "centralFloridaFeatures": [
+        {
+          "icon": "fa-solid fa-file-contract",
+          "title": "Coastal Permitting Fluency",
+          "desc": "Flood-zone and coastal construction rules near Crystal River and Inverness require delicate municipal handling. We manage all coastal-zone submittals and structural compliance seamlessly."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Coastal & Spring-Fed Soil Engineering",
+          "desc": "Citrus County's spring-fed waterways and coastal soils require rigorous foundation prep. We perform comprehensive soil testing and moisture-resistant construction protocols."
+        },
+        {
+          "icon": "fa-solid fa-user-group",
+          "title": "Generational Local Trades",
+          "desc": "Our long-standing network of local masonry, framing, and roofing experts understands Citrus County's coastal conditions, ensuring elite performance on every build."
+        }
+      ],
+      "portfolioProjects": [
+        {
+          "id": 1,
+          "title": "F&S – Coastal Home Remodel",
+          "location": "The Alvarez Family — Crystal River, FL",
+          "image": "/images/project22.jpg"
+        },
+        {
+          "id": 2,
+          "title": "F&S – Open-Concept Living Refresh",
+          "location": "Nina & Todd — Inverness, FL",
+          "image": "/images/living.jpg"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Building near the coast means dealing with flood zones and moisture concerns. Ferrentino & Son handled every detail with total confidence.",
+          "name": "The Alvarez Family",
+          "location": "Crystal River, FL – Coastal Home Remodel"
+        },
+        {
+          "quote": "Our Inverness living room renovation came in on time and on budget, with craftsmanship that has held up beautifully.",
+          "name": "Nina & Todd P.",
+          "location": "Inverness, FL – Open-Concept Living Refresh"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do you handle coastal flood-zone permitting?",
+          "answer": "Yes. We regularly navigate Citrus County's flood-zone and coastal construction ordinances, handling all documentation and approvals on your behalf."
+        },
+        {
+          "question": "How do you address Citrus County's spring-fed soils?",
+          "answer": "We perform comprehensive soil-bearing and moisture assessments before breaking ground, engineering foundations designed for coastal and spring-fed conditions."
+        },
+        {
+          "question": "What is the average timeline for a coastal remodel?",
+          "answer": "Most coastal-area remodels take 4 to 8 weeks depending on design complexity and any required flood-zone structural changes."
+        },
+        {
+          "question": "Are your estimators and trade partners fully certified?",
+          "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "sumter",
+      "name": "Sumter County",
+      "hub": "PRIMARY HUB: THE VILLAGES & WILDWOOD",
+      "hubCity": "The Villages",
+      "isHq": false,
+      "image": "/images/area444.png",
+      "description": "Specializing in aging-in-place modifications, pristine bathroom retrofits, and high-efficiency commercial upgrades to meet fast-growing municipal demands.",
+      "detailHeroBg": "/images/area-view-bg.jpg",
+      "detailHeroTag": "Sumter County Builders",
+      "detailHeroTitleLine1": "Remodeling & Construction",
+      "detailHeroTitleLine2": "in The Villages, FL",
+      "detailHeroDesc": "Proudly building, renovating, and restoring homes across Sumter County's fast-growing communities with generational craftsmanship and reliable family values.",
+      "centralFloridaFeatures": [
+        {
+          "icon": "fa-solid fa-file-contract",
+          "title": "Rapid-Growth Permitting Fluency",
+          "desc": "Sumter County's rapid municipal growth around The Villages and Wildwood requires up-to-date permitting relationships. We manage all submittals and structural compliance seamlessly."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Aging-In-Place Foundation Engineering",
+          "desc": "Many Sumter County remodels involve accessibility and aging-in-place modifications. We perform careful structural assessments to integrate zero-threshold access without compromising the foundation."
+        },
+        {
+          "icon": "fa-solid fa-user-group",
+          "title": "Generational Local Trades",
+          "desc": "Our long-standing network of local masonry, framing, and roofing experts keeps pace with Sumter County's fast-growing demand, ensuring elite performance on every project."
+        }
+      ],
+      "portfolioProjects": [
+        {
+          "id": 1,
+          "title": "F&S – Aging-In-Place Bathroom Retrofit",
+          "location": "The Coleman Family — The Villages, FL",
+          "image": "/images/bath.jpg"
+        },
+        {
+          "id": 2,
+          "title": "F&S – Whole-Home Finish Package",
+          "location": "Harold & Janet — Wildwood, FL",
+          "image": "/images/room.jpg"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "The zero-threshold shower and widened doorways Ferrentino & Son installed have made our home so much easier to live in as we age in place.",
+          "name": "The Coleman Family",
+          "location": "The Villages, FL – Bathroom Retrofit"
+        },
+        {
+          "quote": "Our Wildwood home's interior finishes were coordinated beautifully from room to room. The whole team was professional and on schedule.",
+          "name": "Harold & Janet B.",
+          "location": "Wildwood, FL – Whole-Home Finish Package"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do you handle aging-in-place and accessibility modifications?",
+          "answer": "Yes. We regularly design and build zero-threshold showers, widened doorways, and other accessibility modifications for Sumter County homeowners."
+        },
+        {
+          "question": "How do you keep up with Sumter County's rapid growth?",
+          "answer": "We maintain active, up-to-date relationships with Sumter County and The Villages permitting offices to keep every project moving without compliance friction."
+        },
+        {
+          "question": "What is the average timeline for a bathroom retrofit?",
+          "answer": "Most accessibility-focused bathroom retrofits take 3 to 6 weeks depending on plumbing changes and material lead times."
+        },
+        {
+          "question": "Are your estimators and trade partners fully certified?",
+          "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "levy",
+      "name": "Levy County",
+      "hub": "PRIMARY HUB: WILLISTON & BRONSON",
+      "hubCity": "Williston",
+      "isHq": false,
+      "image": "/images/area555.png",
+      "description": "Honoring rural traditions with sturdy custom farmhouses, complete home renovations, and durable agricultural structural assistance built on reliable family values.",
+      "detailHeroBg": "/images/area-view-bg.jpg",
+      "detailHeroTag": "Levy County Builders",
+      "detailHeroTitleLine1": "Remodeling & Construction",
+      "detailHeroTitleLine2": "in Williston, FL",
+      "detailHeroDesc": "Proudly building, renovating, and restoring homes across Levy County's rural communities with generational craftsmanship and reliable family values.",
+      "centralFloridaFeatures": [
+        {
+          "icon": "fa-solid fa-file-contract",
+          "title": "Rural & Agricultural Permitting Fluency",
+          "desc": "Levy County's rural zoning and agricultural-parcel rules require specialized municipal handling. We manage all agricultural and residential structural compliance seamlessly."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Farmstead Foundation Engineering",
+          "desc": "Levy County's large rural parcels and well-water systems require rigorous foundation and utility prep. We perform comprehensive soil testing for farmhouses and outbuildings alike."
+        },
+        {
+          "icon": "fa-solid fa-user-group",
+          "title": "Generational Local Trades",
+          "desc": "Our long-standing network of local masonry, framing, and roofing experts is well versed in Levy County's rural building traditions, ensuring elite performance on every build."
+        }
+      ],
+      "portfolioProjects": [
+        {
+          "id": 1,
+          "title": "F&S – Custom Farmhouse Build",
+          "location": "The Whitfield Family — Williston, FL",
+          "image": "/images/project33.jpg"
+        },
+        {
+          "id": 2,
+          "title": "F&S – Whole-Home Renovation",
+          "location": "Carl & Denise — Bronson, FL",
+          "image": "/images/interier.jpg"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Our custom farmhouse feels like it's always belonged on this land, with the sturdy timber craftsmanship we hoped for.",
+          "name": "The Whitfield Family",
+          "location": "Williston, FL – Custom Farmhouse Build"
+        },
+        {
+          "quote": "Ferrentino & Son renovated our older Bronson home with real respect for its rural character while updating everything that needed it.",
+          "name": "Carl & Denise M.",
+          "location": "Bronson, FL – Whole-Home Renovation"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do you build on large rural or agricultural parcels?",
+          "answer": "Yes. We regularly build custom farmhouses and agricultural structures on large Levy County parcels, handling rural zoning and permitting along the way."
+        },
+        {
+          "question": "How do you handle well water and septic considerations?",
+          "answer": "We coordinate closely with licensed well and septic contractors so your foundation, plumbing, and utility work are engineered together from day one."
+        },
+        {
+          "question": "What is the average timeline for a custom farmhouse build?",
+          "answer": "Most custom farmhouse builds take 6 to 10 months depending on size, site prep, and permitting timelines."
+        },
+        {
+          "question": "Are your estimators and trade partners fully certified?",
+          "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "volusia",
+      "name": "Volusia County",
+      "hub": "PRIMARY HUB: DAYTONA BEACH & DELAND",
+      "hubCity": "Daytona Beach",
+      "isHq": false,
+      "image": "/images/area666.png",
+      "description": "Adapting layouts for coastal homes, high-impact window/door installations, and robust commercial remodels that stand strong against severe Atlantic weather.",
+      "detailHeroBg": "/images/area-view-bg.jpg",
+      "detailHeroTag": "Volusia County Builders",
+      "detailHeroTitleLine1": "Remodeling & Construction",
+      "detailHeroTitleLine2": "in Daytona Beach, FL",
+      "detailHeroDesc": "Proudly building, renovating, and restoring homes across Volusia County's Atlantic coastline with generational craftsmanship and reliable family values.",
+      "centralFloridaFeatures": [
+        {
+          "icon": "fa-solid fa-file-contract",
+          "title": "Atlantic Coastal Permitting Fluency",
+          "desc": "Hurricane-zone and coastal setback rules near Daytona Beach and DeLand require delicate municipal handling. We manage all coastal-zone submittals and wind-load compliance seamlessly."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Storm & Wind-Load Engineering",
+          "desc": "Volusia County's Atlantic exposure requires rigorous storm-rated engineering. We perform comprehensive wind-load assessments and implement hurricane strapping and impact-rated glazing."
+        },
+        {
+          "icon": "fa-solid fa-user-group",
+          "title": "Generational Local Trades",
+          "desc": "Our long-standing network of local masonry, framing, and roofing experts specializes in Volusia County's storm-resilient construction, ensuring elite performance on every project."
+        }
+      ],
+      "portfolioProjects": [
+        {
+          "id": 1,
+          "title": "F&S – Storm-Resilient Home Addition",
+          "location": "The Ferraro Family — Daytona Beach, FL",
+          "image": "/images/project44.jpg"
+        },
+        {
+          "id": 2,
+          "title": "F&S – Coastal Interior Refresh",
+          "location": "Priya & Sam — DeLand, FL",
+          "image": "/images/project-zone.jpg"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Living this close to the coast, we needed a builder who truly understood wind-load requirements. Ferrentino & Son exceeded our expectations.",
+          "name": "The Ferraro Family",
+          "location": "Daytona Beach, FL – Storm-Resilient Addition"
+        },
+        {
+          "quote": "Our DeLand home's interior renovation was handled with total professionalism from permitting through final walkthrough.",
+          "name": "Priya & Sam K.",
+          "location": "DeLand, FL – Coastal Interior Refresh"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do you handle hurricane-zone and wind-load permitting?",
+          "answer": "Yes. We regularly navigate Volusia County's hurricane-zone construction ordinances, handling all wind-load documentation and approvals on your behalf."
+        },
+        {
+          "question": "How do you protect homes from severe Atlantic weather?",
+          "answer": "We engineer with hurricane strapping, impact-rated glazing, and advanced moisture-barrier applications built for coastal Volusia County conditions."
+        },
+        {
+          "question": "What is the average timeline for a coastal home addition?",
+          "answer": "Most coastal additions take 3 to 6 months depending on size, wind-load engineering, and permitting timelines."
+        },
+        {
+          "question": "Are your estimators and trade partners fully certified?",
+          "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "putnam",
+      "name": "Putnam County",
+      "hub": "PRIMARY HUB: PALATKA",
+      "hubCity": "Palatka",
+      "isHq": false,
+      "image": "/images/area777.png",
+      "description": "Dedicated to historic preservation, structural carpentry updates, and generational remodeling that preserves original charm while upgrading vital safety specs.",
+      "detailHeroBg": "/images/area-view-bg.jpg",
+      "detailHeroTag": "Putnam County Builders",
+      "detailHeroTitleLine1": "Remodeling & Construction",
+      "detailHeroTitleLine2": "in Palatka, FL",
+      "detailHeroDesc": "Proudly building, renovating, and restoring homes across Putnam County's riverfront communities with generational craftsmanship and reliable family values.",
+      "centralFloridaFeatures": [
+        {
+          "icon": "fa-solid fa-file-contract",
+          "title": "Riverfront Permitting Fluency",
+          "desc": "St. Johns River floodplain rules and Palatka's historic district codes require delicate municipal handling. We manage all riverfront and historic-preservation submittals seamlessly."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Floodplain Foundation Engineering",
+          "desc": "Putnam County's riverfront lots and floodplain zones require rigorous foundation prep. We perform comprehensive elevation and soil assessments before any addition or remodel begins."
+        },
+        {
+          "icon": "fa-solid fa-user-group",
+          "title": "Generational Local Trades",
+          "desc": "Our long-standing network of local masonry, framing, and roofing experts understands Putnam County's historic and riverfront properties, ensuring elite performance on every build."
+        }
+      ],
+      "portfolioProjects": [
+        {
+          "id": 1,
+          "title": "F&S – Historic Home Carpentry Restoration",
+          "location": "The Griggs Family — Palatka, FL",
+          "image": "/images/project55.jpg"
+        },
+        {
+          "id": 2,
+          "title": "F&S – Riverfront Remodel",
+          "location": "Owen & Michelle — Palatka, FL",
+          "image": "/images/feature-1.jpg"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Ferrentino & Son matched every piece of original trim in our historic Palatka home while quietly upgrading the systems behind the walls.",
+          "name": "The Griggs Family",
+          "location": "Palatka, FL – Historic Carpentry Restoration"
+        },
+        {
+          "quote": "Our riverfront remodel needed careful floodplain planning, and the team handled every permit and elevation detail with total transparency.",
+          "name": "Owen & Michelle T.",
+          "location": "Palatka, FL – Riverfront Remodel"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do you handle floodplain and riverfront permitting?",
+          "answer": "Yes. We regularly navigate Putnam County's St. Johns River floodplain ordinances, handling all elevation documentation and approvals on your behalf."
+        },
+        {
+          "question": "Do you preserve historic character in Palatka homes?",
+          "answer": "Absolutely. We restore and match original trim, casing, and millwork profiles in Palatka's historic district while updating essential systems for safety."
+        },
+        {
+          "question": "What is the average timeline for a historic restoration?",
+          "answer": "Most historic carpentry restorations take 4 to 10 weeks depending on the scope of trim matching and any required structural updates."
+        },
+        {
+          "question": "Are your estimators and trade partners fully certified?",
+          "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "alachua",
+      "name": "Alachua County",
+      "hub": "PRIMARY HUB: GAINESVILLE",
+      "hubCity": "Gainesville",
+      "isHq": false,
+      "image": "/images/area888.png",
+      "description": "Serving custom residential designs, modern commercial updates, and detailed multi-room remodeling optimized for architectural elegance and modern utility.",
+      "detailHeroBg": "/images/area-view-bg.jpg",
+      "detailHeroTag": "Alachua County Builders",
+      "detailHeroTitleLine1": "Remodeling & Construction",
+      "detailHeroTitleLine2": "in Gainesville, FL",
+      "detailHeroDesc": "Proudly building, renovating, and restoring homes across Alachua County's university community with generational craftsmanship and reliable family values.",
+      "centralFloridaFeatures": [
+        {
+          "icon": "fa-solid fa-file-contract",
+          "title": "University-City Permitting Fluency",
+          "desc": "Gainesville's mix of historic neighborhoods and dense urban zoning requires close municipal coordination. We manage all City of Gainesville and Alachua County structural compliance seamlessly."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Urban Lot Foundation Engineering",
+          "desc": "Alachua County's tighter urban lots and mature tree canopies require careful foundation and drainage planning. We perform comprehensive site assessments before any addition begins."
+        },
+        {
+          "icon": "fa-solid fa-user-group",
+          "title": "Generational Local Trades",
+          "desc": "Our long-standing network of local masonry, framing, and roofing experts is well versed in Gainesville's urban and historic neighborhoods, ensuring elite performance on every project."
+        }
+      ],
+      "portfolioProjects": [
+        {
+          "id": 1,
+          "title": "F&S – Southern Heritage Estate Remodel",
+          "location": "The Bishop Family — Gainesville, FL",
+          "image": "/images/project66.jpg"
+        },
+        {
+          "id": 2,
+          "title": "F&S – Multi-Room Interior Update",
+          "location": "Alicia & Daniel — Gainesville, FL",
+          "image": "/images/feature-2.jpg"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Our Gainesville estate remodel balanced modern amenities with the architectural character we wanted to preserve. The result is stunning.",
+          "name": "The Bishop Family",
+          "location": "Gainesville, FL – Southern Heritage Estate Remodel"
+        },
+        {
+          "quote": "The multi-room update flowed beautifully from space to space, and the crew respected our mature landscaping throughout construction.",
+          "name": "Alicia & Daniel F.",
+          "location": "Gainesville, FL – Multi-Room Interior Update"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do you work within Gainesville's historic neighborhoods?",
+          "answer": "Yes. We regularly coordinate with City of Gainesville historic and zoning boards to keep renovations in historic neighborhoods fully compliant."
+        },
+        {
+          "question": "How do you handle tighter urban lots and mature trees?",
+          "answer": "We perform comprehensive site assessments to plan foundations and drainage around existing tree canopies and tighter urban setbacks."
+        },
+        {
+          "question": "What is the average timeline for a multi-room interior update?",
+          "answer": "Most multi-room interior updates take 4 to 8 weeks depending on the number of rooms and the extent of finish changes."
+        },
+        {
+          "question": "Are your estimators and trade partners fully certified?",
+          "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
+        }
+      ]
+    }
+  ]
+}

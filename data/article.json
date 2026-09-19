@@ -1,0 +1,84 @@
+{
+  "heroBg": "/images/article-view.jpg",
+  "heroTag": "ARTICLE IN DEPTH",
+  "heroTitleLine1": "Industry Overview",
+  "heroTitleLine2": "& Career Pathway",
+  "heroDescription": "In-depth analysis of regional construction and utilities workforce data, structural career progression tracks, and technical certification standards.",
+  "articleTag": "ARTICLE IN DEPTH",
+  "pubDate": "Published Sep 28",
+  "title": "Industry Overview and Career Pathway to Construction & Utilities",
+  "authorAvatar": "/images/Edward.jpg",
+  "authorAlt": "Edward Cicc Ferrentino",
+  "authorName": "Written By Edward Cicc Ferrentino",
+  "bannerImage": "/images/article-inner.jpg",
+  "bannerAlt": "Construction & Utilities Industry Overview",
+  "metricsHeading": "Key Market Metrics",
+  "marketMetrics": [
+    { "label": "TOTAL EMPLOYED", "value": "52,480", "sub": "Total Regional Workforce" },
+    { "label": "CONSTRUCTION WAGE", "value": "$61,323", "sub": "Annual Average Construction Pay" },
+    { "label": "UTILITIES WAGE", "value": "$112,971", "sub": "Annual Average Utilities Pay" },
+    { "label": "EXPECTED DEMAND", "value": "28,442", "sub": "Workforce Needs Next 5 Years" }
+  ],
+  "pathwayTitle": "Career Pathway to Construction & Utilities",
+  "pathwayDesc": "The construction and utilities sectors present multi-tiered progression systems. Pathways range from immediate, low-barrier entry roles with practical training to highly skilled, certified, or degree-required technical fields. Review the targeted structural progression options mapped below.",
+  "pathwayBlocks": [
+    {
+      "badge": "NOW",
+      "heading": "Requires HS Diploma and On the Job Training",
+      "roles": [
+        { "role": "Carpenters", "pay": "$23.75/hr" },
+        { "role": "Construction Equipment Operators", "pay": "$23.08/hr" },
+        { "role": "Construction Laborers", "pay": "$21.11/hr" }
+      ]
+    },
+    {
+      "badge": "NEXT",
+      "heading": "Requires an Apprenticeship and Moderate on the Job Training",
+      "roles": [
+        { "role": "Construction and Building Inspectors", "pay": "$28.13/hr" },
+        { "role": "Electricians", "pay": "$25.24/hr" },
+        { "role": "Plumber/Pipefitters", "pay": "$24.86/hr" }
+      ]
+    },
+    {
+      "badge": "LATER",
+      "heading": "Requires a Bachelor's Degree or Higher and/or Long Term On the Job Training",
+      "roles": [
+        { "role": "Project Management Specialists", "pay": "$55.24/hr" },
+        { "role": "Construction Managers", "pay": "$55.95/hr" },
+        { "role": "Electrical Power-Line Installers and Repairers", "pay": "$44.38/hr" }
+      ]
+    }
+  ],
+  "sidebarDarkTitle": "Have structural queries?",
+  "sidebarDarkText": "Ask Edward and our engineering crew your direct project development questions anytime.",
+  "sidebarDarkLinkText": "BACK TO ASK THE EXPERT",
+  "sidebarDarkLinkHref": "/ask-to-expert",
+  "certsTitle": "Industry Certifications",
+  "certifications": [
+    "HSI Pre-Apprenticeship Certificate",
+    "NSERE Engineers and Surveyor's License",
+    "Certified Construction Manager",
+    "Industrial Energy Efficiency Specialist",
+    "Registered Roof Consultant",
+    "AutoCAD",
+    "PLS-CAD",
+    "OSHA 30 Certification",
+    "NCCER Rigger and Signal Person",
+    "NCCER Construction Technology Credential",
+    "LEED Green Building",
+    "Associate Concrete Transportation Construction",
+    "Certified Well Driller",
+    "Journeyman Line Technician Certification",
+    "Registered Waterproofing Consultant",
+    "NCCER Craft Assessment and Certification",
+    "NCCER Mobile Crane Operator",
+    "NCCER Pipeline Training and Assessment Program",
+    "Journeyman Relay Technician Certification",
+    "Alternative Energy Systems Specialist"
+  ],
+  "nextArticleTag": "NEXT ARTICLE",
+  "nextArticleTitle": "Industry Overview and Career Pathway to Plumbing and HVAC",
+  "nextArticleLinkText": "Read Next Article",
+  "nextArticleLinkHref": "/ask-to-expert"
+}

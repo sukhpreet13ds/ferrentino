@@ -1,0 +1,157 @@
+{
+  "heroSlides": [
+    {
+      "id": 1,
+      "image": "/images/ferrentino1.jpg"
+    },
+    {
+      "id": 2,
+      "image": "/images/ferrentino2.jpg"
+    },
+    {
+      "id": 3,
+      "image": "/images/ferrentino3.jpg"
+    }
+  ],
+  "heroTitleTop": "On These BEAMS",
+  "heroTitleBottom": "We Build DREAMS",
+  "heroSubtitle": "Ferrentino & Son is your Marion County Builder of choice for new home, commercial and remodeling construction projects.",
+  "designBuildBgImage": "/images/nav-bg.png",
+  "designBuildTitle": "Design & Build",
+  "designBuildSubtitle": "From New Home Construction to Complete Home Remodeling",
+  "designBuildDescription": "The foundation of our construction expertise lies in generations of hard work and dedication. Our family values are reflected in the quality and standard we hold for every home, and we've been proud to serve our local communities throughout central Florida since 1984.",
+  "animatedWords": [
+    "built",
+    "crafted",
+    "designed"
+  ],
+  "whatSetsUsApartTitle": "What Sets Us Apart",
+  "whatSetsUsApartSubtitle": "Learn more about our process.",
+  "whatSetsUsApartDescription": "Ferrentino & Son uses a customized process to help buyers through the rewarding experience of remodeling or building a custom home.",
+  "homeServiceLinks": [
+    {
+      "id": 1,
+      "title": "Kitchen Remodels",
+      "slug": "kitchen-remodeling"
+    },
+    {
+      "id": 2,
+      "title": "Bath Remodels",
+      "slug": "bathroom-remodeling"
+    },
+    {
+      "id": 3,
+      "title": "Home Renovations",
+      "slug": "home-renovations"
+    },
+    {
+      "id": 4,
+      "title": "Home Additions",
+      "slug": "home-additions"
+    },
+    {
+      "id": 5,
+      "title": "Outdoor Living",
+      "slug": "exterior-renovations"
+    }
+  ],
+  "videoSectionTitle": "Renovate With Confidence",
+  "videoSrc": "/images/ferr-video.mp4",
+  "videoPoster": "/images/thumbnail-ferr.jpg",
+  "renoBannerLeftTitle": "Renovate With a Team You Trust",
+  "renoBannerRightTitle": "High End Remodeling To Realize Your Dream Home Makeover",
+  "renoBannerRightDescription": "DETAILS and CRAFTSMANSHIP make the difference, especially when it comes to home remodeling and design. Ferrentino & Son, LLC has a remarkable and experienced design team, placing an emphasis on creating one of a kind kitchen, bath, and home designs that are AFFORDABLE.",
+  "homeTestimonial": {
+    "quote": "After talking with several designers and remodeling contractors, we decided on Ferrentino & Son. They got what we wanted straight away and had plans done in less than a week. The best part is how the kitchen actually turned out. Amazing, simply amazing!",
+    "author": "John & Trisha D.",
+    "location": "Ocala Homeowners"
+  },
+  "localityMapImage": "/images/map.png",
+  "localityPinIcon": "/images/location.png",
+  "localityTag": "LOCALITY",
+  "localityTitle": "Proudly Serving Central Florida",
+  "localityDescription": "Rooted in Ocala, our fleet and craft crews cover eight counties, delivering generational masonry, carpentry, and architectural finishes right to your property.",
+  "counties": [
+    "Marion",
+    "Lake",
+    "Citrus",
+    "Sumter",
+    "Levy",
+    "Volusia",
+    "Putnam",
+    "Alachua"
+  ],
+  "mapPins": [
+    {
+      "id": 1,
+      "name": "Alachua",
+      "top": "24%",
+      "left": "69%",
+      "size": "48px",
+      "delay": "0.1s"
+    },
+    {
+      "id": 2,
+      "name": "Putnam",
+      "top": "27%",
+      "left": "78%",
+      "size": "40px",
+      "delay": "0.25s"
+    },
+    {
+      "id": 3,
+      "name": "Levy",
+      "top": "35%",
+      "left": "66%",
+      "size": "52px",
+      "delay": "0.4s"
+    },
+    {
+      "id": 4,
+      "name": "Marion",
+      "top": "36%",
+      "left": "73%",
+      "size": "58px",
+      "delay": "0.55s"
+    },
+    {
+      "id": 5,
+      "name": "Volusia",
+      "top": "40%",
+      "left": "84%",
+      "size": "44px",
+      "delay": "0.7s"
+    },
+    {
+      "id": 6,
+      "name": "Citrus",
+      "top": "48%",
+      "left": "68%",
+      "size": "46px",
+      "delay": "0.85s"
+    },
+    {
+      "id": 7,
+      "name": "Sumter",
+      "top": "52%",
+      "left": "73%",
+      "size": "52px",
+      "delay": "1.0s"
+    },
+    {
+      "id": 8,
+      "name": "Lake",
+      "top": "48%",
+      "left": "78%",
+      "size": "55px",
+      "delay": "1.15s"
+    }
+  ],
+  "yearsBadgeBg": "/images/102-bg.jpg",
+  "yearsNumber": "102",
+  "yearsSubtitle": "Quality Craftsmanship for over 102 Years",
+  "yearsTitleLine1": "Family-owned.",
+  "yearsTitleLine2": "Detail-obsessed.",
+  "yearsTitleLine3": "Built for a life well",
+  "yearsTitleLine4": "lived."
+}
