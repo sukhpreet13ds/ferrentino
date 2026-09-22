@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { getContent } from "../../../lib/data";
 
-export default function ThankYouPage() {
-  const data = getContent("thank-you", {
+export default async function ThankYouPage() {
+  const data = await getContent("thank-you", {
     heroBg: "/images/service-bg.png",
     subtag: "MESSAGE RECEIVED",
     title: "Thank You!",

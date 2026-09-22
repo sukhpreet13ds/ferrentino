@@ -3,8 +3,8 @@ import { getContent } from "../lib/data";
 
 export const dynamic = "force-dynamic";
 
-export default function NotFound() {
-  const data = getContent("not-found", {
+export default async function NotFound() {
+  const data = await getContent("not-found", {
     heroBg: "/images/service-bg.png",
     subtag: "ERROR 404",
     title: "Page Not Found",

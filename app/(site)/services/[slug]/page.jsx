@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 export default async function ServiceDetailPage({ params }) {
   const { slug } = await params;
-  const data = getContent("services", { items: [] });
+  const data = await getContent("services", { items: [] });
   const service = (data.items || []).find((item) => item.slug === slug);
 
   if (!service) {

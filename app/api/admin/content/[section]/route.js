@@ -3,7 +3,7 @@ import { getContent, saveContent } from "../../../../../lib/data";
 
 export async function GET(request, { params }) {
   const { section } = await params;
-  const content = getContent(section, null);
+  const content = await getContent(section, null);
   if (content === null) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
@@ -16,6 +16,10 @@ export async function PUT(request, { params }) {
   if (body === null || typeof body !== "object") {
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
-  const saved = saveContent(section, body);
-  return NextResponse.json({ content: saved });
+  try {
+    const saved = await saveContent(section, body);
+    return NextResponse.json({ content: saved });
+  } catch (err) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
 }

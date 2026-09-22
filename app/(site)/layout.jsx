@@ -9,9 +9,9 @@ import { getContent } from "../../lib/data";
 // of only after a full production rebuild.
 export const dynamic = "force-dynamic";
 
-export default function SiteLayout({ children }) {
-  const site = getContent("site", {});
-  const gallery = getContent("gallery", { images: [] });
+export default async function SiteLayout({ children }) {
+  const site = await getContent("site", {});
+  const gallery = await getContent("gallery", { images: [] });
 
   return (
     <>

@@ -1,8 +1,8 @@
 import { getContent } from "../../../lib/data";
 import EstimatorClient from "../../../components/estimator/EstimatorClient";
 
-export default function EstimatorPage() {
-  const config = getContent("estimator", {
+export default async function EstimatorPage() {
+  const config = await getContent("estimator", {
     hero: {},
     catalog: [],
     globalAddons: [],

@@ -1,10 +1,12 @@
 import { getContent } from "../../lib/data";
 import HomeClient from "../../components/home/HomeClient";
 
-export default function HomePage() {
-  const home = getContent("home", {});
-  const servicesData = getContent("services", { items: [] });
-  const projectsData = getContent("projects", { items: [] });
+export default async function HomePage() {
+  const [home, servicesData, projectsData] = await Promise.all([
+    getContent("home", {}),
+    getContent("services", { items: [] }),
+    getContent("projects", { items: [] }),
+  ]);
 
   const services = servicesData.items || [];
   const projects = (projectsData.items || []).slice(0, 5).map((p) => ({

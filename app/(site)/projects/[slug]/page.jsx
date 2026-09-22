@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 export default async function ProjectDetailPage({ params }) {
   const { slug } = await params;
-  const data = getContent("projects", { items: [] });
+  const data = await getContent("projects", { items: [] });
   const items = data.items || [];
   const project = items.find((item) => item.slug === slug);
 

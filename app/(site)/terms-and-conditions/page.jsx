@@ -1,7 +1,7 @@
 import { getContent } from "../../../lib/data";
 
-export default function TermsPage() {
-  const data = getContent("terms", {
+export default async function TermsPage() {
+  const data = await getContent("terms", {
     heroBg: "/images/service-bg.png",
     heroTag: "LEGAL INFORMATION",
     heroTitle: "Terms & Conditions",

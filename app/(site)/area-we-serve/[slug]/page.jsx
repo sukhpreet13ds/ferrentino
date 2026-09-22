@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 export default async function AreaDetailPage({ params }) {
   const { slug } = await params;
-  const data = getContent("areas", { items: [] });
+  const data = await getContent("areas", { items: [] });
   const area = (data.items || []).find((item) => item.slug === slug);
 
   if (!area) {

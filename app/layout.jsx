@@ -11,8 +11,8 @@ export const viewport = {
   initialScale: 1,
 };
 
-export function generateMetadata() {
-  const site = getContent("site", {});
+export async function generateMetadata() {
+  const site = await getContent("site", {});
   return {
     title: site.siteName || "Ferrentino & Son",
     description:

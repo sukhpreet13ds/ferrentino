@@ -1,7 +1,7 @@
 import { getContent } from "../../../lib/data";
 
-export default function PrivacyPage() {
-  const data = getContent("privacy", {
+export default async function PrivacyPage() {
+  const data = await getContent("privacy", {
     heroBg: "/images/service-bg.png",
     heroTag: "LEGAL INFORMATION",
     heroTitle: "Privacy Policy",
