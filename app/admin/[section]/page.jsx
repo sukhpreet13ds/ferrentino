@@ -63,7 +63,7 @@ export default function AdminSectionPage() {
 
   if (content === null) {
     return (
-      <div>
+      <div className="admin-main-inner">
         <Link href="/admin">← Back to dashboard</Link>
         <p>Section "{section}" not found.</p>
       </div>
@@ -71,7 +71,7 @@ export default function AdminSectionPage() {
   }
 
   return (
-    <div>
+    <div className="admin-main-inner">
       <Link href="/admin">← Back to dashboard</Link>
       <h1 style={{ textTransform: "capitalize" }}>{section.replace(/-/g, " ")}</h1>
       <div className="admin-card">

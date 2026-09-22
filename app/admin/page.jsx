@@ -13,14 +13,14 @@ export default function AdminDashboard() {
     groups[group].push(id);
   });
 
-  const groupOrder = ["Global", "Pages", "Collections", "Tools", "Other"];
+  const groupOrder = ["Global", "Pages", "Collections", "Legal", "Tools", "Other"];
 
   return (
-    <div>
+    <div className="admin-main-inner">
       <h1>Content Manager</h1>
       <p style={{ color: "#666" }}>
         Every page, section, and image on the site is edited from here. Pick a
-        section below.
+        section from the sidebar, or from the cards below.
       </p>
 
       {groupOrder
