@@ -7266,7 +7266,7 @@ margin-left: 5px;
         margin-bottom: 8px;
     }
 
-    .test-google-review-text {
+    .test-google-review-text {  
         font-size: 11px;
         line-height: 1.45;
         margin-bottom: 8px;
@@ -7278,7 +7278,7 @@ margin-left: 5px;
     .test-stories-grid {
         gap: 8px !important;
     }
-    
+
     .test-google-slider-wrapper {
         --card-width: 82%;
         --card-gap: 10px;
@@ -7294,7 +7294,7 @@ margin-left: 5px;
 
 
 }
-
+/* base */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
