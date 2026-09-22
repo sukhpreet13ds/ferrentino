@@ -1,5 +1,15 @@
 import "./globals.css";
+import "../styles/components.css";
+import "../styles/foldtext.css";
+import "../styles/pages.css";
+import "../styles/estimator.css";
+import "../styles/base.css";
 import { getContent } from "../lib/data";
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export function generateMetadata() {
   const site = getContent("site", {});
