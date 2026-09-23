@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import './style/style.css';
 import serviceHeroBg from '../assets/service-bg.png';
 import barbaraImg from '../assets/Barbara.jpg';
-import edwardImg from '../assets/Edward.jpg';
+import edwardImg from '../assets/Edward.webp';
 import shawnaImg from '../assets/shawna.jpg';
 import SplitText from '../components/SplitText';
 
@@ -141,7 +141,7 @@ const MeetTheBuilders = () => {
                             <h2 className="builder-name">Shawna Ferrentino</h2>
                             <div className="builder-accent-line"></div>
                             <p className="builder-bio">
-                              My vision is to build more than just structures. I strive to create lasting value by delivering projects with precision, integrity, and innovation. As a woman in construction, I am committed to empowering others in the industry while giving back through active community involvement. Every project is an opportunity to strengthen connections, uplift people, and leave a positive legacy for future generations.
+                                My vision is to build more than just structures. I strive to create lasting value by delivering projects with precision, integrity, and innovation. As a woman in construction, I am committed to empowering others in the industry while giving back through active community involvement. Every project is an opportunity to strengthen connections, uplift people, and leave a positive legacy for future generations.
                             </p>
                         </div>
 

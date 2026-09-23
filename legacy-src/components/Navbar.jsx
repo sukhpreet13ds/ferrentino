@@ -115,7 +115,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link to="/about" className="nav-link">
                                 <span className="nav-sub">Ferrentino <span className="highlight-yellow">& Son</span> </span>
-                                <span className="nav-main">About Us</span>
+                                <span className="nav-main">Our Story</span>
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -263,7 +263,7 @@ const Navbar = () => {
                     {/* Nav items list left aligned large text */}
                     <ul className="mobile-menu-list">
                         <li><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
-                        <li><Link to="/about" onClick={closeMobileMenu}>About Us</Link></li>
+                        <li><Link to="/about" onClick={closeMobileMenu}>Our Story</Link></li>
                         <li><Link to="/services" onClick={closeMobileMenu}>Services</Link></li>
                         <li><Link to="/meet-the-builders" onClick={closeMobileMenu}>Meet The Builders</Link></li>
                         <li><Link to="/projects" onClick={closeMobileMenu}>Projects</Link></li>

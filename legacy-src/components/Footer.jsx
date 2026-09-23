@@ -89,7 +89,7 @@ const Footer = () => {
                         <div className="footer-col footer-links-col reveal-zoom" data-delay="100">
                             <ul className="footer-links-list">
                                 <li><Link to="/">Home</Link></li>
-                                <li><Link to="/about">About Us</Link></li>
+                                <li><Link to="/about">Our Story</Link></li>
                                 <li><Link to="/services">Services</Link></li>
                                 <li><Link to="/meet-the-builders">Meet The Builders</Link></li>
                                 <li><Link to="/projects">Projects</Link></li>
@@ -109,7 +109,7 @@ const Footer = () => {
                                 FL 34470, United States
                             </p>
                             <p className="footer-contact-item">
-                                <span className="yellow-label">Office:</span> (352) 237-3368
+                                <span className="yellow-label">Office:</span> 352-237-3368
                             </p>
                             <p className="footer-contact-item">
                                 <span className="yellow-label">Email:</span> estimating@ferrentinoandson.com

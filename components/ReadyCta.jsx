@@ -11,7 +11,7 @@ const ReadyCta = () => {
         </p>
         <div className="ready-cta-buttons reveal-zoom" data-delay="300">
           <Link href="/estimator" className="btn-ready-estimate">
-            GET A FREE ESTIMATE
+            GET AN INSTANT ESTIMATE
           </Link>
           <a href="tel:3522373365" className="btn-ready-call">
             <i className="fa-solid fa-phone"></i> CALL (352) 237-3365

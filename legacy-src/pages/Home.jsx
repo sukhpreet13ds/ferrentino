@@ -162,7 +162,7 @@ const Home = () => {
 
                         <div className="hero-btn-container">
                             <Link to="/estimator" className="btn-get-estimate">
-                                Get a Free Estimate <i className="fa-solid fa-arrow-right btn-icon"></i>
+                                Get an Instant Estimate <i className="fa-solid fa-arrow-right btn-icon"></i>
                             </Link>
                         </div>
                     </div>
@@ -255,7 +255,7 @@ const Home = () => {
                                 Ferrentino &amp; Son uses a customized process to help buyers through the rewarding experience of remodeling or building a custom home.
                             </p>
                             <Link to="/estimator" className="btn-design-estimate">
-                                Get a Free Estimate <i className="fa-solid fa-arrow-right"></i>
+                                Get an Instant Estimate <i className="fa-solid fa-arrow-right"></i>
                             </Link>
                         </div>
 

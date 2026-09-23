@@ -5,7 +5,7 @@ import './style/style.css';
 // Assets
 import contactHeroBg from '../assets/article-view.jpg';
 import projectRoofingImg from '../assets/article-inner.jpg';
-import avatar from '../assets/Edward.jpg';
+import avatar from '../assets/Edward.webp';
 import SplitText from '../components/SplitText';
 
 const Article = () => {

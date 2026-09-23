@@ -23,7 +23,10 @@ const Footer = ({ site }) => {
   const address = site?.address || "816 NE 31st Ave, Ocala, FL 34470, United States";
   const phone = site?.phone || "+1 352-237-3368";
   const email = site?.email || "estimating@ferrentinoandson.com";
-  const bbbImage = site?.footerBbbImage || "/images/footer-business.png";
+  const bbbImage = "/images/CEP-Logo.png";
+  const bbbImage1 = "/images/mcbi-logo.webp";
+  const bbbImage2 = "/images/FHBA-logo.png";
+  const bbbImage3 = "/images/nahb-logo.png";
   const copyrightText = site?.copyrightText || "Copyright © 2026 Ferrentino and Son, LLC. All Rights Reserved.";
 
   return (
@@ -80,12 +83,12 @@ const Footer = ({ site }) => {
             <div className="footer-col footer-links-col reveal-zoom" data-delay="100">
               <ul className="footer-links-list">
                 <li><Link href="/">Home</Link></li>
-                <li><Link href="/about">About Us</Link></li>
+                <li><Link href="/about">Our Story</Link></li>
                 <li><Link href="/services">Services</Link></li>
                 <li><Link href="/meet-the-builders">Meet The Builders</Link></li>
                 <li><Link href="/projects">Projects</Link></li>
                 <li><Link href="/contractor">Subcontractor Application</Link></li>
-                <li><Link href="/ask-to-expert">Ask to Expert</Link></li>
+                {/* <li><Link href="/ask-to-expert">Ask to Expert</Link></li> */}
                 <li><Link href="/area-we-serve">Area We Serve</Link></li>
                 <li><Link href="/testimonials">Testimonials</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
@@ -100,15 +103,23 @@ const Footer = ({ site }) => {
               <p className="footer-contact-item">
                 <span className="yellow-label">Email:</span> {email}
               </p>
-              <div className="footer-bbb-wrapper">
-                <img src={bbbImage} alt="BBB Rating A+" className="footer-bbb-img" />
+              <div className="footer-bbb-wrapper" style={{display:"flex",flexDirection:"column",gap:8}}>
+                <div style={{display:"flex",alignItems:"center",gap:2}}>
+
+                <a href="https://ocalacep.com/" target="_blank"><img src={bbbImage} alt="BBB Rating A+" className="footer-bbb-img" style={{backgroundColor:"white"}} /></a>
+                <a href="https://mcbia.org/" target="_blank"><img src={bbbImage1} alt="BBB Rating A+" className="footer-bbb-img" style={{backgroundColor:"white"}}/></a>
+                </div>
+                <div style={{display:"flex",alignItems:"center",gap:2}}>
+                <a href="https://fhba.com/" target="_blank"><img src={bbbImage2} alt="BBB Rating A+" className="footer-bbb-img" style={{backgroundColor:"white"}}/></a>
+                <a href="https://www.nahb.org/" target="_blank"><img src={bbbImage3} alt="BBB Rating A+" className="footer-bbb-img" style={{backgroundColor:"black"}}/></a>
+                </div>
               </div>
             </div>
 
             <div className="footer-col footer-newsletter-col reveal-zoom" data-delay="400">
               <h4 className="newsletter-title">Subscribe to our newsletter</h4>
               <p className="newsletter-desc">
-                join our newsletter to receive latest industry news, updates and insights from our team at Ever Built.
+                join our newsletter to receive latest industry news, updates and insights from our team Ferrentino & Son.
               </p>
               <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
                 <input

@@ -18,7 +18,7 @@
   "heroSubtitle": "Ferrentino & Son is your Marion County Builder of choice for new home, commercial and remodeling construction projects.",
   "designBuildBgImage": "/images/nav-bg.png",
   "designBuildTitle": "Design & Build",
-  "designBuildSubtitle": "From New Home Construction to Complete Home Remodeling",
+  "designBuildSubtitle": "From New Home Construction + Complete Home Remodeling",
   "designBuildDescription": "The foundation of our construction expertise lies in generations of hard work and dedication. Our family values are reflected in the quality and standard we hold for every home, and we've been proud to serve our local communities throughout central Florida since 1984.",
   "animatedWords": [
     "built",
@@ -31,23 +31,23 @@
   "homeServiceLinks": [
     {
       "id": 1,
-      "title": "Kitchen Remodels",
-      "slug": "kitchen-remodeling"
-    },
-    {
-      "id": 2,
       "title": "Bath Remodels",
       "slug": "bathroom-remodeling"
     },
-    {
-      "id": 3,
-      "title": "Home Renovations",
-      "slug": "home-renovations"
-    },
-    {
-      "id": 4,
+      {
+      "id": 2,
       "title": "Home Additions",
       "slug": "home-additions"
+    },
+    {
+      "id": 3,
+      "title": "Kitchen Remodels",
+      "slug": "kitchen-remodeling"
+    },         
+    {
+      "id": 4,
+      "title": "Custom Homes",
+      "slug": "home-renovations"
     },
     {
       "id": 5,

@@ -16,7 +16,7 @@
     {
       "icon": "fa-solid fa-phone",
       "label": "Call or Text Office",
-      "value": "+1 (352) 237-3368",
+      "value": "+1 352-237-3368",
       "link": "tel:3522373368"
     },
     {
@@ -52,7 +52,7 @@
     "Home Remodeling",
     "Commercial Build",
     "Additions & Extensions",
-    "Roofing Service"
+    "Commercial Build Out"
   ],
   "nameLabel": "Your Name *",
   "namePlaceholder": "John Doe",

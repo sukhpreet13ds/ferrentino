@@ -5,7 +5,7 @@ import aboutHeroBg from '../assets/about-bg.jpg';
 import familyImg from '../assets/family.png';
 import missionRightImg from '../assets/mission-right.jpg';
 import barbaraImg from '../assets/Barbara.jpg';
-import edwardImg from '../assets/Edward.jpg';
+import edwardImg from '../assets/Edward.webp';
 import coreBg from '../assets/core-bg.jpg';
 import SplitText from '../components/SplitText';
 import ReadyCta from '../components/ReadyCta';
@@ -40,7 +40,7 @@ const About = () => {
                     <div className="about-hero-content">
                         <span className="about-hero-tag">
                             <SplitText
-                                text="ABOUT US"
+                                text="Our Story"
                                 className="about-tag-text"
                                 delay={40}
                                 duration={0.85}
@@ -87,7 +87,7 @@ const About = () => {
                         </h1>
 
                         <p className="about-hero-desc">
-                            In 1920 <a style={{color: 'inherit'}} href='https://www.ancestry.com/offers/join?dbid=2442&img=1&rtype=1&url=http%3A%2F%2Fwww.ancestry.com%2Fimageviewer%2Fcollections%2F2442%2Fimages%2Fm-t0627-02745-00143%3Fbacklabel%3DReturn%26pId%3D3795720%26ssrc%3D' target='_blank' rel='noopener noreferrer'>Amedeo “Tom” Ferrentino</a> arrived at Ellis Island, NY from Trieste, Italy as a humble brick layer. His passion for craftsmanship and quality construction laid the foundation for over FIVE GENERATIONS! The Ferrentinos have been building dreams ever since.
+                            In 1920 <a style={{ color: 'inherit' }} href='https://www.ancestry.com/offers/join?dbid=2442&img=1&rtype=1&url=http%3A%2F%2Fwww.ancestry.com%2Fimageviewer%2Fcollections%2F2442%2Fimages%2Fm-t0627-02745-00143%3Fbacklabel%3DReturn%26pId%3D3795720%26ssrc%3D' target='_blank' rel='noopener noreferrer'>Amedeo “Tom” Ferrentino</a> arrived at Ellis Island, NY from Trieste, Italy as a humble brick layer. His passion for craftsmanship and quality construction laid the foundation for over FIVE GENERATIONS! The Ferrentinos have been building dreams ever since.
                         </p>
                     </div>
 
@@ -122,7 +122,7 @@ const About = () => {
                 <div className="banner-container">
                     <h2 className="banner-text reveal-zoom">Working together to build your dream home.</h2>
                     <Link to="/estimator" className="btn-banner-estimate reveal-zoom" data-delay="150">
-                        Get a Free Estimate <i className="fa-solid fa-arrow-right"></i>
+                        Get an Instant Estimate <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                 </div>
             </section>
@@ -249,7 +249,7 @@ const About = () => {
                 </div>
             </section>
 
-            <ReadyCta/>
+            <ReadyCta />
         </div>
     );
 };

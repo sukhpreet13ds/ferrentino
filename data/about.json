@@ -1,6 +1,6 @@
 {
   "heroBg": "/images/about-bg.jpg",
-  "heroTag": "ABOUT US",
+  "heroTag": "OUR STORY",
   "heroTitleLine1": "Family Owned",
   "heroTitleLine2": "Since 1920",
   "heroDescBefore": "In 1920 ",
@@ -15,7 +15,7 @@
     "When you are looking to invest time and energy into remodeling your home, it pays to know the company that sets the bar for exceptional quality, incomparable design, and outstanding service. You can be absolutely certain Ferrentino & Son fits the bill perfectly."
   ],
   "bannerText": "Working together to build your dream home.",
-  "bannerBtnText": "Get a Free Estimate",
+  "bannerBtnText": "Get an Instant Estimate",
   "bannerBtnHref": "/estimator",
   "missionTag": "OUR MISSION STATEMENT",
   "missionTitle": "We listen first. Then we build dreams.",
@@ -32,27 +32,69 @@
   "barbaraQuoteBadge": "Barbara Ferrentino, 1st Woman Certified Master Builder",
   "codeTag": "THE STANDARD WE LIVE BY",
   "codeTitle": "The Code of Cicc",
-  "codeImage": "/images/Edward.jpg",
+  "codeImage": "/images/Edward.webp",
   "codeImageAlt": "Edward \"Cicc\" Ferrentino",
   "codeCaption": "Edward \"Cicc\" Ferrentino 4th Generation Builder",
   "codeItems": [
-    { "num": "01", "text": "Acknowledge and act on all customer concerns." },
-    { "num": "02", "text": "Treat all we do business with like they are \"in the family.\"" },
-    { "num": "03", "text": "Give back to the community." },
-    { "num": "04", "text": "Conduct business operations in a manner that is transparent, legal, ethical, & fair." },
-    { "num": "05", "text": "Comply both in spirit & letter with rules and regulations prescribed by Federal, State, & community laws." },
-    { "num": "06", "text": "Avoid using any statement or implications which may be perceived as deceptive." },
-    { "num": "07", "text": "Accurately & honestly describe the price, materials, & standards of craftsmanship and craftsmanship used on our projects—and document, document, document." },
-    { "num": "08", "text": "Use only materials equal to or exceeding the quality specified in the contract, and follow all manufacture recommendations." },
-    { "num": "09", "text": "Start construction upon award of a contract & proceed diligently to completion without unnecessary delays." }
+    {
+      "num": "01",
+      "text": "Acknowledge and act on all customer concerns."
+    },
+    {
+      "num": "02",
+      "text": "Treat all we do business with like they are \"in the family.\""
+    },
+    {
+      "num": "03",
+      "text": "Give back to the community."
+    },
+    {
+      "num": "04",
+      "text": "Conduct business operations in a manner that is transparent, legal, ethical, & fair."
+    },
+    {
+      "num": "05",
+      "text": "Comply both in spirit & letter with rules and regulations prescribed by Federal, State, & community laws."
+    },
+    {
+      "num": "06",
+      "text": "Avoid using any statement or implications which may be perceived as deceptive."
+    },
+    {
+      "num": "07",
+      "text": "Accurately & honestly describe the price, materials, & standards of craftsmanship and craftsmanship used on our projects—and document, document, document."
+    },
+    {
+      "num": "08",
+      "text": "Use only materials equal to or exceeding the quality specified in the contract, and follow all manufacture recommendations."
+    },
+    {
+      "num": "09",
+      "text": "Start construction upon award of a contract & proceed diligently to completion without unnecessary delays."
+    }
   ],
   "coreBg": "/images/core-bg.jpg",
   "coreTitle": "Core Community Values",
   "coreCards": [
-    { "title": "Supporting Our Community", "desc": "Support the company's effort in strengthening the communities in which we live, work, & play. Support the volunteerism of our fellow employees." },
-    { "title": "Superior Customer Experience", "desc": "Our commitment to delivering excellent customer service by engaging with our homeowners, going beyond primary job completion and satisfying our efforts. We strive to provide a fast response with quality craftsmanship/craftswomenship, genuine concern, & clear communication." },
-    { "title": "Quality of Service", "desc": "Take time to hire & train the right employees. Continuously offering learning opportunities. Measure performance. Keep an open line of communication." },
-    { "title": "Respect", "desc": "Take time to understand the perspective of others. Value the contribution of others. Treat everyone with unfailing dignity." },
-    { "title": "Honesty & Integrity", "desc": "Maintain truth in all interactions. Do not take the easy way out. Take accountability for our actions, without passing blame on others. Follow through on commitments." }
+    {
+      "title": "Supporting Our Community",
+      "desc": "Support the company's effort in strengthening the communities in which we live, work, & play. Support the volunteerism of our fellow employees."
+    },
+    {
+      "title": "Superior Customer Experience",
+      "desc": "Our commitment to delivering excellent customer service by engaging with our homeowners, going beyond primary job completion and satisfying our efforts. We strive to provide a fast response with quality craftsmanship/craftswomenship, genuine concern, & clear communication."
+    },
+    {
+      "title": "Quality of Service",
+      "desc": "Take time to hire & train the right employees. Continuously offering learning opportunities. Measure performance. Keep an open line of communication."
+    },
+    {
+      "title": "Respect",
+      "desc": "Take time to understand the perspective of others. Value the contribution of others. Treat everyone with unfailing dignity."
+    },
+    {
+      "title": "Honesty & Integrity",
+      "desc": "Maintain truth in all interactions. Do not take the easy way out. Take accountability for our actions, without passing blame on others. Follow through on commitments."
+    }
   ]
 }

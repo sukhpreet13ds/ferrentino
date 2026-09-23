@@ -7,17 +7,33 @@
   "articleTag": "ARTICLE IN DEPTH",
   "pubDate": "Published Sep 28",
   "title": "Industry Overview and Career Pathway to Construction & Utilities",
-  "authorAvatar": "/images/Edward.jpg",
+  "authorAvatar": "/images/Edward.webp",
   "authorAlt": "Edward Cicc Ferrentino",
   "authorName": "Written By Edward Cicc Ferrentino",
   "bannerImage": "/images/article-inner.jpg",
   "bannerAlt": "Construction & Utilities Industry Overview",
   "metricsHeading": "Key Market Metrics",
   "marketMetrics": [
-    { "label": "TOTAL EMPLOYED", "value": "52,480", "sub": "Total Regional Workforce" },
-    { "label": "CONSTRUCTION WAGE", "value": "$61,323", "sub": "Annual Average Construction Pay" },
-    { "label": "UTILITIES WAGE", "value": "$112,971", "sub": "Annual Average Utilities Pay" },
-    { "label": "EXPECTED DEMAND", "value": "28,442", "sub": "Workforce Needs Next 5 Years" }
+    {
+      "label": "TOTAL EMPLOYED",
+      "value": "52,480",
+      "sub": "Total Regional Workforce"
+    },
+    {
+      "label": "CONSTRUCTION WAGE",
+      "value": "$61,323",
+      "sub": "Annual Average Construction Pay"
+    },
+    {
+      "label": "UTILITIES WAGE",
+      "value": "$112,971",
+      "sub": "Annual Average Utilities Pay"
+    },
+    {
+      "label": "EXPECTED DEMAND",
+      "value": "28,442",
+      "sub": "Workforce Needs Next 5 Years"
+    }
   ],
   "pathwayTitle": "Career Pathway to Construction & Utilities",
   "pathwayDesc": "The construction and utilities sectors present multi-tiered progression systems. Pathways range from immediate, low-barrier entry roles with practical training to highly skilled, certified, or degree-required technical fields. Review the targeted structural progression options mapped below.",
@@ -26,27 +42,54 @@
       "badge": "NOW",
       "heading": "Requires HS Diploma and On the Job Training",
       "roles": [
-        { "role": "Carpenters", "pay": "$23.75/hr" },
-        { "role": "Construction Equipment Operators", "pay": "$23.08/hr" },
-        { "role": "Construction Laborers", "pay": "$21.11/hr" }
+        {
+          "role": "Carpenters",
+          "pay": "$23.75/hr"
+        },
+        {
+          "role": "Construction Equipment Operators",
+          "pay": "$23.08/hr"
+        },
+        {
+          "role": "Construction Laborers",
+          "pay": "$21.11/hr"
+        }
       ]
     },
     {
       "badge": "NEXT",
       "heading": "Requires an Apprenticeship and Moderate on the Job Training",
       "roles": [
-        { "role": "Construction and Building Inspectors", "pay": "$28.13/hr" },
-        { "role": "Electricians", "pay": "$25.24/hr" },
-        { "role": "Plumber/Pipefitters", "pay": "$24.86/hr" }
+        {
+          "role": "Construction and Building Inspectors",
+          "pay": "$28.13/hr"
+        },
+        {
+          "role": "Electricians",
+          "pay": "$25.24/hr"
+        },
+        {
+          "role": "Plumber/Pipefitters",
+          "pay": "$24.86/hr"
+        }
       ]
     },
     {
       "badge": "LATER",
       "heading": "Requires a Bachelor's Degree or Higher and/or Long Term On the Job Training",
       "roles": [
-        { "role": "Project Management Specialists", "pay": "$55.24/hr" },
-        { "role": "Construction Managers", "pay": "$55.95/hr" },
-        { "role": "Electrical Power-Line Installers and Repairers", "pay": "$44.38/hr" }
+        {
+          "role": "Project Management Specialists",
+          "pay": "$55.24/hr"
+        },
+        {
+          "role": "Construction Managers",
+          "pay": "$55.95/hr"
+        },
+        {
+          "role": "Electrical Power-Line Installers and Repairers",
+          "pay": "$44.38/hr"
+        }
       ]
     }
   ],

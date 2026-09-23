@@ -130,7 +130,7 @@ const HomeClient = ({ data, services, projects }) => {
 
             <div className="hero-btn-container">
               <Link href="/estimator" className="btn-get-estimate">
-                Get a Free Estimate <i className="fa-solid fa-arrow-right btn-icon"></i>
+                Get an Instant Estimate <i className="fa-solid fa-arrow-right btn-icon"></i>
               </Link>
             </div>
           </div>
@@ -209,7 +209,7 @@ const HomeClient = ({ data, services, projects }) => {
               <p className="col-bold-sub">{data.whatSetsUsApartSubtitle}</p>
               <p className="col-desc">{data.whatSetsUsApartDescription}</p>
               <Link href="/estimator" className="btn-design-estimate">
-                Get a Free Estimate <i className="fa-solid fa-arrow-right"></i>
+                Get an Instant Estimate <i className="fa-solid fa-arrow-right"></i>
               </Link>
             </div>
 

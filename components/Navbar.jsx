@@ -116,7 +116,7 @@ const Navbar = ({ site }) => {
             <li className="nav-item">
               <Link href="/about" className="nav-link">
                 <span className="nav-sub">Ferrentino <span className="highlight-yellow">& Son</span> </span>
-                <span className="nav-main">About Us</span>
+                <span className="nav-main">Our Story</span>
               </Link>
             </li>
             <li className="nav-item">
@@ -254,7 +254,7 @@ const Navbar = ({ site }) => {
 
           <ul className="mobile-menu-list">
             <li><Link href="/" onClick={closeMobileMenu}>Home</Link></li>
-            <li><Link href="/about" onClick={closeMobileMenu}>About Us</Link></li>
+            <li><Link href="/about" onClick={closeMobileMenu}>Our Story</Link></li>
             <li><Link href="/services" onClick={closeMobileMenu}>Services</Link></li>
             <li><Link href="/meet-the-builders" onClick={closeMobileMenu}>Meet The Builders</Link></li>
             <li><Link href="/projects" onClick={closeMobileMenu}>Projects</Link></li>

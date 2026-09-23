@@ -259,7 +259,7 @@ const Privacy = () => {
                                 </p>
                                 <p className="legal-contact-item">
                                     <i className="fa-solid fa-phone"></i>
-                                    <strong>Phone:</strong> <a href="tel:3522373368">(352) 237-3368</a>
+                                    <strong>Phone:</strong> <a href="tel:3522373368">352-237-3368</a>
                                 </p>
                             </div>
 

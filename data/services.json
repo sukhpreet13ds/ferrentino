@@ -224,15 +224,15 @@
     },
     {
       "id": 4,
-      "slug": "home-renovations",
-      "title": "Home Renovations",
-      "description": "Keep the character. Change what's not working. Our renovation work brings older or dated spaces forward while respecting the home that was already there.",
-      "linkText": "View Home Renovations",
-      "image": "/images/f&s-service4.png",
-      "detailHeroTag": "THOUGHTFUL HOME RENOVATIONS",
-      "detailHeroTitleLine1": "Home Renovations",
+      "slug": "exterior-renovations",
+      "title": "Outdoor living",
+      "description": "Create functional, beautiful outdoor living spaces that extend your home and enhance your lifestyle.",
+      "linkText": "View Outdoor Living",
+      "image": "/images/outdoor-pro.jpg",
+      "detailHeroTag": "OUTDOOR LIVING",
+      "detailHeroTitleLine1": "Outdoor Living",
       "detailHeroTitleLine2": "That Respect Character",
-      "detailHeroDesc": "We bring older, dated spaces forward while preserving the architectural character that made the home special.",
+      "detailHeroDesc": "Outdoor living spaces designed to be extensions of the home, crafted with quality materials and architectural care.",
       "detailHeroBg": "/images/core-bg.jpg",
       "introTitle": "Keep The Character, Fix What's Not Working",
       "introParagraphs": [
@@ -338,63 +338,6 @@
     },
     {
       "id": 6,
-      "slug": "interior-remodeling",
-      "title": "Interior Remodeling",
-      "description": "A few walls, finishes, or layout changes can completely shift how a home feels. We help remodel interiors so each space feels intentional.",
-      "linkText": "View Interior Remodeling",
-      "image": "/images/f&s-service6.png",
-      "detailHeroTag": "INTENTIONAL INTERIOR REMODELING",
-      "detailHeroTitleLine1": "Interior Remodeling",
-      "detailHeroTitleLine2": "For Every Room",
-      "detailHeroDesc": "A few thoughtful layout and finish changes can completely shift how your home feels day to day.",
-      "detailHeroBg": "/images/interier.jpg",
-      "introTitle": "Every Space, Made Intentional",
-      "introParagraphs": [
-        "Interior remodeling is about the details: trim profiles, lighting layers, flooring transitions, and the small layout changes that make rooms feel right.",
-        "We work room by room or across the whole interior, always keeping finishes consistent from space to space."
-      ],
-      "introChecklist": [
-        "Custom trim, millwork, and built-ins",
-        "Layered lighting design",
-        "Flooring and finish transitions",
-        "Consistent material palette across rooms"
-      ],
-      "introImage": "/images/inner-two2.jpg",
-      "featured": [
-        {
-          "image": "/images/room.jpg",
-          "tag": "OCALA, FL",
-          "title": "Living Room Makeover",
-          "desc": "A cozy living room transformed into a spacious entertainment space with modern finishes."
-        },
-        {
-          "image": "/images/living.jpg",
-          "tag": "OCALA, FL",
-          "title": "Whole-Interior Finish Package",
-          "desc": "A coordinated finish package brought consistency across every interior room."
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Can you remodel just one room at a time?",
-          "answer": "Yes, we can remodel a single room or coordinate a full-interior finish package."
-        },
-        {
-          "question": "Do you offer interior design services?",
-          "answer": "Yes, our design team helps coordinate finishes, lighting, and layout before construction begins."
-        },
-        {
-          "question": "How disruptive is an interior remodel?",
-          "answer": "We use dust barriers and phased scheduling to keep disruption to a minimum, especially for occupied homes."
-        },
-        {
-          "question": "Can you build custom built-ins?",
-          "answer": "Yes, our cabinet shop fabricates custom built-ins, shelving, and millwork to your exact space."
-        }
-      ]
-    },
-    {
-      "id": 7,
       "slug": "design-and-planning",
       "title": "Design & Planning",
       "description": "Turn your ideas into a practical project plan. We help guide layout, functionality, materials, finishes, and design decisions before construction begins.",
@@ -447,120 +390,6 @@
         {
           "question": "Will I know the total cost before construction starts?",
           "answer": "Yes, we provide a detailed estimate based on the finalized design before construction begins."
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "slug": "custom-carpentry",
-      "title": "Custom Carpentry",
-      "description": "Add character and detail to your home with custom carpentry, trim work, built-ins, woodwork, doors, and finishing details.",
-      "linkText": "View Custom Carpentry",
-      "image": "/images/f&s-service8.png",
-      "detailHeroTag": "MASTER CUSTOM CARPENTRY",
-      "detailHeroTitleLine1": "Custom Carpentry",
-      "detailHeroTitleLine2": "& Fine Woodwork",
-      "detailHeroDesc": "Add lasting character with custom carpentry, trim work, built-ins, and hand-finished woodwork.",
-      "detailHeroBg": "/images/ask-expert-bg.jpg",
-      "introTitle": "Craftsmanship In Every Detail",
-      "introParagraphs": [
-        "Custom carpentry is where character comes from: hand-fit trim, built-in cabinetry, custom doors, and joinery that a pre-fab product can't match.",
-        "Our in-house cabinet shop fabricates every piece to the exact dimensions of your space, not the other way around."
-      ],
-      "introChecklist": [
-        "Custom trim, casing, and crown molding",
-        "Built-in cabinetry and shelving",
-        "Solid wood doors and hardware",
-        "Hand-finished joinery and millwork"
-      ],
-      "introImage": "/images/ferrentino3.jpg",
-      "featured": [
-        {
-          "image": "/images/project-zone.jpg",
-          "tag": "OCALA, FL",
-          "title": "Hand-Forged Hardware & Finish",
-          "desc": "Every joint, latch, and beam corner finished by master tradespeople."
-        },
-        {
-          "image": "/images/project-zone1.jpg",
-          "tag": "MARION COUNTY, FL",
-          "title": "Custom Built-In Library",
-          "desc": "Floor-to-ceiling custom built-ins fabricated to the exact dimensions of the room."
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Do you build custom furniture pieces?",
-          "answer": "We focus on built-in carpentry \u2014 cabinetry, shelving, trim, and millwork \u2014 fabricated to your home's exact dimensions."
-        },
-        {
-          "question": "Can you match existing woodwork?",
-          "answer": "Yes, we can reproduce or closely match existing trim, door, and cabinetry profiles."
-        },
-        {
-          "question": "What wood species do you work with?",
-          "answer": "We work with oak, pine, cypress, and other hardwoods depending on your style and budget."
-        },
-        {
-          "question": "Is the cabinet shop in-house?",
-          "answer": "Yes, all custom carpentry is fabricated at our own local cabinet shop for a guaranteed fit."
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "slug": "exterior-renovations",
-      "title": "Exterior Renovations",
-      "description": "We update exterior details, finishes, and features to give the home a stronger, more finished presence from the street.",
-      "linkText": "View Exterior Renovations",
-      "image": "/images/f&s-service9.png",
-      "detailHeroTag": "EXTERIOR RENOVATIONS",
-      "detailHeroTitleLine1": "Exterior Renovations",
-      "detailHeroTitleLine2": "& Outdoor Living",
-      "detailHeroDesc": "Give your home a stronger presence from the street with updated exterior details and outdoor living features.",
-      "detailHeroBg": "/images/area-bg.jpg",
-      "introTitle": "A Stronger Presence From The Street",
-      "introParagraphs": [
-        "Exterior updates make the biggest first impression: masonry, siding, roofing, and outdoor living spaces all shape how a home reads from the street.",
-        "We handle everything from brick and stone masonry to covered porches and outdoor entertaining spaces."
-      ],
-      "introChecklist": [
-        "Brick and natural stone masonry",
-        "Roofing and exterior siding updates",
-        "Covered porches and outdoor living spaces",
-        "Exterior lighting and hardscape detail"
-      ],
-      "introImage": "/images/project-outdoor.jpg",
-      "featured": [
-        {
-          "image": "/images/project-roofing.jpg",
-          "tag": "OCALA, FL",
-          "title": "Roofing & Exterior Refresh",
-          "desc": "A full exterior update including roofing, siding, and masonry detail."
-        },
-        {
-          "image": "/images/outdoor.jpg",
-          "tag": "WILLISTON, FL",
-          "title": "Wrap-Around Brick Porch",
-          "desc": "A hand-laid brick porch with cypress ceiling extends indoor living outdoors."
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Do you handle roofing as part of exterior renovations?",
-          "answer": "Yes, roofing, siding, and masonry are all coordinated as part of our exterior renovation scope."
-        },
-        {
-          "question": "Can you build a covered outdoor living space?",
-          "answer": "Yes, we design and build covered porches, patios, and outdoor kitchens to extend your living space outdoors."
-        },
-        {
-          "question": "How weather-resistant are your exterior materials?",
-          "answer": "We select masonry, siding, and roofing materials rated for Central Florida's climate and storm exposure."
-        },
-        {
-          "question": "Do exterior renovations require permits?",
-          "answer": "Most exterior structural and roofing work requires permits, which we manage on your behalf."
         }
       ]
     }
