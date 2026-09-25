@@ -4604,16 +4604,58 @@ margin-left: 5px;
 }
 
 .pv-thumb-scroll-btn {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(17, 18, 19, 0.9);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pv-thumb-scroll-btn:hover {
+    background: var(--primary-color, #c89d5c);
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.pv-thumb-scroll-btn.left {
+    left: -16px;
+}
+
+.pv-thumb-scroll-btn.right {
+    right: -16px;
 }
 
 .pv-thumbnails-row {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
     gap: 16px;
+    padding: 6px 4px;
+    width: 100%;
+}
+
+.pv-thumbnails-row::-webkit-scrollbar {
+    display: none;
 }
 
 .pv-thumb-item {
+    flex: 0 0 calc((100% - 80px) / 6);
+    min-width: 170px;
+    scroll-snap-align: start;
     position: relative;
     cursor: pointer;
     border-radius: 6px;
@@ -4662,6 +4704,9 @@ margin-left: 5px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     backdrop-filter: blur(2px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Section 3: Generations of Timber & Stone (Mandate) */

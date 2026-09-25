@@ -8,6 +8,52 @@ const LONG_TEXT_KEY_RE = /(description|desc|content|body|text|quote|bio|message|
 const IMAGE_VALUE_RE = /\.(jpe?g|png|webp|gif|svg|mp4)$/i;
 const TITLE_KEY_RE = /(title|name|question|heading|label)$/i;
 
+const KNOWN_SCHEMAS = {
+  walkthroughSlides: {
+    id: 0,
+    label: "FEATURE DETAIL",
+    image: "/images/ferrentino1.jpg",
+    title: "Craftsmanship & Architectural Detail",
+    desc: "Precision joinery and custom architectural finish work designed to endure.",
+  },
+  slides: {
+    id: 0,
+    label: "FEATURE DETAIL",
+    image: "/images/ferrentino1.jpg",
+    title: "Craftsmanship & Architectural Detail",
+    desc: "Precision joinery and custom architectural finish work designed to endure.",
+  },
+  items: {
+    id: 1,
+    slug: "new-custom-project",
+    category: "LiveWell Residential",
+    year: "Completed 2025",
+    title: "Custom Residence Estate",
+    location: "Ocala, FL",
+    description: "Generations-strength custom home build featuring high-end architectural finishings.",
+    heroImage: "/images/ferrentino1.jpg",
+    walkthroughSlides: [
+      {
+        id: 0,
+        label: "EXTERIOR FACADE",
+        image: "/images/ferrentino1.jpg",
+        title: "Generations-Strength Timber & Masonry Detail",
+        desc: "Precision joinery showcase designed for enduring structural beauty.",
+      },
+    ],
+    specs: {
+      clientScope: "Custom Residential",
+      timberSource: "Central Florida Oak",
+      specialtyCraft: "Custom Joinery",
+      squareFootage: "3,500 sq ft",
+    },
+    challenge: "Creating a timeless custom build that unifies luxury finishes with structural strength.",
+    solution: "We engineered custom timber and masonry detailing wrapped in energy-efficient architectural design.",
+    quoteText: "The level of detail and craftsmanship exceeded all our expectations.",
+    quoteAuthor: "HOMETOWN RESIDENT",
+  },
+};
+
 function humanizeKey(key) {
   return key
     .replace(/[_-]+/g, " ")
@@ -37,9 +83,35 @@ function isLongTextField(key, value) {
   return LONG_TEXT_KEY_RE.test(key) || value.length > 80;
 }
 
-function emptyLike(sample) {
+function findSampleForArray(root, targetKey) {
+  if (!root || typeof root !== "object" || !targetKey) return null;
+
+  if (Array.isArray(root[targetKey]) && root[targetKey].length > 0) {
+    const first = root[targetKey][0];
+    if (first !== null && first !== undefined) return first;
+  }
+
+  if (Array.isArray(root)) {
+    for (const item of root) {
+      const found = findSampleForArray(item, targetKey);
+      if (found !== null && found !== undefined) return found;
+    }
+    return null;
+  }
+
+  for (const [k, val] of Object.entries(root)) {
+    if (val && typeof val === "object") {
+      const found = findSampleForArray(val, targetKey);
+      if (found !== null && found !== undefined) return found;
+    }
+  }
+
+  return null;
+}
+
+function emptyLike(sample, rootValue, fieldKey) {
   if (Array.isArray(sample)) return [];
-  if (sample === null) return "";
+  if (sample === null || sample === undefined) return "";
   switch (typeof sample) {
     case "string":
       return "";
@@ -48,7 +120,9 @@ function emptyLike(sample) {
     case "boolean":
       return false;
     case "object":
-      return Object.fromEntries(Object.keys(sample).map((k) => [k, emptyLike(sample[k])]));
+      return Object.fromEntries(
+        Object.keys(sample).map((k) => [k, emptyLike(sample[k], rootValue, k)])
+      );
     default:
       return "";
   }
@@ -84,8 +158,18 @@ function pickCardFields(item) {
   return { thumbnail, title, excerpt };
 }
 
-function CardArrayField({ label, value, onChange }) {
-  const sample = value.length > 0 ? value[0] : {};
+function CardArrayField({ label, fieldKey, value, onChange, rootValue, sample: externalSample }) {
+  let sample = value.length > 0 ? value[0] : externalSample;
+  if (!sample && fieldKey && rootValue) {
+    sample = findSampleForArray(rootValue, fieldKey);
+  }
+  if (!sample && fieldKey && KNOWN_SCHEMAS[fieldKey]) {
+    sample = KNOWN_SCHEMAS[fieldKey];
+  }
+  if (!sample) {
+    sample = {};
+  }
+
   const [expanded, setExpanded] = useState(() => new Set());
 
   const toggleExpanded = (idx) => {
@@ -118,7 +202,17 @@ function CardArrayField({ label, value, onChange }) {
 
   const addItem = () => {
     const newIdx = value.length;
-    onChange([...value, emptyLike(sample)]);
+    let newItem = emptyLike(sample, rootValue, fieldKey);
+    if (fieldKey === "walkthroughSlides" || fieldKey === "slides") {
+      newItem = {
+        id: newIdx,
+        label: (sample && sample.label) ? sample.label : "FEATURE DETAIL",
+        image: (sample && sample.image) ? sample.image : "/images/ferrentino1.jpg",
+        title: (sample && sample.title) ? sample.title : "Craftsmanship & Architectural Detail",
+        desc: (sample && sample.desc) ? sample.desc : "Precision joinery and custom architectural finish work designed to endure.",
+      };
+    }
+    onChange([...value, newItem]);
     setExpanded((prev) => new Set(prev).add(newIdx));
   };
 
@@ -136,7 +230,13 @@ function CardArrayField({ label, value, onChange }) {
       <div className="admin-card-grid">
         {value.map((item, idx) => {
           const isOpen = expanded.has(idx);
-          const { thumbnail, title, excerpt } = pickCardFields(item);
+
+          const effectiveItem =
+            typeof item === "object" && item !== null && sample && typeof sample === "object"
+              ? { ...emptyLike(sample, rootValue, fieldKey), ...item }
+              : item;
+
+          const { thumbnail, title, excerpt } = pickCardFields(effectiveItem);
 
           return (
             <div className={`admin-content-card ${isOpen ? "is-editing" : ""}`} key={idx}>
@@ -195,7 +295,13 @@ function CardArrayField({ label, value, onChange }) {
 
               {isOpen && (
                 <div className="admin-content-card-editor">
-                  <JsonEditor value={item} onChange={(next) => updateItem(idx, next)} labelPrefix="" />
+                  <JsonEditor
+                    value={effectiveItem}
+                    onChange={(next) => updateItem(idx, next)}
+                    labelPrefix=""
+                    rootValue={rootValue}
+                    fieldKey={fieldKey}
+                  />
                 </div>
               )}
             </div>
@@ -206,7 +312,7 @@ function CardArrayField({ label, value, onChange }) {
   );
 }
 
-function SimpleArrayField({ label, value, onChange }) {
+function SimpleArrayField({ label, fieldKey, value, onChange, rootValue }) {
   const sample = value.length > 0 ? value[0] : "";
 
   const updateItem = (idx, next) => {
@@ -228,7 +334,7 @@ function SimpleArrayField({ label, value, onChange }) {
   };
 
   const addItem = () => {
-    onChange([...value, emptyLike(sample)]);
+    onChange([...value, emptyLike(sample, rootValue, fieldKey)]);
   };
 
   return (
@@ -250,7 +356,13 @@ function SimpleArrayField({ label, value, onChange }) {
                 <button type="button" className="admin-btn-danger" onClick={() => removeItem(idx)}>Remove</button>
               </div>
             </div>
-            <JsonEditor value={item} onChange={(next) => updateItem(idx, next)} labelPrefix="" />
+            <JsonEditor
+              value={item}
+              onChange={(next) => updateItem(idx, next)}
+              labelPrefix=""
+              rootValue={rootValue}
+              fieldKey={fieldKey}
+            />
           </div>
         ))}
         {value.length === 0 && <p className="admin-empty-hint">No entries yet.</p>}
@@ -259,17 +371,56 @@ function SimpleArrayField({ label, value, onChange }) {
   );
 }
 
-function ArrayField({ label, value, onChange }) {
-  const looksLikeObjectCollection = value.length === 0 || typeof value[0] === "object";
-  if (looksLikeObjectCollection) {
-    return <CardArrayField label={label} value={value} onChange={onChange} />;
+function ArrayField({ label, fieldKey, value, onChange, rootValue }) {
+  let sample = value.length > 0 ? value[0] : null;
+
+  if (!sample && fieldKey && rootValue) {
+    sample = findSampleForArray(rootValue, fieldKey);
   }
-  return <SimpleArrayField label={label} value={value} onChange={onChange} />;
+  if (!sample && fieldKey && KNOWN_SCHEMAS[fieldKey]) {
+    sample = KNOWN_SCHEMAS[fieldKey];
+  }
+
+  const looksLikeObjectCollection =
+    (value.length > 0 && typeof value[0] === "object" && value[0] !== null) ||
+    (value.length === 0 && sample !== null && typeof sample === "object");
+
+  if (looksLikeObjectCollection) {
+    return (
+      <CardArrayField
+        label={label}
+        fieldKey={fieldKey}
+        value={value}
+        onChange={onChange}
+        rootValue={rootValue}
+        sample={sample}
+      />
+    );
+  }
+  return (
+    <SimpleArrayField
+      label={label}
+      fieldKey={fieldKey}
+      value={value}
+      onChange={onChange}
+      rootValue={rootValue}
+    />
+  );
 }
 
-export default function JsonEditor({ value, onChange, labelPrefix }) {
+export default function JsonEditor({ value, onChange, labelPrefix, rootValue, fieldKey }) {
+  const root = rootValue !== undefined ? rootValue : value;
+
   if (Array.isArray(value)) {
-    return <ArrayField label={labelPrefix || "Items"} value={value} onChange={onChange} />;
+    return (
+      <ArrayField
+        label={labelPrefix || "Items"}
+        fieldKey={fieldKey}
+        value={value}
+        onChange={onChange}
+        rootValue={root}
+      />
+    );
   }
 
   if (value !== null && typeof value === "object") {
@@ -281,14 +432,29 @@ export default function JsonEditor({ value, onChange, labelPrefix }) {
           const update = (next) => onChange({ ...value, [key]: next });
 
           if (Array.isArray(val)) {
-            return <ArrayField key={key} label={label} value={val} onChange={update} />;
+            return (
+              <ArrayField
+                key={key}
+                label={label}
+                fieldKey={key}
+                value={val}
+                onChange={update}
+                rootValue={root}
+              />
+            );
           }
 
           if (val !== null && typeof val === "object") {
             return (
               <fieldset className="admin-field admin-field-group" key={key}>
                 <legend>{label}</legend>
-                <JsonEditor value={val} onChange={update} labelPrefix={label} />
+                <JsonEditor
+                  value={val}
+                  onChange={update}
+                  labelPrefix={label}
+                  rootValue={root}
+                  fieldKey={key}
+                />
               </fieldset>
             );
           }
@@ -365,3 +531,4 @@ export default function JsonEditor({ value, onChange, labelPrefix }) {
     />
   );
 }
+

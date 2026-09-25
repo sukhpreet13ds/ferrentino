@@ -91,11 +91,13 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
             </div>
 
             <div className="pv-main-slider-card reveal-zoom">
-              <img src={active.image} alt={active.title} className="pv-slider-img" />
+              <img src={active.image} alt={active.title || active.label || "Craftsmanship & Architectural Detail"} className="pv-slider-img" />
               <div className="pv-slider-overlay">
                 <div className="pv-overlay-content">
-                  <h3 className="pv-overlay-title">{active.title}</h3>
-                  <p className="pv-overlay-desc">{active.desc}</p>
+                  <h3 className="pv-overlay-title">{active.title || active.label || "Craftsmanship & Architectural Detail"}</h3>
+                  {(active.desc || active.description) && (
+                    <p className="pv-overlay-desc">{active.desc || active.description}</p>
+                  )}
                 </div>
                 <div className="pv-slider-dots">
                   {slides.map((_, idx) => (
@@ -117,14 +119,14 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
               <div className="pv-thumbnails-row" ref={thumbContainerRef}>
                 {slides.map((slide, idx) => (
                   <div
-                    key={slide.id}
+                    key={`slide-${slide.id ?? idx}-${idx}`}
                     onClick={() => setCurrentSlide(idx)}
                     className={`pv-thumb-item ${idx === currentSlide ? "active" : ""}`}
                   >
                     <div className="pv-thumb-img-wrapper">
-                      <img src={slide.image} alt={slide.label} />
+                      <img src={slide.image} alt={slide.title || slide.label || "FEATURE DETAIL"} />
                     </div>
-                    <span className="pv-thumb-label">{slide.label}</span>
+                    <span className="pv-thumb-label">{slide.title || slide.label || "FEATURE DETAIL"}</span>
                   </div>
                 ))}
               </div>
@@ -201,24 +203,33 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
             </div>
 
             <div className="pv-portfolios-grid">
-              {otherProjects.map((p, idx) => (
-                <div className="pv-portfolio-card reveal-zoom" key={p.id} data-delay={idx === 0 ? "0" : "150"}>
-                  <div className="pv-portfolio-img-wrapper">
-                    <img src={p.heroImage} alt={p.title} />
-                    <div className="pv-card-badge-bar">
-                      <span className="pv-card-badge">{p.category}</span>
-                      <span className="pv-card-location">{p.location}</span>
+              {otherProjects.map((p, idx) => {
+                const projectSlug = p.slug || (p.title ? p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : p.id);
+                return (
+                  <Link
+                    href={`/projects/${projectSlug}`}
+                    className="pv-portfolio-card reveal-zoom"
+                    key={`other-${p.id ?? idx}-${idx}`}
+                    data-delay={idx === 0 ? "0" : "150"}
+                    style={{ textDecoration: "none", color: "inherit", display: "block" }}
+                  >
+                    <div className="pv-portfolio-img-wrapper">
+                      <img src={p.heroImage} alt={p.title} />
+                      <div className="pv-card-badge-bar">
+                        <span className="pv-card-badge">{p.category}</span>
+                        <span className="pv-card-location">{p.location}</span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="pv-portfolio-card-body">
-                    <h3 className="pv-card-title">{p.title}</h3>
-                    <p className="pv-card-desc">{p.description}</p>
-                    <Link href={`/projects/${p.slug}`} className="pv-card-link">
-                      View Project Case Study →
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                    <div className="pv-portfolio-card-body">
+                      <h3 className="pv-card-title">{p.title}</h3>
+                      <p className="pv-card-desc">{p.description}</p>
+                      <span className="pv-card-link">
+                        View Project Case Study →
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
