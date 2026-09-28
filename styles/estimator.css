@@ -2,6 +2,107 @@
    FERRENTINO & SON — PROJECT ESTIMATOR (Mobile-First Ergonomics & Modern UI)
    ========================================================================= */
 
+/* ── Mode Toggle ── */
+#est-root .est-mode-toggle-wrap {
+  margin-bottom: 36px;
+}
+
+#est-root .est-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background: #FFFFFF;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 10px;
+}
+
+#est-root .est-mode-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 22px;
+  background: transparent;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6B7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+#est-root .est-mode-btn:first-child {
+  border-right: 1.5px solid #E5E7EB;
+}
+
+#est-root .est-mode-btn:hover {
+  background: #F9FAFB;
+  color: #111213;
+}
+
+#est-root .est-mode-btn.active {
+  background: #111213;
+  color: #FFFFFF;
+}
+
+#est-root .est-mode-icon {
+  font-size: 13px;
+}
+
+#est-root .est-mode-tag {
+  background: #FBC705;
+  color: #111213;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+#est-root .est-mode-hint {
+  font-size: 13.5px;
+  color: #6B7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  #est-root .est-mode-toggle {
+    width: 100%;
+  }
+  #est-root .est-mode-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 11px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Catalog mode: strip the inner estimator-page wrapper padding/bg
+   when EstimatorClient is nested inside the mode wrapper */
+.est-catalog-inner > .estimator-page {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background: transparent !important;
+  min-height: 0 !important;
+}
+
+.est-catalog-inner > .estimator-page > #est-root {
+  padding-top: 0 !important;
+}
+
+@media (max-width: 980px) {
+  .est-catalog-inner > .estimator-page {
+    padding-top: 0 !important;
+  }
+}
+
 .estimator-page {
   width: 100%;
   padding-top: 130px;
@@ -169,7 +270,10 @@
 }
 
 /* Main Panel Styling */
-#est-root .est-panel {
+#est-root .est-panel,
+#est-root .est-cart-panel {
+  opacity: 1 !important;
+  visibility: visible !important;
   background: var(--est-surface);
   border: 1px solid var(--est-line);
   border-radius: var(--est-radius);
