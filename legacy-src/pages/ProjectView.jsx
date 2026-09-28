@@ -66,6 +66,8 @@ const ProjectView = () => {
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const thumbContainerRef = useRef(null);
+    const videoTrackRef = useRef(null);
+    const [playingVideoId, setPlayingVideoId] = useState(null);
 
     // Auto-sliding interval
     useEffect(() => {
@@ -206,6 +208,92 @@ const ProjectView = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Video Reels Section */}
+            {project?.videos && project.videos.length > 0 && (
+                <section className="pv-videos-section">
+                    <div className="pv-videos-container">
+                        <div className="pv-section-header-row">
+                            <div className="pv-header-text-group">
+                                <span className="pv-subtag">PROJECT VIDEOS</span>
+                                <h2 className="pv-section-title">Watch the Transformation</h2>
+                            </div>
+
+                            {project.videos.length > 3 && (
+                                <div className="pv-slider-controls desktop-only-controls">
+                                    <button
+                                        onClick={() => {
+                                            if (videoTrackRef.current) {
+                                                const scrollAmount = videoTrackRef.current.clientWidth * 0.75;
+                                                videoTrackRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                                            }
+                                        }}
+                                        className="pv-arrow-btn"
+                                        aria-label="Previous Video"
+                                    >
+                                        ‹
+                                    </button>
+                                    <button
+                                        onClick={() => {
+                                            if (videoTrackRef.current) {
+                                                const scrollAmount = videoTrackRef.current.clientWidth * 0.75;
+                                                videoTrackRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                                            }
+                                        }}
+                                        className="pv-arrow-btn"
+                                        aria-label="Next Video"
+                                    >
+                                        ›
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="pv-reels-wrapper">
+                            <div className="pv-reels-track" ref={videoTrackRef}>
+                                {project.videos.map((vid, idx) => {
+                                    const rawSrc = typeof vid === 'string' ? vid : (vid.videoUrl || vid.url || vid.src || '');
+                                    const title = typeof vid === 'object' ? (vid.title || vid.label || '') : '';
+                                    const desc = typeof vid === 'object' ? (vid.desc || vid.description || '') : '';
+                                    if (!rawSrc) return null;
+
+                                    const videoSrc = rawSrc.includes('#t=') ? rawSrc : `${rawSrc}#t=0.1`;
+                                    const poster = typeof vid === 'object' ? (vid.poster || vid.thumbnail || vid.image) : undefined;
+
+                                    return (
+                                        <div className="pv-reel-card reveal-zoom" key={`legacy-vid-${idx}`}>
+                                            {(title || desc) && (
+                                                <div className="pv-reel-top-info">
+                                                    {title && <h4 className="pv-reel-title">{title}</h4>}
+                                                    {desc && <p className="pv-reel-desc">{desc}</p>}
+                                                </div>
+                                            )}
+                                            <div className="pv-reel-video-wrapper">
+                                                <video
+                                                    src={videoSrc}
+                                                    poster={poster}
+                                                    controls
+                                                    playsInline
+                                                    preload="metadata"
+                                                    onPlay={(e) => {
+                                                        if (videoTrackRef.current) {
+                                                            const allVideos = videoTrackRef.current.querySelectorAll('video');
+                                                            allVideos.forEach((v) => {
+                                                                if (v !== e.target) v.pause();
+                                                            });
+                                                        }
+                                                    }}
+                                                    className="pv-reel-video"
+                                                />
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* Section 3: Generations of Timber & Stone (The Project Mandate) */}
             <section className="pv-mandate-section">

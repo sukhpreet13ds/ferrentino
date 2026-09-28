@@ -39,6 +39,48 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
     }
   };
 
+  const videoTrackRef = useRef(null);
+  const rawVideos = project.videos || [];
+  const videos = rawVideos
+    .map((v, idx) => {
+      if (typeof v === "string") {
+        return { id: idx, src: v, title: "", desc: "" };
+      }
+      if (v && typeof v === "object") {
+        return {
+          id: v.id ?? idx,
+          src: v.videoUrl || v.url || v.src || v.video || "",
+          title: v.title || v.label || "",
+          desc: v.desc || v.description || "",
+        };
+      }
+      return null;
+    })
+    .filter((v) => v && Boolean(v.src));
+
+  const scrollVideos = (direction) => {
+    if (videoTrackRef.current) {
+      const scrollAmount = videoTrackRef.current.clientWidth * 0.75;
+      videoTrackRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleVideoPlay = (e) => {
+    if (videoTrackRef.current) {
+      const allVideos = videoTrackRef.current.querySelectorAll("video");
+      allVideos.forEach((vid) => {
+        if (vid !== e.target) {
+          vid.pause();
+        }
+      });
+    }
+  };
+
+  const showArrows = videos.length > 3;
+
   const specs = project.specs || {};
   const active = slides[currentSlide];
 
@@ -134,6 +176,67 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
               <button className="pv-thumb-scroll-btn right" onClick={() => scrollThumbnails("right")} aria-label="Scroll mini images right">
                 ›
               </button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {videos.length > 0 && (
+        <section className="pv-videos-section">
+          <div className="pv-videos-container">
+            <div className="pv-section-header-row">
+              <div className="pv-header-text-group">
+                <span className="pv-subtag">PROJECT VIDEOS</span>
+                <h2 className="pv-section-title">Watch the Transformation</h2>
+              </div>
+
+              {showArrows && (
+                <div className="pv-slider-controls desktop-only-controls">
+                  <button
+                    onClick={() => scrollVideos("left")}
+                    className="pv-arrow-btn"
+                    aria-label="Previous Video"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    onClick={() => scrollVideos("right")}
+                    className="pv-arrow-btn"
+                    aria-label="Next Video"
+                  >
+                    ›
+                  </button>
+                </div>
+              )}
+            </div>
+
+            <div className="pv-reels-wrapper">
+              <div className="pv-reels-track" ref={videoTrackRef}>
+                {videos.map((vid, idx) => {
+                  const videoSrc = vid.src.includes("#t=") ? vid.src : `${vid.src}#t=0.1`;
+                  return (
+                    <div className="pv-reel-card reveal-zoom" key={`vid-${vid.id}-${idx}`}>
+                      {(vid.title || vid.desc) && (
+                        <div className="pv-reel-top-info">
+                          {vid.title && <h4 className="pv-reel-title">{vid.title}</h4>}
+                          {vid.desc && <p className="pv-reel-desc">{vid.desc}</p>}
+                        </div>
+                      )}
+                      <div className="pv-reel-video-wrapper">
+                        <video
+                          src={videoSrc}
+                          poster={vid.poster || vid.thumbnail || vid.image || undefined}
+                          controls
+                          playsInline
+                          preload="metadata"
+                          onPlay={handleVideoPlay}
+                          className="pv-reel-video"
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>

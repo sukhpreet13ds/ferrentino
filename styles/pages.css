@@ -4529,7 +4529,7 @@ margin-left: 5px;
 .pv-main-slider-card {
     position: relative;
     width: 100%;
-    height: 520px;
+    height: 600px;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 24px;
@@ -10628,7 +10628,187 @@ body {
     .site-header.is-scrolled .main-navbar {
         padding: 10px 15px;
     }
+    .pv-badge {
+font-size: 9px;
+    }
 }
+
+/* Section: Video Reels - Clean Light Theme */
+.pv-videos-section {
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #111213;
+    padding: 80px 40px;
+    overflow: hidden;
+}
+
+.pv-videos-section .pv-subtag {
+    color: #888888;
+}
+
+.pv-videos-section .pv-section-title {
+    color: #111213;
+}
+
+.pv-videos-section .pv-arrow-btn {
+    border-color: #111213;
+    color: #111213;
+}
+
+.pv-videos-section .pv-arrow-btn:hover {
+    background: #111213;
+    color: #FFFFFF;
+}
+
+.pv-videos-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pv-reels-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.pv-reels-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 16px 20px 16px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    box-sizing: border-box;
+}
+
+.pv-reels-track::before,
+.pv-reels-track::after {
+    content: '';
+    margin: auto;
+}
+
+.pv-reels-track::-webkit-scrollbar {
+    display: none;
+}
+
+.pv-reel-card {
+    flex: 0 0 290px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    scroll-snap-align: start;
+    background: #FAFAFA;
+    border-radius: 16px;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pv-reel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    border-color: #D1D5DB;
+}
+
+.pv-reel-top-info {
+    height: 76px;
+    min-height: 76px;
+    max-height: 76px;
+    padding: 14px 16px 10px;
+    background: #FAFAFA;
+    border-bottom: 1px solid #F0F0F0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.pv-reel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111213;
+    margin: 0 0 2px 0;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pv-reel-desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #555555;
+    margin: 0;
+    line-height: 1.35;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.pv-reel-video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    aspect-ratio: 9 / 16;
+    background: #000000;
+    overflow: hidden;
+}
+
+.pv-reel-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #000000;
+}
+
+@media (max-width: 768px) {
+    .pv-videos-section {
+        padding: 50px 16px;
+    }
+
+    .pv-reels-track::before,
+    .pv-reels-track::after {
+        display: none;
+    }
+
+    .pv-reels-track {
+        justify-content: flex-start;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .pv-reel-card {
+        flex: 0 0 240px;
+        width: 240px;
+        border-radius: 12px;
+    }
+
+    .pv-reel-top-info {
+        height: 70px;
+        min-height: 70px;
+        max-height: 70px;
+        padding: 12px 14px 8px;
+    }
+
+    .pv-reel-video-wrapper {
+        height: 380px;
+    }
+
+    .desktop-only-controls {
+        display: none !important;
+    }
+}
+
 
 
 

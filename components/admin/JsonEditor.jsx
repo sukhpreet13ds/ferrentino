@@ -3,12 +3,18 @@
 import { useState } from "react";
 import ImageField from "./ImageField";
 
-const IMAGE_KEY_RE = /(image|img|photo|logo|avatar|thumbnail|icon|banner|background|bg|video)$/i;
-const LONG_TEXT_KEY_RE = /(description|desc|content|body|text|quote|bio|message|paragraph|summary|address)$/i;
-const IMAGE_VALUE_RE = /\.(jpe?g|png|webp|gif|svg|mp4)$/i;
-const TITLE_KEY_RE = /(title|name|question|heading|label)$/i;
+const IMAGE_KEY_RE = /(image|img|photo|logo|avatar|thumbnail|icon|banner|background|bg|video|url|media|reel)/i;
+const LONG_TEXT_KEY_RE = /(description|desc|content|body|text|quote|bio|message|paragraph|summary|address)/i;
+const IMAGE_VALUE_RE = /\.(jpe?g|png|webp|gif|svg|mp4|webm|mov|m4v|ogv|avi|mkv)/i;
+const TITLE_KEY_RE = /(title|name|question|heading|label)/i;
 
 const KNOWN_SCHEMAS = {
+  videos: {
+    id: 0,
+    videoUrl: "",
+    title: "Project Reel",
+    desc: "Short video reel showcasing craftsmanship",
+  },
   walkthroughSlides: {
     id: 0,
     label: "FEATURE DETAIL",
@@ -39,6 +45,14 @@ const KNOWN_SCHEMAS = {
         image: "/images/ferrentino1.jpg",
         title: "Generations-Strength Timber & Masonry Detail",
         desc: "Precision joinery showcase designed for enduring structural beauty.",
+      },
+    ],
+    videos: [
+      {
+        id: 0,
+        videoUrl: "",
+        title: "Project Reel",
+        desc: "Short video reel showcasing craftsmanship",
       },
     ],
     specs: {
@@ -211,6 +225,13 @@ function CardArrayField({ label, fieldKey, value, onChange, rootValue, sample: e
         title: (sample && sample.title) ? sample.title : "Craftsmanship & Architectural Detail",
         desc: (sample && sample.desc) ? sample.desc : "Precision joinery and custom architectural finish work designed to endure.",
       };
+    } else if (fieldKey === "videos") {
+      newItem = {
+        id: newIdx,
+        videoUrl: (sample && sample.videoUrl) ? sample.videoUrl : "",
+        title: (sample && sample.title) ? sample.title : "Project Reel",
+        desc: (sample && sample.desc) ? sample.desc : "",
+      };
     }
     onChange([...value, newItem]);
     setExpanded((prev) => new Set(prev).add(newIdx));
@@ -237,12 +258,16 @@ function CardArrayField({ label, fieldKey, value, onChange, rootValue, sample: e
               : item;
 
           const { thumbnail, title, excerpt } = pickCardFields(effectiveItem);
+          const isVidThumb =
+            thumbnail &&
+            (/\.(mp4|webm|mov|m4v|ogv|avi|mkv)$/i.test(thumbnail) ||
+              thumbnail.includes("/video/upload/"));
 
           return (
             <div className={`admin-content-card ${isOpen ? "is-editing" : ""}`} key={idx}>
               <div className="admin-content-card-thumb">
                 {thumbnail ? (
-                  /\.mp4$/i.test(thumbnail) ? (
+                  isVidThumb ? (
                     <video src={thumbnail} muted />
                   ) : (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -424,12 +449,16 @@ export default function JsonEditor({ value, onChange, labelPrefix, rootValue, fi
   }
 
   if (value !== null && typeof value === "object") {
-    const entries = Object.entries(value);
+    const isProjectItem = Boolean(value.slug || value.heroImage || value.walkthroughSlides || fieldKey === "items");
+    const targetObj = isProjectItem && value.videos === undefined
+      ? { ...value, videos: [] }
+      : value;
+    const entries = Object.entries(targetObj);
     return (
       <div className="admin-object-fields">
         {entries.map(([key, val]) => {
           const label = humanizeKey(key);
-          const update = (next) => onChange({ ...value, [key]: next });
+          const update = (next) => onChange({ ...targetObj, [key]: next });
 
           if (Array.isArray(val)) {
             return (

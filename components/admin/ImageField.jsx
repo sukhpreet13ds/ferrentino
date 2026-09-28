@@ -13,9 +13,33 @@ export default function ImageField({ label, value, onChange }) {
     setUploading(true);
     setError("");
     try {
-      const formData = new FormData();
-      formData.append("file", file);
-      const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
+      let res;
+      if (file.size <= 8 * 1024 * 1024) {
+        const formData = new FormData();
+        formData.append("file", file);
+        res = await fetch("/api/admin/upload", { method: "POST", body: formData });
+      } else {
+        res = await fetch("/api/admin/upload", {
+          method: "POST",
+          headers: {
+            "x-filename": encodeURIComponent(file.name),
+            "content-type": file.type || "application/octet-stream",
+          },
+          body: file,
+        });
+      }
+
+      if (!res.ok && file.size <= 8 * 1024 * 1024) {
+        res = await fetch("/api/admin/upload", {
+          method: "POST",
+          headers: {
+            "x-filename": encodeURIComponent(file.name),
+            "content-type": file.type || "application/octet-stream",
+          },
+          body: file,
+        });
+      }
+
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Upload failed");
       onChange(data.url);
@@ -27,7 +51,9 @@ export default function ImageField({ label, value, onChange }) {
     }
   };
 
-  const isVideo = /\.mp4$/i.test(value || "");
+  const isVideo =
+    /\.(mp4|webm|mov|m4v|ogv|avi|mkv)$/i.test(value || "") ||
+    (typeof value === "string" && (value.includes("/video/upload/") || value.includes("video")));
 
   return (
     <div className="admin-field admin-field-image">
@@ -36,20 +62,20 @@ export default function ImageField({ label, value, onChange }) {
         <div className="admin-image-preview">
           {value ? (
             isVideo ? (
-              <video src={value} muted />
+              <video src={value} muted controls />
             ) : (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={value} alt={label} />
             )
           ) : (
-            <span className="admin-image-placeholder">No image</span>
+            <span className="admin-image-placeholder">No file</span>
           )}
         </div>
         <div className="admin-image-actions">
           <input
             type="text"
             value={value || ""}
-            placeholder="/images/example.jpg"
+            placeholder="/images/example.jpg or video URL"
             onChange={(e) => onChange(e.target.value)}
             className="admin-input"
           />
@@ -64,7 +90,7 @@ export default function ImageField({ label, value, onChange }) {
           <input
             ref={inputRef}
             type="file"
-            accept="image/*,video/mp4"
+            accept="image/*,video/*,.mp4,.webm,.mov,.m4v,.ogv,.avi,.mkv"
             hidden
             onChange={handleFile}
           />
