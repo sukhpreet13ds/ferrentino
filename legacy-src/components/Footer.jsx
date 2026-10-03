@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './style/style.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logoImg from '../assets/ferrentino-logo.png';
 import bbbLogo from '../assets/footer-business.png';
 import bathroomImg from '../assets/bathroom.jpg';
@@ -42,7 +42,7 @@ const Footer = () => {
                             <div className="project-mind-arrow-circle">
                                 <i className="fa-solid fa-arrow-right"></i>
                             </div>
-                            <span>Book Your <br/> Consultation</span>
+                            <span>Book Your <br /> Consultation</span>
                         </Link>
                     </div>
 
@@ -94,22 +94,21 @@ const Footer = () => {
                                 <li><Link to="/meet-the-builders">Meet The Builders</Link></li>
                                 <li><Link to="/projects">Projects</Link></li>
                                 <li><Link to="/contractor">Subcontractor Application</Link></li>
-                                <li><Link to="/ask-to-expert">Ask to Expert</Link></li>
-                                <li><Link to="/area-we-serve">Area We Serve</Link></li>
+                                <li><Link to="/ask-the-expert">Ask The Expert</Link></li>
+                                <li><Link to="/areas-we-serve">Areas We Serve</Link></li>
                                 <li><Link to="/testimonials">Testimonials</Link></li>
                                 <li><Link to="/contact">Contact</Link></li>
-                              
+
                             </ul>
                         </div>
 
                         {/* Col 2: Contact Info & BBB Rating */}
                         <div className="footer-col footer-info-col reveal-zoom" data-delay="250">
                             <p className="footer-address">
-                                816 NE 31st Ave, Ocala,<br />
-                                FL 34470, United States
+                                816 NE 31st Ave<br /> Ocala, FL 34470,
                             </p>
                             <p className="footer-contact-item">
-                                <span className="yellow-label">Office:</span> 352-237-3368
+                                <span className="yellow-label">Office:</span><a href="tel:+13522373368"> 352-237-3368 </a>
                             </p>
                             <p className="footer-contact-item">
                                 <span className="yellow-label">Email:</span> estimating@ferrentinoandson.com

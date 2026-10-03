@@ -206,69 +206,7 @@ const ServiceView = () => {
                 </div>
             </section>
 
-            {/* Section 3: Featured Kitchen Remodels */}
-            <section className="kitchen-featured-section">
-                <div className="kitchen-featured-container">
-                    <div className="featured-header reveal-zoom">
-                        <h2 className="featured-title">Featured Kitchen Remodels</h2>
-                        <p className="featured-sub">
-                            Walk through a couple of our latest culinary transformations.
-                        </p>
-                    </div>
 
-                    <div className="featured-cards-grid">
-                        <div className="featured-card reveal-zoom">
-                            <div className="featured-img-wrapper">
-                                <img src={feature1Img} alt="The Ocala Modern Manor" />
-                            </div>
-                            <div className="featured-card-body">
-                                <span className="featured-tag">MARION COUNTY, FL</span>
-                                <h3 className="featured-card-title">The Ocala Modern Manor</h3>
-                                <p className="featured-card-desc">
-                                    Featuring hand-selected materials, full custom architectural integrations, and custom spatial optimizations. Built to last generations.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="featured-card reveal-zoom" data-delay="150">
-                            <div className="featured-img-wrapper">
-                                <img src={feature2Img} alt="Southern Heritage Estate" />
-                            </div>
-                            <div className="featured-card-body">
-                                <span className="featured-tag">GAINESVILLE, FL</span>
-                                <h3 className="featured-card-title">Southern Heritage Estate</h3>
-                                <p className="featured-card-desc">
-                                    Featuring hand-selected materials, full custom architectural integrations, and custom spatial optimizations. Built to last generations.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Section 4: Why Choose Ferrentino & Son */}
-            <section className="kitchen-why-section">
-                <div className="kitchen-why-container">
-                    <div className="why-header reveal-zoom">
-                        <h2 className="why-title">Why Choose Ferrentino &amp; Son</h2>
-                        <p className="why-sub">
-                            We build relationships on solid trust, master craftsmanship, and affordable, transparent cost planning.
-                        </p>
-                    </div>
-
-                    <div className="why-cards-grid">
-                        {whyUsFeatures.map((feat, idx) => (
-                            <div key={idx} className="why-card reveal-zoom" data-delay={(idx % 3) * 150}>
-                                <div className="why-icon-circle">
-                                    <i className={feat.icon}></i>
-                                </div>
-                                <h3 className="why-card-title">{feat.title}</h3>
-                                <p className="why-card-desc">{feat.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* Section 5: Dark Testimonial Block */}
             <section className="service-testimonial-section">

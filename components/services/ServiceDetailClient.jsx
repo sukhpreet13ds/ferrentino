@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import SplitText from "../SplitText";
 
-const ServiceDetailClient = ({ service, process, whyUs, testimonial }) => {
+const ServiceDetailClient = ({ service, process, testimonial }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -15,7 +15,6 @@ const ServiceDetailClient = ({ service, process, whyUs, testimonial }) => {
   };
 
   const faqs = service.faqs || [];
-  const featured = service.featured || [];
   const checklist = service.introChecklist || [];
   const paragraphs = service.introParagraphs || [];
 
@@ -127,52 +126,7 @@ const ServiceDetailClient = ({ service, process, whyUs, testimonial }) => {
         </div>
       </section>
 
-      <section className="kitchen-featured-section">
-        <div className="kitchen-featured-container">
-          <div className="featured-header reveal-zoom">
-            <h2 className="featured-title">Featured {service.title}</h2>
-            <p className="featured-sub">Walk through a couple of our latest transformations.</p>
-          </div>
 
-          <div className="featured-cards-grid">
-            {featured.map((card, idx) => (
-              <div className="featured-card reveal-zoom" key={idx} data-delay={idx === 0 ? "0" : "150"}>
-                <div className="featured-img-wrapper">
-                  <img src={card.image} alt={card.title} />
-                </div>
-                <div className="featured-card-body">
-                  <span className="featured-tag">{card.tag}</span>
-                  <h3 className="featured-card-title">{card.title}</h3>
-                  <p className="featured-card-desc">{card.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="kitchen-why-section">
-        <div className="kitchen-why-container">
-          <div className="why-header reveal-zoom">
-            <h2 className="why-title">Why Choose Ferrentino &amp; Son</h2>
-            <p className="why-sub">
-              We build relationships on solid trust, master craftsmanship, and affordable, transparent cost planning.
-            </p>
-          </div>
-
-          <div className="why-cards-grid">
-            {(whyUs || []).map((feat, idx) => (
-              <div key={idx} className="why-card reveal-zoom" data-delay={(idx % 3) * 150}>
-                <div className="why-icon-circle">
-                  <i className={feat.icon}></i>
-                </div>
-                <h3 className="why-card-title">{feat.title}</h3>
-                <p className="why-card-desc">{feat.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {testimonial && (
         <section className="service-testimonial-section">

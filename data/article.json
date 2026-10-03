@@ -96,7 +96,7 @@
   "sidebarDarkTitle": "Have structural queries?",
   "sidebarDarkText": "Ask Edward and our engineering crew your direct project development questions anytime.",
   "sidebarDarkLinkText": "BACK TO ASK THE EXPERT",
-  "sidebarDarkLinkHref": "/ask-to-expert",
+  "sidebarDarkLinkHref": "/ask-the-expert",
   "certsTitle": "Industry Certifications",
   "certifications": [
     "HSI Pre-Apprenticeship Certificate",
@@ -123,5 +123,5 @@
   "nextArticleTag": "NEXT ARTICLE",
   "nextArticleTitle": "Industry Overview and Career Pathway to Plumbing and HVAC",
   "nextArticleLinkText": "Read Next Article",
-  "nextArticleLinkHref": "/ask-to-expert"
+  "nextArticleLinkHref": "/ask-the-expert"
 }

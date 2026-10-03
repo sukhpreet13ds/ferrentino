@@ -15,6 +15,9 @@ const KNOWN_SCHEMAS = {
     title: "Project Reel",
     desc: "Short video reel showcasing craftsmanship",
   },
+  gridImages: {
+    image: "",
+  },
   walkthroughSlides: {
     id: 0,
     label: "FEATURE DETAIL",
@@ -225,12 +228,16 @@ function CardArrayField({ label, fieldKey, value, onChange, rootValue, sample: e
         title: (sample && sample.title) ? sample.title : "Craftsmanship & Architectural Detail",
         desc: (sample && sample.desc) ? sample.desc : "Precision joinery and custom architectural finish work designed to endure.",
       };
-    } else if (fieldKey === "videos") {
+      } else if (fieldKey === "videos") {
       newItem = {
         id: newIdx,
         videoUrl: (sample && sample.videoUrl) ? sample.videoUrl : "",
         title: (sample && sample.title) ? sample.title : "Project Reel",
         desc: (sample && sample.desc) ? sample.desc : "",
+      };
+    } else if (fieldKey === "gridImages") {
+      newItem = {
+        image: "",
       };
     }
     onChange([...value, newItem]);
@@ -450,9 +457,17 @@ export default function JsonEditor({ value, onChange, labelPrefix, rootValue, fi
 
   if (value !== null && typeof value === "object") {
     const isProjectItem = Boolean(value.slug || value.heroImage || value.walkthroughSlides || fieldKey === "items");
-    const targetObj = isProjectItem && value.videos === undefined
-      ? { ...value, videos: [] }
-      : value;
+    let targetObj = { ...value };
+    if (isProjectItem) {
+      const ordered = {};
+      for (const key of Object.keys(targetObj)) {
+        if (key === 'videos' || key === 'gridImages') continue;
+        ordered[key] = targetObj[key];
+      }
+      ordered.gridImages = targetObj.gridImages || [];
+      ordered.videos = targetObj.videos || [];
+      targetObj = ordered;
+    }
     const entries = Object.entries(targetObj);
     return (
       <div className="admin-object-fields">

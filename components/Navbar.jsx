@@ -155,12 +155,12 @@ const Navbar = ({ site }) => {
                   <span>Subcontractor Application</span>
                   <i className="fa-solid fa-arrow-right-long"></i>
                 </Link>
-                <Link href="/ask-to-expert" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
-                  <span>Ask to Expert</span>
+                <Link href="/ask-the-expert" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
+                  <span>Ask The Expert</span>
                   <i className="fa-solid fa-arrow-right-long"></i>
                 </Link>
-                <Link href="/area-we-serve" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
-                  <span>Area We Serve</span>
+                <Link href="/areas-we-serve" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
+                  <span>Areas We Serve</span>
                   <i className="fa-solid fa-arrow-right-long"></i>
                 </Link>
                 <Link href="/testimonials" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
@@ -230,14 +230,14 @@ const Navbar = ({ site }) => {
                 </Link>
               </li>
               <li>
-                <Link href="/ask-to-expert" onClick={closeMobileMenu}>
-                  <span>Ask to Expert</span>
+                <Link href="/ask-the-expert" onClick={closeMobileMenu}>
+                  <span>Ask The Expert</span>
                   <i className="fa-solid fa-chevron-right"></i>
                 </Link>
               </li>
               <li>
-                <Link href="/area-we-serve" onClick={closeMobileMenu}>
-                  <span>Area We Serve</span>
+                <Link href="/areas-we-serve" onClick={closeMobileMenu}>
+                  <span>Areas We Serve</span>
                   <i className="fa-solid fa-chevron-right"></i>
                 </Link>
               </li>

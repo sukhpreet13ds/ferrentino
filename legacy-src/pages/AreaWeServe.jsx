@@ -237,13 +237,13 @@ const AreaWeServe = () => {
 
                         <div className="locality-pills-container reveal-zoom" data-delay="450">
                             <span className="locality-pill locality-pill-hq">Marion (Home Base)</span>
-                            <span className="locality-pill">Lake</span>
-                            <span className="locality-pill">Citrus</span>
-                            <span className="locality-pill">Sumter</span>
-                            <span className="locality-pill">Levy</span>
-                            <span className="locality-pill">Volusia</span>
-                            <span className="locality-pill">Putnam</span>
-                            <span className="locality-pill">Alachua</span>
+                            <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Lake</span>
+                            <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Citrus</span>
+                            <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Sumter</span>
+                            <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Levy</span>
+                            <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Volusia</span>
+                            <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Putnam</span>
+                            <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Alachua</span>
                         </div>
                     </div>
                 </div>
@@ -292,7 +292,7 @@ const AreaWeServe = () => {
             </section>
 
             {/* Section 3: Built With Regional Authority */}
-            <section className="aws-authority-section">
+            {/* <section className="aws-authority-section">
                 <div className="aws-authority-container">
                     <div className="aws-authority-header reveal-zoom">
                         <h2 className="aws-auth-title">Built With Regional Authority</h2>
@@ -313,7 +313,7 @@ const AreaWeServe = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* CTA Section */}
             <ReadyCta />

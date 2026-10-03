@@ -1,4 +1,4 @@
-"use client";
+"use client"; 
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -10,6 +10,12 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
   }, []);
 
   const slides = project.walkthroughSlides || [];
+
+  const rawGridImages = project.gridImages || [];
+  const collageImages = rawGridImages.length > 0
+    ? rawGridImages.map((v) => (typeof v === "string" ? v : v?.image || v?.url || v?.src || "")).filter(Boolean)
+    : slides.map(s => s.image).filter(Boolean);
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const thumbContainerRef = useRef(null);
 
@@ -104,9 +110,9 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
 
           <h1 className="pv-main-title">{project.title}</h1>
 
-          <div className="pv-hero-img-box reveal-zoom">
+          {/* <div className="pv-hero-img-box reveal-zoom">
             <img src={project.heroImage} alt={project.title} />
-          </div>
+          </div> */}
         </div>
       </header>
 
@@ -168,7 +174,7 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
                     <div className="pv-thumb-img-wrapper">
                       <img src={slide.image} alt={slide.title || slide.label || "FEATURE DETAIL"} />
                     </div>
-                    <span className="pv-thumb-label">{slide.title || slide.label || "FEATURE DETAIL"}</span>
+                    {/* <span className="pv-thumb-label">{slide.title || slide.label || "FEATURE DETAIL"}</span> */}
                   </div>
                 ))}
               </div>
@@ -176,6 +182,20 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
               <button className="pv-thumb-scroll-btn right" onClick={() => scrollThumbnails("right")} aria-label="Scroll mini images right">
                 ›
               </button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {collageImages.length > 0 && (
+        <section className="pv-collage-section">
+          <div className="pv-collage-container reveal-zoom">
+            <div className="project-collage-grid">
+              {collageImages.map((imgUrl, idx) => (
+                <div key={`collage-${idx}`} className="project-collage-item">
+                  <img src={imgUrl} alt={`${project.title} detail ${idx + 1}`} loading="lazy" />
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -242,7 +262,7 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
         </section>
       )}
 
-      <section className="pv-mandate-section">
+      {/* <section className="pv-mandate-section">
         <div className="pv-mandate-container">
           <div className="pv-header-text-group reveal-zoom">
             <span className="pv-subtag">THE PROJECT MANDATE</span>
@@ -290,7 +310,7 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {otherProjects.length > 0 && (
         <section className="pv-portfolios-section">
@@ -326,9 +346,9 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
                     <div className="pv-portfolio-card-body">
                       <h3 className="pv-card-title">{p.title}</h3>
                       <p className="pv-card-desc">{p.description}</p>
-                      <span className="pv-card-link">
+                      {/* <span className="pv-card-link">
                         View Project Case Study →
-                      </span>
+                      </span> */}
                     </div>
                   </Link>
                 );

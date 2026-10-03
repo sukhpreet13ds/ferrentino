@@ -122,7 +122,7 @@ const TestimonialsClient = ({ data }) => {
       </section>
 
       {/* Section 2: Client Success Stories (4 Cards Grid, 2x2 on Desktop and 2x2 on Mobile) */}
-      <section className="test-stories-section">
+      {/* <section className="test-stories-section">
         <div className="test-section-container">
           <div className="test-header-block reveal-zoom">
             <span className="test-pill-tag">{data.storiesTag}</span>
@@ -158,7 +158,7 @@ const TestimonialsClient = ({ data }) => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Section 3: Google Reviews Section (Auto-sliding 5 Cards, One by One) */}
       <section className="test-google-section">

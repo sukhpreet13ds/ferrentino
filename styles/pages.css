@@ -897,8 +897,8 @@
 }
 
 .locality-pill.locality-pill-hq {
-    background-color: var(--primary-color);
-    color: #111213;
+    background-color: var(--primary-color) !important;
+    color: #111213 !important;
 }
 
 .locality-pill:hover {
@@ -4456,8 +4456,8 @@ margin-left: 5px;
 /* Section 2: Explore the Craftsmanship (Walkthrough) */
 .pv-walkthrough-section {
     width: 100%;
-    background-color: #F6F4F0;
-    padding: 90px 40px;
+    /* background-color: #F6F4F0; */
+    padding: 0px 40px 90px 40px;
 }
 
 .pv-walkthrough-container {
@@ -5891,6 +5891,7 @@ margin-left: 5px;
     width: 100%;
     background-color: #F4F1EA;
     padding: 100px 40px;
+    display: none !important;
 }
 
 .aws-authority-container {
@@ -10820,3 +10821,14 @@ font-size: 9px;
 
 
 
+
+
+/* Project Collage Grid */
+.pv-collage-section { width: 100%; padding: 60px 40px; background-color: #ffffff; }
+.pv-collage-container { max-width: 1820px; margin: 0 auto; }
+.project-collage-grid { column-count: 3; column-gap: 15px; }
+.project-collage-item { display: inline-block; width: 100%; margin-bottom: 15px; border-radius: 8px; overflow: hidden; break-inside: avoid; }
+.project-collage-item img { width: 100%; height: auto; display: block; object-fit: cover; transition: transform 0.3s ease; }
+.project-collage-item img:hover { transform: scale(1.02); }
+@media (max-width: 1024px) { .project-collage-grid { column-count: 2; } }
+@media (max-width: 768px) { .pv-collage-section { padding: 40px 20px; } .project-collage-grid { column-count: 2; } }

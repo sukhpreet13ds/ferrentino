@@ -93,9 +93,9 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/service-view" element={<ServiceView />} />
           <Route path="/estimator" element={<Estimator />} />
-          <Route path="/ask-to-expert" element={<AskToExpert />} />
+          <Route path="/ask-the-expert" element={<AskToExpert />} />
           <Route path="/articles" element={<Article />} />
-          <Route path="/area-we-serve" element={<AreaWeServe />} />
+          <Route path="/areas-we-serve" element={<AreaWeServe />} />
           <Route path="/area-we-serve-view" element={<AreaWeServeView />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/meet-the-builders" element={<MeetTheBuilders />} />
@@ -105,8 +105,8 @@ function App() {
           <Route path="/404" element={<ErrorPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-        <Gallery/>
-        <Footer/>
+        <Gallery />
+        <Footer />
       </Router>
     </>
   );

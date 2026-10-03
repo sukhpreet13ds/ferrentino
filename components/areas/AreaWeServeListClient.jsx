@@ -127,6 +127,7 @@ const AreaWeServeListClient = ({ data }) => {
                 <span
                   key={item.slug}
                   className={`locality-pill ${item.isHq ? "locality-pill-hq" : ""}`}
+                  style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}
                 >
                   {item.name.replace(" County", "")}
                   {item.isHq ? " (Home Base)" : ""}
@@ -148,7 +149,8 @@ const AreaWeServeListClient = ({ data }) => {
             {items.map((area, idx) => (
               <Link
                 key={area.slug}
-                href={`/area-we-serve/${area.slug}`}
+                // href={`/areas-we-serve/${area.slug}`}
+                href={`#`}
                 className="aws-card reveal-zoom"
                 data-delay={(idx % 4) * 100}
                 style={{ textDecoration: "none" }}

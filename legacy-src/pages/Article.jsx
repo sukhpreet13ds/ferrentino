@@ -231,7 +231,7 @@ const Article = () => {
                                 <p className="art-sidebar-p">
                                     Ask Edward and our engineering crew your direct project development questions anytime.
                                 </p>
-                                <Link to="/ask-to-expert" className="art-gold-btn">
+                                <Link to="/ask-the-expert" className="art-gold-btn">
                                     BACK TO ASK THE EXPERT <i className="fa-solid fa-arrow-right"></i>
                                 </Link>
                             </div>
@@ -252,7 +252,7 @@ const Article = () => {
                                 <h4 className="art-next-title">
                                     Industry Overview and Career Pathway to Plumbing and HVAC
                                 </h4>
-                                <Link to="/ask-to-expert" className="art-next-link">
+                                <Link to="/ask-the-expert" className="art-next-link">
                                     Read Next Article <i className="fa-solid fa-arrow-right"></i>
                                 </Link>
                             </div>

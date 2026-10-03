@@ -1,5 +1,5 @@
 {
-  "heroBg": "/images/testi-bg.jpg",
+  "heroBg": "https://res.cloudinary.com/deqetry9x/image/upload/v1791023510/hightower/hpqr68qkrd9vrq7qarr9.jpg",
   "heroTag": "Generations of Craftsmanship",
   "heroTitleLine1": "Reviews & ",
   "heroTitleLine2": "Testimonials",
@@ -13,44 +13,7 @@
   "storiesTag": "STORIES",
   "storiesTitle": "Client Success Stories",
   "storiesDesc": "Explore authentic experiences from our kitchen remodeling, bathroom remodeling, whole-home renovations, and custom build projects.",
-  "stories": [
-    {
-      "id": 1,
-      "category": "KITCHEN REMODELING",
-      "stars": 5,
-      "quote": "The design process was completely seamless. They re-architected our tight kitchen space into an open-plan culinary dream with exquisite cabinet details.",
-      "author": "Robert & Janice S.",
-      "location": "Marion County Homeowners",
-      "image": "/images/testi111.png"
-    },
-    {
-      "id": 2,
-      "category": "BATHROOM REMODELING",
-      "stars": 5,
-      "quote": "From gorgeous porcelain tile work to custom vanity carpentry, the master bath feels like a high-end spa. Every trade crew they brought in was polite and precise.",
-      "author": "Elena G.",
-      "location": "Ocala Resident",
-      "image": "/images/testi222.png"
-    },
-    {
-      "id": 3,
-      "category": "WHOLE-HOME RENOVATION",
-      "stars": 5,
-      "quote": "We preserved the historic bones of our estate while completely modernizing structural framing, electric, and luxury finishes. Stunning execution and complete transparency.",
-      "author": "The Sterling Family",
-      "location": "Central Florida",
-      "image": "/images/testi333.png"
-    },
-    {
-      "id": 4,
-      "category": "NEW CUSTOM BUILD",
-      "stars": 5,
-      "quote": "Building our dream home was a major undertaking, but their team’s multi-generational construction expertise gave us total confidence from the foundation to the roof beams.",
-      "author": "Marcus & Clara B.",
-      "location": "Williston Landowners",
-      "image": "/images/testi444.png"
-    }
-  ],
+  "stories": [],
   "googleIcon": "/images/google.png",
   "googleTitle": "What Our Community Says on Google",
   "googleReadReviewsHref": "https://www.google.com/search?q=Ferrentino+%26+Son,+LLC#lrd=0x88e62d6c82d40beb:0x97e5f30d1e18441f,1,,,,",
@@ -61,7 +24,7 @@
       "author": "Allysen Fitzpatrick",
       "stats": "5 reviews · 1 photo · a month ago",
       "stars": 5,
-      "text": "If I could give more than five stars I would! We have been so pleased with the communication and openness of cisc and Shawna. They made what seemed like a super complicated endeavor, to turn our carport into livable space, seem so flawless. The attention to detail, the quality of products, the fact that they use other small businesses in town where they can ... just simply the best. God hand picked them for our project and I feel like we have life long friends because of it . We will forever be grateful for them!!!",
+      "text": "If I could give more than five stars I would! We have been so pleased with the communication and openness of cicc and Shawna. They made what seemed like a super complicated endeavor, to turn our carport into livable space, seem so flawless. The attention to detail, the quality of products, the fact that they use other small businesses in town where they can.... just simply the best. God hand picked them for our project and I feel like we have life long friends because of it. We will forever be grateful for them!!!",
       "tags": [],
       "avatarBg": "#EA4335",
       "avatarLetter": "A"
@@ -71,8 +34,10 @@
       "author": "Kenneth La Combe",
       "stats": "Local Guide · 39 reviews · 1 photo · 3 months ago",
       "stars": 5,
-      "text": "Great price\nCheech and Shawn are down to earth easy to talk to and stand up people great to work with",
-      "tags": ["Positive: General construction"],
+      "text": "Cheech and Shawna are down to earth easy to talk to and stand up people great to work with\nServices\nGeneral construction",
+      "tags": [
+        "Positive: General construction"
+      ],
       "avatarBg": "#4285F4",
       "avatarLetter": "K"
     },
@@ -81,30 +46,20 @@
       "author": "Shaun Pert",
       "stats": "Local Guide · 14 reviews · 3 years ago",
       "stars": 5,
-      "text": "They do great work at a great price. Do yourself a favor and call them for your needs. Truly professional and reliable.",
+      "text": "They do great work at a great price.. Do yourself a favor and call them for your needs…",
       "tags": [],
       "avatarBg": "#34A853",
       "avatarLetter": "S"
     },
     {
       "id": 4,
-      "author": "David Richardson",
-      "stats": "Local Guide · 22 reviews · 5 months ago",
+      "author": "Wynn Smith",
+      "stats": "Local Guide · 9 reviews · 5 months ago",
       "stars": 5,
-      "text": "Ferrentino & Son remodeled our master bathroom and built a custom closet. The craftsmanship is second to none. Reliable, punctuality, and great value throughout the entire project!",
+      "text": "We had a drainage issue at our house and honestly couldn’t be happier with how Ferrentino Construction handled it! They were quick to get out, figured out what needed to be done, and got the work finished so quickly. After the drainage issue was fixed they also did a sidewalk with pavers and the finished product looks GREAT!\n\nIt’s so nice to find a company that shows up, does quality work, and genuinely takes pride in what they do. Also, they were considerably cheaper than other quotes I received. We’re really happy with the results and would absolutely recommend Ferrentino Construction to anyone needing work done. Thank you guys for making what could have been a stressful project so easy! ⭐️⭐️⭐️⭐️⭐️\nServices\nWaterproofing, Concrete pouring",
       "tags": [],
       "avatarBg": "#FBBC05",
       "avatarLetter": "D"
-    },
-    {
-      "id": 5,
-      "author": "Maria Gonzalez",
-      "stats": "8 reviews · 6 months ago",
-      "stars": 5,
-      "text": "Amazing team! They took care of everything including permits and design blueprints. Super communicative and finished ahead of schedule.",
-      "tags": [],
-      "avatarBg": "#9C27B0",
-      "avatarLetter": "M"
     }
   ]
 }

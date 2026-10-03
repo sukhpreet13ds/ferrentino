@@ -28,23 +28,7 @@
       "desc": "We meticulously review every single detail with you, validating smooth drawer runners, flawless tile joints, and general space excellence."
     }
   ],
-  "whyUs": [
-    {
-      "icon": "fa-solid fa-location-dot",
-      "title": "Three Generations of Legacy",
-      "desc": "Our family name stands on decades of honest construction experience, reliable business practices, and hard-earned expertise."
-    },
-    {
-      "icon": "fa-solid fa-key",
-      "title": "Cabinet Shop",
-      "desc": "We do not rely on standard pre-fab flatpacks. Every cabinet is constructed specifically to your home's exact dimension profile."
-    },
-    {
-      "icon": "fa-solid fa-hashtag",
-      "title": "True Turnkey Ownership",
-      "desc": "No subcontractor scheduling confusion. We handle everything from permits and wiring maps to the final coat of protective paint."
-    }
-  ],
+  "whyUs": [],
   "testimonial": {
     "quote": "After talking with several designers and remodeling contractors, we decided on Ferrentino & Son. They got what we wanted straight away and had plans done in less than a week. The best part is how the kitchen actually turned out. Amazing, simply amazing!",
     "author": "John & Trisha D.",
@@ -75,20 +59,7 @@
         "Integrated ambient and task-focused layered lighting designs"
       ],
       "introImage": "/images/making-right.jpg",
-      "featured": [
-        {
-          "image": "/images/feature-1.jpg",
-          "tag": "MARION COUNTY, FL",
-          "title": "The Ocala Modern Manor",
-          "desc": "Featuring hand-selected materials, full custom architectural integrations, and custom spatial optimizations. Built to last generations."
-        },
-        {
-          "image": "/images/feature-2.jpg",
-          "tag": "GAINESVILLE, FL",
-          "title": "Southern Heritage Estate",
-          "desc": "Featuring hand-selected materials, full custom architectural integrations, and custom spatial optimizations. Built to last generations."
-        }
-      ],
+      "featured": [],
       "faqs": [
         {
           "question": "How long does a typical kitchen remodeling project take?",
@@ -106,7 +77,8 @@
           "question": "Do you assist in choosing high-end appliances?",
           "answer": "Absolutely. We help coordinate dimensions, custom panel requirements for integrated styles, and electrical configurations with top premium appliance suppliers."
         }
-      ]
+      ],
+      "videos": []
     },
     {
       "id": 2,
@@ -171,7 +143,7 @@
       "title": "Home Remodeling",
       "description": "Sometimes a home just needs to work differently. We rethink outdated spaces, awkward layouts, and tired finishes to create a home that fits the way you live now.",
       "linkText": "View Home Remodeling",
-      "image": "/images/f&s-service3.png",
+      "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791008240/hightower/sbmeyqkhjumgfex2fa4u.jpg",
       "detailHeroTag": "WHOLE-HOME REMODELING",
       "detailHeroTitleLine1": "Home Remodeling",
       "detailHeroTitleLine2": "in Marion County",
@@ -220,12 +192,13 @@
           "question": "Can I live in the home during the remodel?",
           "answer": "In most cases yes, with dust barriers and phased work areas to minimize disruption."
         }
-      ]
+      ],
+      "videos": []
     },
     {
       "id": 4,
-      "slug": "exterior-renovations",
-      "title": "Outdoor living",
+      "slug": "outdoor-living",
+      "title": "Outdoor Living",
       "description": "Create functional, beautiful outdoor living spaces that extend your home and enhance your lifestyle.",
       "linkText": "View Outdoor Living",
       "image": "/images/outdoor-pro.jpg",
@@ -245,7 +218,7 @@
         "Insulation and energy-efficiency upgrades",
         "Layout modernization without losing character"
       ],
-      "introImage": "/images/project22.jpg",
+      "introImage": "https://res.cloudinary.com/deqetry9x/image/upload/v1791007398/hightower/dying4qdbegsynkmb1ry.png",
       "featured": [
         {
           "image": "/images/project33.jpg",
@@ -277,7 +250,8 @@
           "question": "Can you match existing trim and millwork?",
           "answer": "Yes, our cabinet shop can reproduce or match existing trim, casing, and millwork profiles."
         }
-      ]
+      ],
+      "videos": []
     },
     {
       "id": 5,

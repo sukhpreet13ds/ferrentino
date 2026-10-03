@@ -1,5 +1,5 @@
 {
-  "heroBg": "/images/area-bg.jpg",
+  "heroBg": "https://res.cloudinary.com/deqetry9x/image/upload/v1791004030/hightower/tlcympjtli9x6wsv9bct.jpg",
   "heroTag": "Central Florida Coverage",
   "heroTitle": "Areas We Serve",
   "heroDescription": "Rooted in Ocala, our fleets and project crews cover eight counties, delivering generational masonry, custom carpentry, and architectural finishes right to your property.",
@@ -77,25 +77,9 @@
   "localityActiveLabel": "CURRENTLY ACTIVE COUNTIES:",
   "countiesSectionTitle": "Explore Active Counties",
   "countiesSectionDesc": "Click a county below to understand local guidelines, regional project hubs, and specialized building crews available for your address.",
-  "authorityTitle": "Built With Regional Authority",
-  "authorityDesc": "Building in central Florida demands hyper-local fluency. Here is how Ferrentino & Son delivers uncompromised reliability from city blocks to shoreline communities.",
-  "regionalFeatures": [
-    {
-      "icon": "fa-solid fa-file-contract",
-      "title": "Permitting Familiarity",
-      "desc": "Each municipal boundary holds specific ordinances. We maintain long-standing operational relationships with building departments across all 8 active counties, ensuring rapid permit approvals with zero unexpected compliance friction."
-    },
-    {
-      "icon": "fa-solid fa-shield-halved",
-      "title": "Shoreline & Wind Engineering",
-      "desc": "From beach-facing Volusia lots to high-water Lake County docks, we build with strict structural defenses, implementing specialized storm strapping, storm-rated impact glazings, and advanced moisture-barrier applications."
-    },
-    {
-      "icon": "fa-solid fa-user-group",
-      "title": "Generational Craft Coordination",
-      "desc": "Rooted locally since 1984, our family works exclusively with trusted, certified local trade sub-contractors, concrete suppliers, and specialty technicians who share our precise standards for excellence and punctuality."
-    }
-  ],
+  "authorityTitle": "",
+  "authorityDesc": "",
+  "regionalFeatures": [],
   "stats": [
     {
       "value": "1984",
@@ -183,7 +167,7 @@
       "description": "We update exterior details, finishes, and features to give the home a stronger, more finished presence from the street.",
       "linkText": "View Exterior Renovations",
       "image": "/images/f&s-service9.png",
-      "href": "/services/exterior-renovations"
+      "href": "/services/outdoor-living"
     }
   ],
   "blueprintTitle": "Our Customized Process",
@@ -285,7 +269,8 @@
           "question": "Are your estimators and trade partners fully certified?",
           "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded. We only partner with verified local trade, mechanical professionals, and concrete suppliers who share our standards for safety and structural excellence."
         }
-      ]
+      ],
+      "videos": []
     },
     {
       "id": 2,
@@ -361,7 +346,8 @@
           "question": "Are your estimators and trade partners fully certified?",
           "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
         }
-      ]
+      ],
+      "videos": []
     },
     {
       "id": 3,
@@ -437,7 +423,8 @@
           "question": "Are your estimators and trade partners fully certified?",
           "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
         }
-      ]
+      ],
+      "videos": []
     },
     {
       "id": 4,
@@ -513,7 +500,8 @@
           "question": "Are your estimators and trade partners fully certified?",
           "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
         }
-      ]
+      ],
+      "videos": []
     },
     {
       "id": 5,
@@ -589,7 +577,8 @@
           "question": "Are your estimators and trade partners fully certified?",
           "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
         }
-      ]
+      ],
+      "videos": []
     },
     {
       "id": 6,
@@ -665,7 +654,8 @@
           "question": "Are your estimators and trade partners fully certified?",
           "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
         }
-      ]
+      ],
+      "videos": []
     },
     {
       "id": 7,
@@ -741,7 +731,8 @@
           "question": "Are your estimators and trade partners fully certified?",
           "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
         }
-      ]
+      ],
+      "videos": []
     },
     {
       "id": 8,
@@ -817,7 +808,8 @@
           "question": "Are your estimators and trade partners fully certified?",
           "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
         }
-      ]
+      ],
+      "videos": []
     }
   ]
 }

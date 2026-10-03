@@ -70,13 +70,6 @@ const projectsList = [
     }
 ];
 
-const categories = [
-    'All Projects',
-    'LiveWell Residential',
-    'WorkWell Commercial',
-    'Custom Kitchens',
-    'Luxury Bathrooms'
-];
 
 const Projects = () => {
     useEffect(() => {
@@ -145,25 +138,6 @@ const Projects = () => {
             {/* Portfolio Grid Section */}
             <section className="projects-portfolio-section">
                 <div className="projects-portfolio-container">
-
-                    {/* Filter Bar */}
-                    <div className="projects-filter-bar reveal-zoom">
-                        <div className="filter-tabs-group">
-                            {categories.map((cat) => (
-                                <button
-                                    key={cat}
-                                    className={`filter-tab-btn ${activeCategory === cat ? 'active' : ''}`}
-                                    onClick={() => setActiveCategory(cat)}
-                                >
-                                    {cat}
-                                </button>
-                            ))}
-                        </div>
-
-                        <span className="filter-count-text">
-                            Showing {filteredProjects.length} Premium {filteredProjects.length === 1 ? 'Project' : 'Projects'}
-                        </span>
-                    </div>
 
                     {/* 6 Boxes Grid */}
                     <div className="projects-grid-container">

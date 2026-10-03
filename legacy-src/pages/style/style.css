@@ -897,8 +897,8 @@
 }
 
 .locality-pill.locality-pill-hq {
-    background-color: var(--primary-color);
-    color: #111213;
+    background-color: var(--primary-color) !important;
+    color: #111213 !important;
 }
 
 .locality-pill:hover {
@@ -4456,7 +4456,7 @@ margin-left: 5px;
 /* Section 2: Explore the Craftsmanship (Walkthrough) */
 .pv-walkthrough-section {
     width: 100%;
-    background-color: #F6F4F0;
+    /* background-color: #F6F4F0; */
     padding: 90px 40px;
 }
 
@@ -5846,6 +5846,7 @@ margin-left: 5px;
     width: 100%;
     background-color: #F4F1EA;
     padding: 100px 40px;
+    display: none !important;
 }
 
 .aws-authority-container {

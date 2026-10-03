@@ -139,7 +139,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link to="/contact" className="nav-link nav-link-single">Contact</Link>
                         </li>
-                        
+
                         {/* More Pages Dropdown (FontAwesome Grip Lines Icon) */}
                         <li className="nav-item nav-dropdown-wrapper" ref={dropdownRef}>
                             <button
@@ -155,12 +155,12 @@ const Navbar = () => {
                                     <span>Subcontractor Application</span>
                                     <i className="fa-solid fa-arrow-right-long"></i>
                                 </Link>
-                                <Link to="/ask-to-expert" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
-                                    <span>Ask to Expert</span>
+                                <Link to="/ask-the-expert" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
+                                    <span>Ask The Expert</span>
                                     <i className="fa-solid fa-arrow-right-long"></i>
                                 </Link>
-                                <Link to="/area-we-serve" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
-                                    <span>Area We Serve</span>
+                                <Link to="/areas-we-serve" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
+                                    <span>Areas We Serve</span>
                                     <i className="fa-solid fa-arrow-right-long"></i>
                                 </Link>
                                 <Link to="/testimonials" className="nav-dropdown-link" onClick={() => setIsDropdownOpen(false)}>
@@ -237,14 +237,14 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/ask-to-expert" onClick={closeMobileMenu}>
-                                    <span>Ask to Expert</span>
+                                <Link to="/ask-the-expert" onClick={closeMobileMenu}>
+                                    <span>Ask the Expert</span>
                                     <i className="fa-solid fa-chevron-right"></i>
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/area-we-serve" onClick={closeMobileMenu}>
-                                    <span>Area We Serve</span>
+                                <Link to="/areas-we-serve" onClick={closeMobileMenu}>
+                                    <span>Areas We Serve</span>
                                     <i className="fa-solid fa-chevron-right"></i>
                                 </Link>
                             </li>

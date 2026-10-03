@@ -163,7 +163,7 @@ const AskToExpert = () => {
                     <div className="contact-hero-content">
                         <span className="contact-hero-tag">
                             <SplitText
-                                text="ASK TO EXPERT"
+                                text="ASK THE EXPERT"
                                 className="contact-tag-text"
                                 delay={40}
                                 duration={0.85}

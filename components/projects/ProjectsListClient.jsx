@@ -68,23 +68,7 @@ const ProjectsListClient = ({ data }) => {
 
       <section className="projects-portfolio-section">
         <div className="projects-portfolio-container">
-          <div className="projects-filter-bar reveal-zoom">
-            <div className="filter-tabs-group">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  className={`filter-tab-btn ${activeCategory === cat ? "active" : ""}`}
-                  onClick={() => setActiveCategory(cat)}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
 
-            <span className="filter-count-text">
-              Showing {filteredProjects.length} Premium {filteredProjects.length === 1 ? "Project" : "Projects"}
-            </span>
-          </div>
 
           <div className="projects-grid-container">
             {filteredProjects.map((project) => (

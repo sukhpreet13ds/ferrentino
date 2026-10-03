@@ -20,7 +20,7 @@ const Footer = ({ site }) => {
   const social = site?.socialLinks || {};
   const logo = site?.logo || "/images/ferrentino-logo.png";
   const siteName = site?.siteName || "Ferrentino & Son, LLC";
-  const address = site?.address || "816 NE 31st Ave, Ocala, FL 34470, United States";
+  const address = site?.address || "816 NE 31st Ave, Ocala, FL 34470";
   const phone = site?.phone || "+1 352-237-3368";
   const email = site?.email || "estimating@ferrentinoandson.com";
   const bbbImage = "/images/CEP-Logo.png";
@@ -88,30 +88,30 @@ const Footer = ({ site }) => {
                 <li><Link href="/meet-the-builders">Meet The Builders</Link></li>
                 <li><Link href="/projects">Projects</Link></li>
                 <li><Link href="/contractor">Subcontractor Application</Link></li>
-                {/* <li><Link href="/ask-to-expert">Ask to Expert</Link></li> */}
-                <li><Link href="/area-we-serve">Area We Serve</Link></li>
+                {/* <li><Link href="/ask-the-expert">Ask the Expert</Link></li> */}
+                <li><Link href="/areas-we-serve">Areas We Serve</Link></li>
                 <li><Link href="/testimonials">Testimonials</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
 
             <div className="footer-col footer-info-col reveal-zoom" data-delay="250">
-              <p className="footer-address">{address}</p>
+              <p className="footer-address" style={{ whiteSpace: "pre-wrap" }}>{address}</p>
               <p className="footer-contact-item">
-                <span className="yellow-label">Office:</span> {phone}
+                <span className="yellow-label">Office:</span><a style={{ color: "inherit!important", textDecoration: "none !important" }} href="tel:+13522373368"> {phone}</a>
               </p>
               <p className="footer-contact-item">
-                <span className="yellow-label">Email:</span> {email}
+                <span className="yellow-label">Email:</span><a style={{ color: "inherit!important", textDecoration: "none !important" }} href={`mailto:${email}`}>{email}</a>
               </p>
-              <div className="footer-bbb-wrapper" style={{display:"flex",flexDirection:"column",gap:8}}>
-                <div style={{display:"flex",alignItems:"center",gap:2}}>
+              <div className="footer-bbb-wrapper" style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 2 }}>
 
-                <a href="https://ocalacep.com/" target="_blank"><img src={bbbImage} alt="BBB Rating A+" className="footer-bbb-img" style={{backgroundColor:"white"}} /></a>
-                <a href="https://mcbia.org/" target="_blank"><img src={bbbImage1} alt="BBB Rating A+" className="footer-bbb-img" style={{backgroundColor:"white"}}/></a>
+                  <a href="https://ocalacep.com/" target="_blank"><img src={bbbImage} alt="BBB Rating A+" className="footer-bbb-img" style={{ backgroundColor: "white" }} /></a>
+                  <a href="https://mcbia.org/" target="_blank"><img src={bbbImage1} alt="BBB Rating A+" className="footer-bbb-img" style={{ backgroundColor: "white" }} /></a>
                 </div>
-                <div style={{display:"flex",alignItems:"center",gap:2}}>
-                <a href="https://fhba.com/" target="_blank"><img src={bbbImage2} alt="BBB Rating A+" className="footer-bbb-img" style={{backgroundColor:"white"}}/></a>
-                <a href="https://www.nahb.org/" target="_blank"><img src={bbbImage3} alt="BBB Rating A+" className="footer-bbb-img" style={{backgroundColor:"black"}}/></a>
+                <div style={{ display: "flex", alignItems: "center", gap: 2 }}>
+                  <a href="https://fhba.com/" target="_blank"><img src={bbbImage2} alt="BBB Rating A+" className="footer-bbb-img" style={{ backgroundColor: "white" }} /></a>
+                  <a href="https://www.nahb.org/" target="_blank"><img src={bbbImage3} alt="BBB Rating A+" className="footer-bbb-img" style={{ backgroundColor: "black" }} /></a>
                 </div>
               </div>
             </div>
