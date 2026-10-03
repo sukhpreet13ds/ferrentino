@@ -19,6 +19,28 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const thumbContainerRef = useRef(null);
 
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const lightboxNext = (e) => {
+    e.stopPropagation();
+    setLightboxIndex((prev) => (prev + 1) % collageImages.length);
+  };
+
+  const lightboxPrev = (e) => {
+    e.stopPropagation();
+    setLightboxIndex((prev) => (prev - 1 + collageImages.length) % collageImages.length);
+  };
+
   useEffect(() => {
     if (slides.length === 0) return;
     const timer = setInterval(() => {
@@ -192,7 +214,7 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
           <div className="pv-collage-container reveal-zoom">
             <div className="project-collage-grid">
               {collageImages.map((imgUrl, idx) => (
-                <div key={`collage-${idx}`} className="project-collage-item">
+                <div key={`collage-${idx}`} className="project-collage-item" onClick={() => openLightbox(idx)} style={{ cursor: "pointer" }}>
                   <img src={imgUrl} alt={`${project.title} detail ${idx + 1}`} loading="lazy" />
                 </div>
               ))}
@@ -356,6 +378,75 @@ const ProjectDetailClient = ({ project, otherProjects }) => {
             </div>
           </div>
         </section>
+      )}
+
+      {lightboxOpen && collageImages.length > 0 && (
+        <div style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: "rgba(0, 0, 0, 0.9)",
+          zIndex: 9999,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }} onClick={closeLightbox}>
+          <button style={{
+            position: "absolute",
+            top: "20px",
+            right: "20px",
+            background: "none",
+            border: "none",
+            color: "white",
+            fontSize: "40px",
+            cursor: "pointer",
+            zIndex: 10000,
+            padding: "10px"
+          }} onClick={closeLightbox} aria-label="Close">
+            &times;
+          </button>
+          
+          <button style={{
+            position: "absolute",
+            left: "20px",
+            background: "none",
+            border: "none",
+            color: "white",
+            fontSize: "50px",
+            cursor: "pointer",
+            zIndex: 10000,
+            padding: "10px"
+          }} onClick={lightboxPrev} aria-label="Previous">
+            &#10094;
+          </button>
+
+          <img 
+            src={collageImages[lightboxIndex]} 
+            alt="Expanded view" 
+            style={{
+              maxWidth: "90%",
+              maxHeight: "90vh",
+              objectFit: "contain"
+            }} 
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          <button style={{
+            position: "absolute",
+            right: "20px",
+            background: "none",
+            border: "none",
+            color: "white",
+            fontSize: "50px",
+            cursor: "pointer",
+            zIndex: 10000,
+            padding: "10px"
+          }} onClick={lightboxNext} aria-label="Next">
+            &#10095;
+          </button>
+        </div>
       )}
 
       <ReadyCta />

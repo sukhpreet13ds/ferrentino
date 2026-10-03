@@ -127,10 +127,8 @@ const AreaWeServeListClient = ({ data }) => {
                 <span
                   key={item.slug}
                   className={`locality-pill ${item.isHq ? "locality-pill-hq" : ""}`}
-                  style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}
                 >
                   {item.name.replace(" County", "")}
-                  {item.isHq ? " (Home Base)" : ""}
                 </span>
               ))}
             </div>
