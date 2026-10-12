@@ -8099,7 +8099,8 @@ body {
         right: 25px;
     }
 
-    .projects-nav-btn svg {
+    .projects-nav-btn svg,
+    .services-nav-btn svg {
         width: 22px;
         height: 32px;
     }
@@ -9059,14 +9060,31 @@ body {
         font-size: 18px;
     }
 
-    .projects-nav-btn {
+    .projects-nav-btn,
+    .services-nav-btn {
         padding: 6px;
+    }
+
+    .services-nav-btn.btn-left {
+        left: 5px;
+    }
+
+    .services-nav-btn.btn-right {
+        right: 5px;
     }
 
     .projects-nav-btn svg {
         width: 18px;
         height: 26px;
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+    }
+
+    .services-nav-btn svg {
+        width: 18px;
+        height: 26px;
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.95))
+                drop-shadow(0 0 5px rgba(255, 255, 255, 0.8))
+                drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45));
     }
 
     /* Video & Reno Section - Mobile */

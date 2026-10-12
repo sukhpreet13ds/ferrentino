@@ -18,6 +18,16 @@ const ServicesSlider = ({ services }) => {
 
   const isHoveredRef = useRef(false);
 
+  const handleNext = () => {
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  const handlePrev = () => {
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev - 1);
+  };
+
   useEffect(() => {
     const updateVisibleSlides = () => {
       const width = window.innerWidth;
@@ -39,18 +49,12 @@ const ServicesSlider = ({ services }) => {
     if (servicesData.length === 0) return;
     const timer = setInterval(() => {
       if (!isDragging && !isHoveredRef.current && !document.hidden) {
-        setIsTransitioning(true);
-        setCurrentIndex((prev) => {
-          const next = prev + 1;
-          if (next >= servicesData.length * 2) {
-            return next - servicesData.length;
-          }
-          return next;
-        });
+        handleNext();
       }
     }, 3500);
 
     return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDragging, servicesData.length]);
 
   useEffect(() => {
@@ -70,7 +74,9 @@ const ServicesSlider = ({ services }) => {
     return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
   }, [servicesData.length]);
 
-  const handleTransitionEnd = () => {
+  const handleTransitionEnd = (e) => {
+    if (e && e.target !== e.currentTarget) return;
+
     if (currentIndex >= servicesData.length * 2) {
       setIsTransitioning(false);
       setCurrentIndex((prev) => prev - servicesData.length);
@@ -106,11 +112,9 @@ const ServicesSlider = ({ services }) => {
     if (!isDragging) return;
     setIsDragging(false);
     if (dragOffset < -50) {
-      setIsTransitioning(true);
-      setCurrentIndex((prev) => prev + 1);
+      handleNext();
     } else if (dragOffset > 50) {
-      setIsTransitioning(true);
-      setCurrentIndex((prev) => prev - 1);
+      handlePrev();
     }
     setDragOffset(0);
   };
@@ -143,11 +147,9 @@ const ServicesSlider = ({ services }) => {
     if (!isDragging) return;
     setIsDragging(false);
     if (dragOffset < -50) {
-      setIsTransitioning(true);
-      setCurrentIndex((prev) => prev + 1);
+      handleNext();
     } else if (dragOffset > 50) {
-      setIsTransitioning(true);
-      setCurrentIndex((prev) => prev - 1);
+      handlePrev();
     }
     setDragOffset(0);
   };
@@ -171,6 +173,36 @@ const ServicesSlider = ({ services }) => {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
+          <button
+            className="services-nav-btn btn-left"
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrev();
+            }}
+            onMouseDown={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
+            aria-label="Previous Service"
+          >
+            <svg viewBox="0 0 22 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 2L2 16L20 30" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          <button
+            className="services-nav-btn btn-right"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNext();
+            }}
+            onMouseDown={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
+            aria-label="Next Service"
+          >
+            <svg viewBox="0 0 22 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 2L20 16L2 30" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
           <div
             className="services-slider-track"
             style={{
