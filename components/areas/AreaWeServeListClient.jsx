@@ -136,7 +136,7 @@ const AreaWeServeListClient = ({ data }) => {
         </div>
       </section>
 
-      <section className="aws-counties-section">
+      {/* <section className="aws-counties-section">
         <div className="aws-counties-container">
           <div className="aws-header-text reveal-zoom">
             <h2 className="aws-main-title">{data.countiesSectionTitle}</h2>
@@ -171,7 +171,7 @@ const AreaWeServeListClient = ({ data }) => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="aws-authority-section">
         <div className="aws-authority-container">

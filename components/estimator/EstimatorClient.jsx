@@ -269,7 +269,7 @@ const EstimatorClient = ({ config }) => {
     }
   };
 
-  const successMessage = (modal.successMessage || "Check your inbox, {firstName}. We'll follow up within 1 business day.")
+  const successMessage = (modal.successMessage || "Check your inbox, {firstName}.")
     .replace("{firstName}", contact.name.split(" ")[0] || "friend");
 
   /* ── Shared mode toggle JSX ── */

@@ -39,7 +39,7 @@
     "title": "Get your estimate",
     "summaryLabel": "Your estimate",
     "successTitle": "Estimate sent",
-    "successMessage": "Check your inbox, {firstName}. We'll follow up within 1 business day.",
+    "successMessage": "Check your inbox, {firstName}.",
     "doneLabel": "Done",
     "errorMessage": "Something went wrong. Please try again or call us directly."
   },

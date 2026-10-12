@@ -62,7 +62,6 @@ const AreaWeServe = () => {
         {
             id: 1,
             isHq: true,
-            // hqBadge: 'OPERATIONAL HQ',
             county: 'Marion County',
             hub: 'PRIMARY HUB: OCALA (HOME BASE)',
             desc: 'Our ancestral heartland and operational headquarters. We offer full-scale residential custom builds, massive commercial renovations, and detailed kitchen bath transformations across Marion County.',
@@ -250,7 +249,7 @@ const AreaWeServe = () => {
             </section>
 
             {/* Section 2: Explore Active Counties (8 County Cards) */}
-            <section className="aws-counties-section">
+            {/* <section className="aws-counties-section">
                 <div className="aws-counties-container">
                     <div className="aws-header-text reveal-zoom">
                         <h2 className="aws-main-title">Explore Active Counties</h2>
@@ -270,9 +269,7 @@ const AreaWeServe = () => {
                             >
                                 <div className="aws-card-img-box">
                                     <img src={card.img} alt={card.county} />
-                                    {/* {card.isHq && (
-                                        <span className="aws-hq-badge">{card.hqBadge}</span>
-                                    )} */}
+                                    
                                 </div>
 
                                 <div className="aws-card-body">
@@ -289,7 +286,7 @@ const AreaWeServe = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Section 3: Built With Regional Authority */}
             {/* <section className="aws-authority-section">

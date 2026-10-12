@@ -417,7 +417,7 @@ export default function GuidedEstimator({ config }) {
     }
   }
 
-  const successMessage = (modal.successMessage || "Check your inbox, {firstName}. We'll follow up within 1 business day.")
+  const successMessage = (modal.successMessage || "Check your inbox, {firstName}.")
     .replace("{firstName}", contact.name.split(" ")[0] || "friend");
 
   /* ─── RENDER ─── */
@@ -688,7 +688,6 @@ export default function GuidedEstimator({ config }) {
               <div className="ge-step-header">
                 <div className="ge-step-eyebrow">Last step</div>
                 <h2 className="ge-step-title">Where should we send it?</h2>
-                <p className="ge-step-subtitle">We'll email you a detailed estimate within 1 business day.</p>
               </div>
 
               {/* Estimate chip */}

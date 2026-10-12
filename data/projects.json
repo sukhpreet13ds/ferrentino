@@ -220,14 +220,7 @@
           "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791020032/hightower/uqyixlb4xxiru42uspqr.jpg"
         }
       ],
-      "videos": [
-        {
-          "id": 0,
-          "videoUrl": "https://res.cloudinary.com/deqetry9x/video/upload/v1790582867/hightower/fylidvopaboh2ayarkss.mp4",
-          "title": "Luxury Bathroom",
-          "desc": "After completed work the look of Bathroom."
-        }
-      ]
+      "videos": []
     },
     {
       "id": 3,
@@ -395,38 +388,7 @@
           "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791021242/hightower/lfbkhjtyv8xkrrkriy43.jpg"
         }
       ],
-      "videos": [
-        {
-          "id": 0,
-          "videoUrl": "https://res.cloudinary.com/deqetry9x/video/upload/v1790581885/hightower/rsntzdtl3qmv6wqgf59n.mp4",
-          "title": "Home Renovation",
-          "desc": "Working on whole Home renovation."
-        },
-        {
-          "id": 1,
-          "videoUrl": "https://res.cloudinary.com/deqetry9x/video/upload/v1790581929/hightower/eqfnxwehuwofvrxbs7ny.mp4",
-          "title": "Home Renovation",
-          "desc": "Working on stones for walk path."
-        },
-        {
-          "id": 2,
-          "videoUrl": "https://res.cloudinary.com/deqetry9x/video/upload/v1790581975/hightower/mknncvnslk9yfju0kz2m.mp4",
-          "title": "Home Renovation",
-          "desc": "Working on Home Roof."
-        },
-        {
-          "id": 3,
-          "videoUrl": "https://res.cloudinary.com/deqetry9x/video/upload/v1790582006/hightower/pmnsawwsiq2kvjc2xmgg.mp4",
-          "title": "Home Renovation",
-          "desc": "Working on Internal under Roof of Home."
-        },
-        {
-          "id": 4,
-          "videoUrl": "https://res.cloudinary.com/deqetry9x/video/upload/v1790582073/hightower/odocypoludahmxmw3kkw.mp4",
-          "title": "Home Renovation",
-          "desc": "Working on Home walk path of stones."
-        }
-      ]
+      "videos": []
     },
     {
       "id": 4,
@@ -524,32 +486,7 @@
           "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791021664/hightower/syxnbacjsal6l0m3pjb5.jpg"
         }
       ],
-      "videos": [
-        {
-          "id": 0,
-          "videoUrl": "https://res.cloudinary.com/deqetry9x/video/upload/v1790579612/hightower/ze6raapfaj97lsnrpyzw.mp4",
-          "title": "James Queens Quarters Work",
-          "desc": "Team is working at James Queens Quarters."
-        },
-        {
-          "id": 1,
-          "videoUrl": "https://res.cloudinary.com/deqetry9x/video/upload/v1790580537/hightower/dgfqsqzu1rir1qgmjq2j.mp4",
-          "title": "James Queens Quarters Work",
-          "desc": "Pipeline work at James Queens Quarters. Carefully and within the time."
-        },
-        {
-          "id": 2,
-          "videoUrl": "https://res.cloudinary.com/deqetry9x/video/upload/v1790580736/hightower/xdgqxcctcrsysxmkjpvn.mp4",
-          "title": "James Queens Quarters Work",
-          "desc": "Team is working at James Queens Quarters, the Cement work."
-        },
-        {
-          "id": 3,
-          "videoUrl": "https://res.cloudinary.com/deqetry9x/video/upload/v1790580803/hightower/q3ibywxmrbcrwqbcbsx2.mp4",
-          "title": "James Queens Quarters Work",
-          "desc": "Team is working at James Queens Quarters, Water line work."
-        }
-      ]
+      "videos": []
     }
   ]
 }

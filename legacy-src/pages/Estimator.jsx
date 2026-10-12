@@ -959,7 +959,7 @@ const Estimator = () => {
                   <div className="est-success-icon">✓</div>
                   <h2 className="est-success-title">Estimate sent</h2>
                   <p className="est-success-msg">
-                    Check your inbox, {contact.name.split(' ')[0] || 'friend'}. We'll follow up within 1 business day.
+                    Check your inbox, {contact.name.split(' ')[0] || 'friend'}.
                   </p>
                   <button type="button" className="est-cta-btn" onClick={closeModal}>
                     Done
