@@ -22,7 +22,6 @@ export default async function ServiceDetailPage({ params }) {
       service={service}
       process={data.process}
       whyUs={data.whyUs}
-      testimonial={data.testimonial}
     />
   );
 }

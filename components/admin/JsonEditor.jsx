@@ -68,6 +68,12 @@ const KNOWN_SCHEMAS = {
     solution: "We engineered custom timber and masonry detailing wrapped in energy-efficient architectural design.",
     quoteText: "The level of detail and craftsmanship exceeded all our expectations.",
     quoteAuthor: "HOMETOWN RESIDENT",
+    testimonial: {
+      tag: "FEATURED CLIENT",
+      quote: "",
+      author: "",
+      location: "",
+    },
   },
 };
 
@@ -461,11 +467,14 @@ export default function JsonEditor({ value, onChange, labelPrefix, rootValue, fi
     if (isProjectItem) {
       const ordered = {};
       for (const key of Object.keys(targetObj)) {
-        if (key === 'videos' || key === 'gridImages') continue;
+        if (key === 'videos' || key === 'gridImages' || key === 'testimonial') continue;
         ordered[key] = targetObj[key];
       }
       ordered.gridImages = targetObj.gridImages || [];
       ordered.videos = targetObj.videos || [];
+      if ('testimonial' in targetObj) {
+        ordered.testimonial = targetObj.testimonial;
+      }
       targetObj = ordered;
     }
     const entries = Object.entries(targetObj);

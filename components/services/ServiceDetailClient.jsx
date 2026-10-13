@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import SplitText from "../SplitText";
 
-const ServiceDetailClient = ({ service, process, testimonial }) => {
+const ServiceDetailClient = ({ service, process }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -128,25 +128,46 @@ const ServiceDetailClient = ({ service, process, testimonial }) => {
 
 
 
-      {testimonial && (
-        <section className="service-testimonial-section">
-          <div className="service-testimonial-container reveal-zoom">
-            <div className="testimonial-stars-badge">
-              <div className="stars-row">★★★★★</div>
-              <span className="testimonial-badge-label">CLIENT TESTIMONIAL</span>
+      {/* Featured Testimonial Section */}
+      {(() => {
+        const activeTestimonial = service.testimonial;
+        if (!activeTestimonial || !activeTestimonial.quote) return null;
+
+        const tag = activeTestimonial.tag || "FEATURED CLIENT";
+        const quote = activeTestimonial.quote;
+        const author = activeTestimonial.author;
+        const locationOrRole = activeTestimonial.location || activeTestimonial.role;
+
+        return (
+          <section className="test-hero-featured-section">
+            <div className="test-hero-featured-container reveal-zoom">
+              <div className="test-featured-stars">
+                {[...Array(5)].map((_, i) => (
+                  <i key={i} className="fa-solid fa-star"></i>
+                ))}
+              </div>
+
+              <span className="test-featured-tag">{tag}</span>
+
+              <div className="test-featured-quote-icon">
+                <svg width="32" height="24" viewBox="0 0 34 26" fill="var(--primary-color)">
+                  <path d="M0 26V14.5C0 6.5 5.5 1 13.5 0L15.5 3.5C10.5 4.5 7.5 7.5 7 11.5H13.5V26H0ZM18.5 26V14.5C18.5 6.5 24 1 32 0L34 3.5C29 4.5 26 7.5 25.5 11.5H32V26H18.5Z" />
+                </svg>
+              </div>
+
+              <blockquote className="test-featured-quote">{quote}</blockquote>
+
+              <div className="test-featured-author-row">
+                <span className="test-featured-dash">&mdash;</span>
+                <span className="test-featured-author-name">{author}</span>
+                {locationOrRole && (
+                  <span className="test-featured-author-loc">{locationOrRole}</span>
+                )}
+              </div>
             </div>
-
-            <div className="testimonial-quote-mark">“</div>
-
-            <p className="testimonial-quote-body">{testimonial.quote}</p>
-
-            <div className="testimonial-author-line">
-              <span className="author-name">— {testimonial.author}</span>
-              <span className="author-role">{testimonial.role}</span>
-            </div>
-          </div>
-        </section>
-      )}
+          </section>
+        );
+      })()}
 
       <section className="kitchen-faq-section">
         <div className="kitchen-faq-container">

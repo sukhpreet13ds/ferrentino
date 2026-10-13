@@ -1,5 +1,5 @@
 {
-  "heroBg": "/images/service-bg.png",
+  "heroBg": "https://res.cloudinary.com/deqetry9x/image/upload/v1791023910/hightower/qw7zs63okmt4zt9diuoo.jpg",
   "heroTag": "OUR SERVICES",
   "heroTitleLine1": "Building, Remodeling",
   "heroTitleLine2": "& Renovations",
@@ -30,8 +30,8 @@
   ],
   "whyUs": [],
   "testimonial": {
-    "quote": "After talking with several designers and remodeling contractors, we decided on Ferrentino & Son. They got what we wanted straight away and had plans done in less than a week. The best part is how the kitchen actually turned out. Amazing, simply amazing!",
-    "author": "John & Trisha D.",
+    "quote": "After exploring several kitchen remodeling contractors, we chose a team that truly understood our vision. They brought our ideas to life with a beautiful design, quality craftsmanship, and attention to every detail. The final result exceeded our expectations. Our new kitchen is absolutely stunning!",
+    "author": "Robert",
     "role": "Ocala Homeowners"
   },
   "items": [
@@ -41,12 +41,12 @@
       "title": "Kitchen Remodeling",
       "description": "Create a kitchen that combines functionality, comfort, and style. We remodel it to make cooking, gathering, storing, and everyday life feel easier, while giving the space a look that feels completely at home.",
       "linkText": "View Kitchen Remodeling",
-      "image": "/images/f&s-service1.png",
+      "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791023969/hightower/hsa6beqq5hd197b1bafe.jpg",
       "detailHeroTag": "PREMIER KITCHEN REMODELING",
       "detailHeroTitleLine1": "Kitchen Remodeling",
       "detailHeroTitleLine2": "in Ocala, Florida",
       "detailHeroDesc": "Transform the heart of your home into a culinary sanctuary. Tailored architectural layouts, custom cabinetry fabrication, and high-end finishes.",
-      "detailHeroBg": "/images/kitchen-bg.jpg",
+      "detailHeroBg": "https://res.cloudinary.com/deqetry9x/image/upload/v1791024339/hightower/sr6s9ekxy8hcvecreucy.jpg",
       "introTitle": "Making the Most of Your Kitchen",
       "introParagraphs": [
         "A successful kitchen remodel balances elegant aesthetic presentation with deep functional utility. At Ferrentino & Son, we believe your kitchen should be tailored to your culinary habits, hosting preferences, and storage needs.",
@@ -58,19 +58,19 @@
         "Professional-grade culinary appliance configurations",
         "Integrated ambient and task-focused layered lighting designs"
       ],
-      "introImage": "/images/making-right.jpg",
+      "introImage": "https://res.cloudinary.com/deqetry9x/image/upload/v1791024432/hightower/mnk1zfenznqd5itgphxx.jpg",
       "featured": [],
       "faqs": [
         {
           "question": "How long does a typical kitchen remodeling project take?",
-          "answer": "A comprehensive kitchen remodel generally takes between 4 to 8 weeks depending on structural layout changes, plumbing rerouting, and custom-cabinet requirements."
+          "answer": "A comprehensive kitchen remodel generally takes between 4 to 8 months depending on structural layout changes, plumbing rerouting, and custom-cabinet requirements."
         },
         {
           "question": "Can I remain in my home during the kitchen remodel?",
           "answer": "Yes, though the kitchen workspace will be fully isolated to minimize dust. We set up temporary cooking solutions and construct safety dust walls to preserve your daily home comfort."
         },
         {
-          "question": "Do you build the cabinetry in-house?",
+          "question": "Do you build custom cabinetry?",
           "answer": "Yes. Our team fabricates bespoke hardwood cabinets specifically engineered to your kitchen layout parameters at our local cabinet shop, guaranteeing a perfect fit."
         },
         {
@@ -78,7 +78,14 @@
           "answer": "Absolutely. We help coordinate dimensions, custom panel requirements for integrated styles, and electrical configurations with top premium appliance suppliers."
         }
       ],
-      "videos": []
+      "gridImages": [],
+      "videos": [],
+      "testimonial": {
+        "tag": "FEATURED KITCHEN CLIENT",
+        "quote": "We chose this team for our kitchen remodel, and they exceeded our expectations. The design, craftsmanship, and final result were simply amazing!",
+        "author": "Robert",
+        "location": "Ocala Home"
+      }
     },
     {
       "id": 2,
@@ -86,7 +93,7 @@
       "title": "Bathroom Remodeling",
       "description": "Small room, big impact. We rework bathrooms with better layouts, smarter storage, updated finishes, and details that make the space feel noticeably better every day.",
       "linkText": "View Bathroom Remodeling",
-      "image": "/images/f&s-service2.png",
+      "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791024048/hightower/hykqwhtsskdvujdqsbeg.jpg",
       "detailHeroTag": "PREMIER BATHROOM REMODELING",
       "detailHeroTitleLine1": "Bathroom Remodeling",
       "detailHeroTitleLine2": "in Ocala, Florida",
@@ -121,7 +128,7 @@
       "faqs": [
         {
           "question": "How long does a bathroom remodel take?",
-          "answer": "Most full bathroom remodels take 3 to 6 weeks depending on plumbing changes and material lead times."
+          "answer": "Most full bathroom remodels take 1-3 months depending on plumbing changes and material lead times."
         },
         {
           "question": "Can you add a walk-in or zero-threshold shower?",
@@ -129,13 +136,15 @@
         },
         {
           "question": "Will you handle plumbing and electrical?",
-          "answer": "Yes, all plumbing and electrical work is coordinated in-house through our licensed trade partners."
+          "answer": "Yes, all plumbing and electrical work is coordinated through our licensed trade partners."
         },
         {
           "question": "What finish options do you offer?",
           "answer": "We source natural stone, porcelain slab, and tile finishes, and help you select options that fit your budget and style."
         }
-      ]
+      ],
+      "gridImages": [],
+      "videos": []
     },
     {
       "id": 3,
@@ -186,13 +195,14 @@
         },
         {
           "question": "How do you keep the project on schedule?",
-          "answer": "We manage every trade in-house under one schedule instead of coordinating separate subcontractors."
+          "answer": "We manage every trade under one schedule instead of coordinating separate subcontractors."
         },
         {
           "question": "Can I live in the home during the remodel?",
           "answer": "In most cases yes, with dust barriers and phased work areas to minimize disruption."
         }
       ],
+      "gridImages": [],
       "videos": []
     },
     {
@@ -201,12 +211,12 @@
       "title": "Outdoor Living",
       "description": "Create functional, beautiful outdoor living spaces that extend your home and enhance your lifestyle.",
       "linkText": "View Outdoor Living",
-      "image": "/images/outdoor-pro.jpg",
+      "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791799267/hightower/uucvp8x8hma94lwlfjd6.jpg",
       "detailHeroTag": "OUTDOOR LIVING",
       "detailHeroTitleLine1": "Outdoor Living",
       "detailHeroTitleLine2": "That Respect Character",
       "detailHeroDesc": "Outdoor living spaces designed to be extensions of the home, crafted with quality materials and architectural care.",
-      "detailHeroBg": "/images/core-bg.jpg",
+      "detailHeroBg": "https://res.cloudinary.com/deqetry9x/image/upload/v1791799666/hightower/mduv7nahbs6qd14x08ht.jpg",
       "introTitle": "Keep The Character, Fix What's Not Working",
       "introParagraphs": [
         "Older homes carry character that's worth preserving, but systems and layouts can fall behind how a family lives today.",
@@ -235,22 +245,27 @@
       ],
       "faqs": [
         {
-          "question": "Will renovation preserve the original character of my home?",
-          "answer": "Yes, preserving character is central to our renovation approach; we restore and match original detail wherever possible."
+          "question": "Do you build outdoor kitchens?",
+          "answer": "Yes. We design and build custom outdoor kitchens, including built-in grills, countertops, and outdoor entertaining areas."
         },
         {
-          "question": "Do you handle older homes with outdated systems?",
-          "answer": "Yes, we regularly update electrical, plumbing, and insulation in older homes as part of a renovation."
+          "question": "Do you install pavers?",
+          "answer": "Yes. We install pavers for patios, walkways, driveways, and other outdoor spaces."
         },
         {
-          "question": "How do you handle unexpected issues behind the walls?",
-          "answer": "We build contingency into the schedule and budget and communicate any findings with you before proceeding."
+          "question": "Do you build retaining walls?",
+          "answer": "Yes. We build retaining walls that provide structural support and complement your outdoor space."
         },
         {
-          "question": "Can you match existing trim and millwork?",
-          "answer": "Yes, our cabinet shop can reproduce or match existing trim, casing, and millwork profiles."
+          "question": "Do you build pergolas?",
+          "answer": "Yes. We build pergolas to add shade and create comfortable outdoor living spaces."
+        },
+        {
+          "question": "Can you help with a complete backyard renovation?",
+          "answer": "Yes. We can combine outdoor kitchens, pavers, pergolas, and other features to create an outdoor living space that fits your needs."
         }
       ],
+      "gridImages": [],
       "videos": []
     },
     {
@@ -259,12 +274,12 @@
       "title": "Home Additions",
       "description": "Need more room? Expand your living space with a thoughtfully designed addition that complements your existing home.",
       "linkText": "View Home Additions",
-      "image": "/images/f&s-service5.png",
+      "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791799247/hightower/pjufxf1c9zihvybh6fhb.jpg",
       "detailHeroTag": "SEAMLESS HOME ADDITIONS",
       "detailHeroTitleLine1": "Home Additions",
       "detailHeroTitleLine2": "Built To Match",
       "detailHeroDesc": "Expand your living space with an addition engineered and finished to match your existing home.",
-      "detailHeroBg": "/images/about-bg.jpg",
+      "detailHeroBg": "https://res.cloudinary.com/deqetry9x/image/upload/v1791799678/hightower/zx4ewzjglesazwpgm9ph.jpg",
       "introTitle": "More Room, Seamlessly Integrated",
       "introParagraphs": [
         "A great addition should feel like it was always part of the house, matching rooflines, siding, and finish detail on the exterior and interior alike.",
@@ -276,7 +291,7 @@
         "Permitting and code compliance management",
         "Interior finish matching to existing home"
       ],
-      "introImage": "/images/project55.jpg",
+      "introImage": "https://res.cloudinary.com/deqetry9x/image/upload/v1791868762/hightower/gl3380ha4hmkhnfpfbof.jpg",
       "featured": [
         {
           "image": "/images/project66.jpg",
@@ -302,13 +317,11 @@
         },
         {
           "question": "How long does a typical addition take?",
-          "answer": "Most additions take 3 to 6 months depending on size, foundation type, and permitting timelines."
-        },
-        {
-          "question": "Can you add a second story?",
-          "answer": "Yes, second-story additions are possible after a structural engineering review of the existing foundation and framing."
+          "answer": "Most additions take 6 months to a year depending on size, foundation type, and permitting timelines."
         }
-      ]
+      ],
+      "gridImages": [],
+      "videos": []
     },
     {
       "id": 6,
@@ -316,12 +329,12 @@
       "title": "Design & Planning",
       "description": "Turn your ideas into a practical project plan. We help guide layout, functionality, materials, finishes, and design decisions before construction begins.",
       "linkText": "View Design Services",
-      "image": "/images/f&s-service7.png",
+      "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791024161/hightower/qh4hoaovoshoggsv9ud5.jpg",
       "detailHeroTag": "DESIGN & PROJECT PLANNING",
       "detailHeroTitleLine1": "Design & Planning",
       "detailHeroTitleLine2": "Before You Build",
       "detailHeroDesc": "Turn your ideas into a practical, buildable project plan before construction ever begins.",
-      "detailHeroBg": "/images/contractor-bg.jpg",
+      "detailHeroBg": "https://res.cloudinary.com/deqetry9x/image/upload/v1791027581/hightower/ydopb3xokbssyygyos7b.jpg",
       "introTitle": "A Clear Plan Before You Build",
       "introParagraphs": [
         "Good construction starts with good planning. We help you work through layout, functionality, materials, and finish decisions before any wall comes down.",
@@ -333,7 +346,7 @@
         "Visual space renderings",
         "Realistic budget and timeline planning"
       ],
-      "introImage": "/images/core-bg.jpg",
+      "introImage": "https://res.cloudinary.com/deqetry9x/image/upload/v1791869219/hightower/fsp9ddhxgnt33j3cxkcx.jpg",
       "featured": [
         {
           "image": "/images/feature-1.jpg",
@@ -350,22 +363,20 @@
       ],
       "faqs": [
         {
-          "question": "Do I need architectural drawings before we start?",
+          "question": "Do I need a licensed, structural engineer before we start?",
           "answer": "For most remodels our in-house design process covers what's needed; larger projects may require a licensed architect, which we can coordinate."
         },
         {
           "question": "How long does the design phase take?",
-          "answer": "Design and planning typically takes 2 to 4 weeks depending on project scope."
+          "answer": "Design and planning typically takes 6 months to a year, longer depending on scope."
         },
         {
           "question": "Can you help with material selection?",
           "answer": "Yes, our design team curates material and finish options that fit your style and budget."
-        },
-        {
-          "question": "Will I know the total cost before construction starts?",
-          "answer": "Yes, we provide a detailed estimate based on the finalized design before construction begins."
         }
-      ]
+      ],
+      "gridImages": [],
+      "videos": []
     }
   ]
 }
