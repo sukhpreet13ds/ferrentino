@@ -5,8 +5,6 @@ import heroImg from '../assets/ferrentino1.jpg';
 import heroImg2 from '../assets/ferrentino2.jpg';
 import heroImg3 from '../assets/ferrentino3.jpg';
 import navBg from '../assets/nav-bg.png';
-import videoSrc from '../assets/ferr-video.mp4';
-import thumbnailImg from '../assets/thumbnail-ferr.jpg';
 import mapImg from '../assets/map.png';
 import locationIcon from '../assets/location.png';
 import bg102 from '../assets/102-bg.jpg';
@@ -343,33 +341,7 @@ const Home = () => {
             {/* Our Projects Section */}
             <Projects />
 
-            {/* Renovate With Confidence Video Section */}
-            <section className="video-confidence-section">
-                <div className="video-confidence-container">
-                    <h2 className="video-confidence-title reveal-zoom">Renovate With Confidence</h2>
-
-                    <div className="video-player-wrapper reveal-zoom" data-delay="200" onClick={toggleVideoPlay}>
-                        <video
-                            ref={videoRef}
-                            src={videoSrc}
-                            poster={thumbnailImg}
-                            playsInline
-                            controls={isVideoPlaying}
-                            onEnded={() => setIsVideoPlaying(false)}
-                            onPause={() => setIsVideoPlaying(false)}
-                            onPlay={() => setIsVideoPlaying(true)}
-                            className="confidence-video-element"
-                        />
-                        {!isVideoPlaying && (
-                            <div className="video-play-overlay">
-                                <button className="video-play-circle-btn" aria-label="Play Video">
-                                    <i className="fa-solid fa-play"></i>
-                                </button>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </section>
+      
 
             {/* Renovate Banner & Testimonial Section */}
             <section className="reno-banner-section">
@@ -510,7 +482,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Ready to Build Your Dream CTA Section */}
             <ReadyCta />
 
         </div>

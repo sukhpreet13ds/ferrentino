@@ -152,6 +152,24 @@ const Gallery = ({ images }) => {
     setDragOffset(0);
   };
 
+  const handlePrev = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev - 1);
+  };
+
+  const handleNext = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev + 1);
+  };
+
   if (galleryImages.length === 0) return null;
 
   return (
@@ -167,6 +185,32 @@ const Gallery = ({ images }) => {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
+        <button
+          type="button"
+          className="gallery-nav-btn btn-left"
+          onClick={handlePrev}
+          onMouseDown={(e) => e.stopPropagation()}
+          onTouchStart={(e) => e.stopPropagation()}
+          aria-label="Previous image"
+        >
+          <svg viewBox="0 0 22 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2L2 16L20 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          className="gallery-nav-btn btn-right"
+          onClick={handleNext}
+          onMouseDown={(e) => e.stopPropagation()}
+          onTouchStart={(e) => e.stopPropagation()}
+          aria-label="Next image"
+        >
+          <svg viewBox="0 0 22 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 2L20 16L2 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
         <div
           className="gallery-slider-track"
           style={{

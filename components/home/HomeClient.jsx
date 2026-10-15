@@ -247,32 +247,6 @@ const HomeClient = ({ data, services, projects }) => {
 
       <Projects projects={projects} />
 
-      <section className="video-confidence-section">
-        <div className="video-confidence-container">
-          <h2 className="video-confidence-title reveal-zoom">{data.videoSectionTitle}</h2>
-
-          <div className="video-player-wrapper reveal-zoom" data-delay="200" onClick={toggleVideoPlay}>
-            <video
-              ref={videoRef}
-              src={data.videoSrc}
-              poster={data.videoPoster}
-              playsInline
-              controls={isVideoPlaying}
-              onEnded={() => setIsVideoPlaying(false)}
-              onPause={() => setIsVideoPlaying(false)}
-              onPlay={() => setIsVideoPlaying(true)}
-              className="confidence-video-element"
-            />
-            {!isVideoPlaying && (
-              <div className="video-play-overlay">
-                <button className="video-play-circle-btn" aria-label="Play Video">
-                  <i className="fa-solid fa-play"></i>
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
 
       <section className="reno-banner-section">
         <div className="reno-yellow-banner">

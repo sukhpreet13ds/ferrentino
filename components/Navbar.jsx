@@ -87,7 +87,6 @@ const Navbar = ({ site }) => {
               <a href={social.facebook} aria-label="Facebook" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
               <a href={social.instagram || "#instagram"} aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
               <a href={social.linkedin || "#linkedin"} aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-              <a href={social.youtube || "#youtube"} aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
             </div>
             <div className="top-contact-item">
               <i className="fa-solid fa-phone icon-yellow"></i>
@@ -209,7 +208,6 @@ const Navbar = ({ site }) => {
               <a href={social.facebook} aria-label="Facebook" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
               <a href={social.instagram || "#instagram"} aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
               <a href={social.linkedin || "#linkedin"} aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-              <a href={social.youtube || "#youtube"} aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
             </div>
             <button
               className={`mobile-grip-toggle-btn ${isMobileExtraOpen ? "active" : ""}`}

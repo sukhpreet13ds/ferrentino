@@ -73,7 +73,6 @@ const Footer = ({ site }) => {
               <a href={social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
               <a href={social.instagram || "#instagram"} aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
               <a href={social.linkedin || "#linkedin"} aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-              <a href={social.youtube || "#youtube"} aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
             </div>
           </div>
 

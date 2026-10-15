@@ -359,8 +359,8 @@ const ProjectView = () => {
                 <div className="pv-portfolios-container">
                     <div className="pv-section-header-row reveal-zoom">
                         <div className="pv-header-text-group">
-                            <span className="pv-subtag">CONTINUE EXPLORING</span>
-                            <h2 className="pv-section-title">Other Premium Portfolios</h2>
+                             <span className="pv-subtag">MORE PROJECTS</span>
+                <h2 className="pv-section-title">Continue Exploring</h2>
                         </div>
                         <Link to="/projects" className="pv-view-all-link">
                             VIEW ALL CASE STUDIES
