@@ -271,6 +271,19 @@ const Home = () => {
                                                 <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
                                             </svg>
                                         </span>
+                                        <span>Home Remodeling</span>
+                                    </Link>
+                                </li>
+                                <li style={{ cursor: 'pointer' }}>
+                                    <Link to="/service-view" style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        <span className="services-grid-icon">
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
+                                                <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
+                                            </svg>
+                                        </span>
                                         <span>Kitchen Remodels</span>
                                     </Link>
                                 </li>
@@ -297,19 +310,6 @@ const Home = () => {
                                                 <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
                                             </svg>
                                         </span>
-                                        <span>Home Renovations </span>
-                                    </Link>
-                                </li>
-                                <li style={{ cursor: 'pointer' }}>
-                                    <Link to="/service-view" style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        <span className="services-grid-icon">
-                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
-                                                <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
-                                                <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
-                                                <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
-                                                <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
-                                            </svg>
-                                        </span>
                                         <span>Home Additions</span>
                                     </Link>
                                 </li>
@@ -324,6 +324,19 @@ const Home = () => {
                                             </svg>
                                         </span>
                                         <span>Outdoor Living</span>
+                                    </Link>
+                                </li>
+                                <li style={{ cursor: 'pointer' }}>
+                                    <Link to="/service-view" style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        <span className="services-grid-icon">
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="var(--primary-color)">
+                                                <rect x="0" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="0" width="6.5" height="6.5" rx="1" />
+                                                <rect x="0" y="9.5" width="6.5" height="6.5" rx="1" />
+                                                <rect x="9.5" y="9.5" width="6.5" height="6.5" rx="1" />
+                                            </svg>
+                                        </span>
+                                        <span>Custom Homes</span>
                                     </Link>
                                 </li>
                             </ul>

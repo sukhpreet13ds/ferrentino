@@ -36,6 +36,65 @@
   },
   "items": [
     {
+      "id": 3,
+      "slug": "home-remodeling",
+      "title": "Home Remodeling",
+      "description": "Sometimes a home just needs to work differently. We rethink outdated spaces, awkward layouts, and tired finishes to create a home that fits the way you live now.",
+      "linkText": "View Home Remodeling",
+      "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791008240/hightower/sbmeyqkhjumgfex2fa4u.jpg",
+      "detailHeroTag": "WHOLE-HOME REMODELING",
+      "detailHeroTitleLine1": "Home Remodeling",
+      "detailHeroTitleLine2": "in Marion County",
+      "detailHeroDesc": "Rethink outdated layouts and tired finishes with a whole-home remodel built around how you actually live.",
+      "detailHeroBg": "/images/interier.jpg",
+      "introTitle": "A Home That Works The Way You Live",
+      "introParagraphs": [
+        "Many homes just need to work differently: opened-up living areas, better flow between rooms, and finishes that match how the family actually uses the space.",
+        "We coordinate structural, electrical, and finish work as one project, so your remodel moves through design and construction without disconnected subcontractors."
+      ],
+      "introChecklist": [
+        "Open-concept layout reconfiguration",
+        "Whole-home finish and material coordination",
+        "Structural wall and header modifications",
+        "Single point of contact from design to delivery"
+      ],
+      "introImage": "/images/room.jpg",
+      "featured": [
+        {
+          "image": "/images/living.jpg",
+          "tag": "OCALA, FL",
+          "title": "Ocala Oak-Wood Remodel",
+          "desc": "A whole-home remodel highlighting custom cabinetry, vaulted ceilings, and meticulous hardwood finishings."
+        },
+        {
+          "image": "/images/inner-two2.jpg",
+          "tag": "OCALA, FL",
+          "title": "Open-Concept Living Refresh",
+          "desc": "Reopened sightlines and raised ceilings brought light and scale into the main living space."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can I remodel in phases?",
+          "answer": "Yes, we can plan whole-home remodels in phases to match your budget and timeline."
+        },
+        {
+          "question": "Do you handle structural changes?",
+          "answer": "Yes, our team handles load-bearing wall removal, header installation, and any required permitting and engineering."
+        },
+        {
+          "question": "How do you keep the project on schedule?",
+          "answer": "We manage every trade under one schedule instead of coordinating separate subcontractors."
+        },
+        {
+          "question": "Can I live in the home during the remodel?",
+          "answer": "In most cases yes, with dust barriers and phased work areas to minimize disruption."
+        }
+      ],
+      "gridImages": [],
+      "videos": []
+    },
+    {
       "id": 1,
       "slug": "kitchen-remodeling",
       "title": "Kitchen Remodeling",
@@ -141,65 +200,6 @@
         {
           "question": "What finish options do you offer?",
           "answer": "We source natural stone, porcelain slab, and tile finishes, and help you select options that fit your budget and style."
-        }
-      ],
-      "gridImages": [],
-      "videos": []
-    },
-    {
-      "id": 3,
-      "slug": "home-remodeling",
-      "title": "Home Remodeling",
-      "description": "Sometimes a home just needs to work differently. We rethink outdated spaces, awkward layouts, and tired finishes to create a home that fits the way you live now.",
-      "linkText": "View Home Remodeling",
-      "image": "https://res.cloudinary.com/deqetry9x/image/upload/v1791008240/hightower/sbmeyqkhjumgfex2fa4u.jpg",
-      "detailHeroTag": "WHOLE-HOME REMODELING",
-      "detailHeroTitleLine1": "Home Remodeling",
-      "detailHeroTitleLine2": "in Marion County",
-      "detailHeroDesc": "Rethink outdated layouts and tired finishes with a whole-home remodel built around how you actually live.",
-      "detailHeroBg": "/images/interier.jpg",
-      "introTitle": "A Home That Works The Way You Live",
-      "introParagraphs": [
-        "Many homes just need to work differently: opened-up living areas, better flow between rooms, and finishes that match how the family actually uses the space.",
-        "We coordinate structural, electrical, and finish work as one project, so your remodel moves through design and construction without disconnected subcontractors."
-      ],
-      "introChecklist": [
-        "Open-concept layout reconfiguration",
-        "Whole-home finish and material coordination",
-        "Structural wall and header modifications",
-        "Single point of contact from design to delivery"
-      ],
-      "introImage": "/images/room.jpg",
-      "featured": [
-        {
-          "image": "/images/living.jpg",
-          "tag": "OCALA, FL",
-          "title": "Ocala Oak-Wood Remodel",
-          "desc": "A whole-home remodel highlighting custom cabinetry, vaulted ceilings, and meticulous hardwood finishings."
-        },
-        {
-          "image": "/images/inner-two2.jpg",
-          "tag": "OCALA, FL",
-          "title": "Open-Concept Living Refresh",
-          "desc": "Reopened sightlines and raised ceilings brought light and scale into the main living space."
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Can I remodel in phases?",
-          "answer": "Yes, we can plan whole-home remodels in phases to match your budget and timeline."
-        },
-        {
-          "question": "Do you handle structural changes?",
-          "answer": "Yes, our team handles load-bearing wall removal, header installation, and any required permitting and engineering."
-        },
-        {
-          "question": "How do you keep the project on schedule?",
-          "answer": "We manage every trade under one schedule instead of coordinating separate subcontractors."
-        },
-        {
-          "question": "Can I live in the home during the remodel?",
-          "answer": "In most cases yes, with dust barriers and phased work areas to minimize disruption."
         }
       ],
       "gridImages": [],

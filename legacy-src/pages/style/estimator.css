@@ -1,7 +1,3 @@
-/* =========================================================================
-   FERRENTINO & SON — PROJECT ESTIMATOR (Mobile-First Ergonomics & Modern UI)
-   ========================================================================= */
-
 .estimator-page {
   width: 100%;
   padding-top: 130px;
@@ -13,7 +9,7 @@
 @media (max-width: 980px) {
   .estimator-page {
     padding-top: 95px;
-    padding-bottom: 110px;
+    padding-bottom: 0px;
   }
 }
 

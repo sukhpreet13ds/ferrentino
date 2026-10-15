@@ -282,7 +282,7 @@ const EstimatorClient = ({ config }) => {
           onClick={() => setMode("guided")}
         >
           <span className="est-mode-icon">✦</span>
-          Guided
+          Project Calculator
           <span className="est-mode-tag">Recommended</span>
         </button>
         <button
@@ -291,13 +291,13 @@ const EstimatorClient = ({ config }) => {
           onClick={() => setMode("catalog")}
         >
           <span className="est-mode-icon">☰</span>
-          Full Catalog
+          Itemized Catalog
         </button>
       </div>
       <p className="est-mode-hint">
         {mode === "guided"
-          ? "Answer a few questions and we\u2019ll build your estimate."
-          : "Browse all services and add exactly what you need."}
+          ? "Select your project type and enter approximate square footage for an instant estimate range."
+          : "Browse all trade services and assemble a custom itemized estimate."}
       </p>
     </div>
   );

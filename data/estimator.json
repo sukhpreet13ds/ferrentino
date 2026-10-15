@@ -1,8 +1,8 @@
 {
   "hero": {
     "eyebrow": "Marion County · FL",
-    "title": "Build your project estimate",
-    "subtitle": "Add any combination of services below to see a ballpark price range. We'll follow up with a firm quote."
+    "title": "Project Cost Estimator",
+    "subtitle": "Select your project type, enter approximate square footage, and receive an estimated cost range for your build or remodel."
   },
   "catalogHint": "Tap a category to expand",
   "cartEmptyMessage": "Add services from the catalog above to build your estimate range.",

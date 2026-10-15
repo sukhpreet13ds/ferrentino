@@ -15,10 +15,10 @@
   ],
   "heroTitleTop": "On These BEAMS",
   "heroTitleBottom": "We Build DREAMS",
-  "heroSubtitle": "Ferrentino & Son is your Marion County Builder of choice for new home, commercial and remodeling construction projects.",
+  "heroSubtitle": "Ferrentino & Son is your Marion County Builder of choice for remodeling, home additions, and custom construction projects.",
   "designBuildBgImage": "/images/nav-bg.png",
   "designBuildTitle": "Design & Build",
-  "designBuildSubtitle": "From New Home Construction + Complete Home Remodeling",
+  "designBuildSubtitle": "From Complete Home Remodeling to Custom Homes",
   "designBuildDescription": "The foundation of our construction expertise lies in generations of hard work and dedication. Our family values are reflected in the quality and standard we hold for every home, and we've been proud to serve our local communities throughout central Florida since 1984.",
   "animatedWords": [
     "built",
@@ -31,28 +31,33 @@
   "homeServiceLinks": [
     {
       "id": 1,
-      "title": "Bath Remodels",
-      "slug": "bathroom-remodeling"
+      "title": "Home Remodeling",
+      "slug": "home-remodeling"
     },
-      {
+    {
       "id": 2,
-      "title": "Home Additions",
-      "slug": "home-additions"
+      "title": "Kitchen Remodels",
+      "slug": "kitchen-remodeling"
     },
     {
       "id": 3,
-      "title": "Kitchen Remodels",
-      "slug": "kitchen-remodeling"
-    },         
+      "title": "Bath Remodels",
+      "slug": "bathroom-remodeling"
+    },
     {
       "id": 4,
-      "title": "Custom Homes",
-      "slug": "home-renovations"
+      "title": "Home Additions",
+      "slug": "home-additions"
     },
     {
       "id": 5,
       "title": "Outdoor Living",
       "slug": "outdoor-living"
+    },
+    {
+      "id": 6,
+      "title": "Custom Homes",
+      "slug": "home-renovations"
     }
   ],
 
