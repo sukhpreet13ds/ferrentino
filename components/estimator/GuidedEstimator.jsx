@@ -340,8 +340,8 @@ export default function GuidedEstimator({ config }) {
                     {isSelected && <span className="ge-card-radio-dot"></span>}
                   </div>
                 </div>
-                <div className="ge-project-title">{p.name}</div>
-                <div className="ge-project-rate">{p.rateLabel}</div>
+                <div className="ge-project-title" style={{marginBottom:"10px"}}>{p.name}</div>
+                {/* <div className="ge-project-rate">{p.rateLabel}</div> */}
                 <div className="ge-project-tagline">{p.tagline}</div>
               </button>
             );
