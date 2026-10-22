@@ -120,15 +120,12 @@ const PROJECT_TYPES = [
     id: "outdoor_living",
     name: "Outdoor Living",
     tagline: "Patios, summer kitchens & outdoor entertaining",
-    rateLabel: "$150 – $250 / sq ft (Base Test Rate)",
-    minRate: 150,
-    maxRate: 250,
+    rateLabel: "Custom multi-feature estimate",
     icon: ICONS.outdoor,
     defaultSqft: 400,
     sqftPlaceholder: "e.g. 400",
     description: "Custom outdoor living spaces designed as seamless extensions of your home.",
-    hasOutdoorQuestions: true,
-    presets: [200, 350, 500, 750, 1000],
+    isOutdoorCustom: true,
   },
   {
     id: "design_planning",
@@ -150,6 +147,119 @@ const PROJECT_TYPES = [
   },
 ];
 
+/* ── Outdoor Living Features & Finish Levels ── */
+const OUTDOOR_FEATURES = [
+  {
+    id: "paver_patio",
+    name: "Paver Patio",
+    subtitle: "Patios & pool decks",
+    sizeLabel: "Patio area",
+    unit: "sq ft",
+    defaultQty: 400,
+    rates: {
+      standard: { low: 18, high: 26 },
+      upgraded: { low: 28.125, high: 40 },
+      premium: { low: 45, high: 65 },
+    },
+  },
+  {
+    id: "concrete_patio",
+    name: "Concrete Patio",
+    subtitle: "Slabs & walkways",
+    sizeLabel: "Slabs & walkways",
+    unit: "sq ft",
+    defaultQty: 400,
+    rates: {
+      standard: { low: 10, high: 15 },
+      upgraded: { low: 16, high: 24 },
+      premium: { low: 25, high: 36 },
+    },
+  },
+  {
+    id: "retaining_wall",
+    name: "Retaining Wall",
+    subtitle: "Grade changes & terraces",
+    sizeLabel: "Grade changes & terraces",
+    unit: "linear ft",
+    defaultQty: 30,
+    rates: {
+      standard: { low: 120, high: 180 },
+      upgraded: { low: 200, high: 320 },
+      premium: { low: 350, high: 550 },
+    },
+  },
+  {
+    id: "outdoor_fireplace",
+    name: "Outdoor Fireplace",
+    subtitle: "Masonry fireplaces",
+    sizeLabel: "Masonry fireplaces",
+    unit: "each",
+    defaultQty: 1,
+    rates: {
+      standard: { low: 9000, high: 14000 },
+      upgraded: { low: 15000, high: 24000 },
+      premium: { low: 25000, high: 40000 },
+    },
+  },
+  {
+    id: "fire_pit",
+    name: "Fire Pit",
+    subtitle: "Wood or gas",
+    sizeLabel: "Fire pits",
+    unit: "each",
+    defaultQty: 1,
+    rates: {
+      standard: { low: 2500, high: 4500 },
+      upgraded: { low: 5000, high: 9500 },
+      premium: { low: 10000, high: 16000 },
+    },
+  },
+  {
+    id: "outdoor_kitchen",
+    name: "Outdoor Kitchen",
+    subtitle: "Grills, counters & bars",
+    sizeLabel: "Grills, counters & bars",
+    unit: "linear ft",
+    defaultQty: 12,
+    rates: {
+      standard: { low: 650, high: 1000 },
+      upgraded: { low: 1200, high: 1900 },
+      premium: { low: 2100, high: 3400 },
+    },
+  },
+  {
+    id: "pergola_shade",
+    name: "Pergola / Shade",
+    subtitle: "Pergolas & pavilions",
+    sizeLabel: "Pergolas & pavilions",
+    unit: "sq ft",
+    defaultQty: 250,
+    rates: {
+      standard: { low: 32, high: 48 },
+      upgraded: { low: 55, high: 85 },
+      premium: { low: 90, high: 145 },
+    },
+  },
+];
+
+const OUTDOOR_FINISH_LEVELS = [
+  {
+    id: "standard",
+    name: "Standard",
+    desc: "Concrete pavers, block, prefab kits",
+  },
+  {
+    id: "upgraded",
+    name: "Upgraded",
+    desc: "Travertine, natural stone, custom masonry",
+  },
+  {
+    id: "premium",
+    name: "Premium",
+    desc: "Porcelain, veneer, high-end appliances",
+  },
+];
+
 export default function GuidedEstimator({ config }) {
   const formspreeEndpoint = config?.formspreeEndpoint || "https://formspree.io/f/YOUR_FORM_ID";
 
@@ -157,11 +267,22 @@ export default function GuidedEstimator({ config }) {
   const [selectedProjectId, setSelectedProjectId] = useState("home_remodeling");
   const [sqftInput, setSqftInput] = useState("1500");
   const [bathFinishLevel, setBathFinishLevel] = useState("better");
-  const [outdoorOptions, setOutdoorOptions] = useState({
-    fireplace: false,
-    pavers: true,
-    retainingWall: false,
+
+  // Outdoor Living Multi-Feature State
+  const [outdoorSelectedFeatures, setOutdoorSelectedFeatures] = useState({
+    paver_patio: true,
+    fire_pit: true,
   });
+  const [outdoorSizes, setOutdoorSizes] = useState({
+    paver_patio: "400",
+    fire_pit: "1",
+    concrete_patio: "400",
+    retaining_wall: "30",
+    outdoor_fireplace: "1",
+    outdoor_kitchen: "12",
+    pergola_shade: "250",
+  });
+  const [outdoorFinishLevel, setOutdoorFinishLevel] = useState("upgraded");
 
   // Quote Form / Lead Inquiry State
   const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
@@ -177,12 +298,41 @@ export default function GuidedEstimator({ config }) {
   const quoteFormRef = useRef(null);
   const resultRef = useRef(null);
 
-  // Derived current project config
+  // Check if currently on outdoor living
+  const isOutdoor = selectedProjectId === "outdoor_living";
+
+  // Outdoor Calculations
+  const selectedOutdoorItems = OUTDOOR_FEATURES.filter((f) => outdoorSelectedFeatures[f.id]);
+  const currentOutdoorFinish = OUTDOOR_FINISH_LEVELS.find((lvl) => lvl.id === outdoorFinishLevel) || OUTDOOR_FINISH_LEVELS[1];
+
+  const outdoorBreakdownItems = selectedOutdoorItems.map((f) => {
+    const rawQty = outdoorSizes[f.id];
+    const qty = parseFloat(rawQty) || 0;
+    const rates = f.rates[outdoorFinishLevel] || f.rates.upgraded;
+    const itemLow = Math.round(qty * rates.low);
+    const itemHigh = Math.round(qty * rates.high);
+    return {
+      id: f.id,
+      name: f.name,
+      qty,
+      unit: f.unit,
+      low: itemLow,
+      high: itemHigh,
+      label: `${f.name} · ${qty.toLocaleString()} ${f.unit}`,
+      rangeDisplay: `${fmt(itemLow)} – ${fmt(itemHigh)}`,
+    };
+  });
+
+  const outdoorTotalLow = outdoorBreakdownItems.reduce((acc, it) => acc + it.low, 0);
+  const outdoorTotalHigh = outdoorBreakdownItems.reduce((acc, it) => acc + it.high, 0);
+  const hasOutdoorSelection = selectedOutdoorItems.length > 0;
+
+  // Derived current project config for non-outdoor projects
   const currentProject = PROJECT_TYPES.find((p) => p.id === selectedProjectId) || PROJECT_TYPES[0];
   const sqft = parseFloat(sqftInput) || 0;
   const isSqftValid = sqft > 0;
 
-  // Calculation
+  // Calculation for non-outdoor projects
   let calculatedLow = 0;
   let calculatedHigh = 0;
   let calculationMode = "range"; // 'range' | 'flat' | 'single'
@@ -221,12 +371,25 @@ export default function GuidedEstimator({ config }) {
   // Handle Project Change
   const handleSelectProject = (project) => {
     setSelectedProjectId(project.id);
-    setSqftInput(String(project.defaultSqft));
+    if (project.defaultSqft) {
+      setSqftInput(String(project.defaultSqft));
+    }
   };
 
-  // Toggle Outdoor Checkbox
-  const handleToggleOutdoorOption = (key) => {
-    setOutdoorOptions((prev) => ({ ...prev, [key]: !prev[key] }));
+  // Toggle Outdoor Feature
+  const handleToggleOutdoorFeature = (id) => {
+    setOutdoorSelectedFeatures((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  // Change Outdoor Feature Size
+  const handleOutdoorSizeChange = (id, val) => {
+    setOutdoorSizes((prev) => ({
+      ...prev,
+      [id]: val,
+    }));
   };
 
   // Open Quote Form with smooth scroll
@@ -255,35 +418,56 @@ export default function GuidedEstimator({ config }) {
 
     setSubmitState("sending");
 
-    const estimateDisplay = calculationMode === "range"
-      ? `${fmt(calculatedLow)} – ${fmt(calculatedHigh)}`
-      : fmt(calculatedLow);
+    let payload;
 
-    let optionsSummary = "Standard";
-    if (currentProject.hasFinishLevels) {
-      const selectedTier = currentProject.finishLevels.find((f) => f.id === bathFinishLevel);
-      optionsSummary = `Finish Level: ${selectedTier?.name} ($${selectedTier?.rate}/sq ft)`;
-    } else if (currentProject.hasOutdoorQuestions) {
-      const opts = [];
-      if (outdoorOptions.fireplace) opts.push("Include Fireplace: Yes");
-      if (outdoorOptions.pavers) opts.push("Include Pavers: Yes");
-      if (outdoorOptions.retainingWall) opts.push("Include Retaining Wall: Yes");
-      optionsSummary = opts.length ? opts.join(", ") : "No special features selected";
+    if (isOutdoor) {
+      const estimateDisplay = hasOutdoorSelection
+        ? `${fmt(outdoorTotalLow)} – ${fmt(outdoorTotalHigh)}`
+        : "$0";
+      const selectedOptionsStr = `${currentOutdoorFinish.name} finishes; Selected: ` +
+        outdoorBreakdownItems.map((it) => it.label).join(", ");
+      const breakdownStr = outdoorBreakdownItems
+        .map((it) => `${it.label}: ${it.rangeDisplay}`)
+        .join("\n");
+
+      payload = {
+        projectType: "Outdoor Living",
+        squareFootage: outdoorBreakdownItems.map((it) => it.label).join("; ") || "None selected",
+        selectedOptions: selectedOptionsStr,
+        estimatedCostRange: estimateDisplay,
+        breakdown: breakdownStr,
+        customerName: contact.name,
+        customerEmail: contact.email,
+        customerPhone: contact.phone || "Not provided",
+        projectAddress: contact.address || "Not provided",
+        customerNotes: contact.notes || "None",
+        submittedAt: new Date().toISOString(),
+      };
+    } else {
+      const estimateDisplay = calculationMode === "range"
+        ? `${fmt(calculatedLow)} – ${fmt(calculatedHigh)}`
+        : fmt(calculatedLow);
+
+      let optionsSummary = "Standard";
+      if (currentProject.hasFinishLevels) {
+        const selectedTier = currentProject.finishLevels.find((f) => f.id === bathFinishLevel);
+        optionsSummary = `Finish Level: ${selectedTier?.name} ($${selectedTier?.rate}/sq ft)`;
+      }
+
+      payload = {
+        projectType: currentProject.name,
+        squareFootage: `${sqft} sq ft`,
+        selectedOptions: optionsSummary,
+        estimatedCostRange: estimateDisplay,
+        breakdown: breakdownSummary,
+        customerName: contact.name,
+        customerEmail: contact.email,
+        customerPhone: contact.phone || "Not provided",
+        projectAddress: contact.address || "Not provided",
+        customerNotes: contact.notes || "None",
+        submittedAt: new Date().toISOString(),
+      };
     }
-
-    const payload = {
-      projectType: currentProject.name,
-      squareFootage: `${sqft} sq ft`,
-      selectedOptions: optionsSummary,
-      estimatedCostRange: estimateDisplay,
-      breakdown: breakdownSummary,
-      customerName: contact.name,
-      customerEmail: contact.email,
-      customerPhone: contact.phone || "Not provided",
-      projectAddress: contact.address || "Not provided",
-      customerNotes: contact.notes || "None",
-      submittedAt: new Date().toISOString(),
-    };
 
     if (!formspreeEndpoint || formspreeEndpoint.includes("YOUR_FORM_ID")) {
       console.log("[Ferrentino Estimator Inquiry Payload]:", payload);
@@ -340,8 +524,7 @@ export default function GuidedEstimator({ config }) {
                     {isSelected && <span className="ge-card-radio-dot"></span>}
                   </div>
                 </div>
-                <div className="ge-project-title" style={{marginBottom:"10px"}}>{p.name}</div>
-                {/* <div className="ge-project-rate">{p.rateLabel}</div> */}
+                <div className="ge-project-title" style={{ marginBottom: "10px" }}>{p.name}</div>
                 <div className="ge-project-tagline">{p.tagline}</div>
               </button>
             );
@@ -349,219 +532,280 @@ export default function GuidedEstimator({ config }) {
         </div>
       </section>
 
-      {/* ── STEP 2: Square Footage & Options ── */}
-      <section className="ge-calc-section">
-        <div className="ge-calc-header">
-          <div className="ge-step-eyebrow">STEP 2 · PROJECT SPECIFICATIONS</div>
-          <h3 className="ge-step-title">Enter approximate square footage</h3>
-          <p className="ge-step-subtitle">
-            {currentProject.description}
-          </p>
-        </div>
+      {/* ── OUTDOOR LIVING ESTIMATOR WORKFLOW ── */}
+      {isOutdoor ? (
+        <section className="ge-calc-section ge-outdoor-section">
+          <div className="ge-calc-header">
+            <div className="ge-step-eyebrow">MARION COUNTY · OUTDOOR LIVING</div>
+            <h3 className="ge-step-title">Outdoor Living Estimator</h3>
+            <p className="ge-step-subtitle">
+              Choose what you'd like built, enter rough sizes, and get a planning range.
+            </p>
+          </div>
 
-        <div className="ge-spec-box">
-          <div className="ge-input-row">
-            <div className="ge-input-wrap">
-              <label htmlFor="ge-sqft-input" className="ge-input-label">
-                Approximate Square Footage (sq ft)
-              </label>
-              <div className="ge-input-field-group">
-                <input
-                  id="ge-sqft-input"
-                  type="number"
-                  min="1"
-                  step="1"
-                  className={`ge-sqft-input ${!isSqftValid && sqftInput !== "" ? "invalid" : ""}`}
-                  placeholder={currentProject.sqftPlaceholder}
-                  value={sqftInput}
-                  onChange={(e) => setSqftInput(e.target.value)}
-                />
-                <span className="ge-sqft-unit">sq ft</span>
-              </div>
-              {!isSqftValid && (
-                <p className="ge-validation-error">Please enter a valid square footage greater than 0.</p>
-              )}
+          {/* OUTDOOR STEP 1: What are you building? */}
+          <div className="ge-outdoor-block" style={{ borderTop: "none", paddingTop: 0, marginTop: "8px" }}>
+            <div className="ge-outdoor-step-header">
+              <span className="ge-outdoor-step-num">STEP 1</span>
+              <h4 className="ge-outdoor-step-title">What are you building?</h4>
             </div>
 
-            {/* Quick preset buttons */}
-            <div className="ge-presets-wrap">
-              <span className="ge-presets-title">Quick Select:</span>
-              <div className="ge-presets-list">
-                {currentProject.presets.map((val) => (
+            <div className="ge-outdoor-grid">
+              {OUTDOOR_FEATURES.map((f) => {
+                const isChecked = !!outdoorSelectedFeatures[f.id];
+                return (
                   <button
-                    key={val}
+                    key={f.id}
                     type="button"
-                    className={`ge-preset-btn ${sqft === val ? "active" : ""}`}
-                    onClick={() => setSqftInput(String(val))}
+                    className={`ge-outdoor-feature-card ${isChecked ? "selected" : ""}`}
+                    onClick={() => handleToggleOutdoorFeature(f.id)}
+                    aria-pressed={isChecked}
                   >
-                    {val.toLocaleString()} sq ft
+                    <div className="ge-outdoor-feature-info">
+                      <div className="ge-outdoor-feature-name">
+                        <span>{f.name}</span>
+                        {isChecked && <span className="ge-check-mark">✓</span>}
+                      </div>
+                      <div className="ge-outdoor-feature-sub">{f.subtitle}</div>
+                    </div>
                   </button>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* Full Kitchen Remodels Comment/Notice */}
-          {currentProject.allInclusiveNote && currentProject.id === "kitchen_remodel" && (
-            <div className="ge-scope-banner">
-              <div className="ge-scope-banner-icon">✓</div>
-              <div className="ge-scope-banner-text">
-                <strong>Full Kitchen Remodel Scope:</strong> {currentProject.allInclusiveNote}
-              </div>
+          {/* OUTDOOR STEP 2: Approximate size */}
+          <div className="ge-outdoor-block">
+            <div className="ge-outdoor-step-header">
+              <span className="ge-outdoor-step-num">STEP 2</span>
+              <h4 className="ge-outdoor-step-title">Approximate size</h4>
             </div>
-          )}
 
-          {/* Full Bathroom Remodels Finish Level Selection */}
-          {currentProject.hasFinishLevels && (
-            <div className="ge-extra-scope-section">
-              <div className="ge-sub-section-title">
-                <span>Select Finish Level</span>
-                <span className="ge-sub-section-hint">Pricing is determined by your chosen finish tier</span>
+            {selectedOutdoorItems.length === 0 ? (
+              <div className="ge-outdoor-empty-prompt">
+                Please select at least one feature in Step 1 above to configure sizes.
               </div>
-              <div className="ge-finish-grid">
-                {currentProject.finishLevels.map((lvl) => {
-                  const isLvlSelected = bathFinishLevel === lvl.id;
-                  return (
-                    <button
-                      key={lvl.id}
-                      type="button"
-                      className={`ge-finish-card ${isLvlSelected ? "selected" : ""}`}
-                      onClick={() => setBathFinishLevel(lvl.id)}
-                    >
-                      <div className="ge-finish-card-head">
-                        <span className="ge-finish-name">{lvl.name}</span>
-                        <span className="ge-finish-rate">{lvl.badge}</span>
-                      </div>
-                      <p className="ge-finish-desc">{lvl.desc}</p>
-                      <div className="ge-finish-select-indicator">
-                        {isLvlSelected ? "Selected" : "Select Level"}
-                      </div>
-                    </button>
-                  );
-                })}
+            ) : (
+              <div className="ge-outdoor-sizes-card">
+                {selectedOutdoorItems.map((f) => (
+                  <div key={f.id} className="ge-outdoor-size-row">
+                    <div className="ge-outdoor-size-meta">
+                      <span className="ge-outdoor-size-title">{f.name}</span>
+                      <span className="ge-outdoor-size-subtitle">{f.sizeLabel}</span>
+                    </div>
+                    <div className="ge-outdoor-input-group">
+                      <input
+                        type="number"
+                        min="1"
+                        step="any"
+                        className="ge-outdoor-size-input"
+                        value={outdoorSizes[f.id] ?? ""}
+                        placeholder={String(f.defaultQty)}
+                        onChange={(e) => handleOutdoorSizeChange(f.id, e.target.value)}
+                      />
+                      <span className="ge-outdoor-size-unit">{f.unit}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
-              {currentProject.allInclusiveNote && (
-                <div className="ge-scope-banner" style={{ marginTop: "16px" }}>
-                  <div className="ge-scope-banner-icon">✓</div>
-                  <div className="ge-scope-banner-text">
-                    <strong>All-Inclusive Bathroom Remodel:</strong> {currentProject.allInclusiveNote}
+            )}
+          </div>
+
+          {/* OUTDOOR STEP 3: Finish level */}
+          <div className="ge-outdoor-block">
+            <div className="ge-outdoor-step-header">
+              <span className="ge-outdoor-step-num">STEP 3</span>
+              <h4 className="ge-outdoor-step-title">Finish level</h4>
+            </div>
+
+            <div className="ge-finish-grid">
+              {OUTDOOR_FINISH_LEVELS.map((lvl) => {
+                const isSelected = outdoorFinishLevel === lvl.id;
+                return (
+                  <button
+                    key={lvl.id}
+                    type="button"
+                    className={`ge-finish-card ge-outdoor-finish-card ${isSelected ? "selected" : ""}`}
+                    onClick={() => setOutdoorFinishLevel(lvl.id)}
+                  >
+                    <div className="ge-finish-card-head">
+                      <span className="ge-finish-name">{lvl.name}</span>
+                      {isSelected && <span className="ge-finish-check-badge">Selected</span>}
+                    </div>
+                    <p className="ge-finish-desc">{lvl.desc}</p>
+                    <div className="ge-finish-select-indicator">
+                      {isSelected ? "Selected" : "Select Level"}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      ) : (
+        /* ── STANDARD STEP 2: Square Footage & Options for All Other Projects ── */
+        <section className="ge-calc-section">
+          <div className="ge-calc-header">
+            <div className="ge-step-eyebrow">STEP 2 · PROJECT SPECIFICATIONS</div>
+            <h3 className="ge-step-title">Enter approximate square footage</h3>
+            <p className="ge-step-subtitle">
+              {currentProject.description}
+            </p>
+          </div>
+
+          <div className="ge-spec-box">
+            <div className="ge-input-row">
+              <div className="ge-input-wrap">
+                <label htmlFor="ge-sqft-input" className="ge-input-label">
+                  Approximate Square Footage (sq ft)
+                </label>
+                <div className="ge-input-field-group">
+                  <input
+                    id="ge-sqft-input"
+                    type="number"
+                    min="1"
+                    step="1"
+                    className={`ge-sqft-input ${!isSqftValid && sqftInput !== "" ? "invalid" : ""}`}
+                    placeholder={currentProject.sqftPlaceholder}
+                    value={sqftInput}
+                    onChange={(e) => setSqftInput(e.target.value)}
+                  />
+                  <span className="ge-sqft-unit">sq ft</span>
+                </div>
+                {!isSqftValid && (
+                  <p className="ge-validation-error">Please enter a valid square footage greater than 0.</p>
+                )}
+              </div>
+
+              {/* Quick preset buttons */}
+              {currentProject.presets && (
+                <div className="ge-presets-wrap">
+                  <span className="ge-presets-title">Quick Select:</span>
+                  <div className="ge-presets-list">
+                    {currentProject.presets.map((val) => (
+                      <button
+                        key={val}
+                        type="button"
+                        className={`ge-preset-btn ${sqft === val ? "active" : ""}`}
+                        onClick={() => setSqftInput(String(val))}
+                      >
+                        {val.toLocaleString()} sq ft
+                      </button>
+                    ))}
                   </div>
                 </div>
               )}
             </div>
-          )}
 
-          {/* Outdoor Living Additional Scope Questions */}
-          {currentProject.hasOutdoorQuestions && (
-            <div className="ge-extra-scope-section">
-              <div className="ge-sub-section-title">
-                <span>Outdoor Living Project Features</span>
-                <span className="ge-sub-section-hint">Select the features you would like to include</span>
-              </div>
-              <p className="ge-outdoor-note">
-                Select your intended scope below. Pricing for outdoor living projects and individual features will be finalized in your formal proposal.
-              </p>
-              <div className="ge-checkbox-group">
-                <label className="ge-checkbox-item">
-                  <input
-                    type="checkbox"
-                    checked={outdoorOptions.fireplace}
-                    onChange={() => handleToggleOutdoorOption("fireplace")}
-                  />
-                  <div className="ge-checkbox-box">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div className="ge-checkbox-content">
-                    <span className="ge-checkbox-label">Include an Outdoor Fireplace</span>
-                    <span className="ge-checkbox-sub">Custom masonry, gas, or wood-burning hearth</span>
-                  </div>
-                </label>
-
-                <label className="ge-checkbox-item">
-                  <input
-                    type="checkbox"
-                    checked={outdoorOptions.pavers}
-                    onChange={() => handleToggleOutdoorOption("pavers")}
-                  />
-                  <div className="ge-checkbox-box">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div className="ge-checkbox-content">
-                    <span className="ge-checkbox-label">Include Pavers</span>
-                    <span className="ge-checkbox-sub">Patios, walkways, pool decks, and decorative borders</span>
-                  </div>
-                </label>
-
-                <label className="ge-checkbox-item">
-                  <input
-                    type="checkbox"
-                    checked={outdoorOptions.retainingWall}
-                    onChange={() => handleToggleOutdoorOption("retainingWall")}
-                  />
-                  <div className="ge-checkbox-box">
-                    <svg viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div className="ge-checkbox-content">
-                    <span className="ge-checkbox-label">Include a Retaining Wall</span>
-                    <span className="ge-checkbox-sub">Structural grade retention, raised planters & terrace masonry</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-          )}
-
-          {/* Design & Planning Tier Information */}
-          {currentProject.isTieredFlat && (
-            <div className="ge-extra-scope-section">
+            {/* Full Kitchen Remodels Comment/Notice */}
+            {currentProject.allInclusiveNote && currentProject.id === "kitchen_remodel" && (
               <div className="ge-scope-banner">
-                <div className="ge-scope-banner-icon">ℹ</div>
+                <div className="ge-scope-banner-icon">✓</div>
                 <div className="ge-scope-banner-text">
-                  <strong>Design & Planning Scope:</strong> {currentProject.scopeNote}
+                  <strong>Full Kitchen Remodel Scope:</strong> {currentProject.allInclusiveNote}
                 </div>
               </div>
-              <div className="ge-tier-table">
-                <div className="ge-tier-row-head">
-                  <span>Total Project Size</span>
-                  <span>Flat-Rate Investment</span>
-                  <span>Status</span>
+            )}
+
+            {/* Full Bathroom Remodels Finish Level Selection */}
+            {currentProject.hasFinishLevels && (
+              <div className="ge-extra-scope-section">
+                <div className="ge-sub-section-title">
+                  <span>Select Finish Level</span>
+                  <span className="ge-sub-section-hint">Pricing is determined by your chosen finish tier</span>
                 </div>
-                {currentProject.tiers.map((t, idx) => {
-                  const isActive = sqft >= t.minSqft && sqft <= t.maxSqft;
-                  return (
-                    <div key={idx} className={`ge-tier-row ${isActive ? "active-tier" : ""}`}>
-                      <span className="ge-tier-range">{t.label.split(" — ")[0]}</span>
-                      <span className="ge-tier-cost">{fmt(t.cost)}</span>
-                      <span className="ge-tier-badge">{isActive ? "Applicable Tier" : "—"}</span>
+                <div className="ge-finish-grid">
+                  {currentProject.finishLevels.map((lvl) => {
+                    const isLvlSelected = bathFinishLevel === lvl.id;
+                    return (
+                      <button
+                        key={lvl.id}
+                        type="button"
+                        className={`ge-finish-card ${isLvlSelected ? "selected" : ""}`}
+                        onClick={() => setBathFinishLevel(lvl.id)}
+                      >
+                        <div className="ge-finish-card-head">
+                          <span className="ge-finish-name">{lvl.name}</span>
+                          <span className="ge-finish-rate">{lvl.badge}</span>
+                        </div>
+                        <p className="ge-finish-desc">{lvl.desc}</p>
+                        <div className="ge-finish-select-indicator">
+                          {isLvlSelected ? "Selected" : "Select Level"}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+                {currentProject.allInclusiveNote && (
+                  <div className="ge-scope-banner" style={{ marginTop: "16px" }}>
+                    <div className="ge-scope-banner-icon">✓</div>
+                    <div className="ge-scope-banner-text">
+                      <strong>All-Inclusive Bathroom Remodel:</strong> {currentProject.allInclusiveNote}
                     </div>
-                  );
-                })}
+                  </div>
+                )}
               </div>
-            </div>
-          )}
-        </div>
-      </section>
+            )}
+
+            {/* Design & Planning Tier Information */}
+            {currentProject.isTieredFlat && (
+              <div className="ge-extra-scope-section">
+                <div className="ge-scope-banner">
+                  <div className="ge-scope-banner-icon">ℹ</div>
+                  <div className="ge-scope-banner-text">
+                    <strong>Design & Planning Scope:</strong> {currentProject.scopeNote}
+                  </div>
+                </div>
+                <div className="ge-tier-table">
+                  <div className="ge-tier-row-head">
+                    <span>Total Project Size</span>
+                    <span>Flat-Rate Investment</span>
+                    <span>Status</span>
+                  </div>
+                  {currentProject.tiers.map((t, idx) => {
+                    const isActive = sqft >= t.minSqft && sqft <= t.maxSqft;
+                    return (
+                      <div key={idx} className={`ge-tier-row ${isActive ? "active-tier" : ""}`}>
+                        <span className="ge-tier-range">{t.label.split(" — ")[0]}</span>
+                        <span className="ge-tier-cost">{fmt(t.cost)}</span>
+                        <span className="ge-tier-badge">{isActive ? "Applicable Tier" : "—"}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* ── STEP 3: Real-Time Calculated Estimate Card ── */}
       <section className="ge-result-section" ref={resultRef}>
         <div className="ge-result-card">
           <div className="ge-result-top">
             <span className="ge-preliminary-tag">
-              <span className="ge-tag-dot"></span> PRELIMINARY PLANNING ESTIMATE
+              <span className="ge-tag-dot"></span> ESTIMATED INVESTMENT RANGE
             </span>
-            <span className="ge-subject-review">Subject to review by Ferrentino & Son</span>
+            <span className="ge-subject-review">
+              {isOutdoor ? "Marion County · Outdoor Living" : "Subject to review by Ferrentino & Son"}
+            </span>
           </div>
 
           <div className="ge-result-main">
             <div className="ge-result-project-info">
               <span className="ge-result-label">Estimated Investment Range:</span>
               <div className="ge-result-price">
-                {isSqftValid ? (
+                {isOutdoor ? (
+                  hasOutdoorSelection ? (
+                    <>
+                      <span>{fmt(outdoorTotalLow)}</span>
+                      <span className="ge-price-dash">–</span>
+                      <span>{fmt(outdoorTotalHigh)}</span>
+                    </>
+                  ) : (
+                    <span className="ge-price-placeholder">Select features above</span>
+                  )
+                ) : isSqftValid ? (
                   calculationMode === "range" ? (
                     <>
                       <span>{fmt(calculatedLow)}</span>
@@ -575,10 +819,30 @@ export default function GuidedEstimator({ config }) {
                   <span className="ge-price-placeholder">Enter square footage</span>
                 )}
               </div>
-              {isSqftValid && (
-                <div className="ge-result-breakdown">
-                  <strong>Selected:</strong> {currentProject.name} ({breakdownSummary})
-                </div>
+
+              {isOutdoor ? (
+                <>
+                  <div className="ge-outdoor-finish-subtitle">
+                    {currentOutdoorFinish.name} finishes
+                  </div>
+                  {hasOutdoorSelection && (
+                    <div className="ge-outdoor-breakdown-list">
+                      {outdoorBreakdownItems.map((item) => (
+                        <div key={item.id} className="ge-outdoor-breakdown-row">
+                          <span className="ge-outdoor-breakdown-name">{item.label}</span>
+                          <span className="ge-outdoor-breakdown-dots"></span>
+                          <span className="ge-outdoor-breakdown-price">{item.rangeDisplay}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                isSqftValid && (
+                  <div className="ge-result-breakdown">
+                    <strong>Selected:</strong> {currentProject.name} ({breakdownSummary})
+                  </div>
+                )
               )}
             </div>
 
@@ -587,8 +851,9 @@ export default function GuidedEstimator({ config }) {
                 type="button"
                 className="ge-cta-quote-btn"
                 onClick={handleOpenQuoteForm}
+                disabled={isOutdoor && !hasOutdoorSelection}
               >
-                <span>Request a Detailed Project Quote</span>
+                <span>Request a detailed quote</span>
                 <i className="fa-solid fa-arrow-right"></i>
               </button>
             </div>
@@ -598,7 +863,9 @@ export default function GuidedEstimator({ config }) {
           <div className="ge-disclaimer-box">
             <p className="ge-disclaimer-title">Preliminary Estimate Disclaimer</p>
             <p className="ge-disclaimer-text">
-              This calculator provides a preliminary cost estimate for planning purposes only. Actual pricing may vary based on project specifications, materials, site conditions, and other factors. All estimates are subject to review and confirmation by Ferrentino & Son. Final pricing will be provided in a formal project proposal.
+              {isOutdoor
+                ? "Preliminary planning estimate. Actual pricing depends on site access, grading, materials and permits, and is confirmed in a formal proposal from Ferrentino & Son. Rates shown are placeholders pending Ferrentino review."
+                : "This calculator provides a preliminary cost estimate for planning purposes only. Actual pricing may vary based on project specifications, materials, site conditions, and other factors. All estimates are subject to review and confirmation by Ferrentino & Son. Final pricing will be provided in a formal project proposal."}
             </p>
           </div>
         </div>
@@ -620,25 +887,48 @@ export default function GuidedEstimator({ config }) {
             <div className="ge-carried-summary">
               <div className="ge-carried-item">
                 <span className="ge-carried-label">Project:</span>
-                <span className="ge-carried-val">{currentProject.name}</span>
+                <span className="ge-carried-val">{isOutdoor ? "Outdoor Living" : currentProject.name}</span>
               </div>
-              <div className="ge-carried-item">
-                <span className="ge-carried-label">Square Footage:</span>
-                <span className="ge-carried-val">{sqft.toLocaleString()} sq ft</span>
-              </div>
-              <div className="ge-carried-item">
-                <span className="ge-carried-label">Preliminary Cost:</span>
-                <span className="ge-carried-val highlight">
-                  {calculationMode === "range"
-                    ? `${fmt(calculatedLow)} – ${fmt(calculatedHigh)}`
-                    : fmt(calculatedLow)}
-                </span>
-              </div>
-              {currentProject.hasFinishLevels && (
-                <div className="ge-carried-item">
-                  <span className="ge-carried-label">Finish Level:</span>
-                  <span className="ge-carried-val" style={{ textTransform: "capitalize" }}>{bathFinishLevel}</span>
-                </div>
+              {isOutdoor ? (
+                <>
+                  <div className="ge-carried-item">
+                    <span className="ge-carried-label">Features:</span>
+                    <span className="ge-carried-val">
+                      {outdoorBreakdownItems.map((i) => i.name).join(", ") || "None"}
+                    </span>
+                  </div>
+                  <div className="ge-carried-item">
+                    <span className="ge-carried-label">Finish:</span>
+                    <span className="ge-carried-val">{currentOutdoorFinish.name}</span>
+                  </div>
+                  <div className="ge-carried-item">
+                    <span className="ge-carried-label">Preliminary Cost:</span>
+                    <span className="ge-carried-val highlight">
+                      {hasOutdoorSelection ? `${fmt(outdoorTotalLow)} – ${fmt(outdoorTotalHigh)}` : "$0"}
+                    </span>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="ge-carried-item">
+                    <span className="ge-carried-label">Square Footage:</span>
+                    <span className="ge-carried-val">{sqft.toLocaleString()} sq ft</span>
+                  </div>
+                  <div className="ge-carried-item">
+                    <span className="ge-carried-label">Preliminary Cost:</span>
+                    <span className="ge-carried-val highlight">
+                      {calculationMode === "range"
+                        ? `${fmt(calculatedLow)} – ${fmt(calculatedHigh)}`
+                        : fmt(calculatedLow)}
+                    </span>
+                  </div>
+                  {currentProject.hasFinishLevels && (
+                    <div className="ge-carried-item">
+                      <span className="ge-carried-label">Finish Level:</span>
+                      <span className="ge-carried-val" style={{ textTransform: "capitalize" }}>{bathFinishLevel}</span>
+                    </div>
+                  )}
+                </>
               )}
             </div>
 
