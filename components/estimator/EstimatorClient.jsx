@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import GuidedEstimator from "./GuidedEstimator";
 import "../../styles/guided-estimator.css";
 
@@ -84,6 +85,7 @@ function lineCost(catalog, permitFormulas, key, entry) {
    Single #est-root — no duplicate ID issues.
 ───────────────────────────────────────────────────────────────── */
 const EstimatorClient = ({ config }) => {
+  const router = useRouter();
   const catalog = config.catalog || [];
   const globalAddons = config.globalAddons || [];
   const permitFormulas = config.permitFormulas || {};
@@ -252,7 +254,12 @@ const EstimatorClient = ({ config }) => {
 
     if (!formspreeEndpoint || formspreeEndpoint.includes("YOUR_FORM_ID")) {
       console.log("Estimator submission:", payload);
-      setTimeout(() => setSubmitState("success"), 600);
+      setTimeout(() => {
+        setSubmitState("idle");
+        setModalOpen(false);
+        setContact({ name: "", email: "", phone: "", notes: "" });
+        router.push("/thank-you");
+      }, 600);
       return;
     }
 
@@ -262,7 +269,12 @@ const EstimatorClient = ({ config }) => {
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(payload)
       });
-      if (res.ok) setSubmitState("success");
+      if (res.ok) {
+        setSubmitState("idle");
+        setModalOpen(false);
+        setContact({ name: "", email: "", phone: "", notes: "" });
+        router.push("/thank-you");
+      }
       else throw new Error("bad response");
     } catch {
       setSubmitState("error");

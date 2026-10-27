@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 const fmt = (n) => "$" + Math.round(n).toLocaleString("en-US");
 
@@ -261,6 +262,7 @@ const OUTDOOR_FINISH_LEVELS = [
 ];
 
 export default function GuidedEstimator({ config }) {
+  const router = useRouter();
   const formspreeEndpoint = config?.formspreeEndpoint || "https://formspree.io/f/YOUR_FORM_ID";
 
   // Calculator State
@@ -472,7 +474,10 @@ export default function GuidedEstimator({ config }) {
     if (!formspreeEndpoint || formspreeEndpoint.includes("YOUR_FORM_ID")) {
       console.log("[Ferrentino Estimator Inquiry Payload]:", payload);
       setTimeout(() => {
-        setSubmitState("success");
+        setSubmitState("idle");
+        setContact({ name: "", email: "", phone: "", address: "", notes: "" });
+        setIsQuoteFormOpen(false);
+        router.push("/thank-you");
       }, 700);
       return;
     }
@@ -484,7 +489,10 @@ export default function GuidedEstimator({ config }) {
         body: JSON.stringify(payload),
       });
       if (res.ok) {
-        setSubmitState("success");
+        setSubmitState("idle");
+        setContact({ name: "", email: "", phone: "", address: "", notes: "" });
+        setIsQuoteFormOpen(false);
+        router.push("/thank-you");
       } else {
         throw new Error("Submission failed");
       }
@@ -840,7 +848,7 @@ export default function GuidedEstimator({ config }) {
               ) : (
                 isSqftValid && (
                   <div className="ge-result-breakdown">
-                    <strong>Selected:</strong> {currentProject.name} ({breakdownSummary})
+                    <strong>Selected:</strong> {currentProject.name}
                   </div>
                 )
               )}

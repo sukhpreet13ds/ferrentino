@@ -1,12 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import SplitText from "../SplitText";
 
 const ContactClient = ({ data }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const router = useRouter();
 
   const availableServices = data.availableServices || [];
   const details = data.details || [];
@@ -28,7 +31,9 @@ const ContactClient = ({ data }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
+    e.currentTarget.reset();
+    setSelectedServices([]);
+    router.push("/thank-you");
   };
 
   const countyCols = [counties.slice(0, 4), counties.slice(4, 8)];

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './style/style.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logoImg from '../assets/ferrentino-logo.png';
 import bbbLogo from '../assets/footer-business.png';
 import bathroomImg from '../assets/bathroom.jpg';
@@ -18,6 +18,16 @@ const projectImages = [
 ];
 
 const Footer = () => {
+    const navigate = useNavigate();
+    const [newsletterEmail, setNewsletterEmail] = useState('');
+
+    const handleNewsletterSubmit = (e) => {
+        e.preventDefault();
+        if (!newsletterEmail.trim()) return;
+        setNewsletterEmail('');
+        navigate('/thank-you');
+    };
+
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     // Loop project images every 1.5 seconds
@@ -123,11 +133,13 @@ const Footer = () => {
                             <p className="newsletter-desc">
                                 join our newsletter to receive latest industry news, updates and insights from our team at Ever Built.
                             </p>
-                            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+                            <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
                                 <input
                                     type="email"
                                     placeholder="Enter Your Email....."
                                     className="newsletter-input"
+                                    value={newsletterEmail}
+                                    onChange={(e) => setNewsletterEmail(e.target.value)}
                                     required
                                 />
                                 <button type="submit" className="newsletter-btn">

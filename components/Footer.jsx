@@ -2,8 +2,18 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Footer = ({ site }) => {
+  const router = useRouter();
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (!newsletterEmail.trim()) return;
+    setNewsletterEmail("");
+    router.push("/thank-you");
+  };
   const projectImages = site?.footerProjectImages?.length
     ? site.footerProjectImages
     : ["/images/bathroom.jpg", "/images/room.jpg", "/images/inner-two2.jpg", "/images/outdoor-pro.jpg", "/images/living.jpg"];
@@ -71,8 +81,6 @@ const Footer = ({ site }) => {
             </div>
             <div className="footer-social-icons">
               <a href={social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-              <a href={social.instagram || "#instagram"} aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-              <a href={social.linkedin || "#linkedin"} aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
             </div>
           </div>
 
@@ -95,7 +103,7 @@ const Footer = ({ site }) => {
             </div>
 
             <div className="footer-col footer-info-col reveal-zoom" data-delay="250">
-              <p className="footer-address" style={{ whiteSpace: "pre-wrap" }}>{address}</p>
+              <a href="https://maps.app.goo.gl/8sVU5TkLpRxc18Uq9" target="_blank" style={{textDecoration: "none"}}><p className="footer-address" style={{ whiteSpace: "pre-wrap", color: "#fff" }}>{address}</p></a>
               <p className="footer-contact-item">
                 <span className="yellow-label">Office:</span><a style={{ color: "inherit!important", textDecoration: "none !important" }} href="tel:+13522373368"> {phone}</a>
               </p>
@@ -120,11 +128,13 @@ const Footer = ({ site }) => {
               <p className="newsletter-desc">
                 join our newsletter to receive latest industry news, updates and insights from our team Ferrentino & Son.
               </p>
-              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+              <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
                 <input
                   type="email"
                   placeholder="Enter Your Email....."
                   className="newsletter-input"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
                   required
                 />
                 <button type="submit" className="newsletter-btn">

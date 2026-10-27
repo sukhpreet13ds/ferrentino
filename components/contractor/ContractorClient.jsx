@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import SplitText from "../SplitText";
 
 const ContractorClient = ({ data }) => {
@@ -8,12 +9,14 @@ const ContractorClient = ({ data }) => {
     window.scrollTo(0, 0);
   }, []);
 
+  const router = useRouter();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
+    e.currentTarget.reset();
+    router.push("/thank-you");
   };
 
   return (

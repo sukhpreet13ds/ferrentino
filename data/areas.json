@@ -581,83 +581,6 @@
       "videos": []
     },
     {
-      "id": 6,
-      "slug": "volusia",
-      "name": "Volusia County",
-      "hub": "PRIMARY HUB: DAYTONA BEACH & DELAND",
-      "hubCity": "Daytona Beach",
-      "isHq": false,
-      "image": "/images/area666.png",
-      "description": "Adapting layouts for coastal homes, high-impact window/door installations, and robust commercial remodels that stand strong against severe Atlantic weather.",
-      "detailHeroBg": "/images/area-view-bg.jpg",
-      "detailHeroTag": "Volusia County Builders",
-      "detailHeroTitleLine1": "Remodeling & Construction",
-      "detailHeroTitleLine2": "in Daytona Beach, FL",
-      "detailHeroDesc": "Proudly building, renovating, and restoring homes across Volusia County's Atlantic coastline with generational craftsmanship and reliable family values.",
-      "centralFloridaFeatures": [
-        {
-          "icon": "fa-solid fa-file-contract",
-          "title": "Atlantic Coastal Permitting Fluency",
-          "desc": "Hurricane-zone and coastal setback rules near Daytona Beach and DeLand require delicate municipal handling. We manage all coastal-zone submittals and wind-load compliance seamlessly."
-        },
-        {
-          "icon": "fa-solid fa-shield-halved",
-          "title": "Storm & Wind-Load Engineering",
-          "desc": "Volusia County's Atlantic exposure requires rigorous storm-rated engineering. We perform comprehensive wind-load assessments and implement hurricane strapping and impact-rated glazing."
-        },
-        {
-          "icon": "fa-solid fa-user-group",
-          "title": "Generational Local Trades",
-          "desc": "Our long-standing network of local masonry, framing, and roofing experts specializes in Volusia County's storm-resilient construction, ensuring elite performance on every project."
-        }
-      ],
-      "portfolioProjects": [
-        {
-          "id": 1,
-          "title": "F&S – Storm-Resilient Home Addition",
-          "location": "The Ferraro Family — Daytona Beach, FL",
-          "image": "/images/project44.jpg"
-        },
-        {
-          "id": 2,
-          "title": "F&S – Coastal Interior Refresh",
-          "location": "Priya & Sam — DeLand, FL",
-          "image": "/images/project-zone.jpg"
-        }
-      ],
-      "testimonials": [
-        {
-          "quote": "Living this close to the coast, we needed a builder who truly understood wind-load requirements. Ferrentino & Son exceeded our expectations.",
-          "name": "The Ferraro Family",
-          "location": "Daytona Beach, FL – Storm-Resilient Addition"
-        },
-        {
-          "quote": "Our DeLand home's interior renovation was handled with total professionalism from permitting through final walkthrough.",
-          "name": "Priya & Sam K.",
-          "location": "DeLand, FL – Coastal Interior Refresh"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "Do you handle hurricane-zone and wind-load permitting?",
-          "answer": "Yes. We regularly navigate Volusia County's hurricane-zone construction ordinances, handling all wind-load documentation and approvals on your behalf."
-        },
-        {
-          "question": "How do you protect homes from severe Atlantic weather?",
-          "answer": "We engineer with hurricane strapping, impact-rated glazing, and advanced moisture-barrier applications built for coastal Volusia County conditions."
-        },
-        {
-          "question": "What is the average timeline for a coastal home addition?",
-          "answer": "Most coastal additions take 3 to 6 months depending on size, wind-load engineering, and permitting timelines."
-        },
-        {
-          "question": "Are your estimators and trade partners fully certified?",
-          "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
-        }
-      ],
-      "videos": []
-    },
-    {
       "id": 7,
       "slug": "putnam",
       "name": "Putnam County",
@@ -803,6 +726,83 @@
         {
           "question": "What is the average timeline for a multi-room interior update?",
           "answer": "Most multi-room interior updates take 4 to 8 weeks depending on the number of rooms and the extent of finish changes."
+        },
+        {
+          "question": "Are your estimators and trade partners fully certified?",
+          "answer": "Yes, Ferrentino & Son is fully licensed, insured, and bonded, partnering only with verified local trade professionals who share our standards for safety and excellence."
+        }
+      ],
+      "videos": []
+    },
+    {
+      "id": 6,
+      "slug": "volusia",
+      "name": "Volusia County",
+      "hub": "PRIMARY HUB: DAYTONA BEACH & DELAND",
+      "hubCity": "Daytona Beach",
+      "isHq": false,
+      "image": "/images/area666.png",
+      "description": "Adapting layouts for coastal homes, high-impact window/door installations, and robust commercial remodels that stand strong against severe Atlantic weather.",
+      "detailHeroBg": "/images/area-view-bg.jpg",
+      "detailHeroTag": "Volusia County Builders",
+      "detailHeroTitleLine1": "Remodeling & Construction",
+      "detailHeroTitleLine2": "in Daytona Beach, FL",
+      "detailHeroDesc": "Proudly building, renovating, and restoring homes across Volusia County's Atlantic coastline with generational craftsmanship and reliable family values.",
+      "centralFloridaFeatures": [
+        {
+          "icon": "fa-solid fa-file-contract",
+          "title": "Atlantic Coastal Permitting Fluency",
+          "desc": "Hurricane-zone and coastal setback rules near Daytona Beach and DeLand require delicate municipal handling. We manage all coastal-zone submittals and wind-load compliance seamlessly."
+        },
+        {
+          "icon": "fa-solid fa-shield-halved",
+          "title": "Storm & Wind-Load Engineering",
+          "desc": "Volusia County's Atlantic exposure requires rigorous storm-rated engineering. We perform comprehensive wind-load assessments and implement hurricane strapping and impact-rated glazing."
+        },
+        {
+          "icon": "fa-solid fa-user-group",
+          "title": "Generational Local Trades",
+          "desc": "Our long-standing network of local masonry, framing, and roofing experts specializes in Volusia County's storm-resilient construction, ensuring elite performance on every project."
+        }
+      ],
+      "portfolioProjects": [
+        {
+          "id": 1,
+          "title": "F&S – Storm-Resilient Home Addition",
+          "location": "The Ferraro Family — Daytona Beach, FL",
+          "image": "/images/project44.jpg"
+        },
+        {
+          "id": 2,
+          "title": "F&S – Coastal Interior Refresh",
+          "location": "Priya & Sam — DeLand, FL",
+          "image": "/images/project-zone.jpg"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Living this close to the coast, we needed a builder who truly understood wind-load requirements. Ferrentino & Son exceeded our expectations.",
+          "name": "The Ferraro Family",
+          "location": "Daytona Beach, FL – Storm-Resilient Addition"
+        },
+        {
+          "quote": "Our DeLand home's interior renovation was handled with total professionalism from permitting through final walkthrough.",
+          "name": "Priya & Sam K.",
+          "location": "DeLand, FL – Coastal Interior Refresh"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do you handle hurricane-zone and wind-load permitting?",
+          "answer": "Yes. We regularly navigate Volusia County's hurricane-zone construction ordinances, handling all wind-load documentation and approvals on your behalf."
+        },
+        {
+          "question": "How do you protect homes from severe Atlantic weather?",
+          "answer": "We engineer with hurricane strapping, impact-rated glazing, and advanced moisture-barrier applications built for coastal Volusia County conditions."
+        },
+        {
+          "question": "What is the average timeline for a coastal home addition?",
+          "answer": "Most coastal additions take 3 to 6 months depending on size, wind-load engineering, and permitting timelines."
         },
         {
           "question": "Are your estimators and trade partners fully certified?",

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './style/estimator.css';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
@@ -366,6 +367,7 @@ function lineCost(key, entry) {
 }
 
 const Estimator = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -592,7 +594,10 @@ const Estimator = () => {
     if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
       console.log('Estimator submission (endpoint not configured):', payload);
       setTimeout(() => {
-        setSubmitState('success');
+        setSubmitState('idle');
+        setModalOpen(false);
+        setContact({ name: '', email: '', phone: '', notes: '' });
+        navigate('/thank-you');
       }, 600);
       return;
     }
@@ -604,7 +609,10 @@ const Estimator = () => {
         body: JSON.stringify(payload)
       });
       if (res.ok) {
-        setSubmitState('success');
+        setSubmitState('idle');
+        setModalOpen(false);
+        setContact({ name: '', email: '', phone: '', notes: '' });
+        navigate('/thank-you');
       } else {
         throw new Error('bad response');
       }

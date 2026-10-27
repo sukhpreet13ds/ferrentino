@@ -81,8 +81,7 @@ const Navbar = () => {
                     <div className="top-bar-right">
                         <div className="social-icons">
                             <a href="https://www.facebook.com/ferrentinoandson/" aria-label="Facebook" target='_blank' rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
-                            <a href="#instagram" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-                            <a href="#linkedin" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
+                        
                         </div>
                         <div className="top-contact-item">
                             <i className="fa-solid fa-phone icon-yellow"></i>
@@ -92,9 +91,7 @@ const Navbar = () => {
                             <i className="fa-solid fa-envelope icon-yellow"></i>
                             <a href="mailto:estimating@ferrentinoandson.com">estimating@ferrentinoandson.com</a>
                         </div>
-                        <div className="lang-select">
-                            <a href="#en" className="lang-link">EN</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -201,7 +198,6 @@ const Navbar = () => {
                             <img src={logo} alt="Ferrentino & Son" />
                         </div>
                         <div className="mobile-header-actions">
-                            <a href="#en" className="mobile-lang-btn">EN</a>
                             <button className="mobile-close-btn" onClick={closeMobileMenu} aria-label="Close menu">
                                 <i className="fa-solid fa-xmark"></i>
                             </button>
@@ -212,8 +208,6 @@ const Navbar = () => {
                     <div className="mobile-social-bar-container">
                         <div className="mobile-social-row">
                             <a href="https://www.facebook.com/ferrentinoandson/" aria-label="Facebook" target='_blank' rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
-                            <a href="#instagram" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-                            <a href="#linkedin" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
                         </div>
                         <button
                             className={`mobile-grip-toggle-btn ${isMobileExtraOpen ? 'active' : ''}`}

@@ -240,9 +240,9 @@ const AreaWeServe = () => {
                             <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Citrus</span>
                             <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Sumter</span>
                             <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Levy</span>
-                            <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Volusia</span>
                             <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Putnam</span>
                             <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Alachua</span>
+                             <span className="locality-pill" style={{ backgroundColor: "#D4AF37 !important", color: "#111213 !important" }}>Volusia</span>
                         </div>
                     </div>
                 </div>

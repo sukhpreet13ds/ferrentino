@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './style/style.css';
+import { useNavigate } from 'react-router-dom';
 import contractorHeroBg from '../assets/contractor-bg.jpg';
 import SplitText from '../components/SplitText';
 import Footer from '../components/Footer';
@@ -9,12 +10,14 @@ const Contractor = () => {
         window.scrollTo(0, 0);
     }, []);
 
+    const navigate = useNavigate();
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 5000);
+        e.currentTarget.reset();
+        navigate('/thank-you');
     };
 
     return (

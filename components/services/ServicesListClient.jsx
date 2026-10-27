@@ -6,7 +6,7 @@ import Link from "next/link";
 import SplitText from "../SplitText";
 
 const ServicesListClient = ({ data }) => {
-  const router = useRouter();
+  const router = useRouter(); 
   const items = data.items || [];
 
   useEffect(() => {

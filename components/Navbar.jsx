@@ -85,8 +85,6 @@ const Navbar = ({ site }) => {
           <div className="top-bar-right">
             <div className="social-icons">
               <a href={social.facebook} aria-label="Facebook" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
-              <a href={social.instagram || "#instagram"} aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-              <a href={social.linkedin || "#linkedin"} aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
             </div>
             <div className="top-contact-item">
               <i className="fa-solid fa-phone icon-yellow"></i>
@@ -95,9 +93,6 @@ const Navbar = ({ site }) => {
             <div className="top-contact-item">
               <i className="fa-solid fa-envelope icon-yellow"></i>
               <a href={`mailto:${email}`}>{email}</a>
-            </div>
-            <div className="lang-select">
-              <a href="#en" className="lang-link">EN</a>
             </div>
           </div>
         </div>
@@ -206,8 +201,6 @@ const Navbar = ({ site }) => {
           <div className="mobile-social-bar-container">
             <div className="mobile-social-row">
               <a href={social.facebook} aria-label="Facebook" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
-              <a href={social.instagram || "#instagram"} aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-              <a href={social.linkedin || "#linkedin"} aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
             </div>
             <button
               className={`mobile-grip-toggle-btn ${isMobileExtraOpen ? "active" : ""}`}

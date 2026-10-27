@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './style/style.css';
+import { useNavigate } from 'react-router-dom';
 import contactHeroBg from '../assets/contact-us-hero.jpg';
 import SplitText from '../components/SplitText';
 import Footer from '../components/Footer';
@@ -8,6 +9,8 @@ const Contact = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const navigate = useNavigate();
 
     const [selectedServices, setSelectedServices] = useState(['']);
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -31,7 +34,9 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 5000);
+        e.currentTarget.reset();
+        setSelectedServices([]);
+        navigate('/thank-you');
     };
 
     return (
@@ -242,7 +247,7 @@ const Contact = () => {
 
                                 <div className="form-group">
                                     <label>Estimated Budget Range</label>
-                                    <input type="text" placeholder="e.g. $150,000 - $300,000" />
+                                    <input type="text" placeholder="e.g. $15,000 - $300,000" />
                                 </div>
 
                                 <div className="form-group">
