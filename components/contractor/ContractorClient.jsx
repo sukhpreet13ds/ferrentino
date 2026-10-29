@@ -11,12 +11,46 @@ const ContractorClient = ({ data }) => {
 
   const router = useRouter();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    e.currentTarget.reset();
-    router.push("/thank-you");
+    setIsSubmitting(true);
+    const formEl = e.currentTarget;
+    const fd = new FormData(formEl);
+
+    const payload = {
+      type: "contractor",
+      companyName: fd.get("companyName") || "",
+      yearsInBusiness: fd.get("yearsInBusiness") || "",
+      country: fd.get("country") || "USA",
+      addressLine1: fd.get("addressLine1") || "",
+      addressLine2: fd.get("addressLine2") || "",
+      city: fd.get("city") || "",
+      state: fd.get("state") || "",
+      zip: fd.get("zip") || "",
+      firstName: fd.get("firstName") || "",
+      lastName: fd.get("lastName") || "",
+      contactEmail: fd.get("contactEmail") || "",
+      contactPhone: fd.get("contactPhone") || "",
+    };
+
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      setIsSubmitted(true);
+      formEl.reset();
+      router.push("/thank-you");
+    } catch (err) {
+      console.error(err);
+      setIsSubmitted(true);
+      router.push("/thank-you");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -101,12 +135,12 @@ const ContractorClient = ({ data }) => {
 
                 <div className="form-group">
                   <label>{data.companyNameLabel}</label>
-                  <input type="text" placeholder={data.companyNamePlaceholder} required />
+                  <input type="text" name="companyName" placeholder={data.companyNamePlaceholder} required />
                 </div>
 
                 <div className="form-group">
                   <label>{data.yearsInBusinessLabel}</label>
-                  <input type="text" placeholder={data.yearsInBusinessPlaceholder} required />
+                  <input type="text" name="yearsInBusiness" placeholder={data.yearsInBusinessPlaceholder} required />
                 </div>
               </div>
 
@@ -117,31 +151,31 @@ const ContractorClient = ({ data }) => {
 
                 <div className="form-group">
                   <label>{data.countryLabel}</label>
-                  <input type="text" defaultValue={data.countryDefaultValue} />
+                  <input type="text" name="country" defaultValue={data.countryDefaultValue} />
                 </div>
 
                 <div className="form-group">
                   <label>{data.addressLine1Label}</label>
-                  <input type="text" placeholder={data.addressLine1Placeholder} required />
+                  <input type="text" name="addressLine1" placeholder={data.addressLine1Placeholder} required />
                 </div>
 
                 <div className="form-group">
                   <label>{data.addressLine2Label}</label>
-                  <input type="text" placeholder={data.addressLine2Placeholder} />
+                  <input type="text" name="addressLine2" placeholder={data.addressLine2Placeholder} />
                 </div>
 
                 <div className="form-row-three">
                   <div className="form-group">
                     <label>{data.cityLabel}</label>
-                    <input type="text" placeholder={data.cityPlaceholder} required />
+                    <input type="text" name="city" placeholder={data.cityPlaceholder} required />
                   </div>
                   <div className="form-group">
                     <label>{data.stateLabel}</label>
-                    <input type="text" placeholder={data.statePlaceholder} required />
+                    <input type="text" name="state" placeholder={data.statePlaceholder} required />
                   </div>
                   <div className="form-group">
                     <label>{data.zipLabel}</label>
-                    <input type="text" placeholder={data.zipPlaceholder} required />
+                    <input type="text" name="zip" placeholder={data.zipPlaceholder} required />
                   </div>
                 </div>
               </div>
@@ -154,27 +188,27 @@ const ContractorClient = ({ data }) => {
                 <div className="form-row-two">
                   <div className="form-group">
                     <label>{data.firstNameLabel}</label>
-                    <input type="text" placeholder={data.firstNamePlaceholder} required />
+                    <input type="text" name="firstName" placeholder={data.firstNamePlaceholder} required />
                   </div>
                   <div className="form-group">
                     <label>{data.lastNameLabel}</label>
-                    <input type="text" placeholder={data.lastNamePlaceholder} required />
+                    <input type="text" name="lastName" placeholder={data.lastNamePlaceholder} required />
                   </div>
                 </div>
 
                 <div className="form-group">
                   <label>{data.contactEmailLabel}</label>
-                  <input type="email" placeholder={data.contactEmailPlaceholder} required />
+                  <input type="email" name="contactEmail" placeholder={data.contactEmailPlaceholder} required />
                 </div>
 
                 <div className="form-group">
                   <label>{data.contactPhoneLabel}</label>
-                  <input type="tel" placeholder={data.contactPhonePlaceholder} required />
+                  <input type="tel" name="contactPhone" placeholder={data.contactPhonePlaceholder} required />
                 </div>
               </div>
 
-              <button type="submit" className="btn-send-application">
-                {data.submitButtonText}
+              <button type="submit" className="btn-send-application" disabled={isSubmitting}>
+                {isSubmitting ? "Sending Application..." : data.submitButtonText}
               </button>
             </form>
           </div>

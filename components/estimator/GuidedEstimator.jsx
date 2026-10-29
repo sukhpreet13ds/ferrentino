@@ -115,7 +115,7 @@ const PROJECT_TYPES = [
       { id: "better", name: "Better", rate: 500, badge: "$500 / sq ft", desc: "Upgraded fixtures, custom vanity millwork, and designer tile layouts" },
       { id: "best", name: "Best", rate: 600, badge: "$600 / sq ft", desc: "Luxury spa-grade fixtures, natural stone slabs, and curbless zero-threshold shower" },
     ],
-    presets: [60, 90, 120, 160, 220],
+    presets: [40, 60, 90, 120, 160, 220],
   },
   {
     id: "outdoor_living",
@@ -297,6 +297,16 @@ export default function GuidedEstimator({ config }) {
   });
   const [submitState, setSubmitState] = useState("idle"); // idle | sending | success | error
 
+  // "Send Me This Estimate" Modal State
+  const [sendModalOpen, setSendModalOpen] = useState(false);
+  const [sendContact, setSendContact] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    notes: "",
+  });
+  const [sendSubmitState, setSendSubmitState] = useState("idle"); // idle | sending | success | error
+
   const quoteFormRef = useRef(null);
   const resultRef = useRef(null);
 
@@ -402,7 +412,99 @@ export default function GuidedEstimator({ config }) {
     }, 100);
   };
 
-  // Submit Quote Inquiry
+  // "Send Me This Estimate" Modal Submission (Sends to customer with PDF & to estimating team)
+  const handleSendEstimateSubmit = async (e) => {
+    e?.preventDefault();
+    if (!sendContact.name.trim()) {
+      alert("Please enter your name.");
+      return;
+    }
+    if (!sendContact.email.trim()) {
+      alert("Please enter your email.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(sendContact.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    setSendSubmitState("sending");
+
+    let payload;
+    if (isOutdoor) {
+      const estimateDisplay = hasOutdoorSelection
+        ? `${fmt(outdoorTotalLow)} – ${fmt(outdoorTotalHigh)}`
+        : "$0";
+      const selectedOptionsStr =
+        `${currentOutdoorFinish.name} finishes; Selected: ` +
+        outdoorBreakdownItems.map((it) => it.label).join(", ");
+      const breakdownStr = outdoorBreakdownItems
+        .map((it) => `${it.label}: ${it.rangeDisplay}`)
+        .join("\n");
+
+      payload = {
+        type: "estimator-send-me",
+        name: sendContact.name,
+        email: sendContact.email,
+        phone: sendContact.phone,
+        notes: sendContact.notes,
+        projectType: "Outdoor Living",
+        squareFootage: outdoorBreakdownItems.map((it) => it.label).join("; ") || "None selected",
+        selectedOptions: selectedOptionsStr,
+        estimatedCostRange: estimateDisplay,
+        breakdown: breakdownStr,
+        breakdownItems: outdoorBreakdownItems,
+      };
+    } else {
+      const estimateDisplay =
+        calculationMode === "range"
+          ? `${fmt(calculatedLow)} – ${fmt(calculatedHigh)}`
+          : fmt(calculatedLow);
+
+      let optionsSummary = "Standard";
+      if (currentProject.hasFinishLevels) {
+        const selectedTier = currentProject.finishLevels.find((f) => f.id === bathFinishLevel);
+        optionsSummary = `Finish Level: ${selectedTier?.name || bathFinishLevel} ($${selectedTier?.rate}/sq ft)`;
+      }
+
+      payload = {
+        type: "estimator-send-me",
+        name: sendContact.name,
+        email: sendContact.email,
+        phone: sendContact.phone,
+        notes: sendContact.notes,
+        projectType: currentProject.name,
+        squareFootage: `${sqft.toLocaleString()} sq ft`,
+        selectedOptions: optionsSummary,
+        estimatedCostRange: estimateDisplay,
+        breakdown: breakdownSummary,
+        breakdownItems: [
+          {
+            label: `${currentProject.name} (${sqft.toLocaleString()} sq ft)`,
+            rangeDisplay: estimateDisplay,
+          },
+        ],
+      };
+    }
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (res.ok) {
+        setSendSubmitState("success");
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (err) {
+      console.error(err);
+      setSendSubmitState("error");
+    }
+  };
+
+  // Submit Quote Inquiry (Sends to estimating team)
   const handleSubmitQuote = async (e) => {
     e.preventDefault();
     if (!contact.name.trim()) {
@@ -433,11 +535,13 @@ export default function GuidedEstimator({ config }) {
         .join("\n");
 
       payload = {
+        type: "estimator-quote",
         projectType: "Outdoor Living",
         squareFootage: outdoorBreakdownItems.map((it) => it.label).join("; ") || "None selected",
         selectedOptions: selectedOptionsStr,
         estimatedCostRange: estimateDisplay,
         breakdown: breakdownStr,
+        breakdownItems: outdoorBreakdownItems,
         customerName: contact.name,
         customerEmail: contact.email,
         customerPhone: contact.phone || "Not provided",
@@ -457,11 +561,18 @@ export default function GuidedEstimator({ config }) {
       }
 
       payload = {
+        type: "estimator-quote",
         projectType: currentProject.name,
         squareFootage: `${sqft} sq ft`,
         selectedOptions: optionsSummary,
         estimatedCostRange: estimateDisplay,
         breakdown: breakdownSummary,
+        breakdownItems: [
+          {
+            label: `${currentProject.name} (${sqft.toLocaleString()} sq ft)`,
+            rangeDisplay: estimateDisplay,
+          },
+        ],
         customerName: contact.name,
         customerEmail: contact.email,
         customerPhone: contact.phone || "Not provided",
@@ -471,21 +582,10 @@ export default function GuidedEstimator({ config }) {
       };
     }
 
-    if (!formspreeEndpoint || formspreeEndpoint.includes("YOUR_FORM_ID")) {
-      console.log("[Ferrentino Estimator Inquiry Payload]:", payload);
-      setTimeout(() => {
-        setSubmitState("idle");
-        setContact({ name: "", email: "", phone: "", address: "", notes: "" });
-        setIsQuoteFormOpen(false);
-        router.push("/thank-you");
-      }, 700);
-      return;
-    }
-
     try {
-      const res = await fetch(formspreeEndpoint, {
+      const res = await fetch("/api/send-email", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
       if (res.ok) {
@@ -734,7 +834,7 @@ export default function GuidedEstimator({ config }) {
                       >
                         <div className="ge-finish-card-head">
                           <span className="ge-finish-name">{lvl.name}</span>
-                          <span className="ge-finish-rate">{lvl.badge}</span>
+                          {/* <span className="ge-finish-rate">{lvl.badge}</span> */}
                         </div>
                         <p className="ge-finish-desc">{lvl.desc}</p>
                         <div className="ge-finish-select-indicator">
@@ -857,9 +957,21 @@ export default function GuidedEstimator({ config }) {
             <div className="ge-result-cta-col">
               <button
                 type="button"
+                className="ge-cta-send-estimate-btn"
+                onClick={() => {
+                  setSendModalOpen(true);
+                  setSendSubmitState("idle");
+                }}
+                disabled={(isOutdoor && !hasOutdoorSelection) || (!isOutdoor && !isSqftValid)}
+              >
+                <span>Send Me This Estimate</span>
+                <i className="fa-solid fa-paper-plane"></i>
+              </button>
+              <button
+                type="button"
                 className="ge-cta-quote-btn"
                 onClick={handleOpenQuoteForm}
-                disabled={isOutdoor && !hasOutdoorSelection}
+                disabled={(isOutdoor && !hasOutdoorSelection) || (!isOutdoor && !isSqftValid)}
               >
                 <span>Request a detailed quote</span>
                 <i className="fa-solid fa-arrow-right"></i>
@@ -1045,6 +1157,143 @@ export default function GuidedEstimator({ config }) {
             )}
           </div>
         </section>
+      )}
+
+      {/* ── Modal: Send Me This Estimate (Uses the same form as the catalog modal) ── */}
+      {sendModalOpen && (
+        <div
+          className="est-modal-backdrop"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setSendModalOpen(false);
+              setSendSubmitState("idle");
+            }
+          }}
+        >
+          <div className="est-modal">
+            {sendSubmitState === "success" ? (
+              <div className="est-success-body">
+                <div className="est-success-icon">✓</div>
+                <h2 className="est-success-title">Estimate Sent!</h2>
+                <p className="est-success-msg">
+                  We have emailed a copy of your preliminary estimate and PDF to <strong>{sendContact.email}</strong>. Our estimating team has also received your project parameters and will follow up with you.
+                </p>
+                <button
+                  type="button"
+                  className="est-cta-btn"
+                  onClick={() => {
+                    setSendModalOpen(false);
+                    setSendSubmitState("idle");
+                    setSendContact({ name: "", email: "", phone: "", notes: "" });
+                  }}
+                >
+                  Done
+                </button>
+              </div>
+            ) : (
+              <>
+                <div className="est-modal-head">
+                  <h2 className="est-modal-title">Send Me This Estimate</h2>
+                  <button
+                    type="button"
+                    className="est-modal-close"
+                    onClick={() => {
+                      setSendModalOpen(false);
+                      setSendSubmitState("idle");
+                    }}
+                  >
+                    ×
+                  </button>
+                </div>
+                <div className="est-modal-body">
+                  <div className="est-modal-summary">
+                    <span className="est-modal-summary-label">PRELIMINARY ESTIMATE</span>
+                    <span className="est-modal-summary-value est-mono">
+                      {isOutdoor
+                        ? (hasOutdoorSelection ? `${fmt(outdoorTotalLow)} – ${fmt(outdoorTotalHigh)}` : "$0")
+                        : (calculationMode === "range" ? `${fmt(calculatedLow)} – ${fmt(calculatedHigh)}` : fmt(calculatedLow))}
+                    </span>
+                  </div>
+                  <div className="est-field">
+                    <label className="est-label" htmlFor="ge-send-c-name">Full name *</label>
+                    <input
+                      type="text"
+                      className="est-input"
+                      id="ge-send-c-name"
+                      required
+                      placeholder="John Doe"
+                      value={sendContact.name}
+                      onChange={(e) => setSendContact({ ...sendContact, name: e.target.value })}
+                    />
+                  </div>
+                  <div className="est-field">
+                    <label className="est-label" htmlFor="ge-send-c-email">Email *</label>
+                    <input
+                      type="email"
+                      className="est-input"
+                      id="ge-send-c-email"
+                      required
+                      placeholder="john@example.com"
+                      value={sendContact.email}
+                      onChange={(e) => setSendContact({ ...sendContact, email: e.target.value })}
+                    />
+                  </div>
+                  <div className="est-field">
+                    <label className="est-label" htmlFor="ge-send-c-phone">
+                      Phone <span className="est-label-hint">optional</span>
+                    </label>
+                    <input
+                      type="tel"
+                      className="est-input"
+                      id="ge-send-c-phone"
+                      placeholder="(352) 000-0000"
+                      value={sendContact.phone}
+                      onChange={(e) => setSendContact({ ...sendContact, phone: e.target.value })}
+                    />
+                  </div>
+                  <div className="est-field">
+                    <label className="est-label" htmlFor="ge-send-c-notes">
+                      Notes <span className="est-label-hint">optional</span>
+                    </label>
+                    <textarea
+                      className="est-input"
+                      id="ge-send-c-notes"
+                      rows="3"
+                      placeholder="Timeline, materials, questions…"
+                      value={sendContact.notes}
+                      onChange={(e) => setSendContact({ ...sendContact, notes: e.target.value })}
+                    />
+                  </div>
+                  {sendSubmitState === "error" && (
+                    <div className="est-error-msg">
+                      Something went wrong sending your estimate. Please call us directly at (352) 237-3368.
+                    </div>
+                  )}
+                </div>
+                <div className="est-modal-actions">
+                  <button
+                    type="button"
+                    className="est-btn-ghost"
+                    onClick={() => {
+                      setSendModalOpen(false);
+                      setSendSubmitState("idle");
+                    }}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    className="est-cta-btn"
+                    onClick={handleSendEstimateSubmit}
+                    disabled={sendSubmitState === "sending"}
+                  >
+                    {sendSubmitState === "sending" ? "Sending…" : "Send estimate"}
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );

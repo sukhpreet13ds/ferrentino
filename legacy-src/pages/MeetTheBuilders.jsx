@@ -121,12 +121,12 @@ const MeetTheBuilders = () => {
                         </div>
 
                         <div className="builder-content-col reveal-zoom" data-delay="150">
-                            <span className="builder-role-tag">4TH GENERATION BUILDER &amp; 2ND GENERATION EDWARD</span>
+                            <span className="builder-role-tag">4TH GENERATION BUILDER</span>
                             <h2 className="builder-name">Edward "Cicc" Ferrentino</h2>
                             <div className="builder-accent-line"></div>
 
                             <p className="builder-bio">
-                                4th generation builder and 2nd generation Edward, Cicc carries his legacy proudly. As son of the founder of Ferrentino &amp; Son and the 1st Woman Certified Master Builder, Cicc was raised with a passion for building.
+                                4th generation builder Edward, Cicc carries his legacy proudly. As son of the founder of Ferrentino &amp; Son and the 1st Woman Certified Master Builder, Cicc was raised with a passion for building.
                             </p>
                             <p className="builder-bio">
                                 After the passing of his father, Cicc has made it his life’s mission to carry on the good name and unique quality of all of the great Ferrentinos before him.

@@ -19,6 +19,7 @@ const ContactClient = ({ data }) => {
 
   const [selectedServices, setSelectedServices] = useState([""]);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const toggleService = (service) => {
     if (selectedServices.includes(service)) {
@@ -28,12 +29,40 @@ const ContactClient = ({ data }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    e.currentTarget.reset();
-    setSelectedServices([]);
-    router.push("/thank-you");
+    setIsSubmitting(true);
+    const formEl = e.currentTarget;
+    const fd = new FormData(formEl);
+
+    const payload = {
+      type: "contact",
+      name: fd.get("name") || "",
+      phone: fd.get("phone") || "",
+      email: fd.get("email") || "",
+      location: fd.get("location") || "",
+      services: selectedServices.filter(Boolean),
+      budget: fd.get("budget") || "",
+      details: fd.get("details") || "",
+    };
+
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      setIsSubmitted(true);
+      formEl.reset();
+      setSelectedServices([]);
+      router.push("/thank-you");
+    } catch (err) {
+      console.error(err);
+      setIsSubmitted(true);
+      router.push("/thank-you");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const countyCols = [counties.slice(0, 4), counties.slice(4, 8)];
@@ -173,22 +202,22 @@ const ContactClient = ({ data }) => {
                 <div className="form-row-two">
                   <div className="form-group">
                     <label>{data.nameLabel}</label>
-                    <input type="text" placeholder={data.namePlaceholder} required />
+                    <input type="text" name="name" placeholder={data.namePlaceholder} required />
                   </div>
                   <div className="form-group">
                     <label>{data.phoneLabel}</label>
-                    <input type="tel" placeholder={data.phonePlaceholder} required />
+                    <input type="tel" name="phone" placeholder={data.phonePlaceholder} required />
                   </div>
                 </div>
 
                 <div className="form-row-two">
                   <div className="form-group">
                     <label>{data.emailLabel}</label>
-                    <input type="email" placeholder={data.emailPlaceholder} required />
+                    <input type="email" name="email" placeholder={data.emailPlaceholder} required />
                   </div>
                   <div className="form-group">
                     <label>{data.locationLabel}</label>
-                    <input type="text" placeholder={data.locationPlaceholder} required />
+                    <input type="text" name="location" placeholder={data.locationPlaceholder} required />
                   </div>
                 </div>
 
@@ -214,16 +243,16 @@ const ContactClient = ({ data }) => {
 
                 <div className="form-group">
                   <label>{data.budgetLabel}</label>
-                  <input type="text" placeholder={data.budgetPlaceholder} />
+                  <input type="text" name="budget" placeholder={data.budgetPlaceholder} />
                 </div>
 
                 <div className="form-group">
                   <label>{data.detailsLabel}</label>
-                  <textarea rows="4" placeholder={data.detailsPlaceholder}></textarea>
+                  <textarea name="details" rows="4" placeholder={data.detailsPlaceholder}></textarea>
                 </div>
 
-                <button type="submit" className="btn-submit-inquiry">
-                  <span>{data.submitButtonText}</span>
+                <button type="submit" className="btn-submit-inquiry" disabled={isSubmitting}>
+                  <span>{isSubmitting ? "Sending..." : data.submitButtonText}</span>
                   <i className="fa-solid fa-arrow-right"></i>
                 </button>
 

@@ -7,12 +7,30 @@ import { useRouter } from "next/navigation";
 const Footer = ({ site }) => {
   const router = useRouter();
   const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
 
-  const handleNewsletterSubmit = (e) => {
+  const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
-    if (!newsletterEmail.trim()) return;
-    setNewsletterEmail("");
-    router.push("/thank-you");
+    if (!newsletterEmail.trim() || newsletterLoading) return;
+    setNewsletterLoading(true);
+    const emailToSubmit = newsletterEmail.trim();
+
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "subscribe",
+          email: emailToSubmit,
+        }),
+      });
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setNewsletterLoading(false);
+      setNewsletterEmail("");
+      router.push("/thank-you");
+    }
   };
   const projectImages = site?.footerProjectImages?.length
     ? site.footerProjectImages
@@ -137,8 +155,8 @@ const Footer = ({ site }) => {
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   required
                 />
-                <button type="submit" className="newsletter-btn">
-                  Subscribe
+                <button type="submit" className="newsletter-btn" disabled={newsletterLoading}>
+                  {newsletterLoading ? "Subscribing..." : "Subscribe"}
                 </button>
               </form>
             </div>

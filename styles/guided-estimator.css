@@ -686,30 +686,84 @@
 
 .ge-result-cta-col {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
 }
 
-.ge-cta-quote-btn {
+.ge-cta-send-estimate-btn {
   background: var(--ge-gold);
   color: #111213;
   border: none;
   border-radius: 30px;
-  padding: 16px 28px;
+  padding: 15px 28px;
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 6px 20px rgba(251, 199, 5, 0.35);
+  font-family: inherit;
+  text-decoration: none;
 }
 
-.ge-cta-quote-btn:hover {
+.ge-cta-send-estimate-btn:hover {
   background: #FFFFFF;
   color: #111213;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.ge-cta-send-estimate-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.ge-cta-send-estimate-btn i {
+  transition: transform 0.2s ease;
+}
+
+.ge-cta-send-estimate-btn:hover i {
+  transform: translateX(3px);
+}
+
+.ge-cta-quote-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(251, 199, 5, 0.6);
+  border-radius: 30px;
+  padding: 13px 24px;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+
+.ge-cta-quote-btn:hover {
+  background: rgba(251, 199, 5, 0.18);
+  border-color: var(--ge-gold);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.ge-cta-quote-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .ge-cta-quote-btn i {

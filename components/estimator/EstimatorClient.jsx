@@ -244,6 +244,7 @@ const EstimatorClient = ({ config }) => {
     const highPct = Math.round(contingencyHighRate * 100);
 
     const payload = {
+      type: "estimator-catalog",
       name: contact.name, email: contact.email, phone: contact.phone, notes: contact.notes,
       estimateLow: total.hasCustom && total.low === 0 ? "Custom" : fmt(total.low),
       estimateHigh: total.hasCustom && total.low === 0 ? "Custom" : fmt(total.high),
@@ -252,21 +253,10 @@ const EstimatorClient = ({ config }) => {
       submittedAt: new Date().toISOString()
     };
 
-    if (!formspreeEndpoint || formspreeEndpoint.includes("YOUR_FORM_ID")) {
-      console.log("Estimator submission:", payload);
-      setTimeout(() => {
-        setSubmitState("idle");
-        setModalOpen(false);
-        setContact({ name: "", email: "", phone: "", notes: "" });
-        router.push("/thank-you");
-      }, 600);
-      return;
-    }
-
     try {
-      const res = await fetch(formspreeEndpoint, {
+      const res = await fetch("/api/send-email", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
       if (res.ok) {
